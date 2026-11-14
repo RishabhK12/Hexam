@@ -1,0 +1,1660 @@
+{
+  "term_label": "FALL 2026",
+  "exam_windows": [
+    {
+      "start": "08:00",
+      "end": "10:50"
+    },
+    {
+      "start": "11:20",
+      "end": "14:10"
+    },
+    {
+      "start": "14:40",
+      "end": "17:30"
+    },
+    {
+      "start": "18:00",
+      "end": "20:50"
+    }
+  ],
+  "exam_periods": [
+    {
+      "date": "2026-12-10",
+      "start": "14:40",
+      "end": "17:30"
+    },
+    {
+      "date": "2026-12-10",
+      "start": "18:00",
+      "end": "20:50"
+    },
+    {
+      "date": "2026-12-11",
+      "start": "08:00",
+      "end": "10:50"
+    },
+    {
+      "date": "2026-12-11",
+      "start": "11:20",
+      "end": "14:10"
+    },
+    {
+      "date": "2026-12-11",
+      "start": "14:40",
+      "end": "17:30"
+    },
+    {
+      "date": "2026-12-11",
+      "start": "18:00",
+      "end": "20:50"
+    },
+    {
+      "date": "2026-12-14",
+      "start": "08:00",
+      "end": "10:50"
+    },
+    {
+      "date": "2026-12-14",
+      "start": "11:20",
+      "end": "14:10"
+    },
+    {
+      "date": "2026-12-14",
+      "start": "14:40",
+      "end": "17:30"
+    },
+    {
+      "date": "2026-12-14",
+      "start": "18:00",
+      "end": "20:50"
+    },
+    {
+      "date": "2026-12-15",
+      "start": "11:20",
+      "end": "14:10"
+    },
+    {
+      "date": "2026-12-15",
+      "start": "14:40",
+      "end": "17:30"
+    },
+    {
+      "date": "2026-12-15",
+      "start": "18:00",
+      "end": "20:50"
+    },
+    {
+      "date": "2026-12-16",
+      "start": "08:00",
+      "end": "10:50"
+    },
+    {
+      "date": "2026-12-16",
+      "start": "11:20",
+      "end": "14:10"
+    },
+    {
+      "date": "2026-12-16",
+      "start": "14:40",
+      "end": "17:30"
+    },
+    {
+      "date": "2026-12-16",
+      "start": "18:00",
+      "end": "20:50"
+    },
+    {
+      "date": "2026-12-17",
+      "start": "08:00",
+      "end": "10:50"
+    },
+    {
+      "date": "2026-12-17",
+      "start": "11:20",
+      "end": "14:10"
+    },
+    {
+      "date": "2026-12-17",
+      "start": "14:40",
+      "end": "17:30"
+    },
+    {
+      "date": "2026-12-17",
+      "start": "18:00",
+      "end": "20:50"
+    }
+  ],
+  "meeting_pattern_rows": [
+    {
+      "days": "TR",
+      "class_start": "14:00",
+      "class_end": "14:50",
+      "pattern_key": "TR 14:00",
+      "exam": {
+        "date": "2026-12-10",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "TR",
+      "class_start": "14:00",
+      "class_end": "15:15",
+      "pattern_key": "TR 14:00",
+      "exam": {
+        "date": "2026-12-10",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "TRF",
+      "class_start": "14:00",
+      "class_end": "14:50",
+      "pattern_key": "TRF 14:00",
+      "exam": {
+        "date": "2026-12-10",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "TWRF",
+      "class_start": "14:00",
+      "class_end": "14:50",
+      "pattern_key": "TWRF 14:00",
+      "exam": {
+        "date": "2026-12-10",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "TR",
+      "class_start": "17:00",
+      "class_end": "17:50",
+      "pattern_key": "TR 17:00",
+      "exam": {
+        "date": "2026-12-10",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "TR",
+      "class_start": "17:00",
+      "class_end": "18:15",
+      "pattern_key": "TR 17:00",
+      "exam": {
+        "date": "2026-12-10",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "TR",
+      "class_start": "17:00",
+      "class_end": "18:55",
+      "pattern_key": "TR 17:00",
+      "exam": {
+        "date": "2026-12-10",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "TRF",
+      "class_start": "17:00",
+      "class_end": "17:50",
+      "pattern_key": "TRF 17:00",
+      "exam": {
+        "date": "2026-12-10",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "TWRF",
+      "class_start": "17:00",
+      "class_end": "17:50",
+      "pattern_key": "TWRF 17:00",
+      "exam": {
+        "date": "2026-12-10",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "M",
+      "class_start": "08:00",
+      "class_end": "10:45",
+      "pattern_key": "M 08:00",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "M",
+      "class_start": "08:25",
+      "class_end": "10:20",
+      "pattern_key": "M 08:25",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "MTWR",
+      "class_start": "08:25",
+      "class_end": "09:15",
+      "pattern_key": "MTWR 08:25",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "MW",
+      "class_start": "08:00",
+      "class_end": "09:15",
+      "pattern_key": "MW 08:00",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "MW",
+      "class_start": "08:25",
+      "class_end": "09:15",
+      "pattern_key": "MW 08:25",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "MW",
+      "class_start": "08:25",
+      "class_end": "10:20",
+      "pattern_key": "MW 08:25",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "MWF",
+      "class_start": "08:25",
+      "class_end": "09:15",
+      "pattern_key": "MWF 08:25",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "R",
+      "class_start": "08:25",
+      "class_end": "10:20",
+      "pattern_key": "R 08:25",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "WF",
+      "class_start": "08:00",
+      "class_end": "09:15",
+      "pattern_key": "WF 08:00",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "WF",
+      "class_start": "08:25",
+      "class_end": "09:15",
+      "pattern_key": "WF 08:25",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "MW",
+      "class_start": "11:00",
+      "class_end": "11:50",
+      "pattern_key": "MW 11:00",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "11:20",
+        "end": "14:10"
+      }
+    },
+    {
+      "days": "MW",
+      "class_start": "11:00",
+      "class_end": "12:15",
+      "pattern_key": "MW 11:00",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "11:20",
+        "end": "14:10"
+      }
+    },
+    {
+      "days": "MWF",
+      "class_start": "11:00",
+      "class_end": "11:50",
+      "pattern_key": "MWF 11:00",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "11:20",
+        "end": "14:10"
+      }
+    },
+    {
+      "days": "WF",
+      "class_start": "11:00",
+      "class_end": "11:50",
+      "pattern_key": "WF 11:00",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "11:20",
+        "end": "14:10"
+      }
+    },
+    {
+      "days": "WF",
+      "class_start": "11:00",
+      "class_end": "12:15",
+      "pattern_key": "WF 11:00",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "11:20",
+        "end": "14:10"
+      }
+    },
+    {
+      "days": "MTWR",
+      "class_start": "15:30",
+      "class_end": "16:20",
+      "pattern_key": "MTWR 15:30",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "MW",
+      "class_start": "15:30",
+      "class_end": "16:20",
+      "pattern_key": "MW 15:30",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "MW",
+      "class_start": "15:30",
+      "class_end": "16:45",
+      "pattern_key": "MW 15:30",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "MWF",
+      "class_start": "15:30",
+      "class_end": "16:20",
+      "pattern_key": "MWF 15:30",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "WF",
+      "class_start": "15:30",
+      "class_end": "16:20",
+      "pattern_key": "WF 15:30",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "WF",
+      "class_start": "15:30",
+      "class_end": "16:45",
+      "pattern_key": "WF 15:30",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "F",
+      "class_start": "17:00",
+      "class_end": "18:55",
+      "pattern_key": "F 17:00",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "F",
+      "class_start": "17:00",
+      "class_end": "19:45",
+      "pattern_key": "F 17:00",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "F",
+      "class_start": "18:30",
+      "class_end": "20:25",
+      "pattern_key": "F 18:30",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "F",
+      "class_start": "18:30",
+      "class_end": "21:15",
+      "pattern_key": "F 18:30",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "MTWR",
+      "class_start": "17:00",
+      "class_end": "17:50",
+      "pattern_key": "MTWR 17:00",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "MW",
+      "class_start": "17:00",
+      "class_end": "17:50",
+      "pattern_key": "MW 17:00",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "MW",
+      "class_start": "17:00",
+      "class_end": "18:15",
+      "pattern_key": "MW 17:00",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "MW",
+      "class_start": "17:00",
+      "class_end": "18:55",
+      "pattern_key": "MW 17:00",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "MWF",
+      "class_start": "17:00",
+      "class_end": "17:50",
+      "pattern_key": "MWF 17:00",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "WF",
+      "class_start": "17:00",
+      "class_end": "17:50",
+      "pattern_key": "WF 17:00",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "WF",
+      "class_start": "17:00",
+      "class_end": "18:15",
+      "pattern_key": "WF 17:00",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "WF",
+      "class_start": "17:00",
+      "class_end": "18:55",
+      "pattern_key": "WF 17:00",
+      "exam": {
+        "date": "2026-12-11",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "R",
+      "class_start": "08:00",
+      "class_end": "10:45",
+      "pattern_key": "R 08:00",
+      "exam": {
+        "date": "2026-12-14",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "TR",
+      "class_start": "09:30",
+      "class_end": "10:20",
+      "pattern_key": "TR 09:30",
+      "exam": {
+        "date": "2026-12-14",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "TR",
+      "class_start": "09:30",
+      "class_end": "10:45",
+      "pattern_key": "TR 09:30",
+      "exam": {
+        "date": "2026-12-14",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "TRF",
+      "class_start": "09:30",
+      "class_end": "10:20",
+      "pattern_key": "TRF 09:30",
+      "exam": {
+        "date": "2026-12-14",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "TWRF",
+      "class_start": "09:30",
+      "class_end": "10:20",
+      "pattern_key": "TWRF 09:30",
+      "exam": {
+        "date": "2026-12-14",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "F",
+      "class_start": "11:00",
+      "class_end": "12:55",
+      "pattern_key": "F 11:00",
+      "exam": {
+        "date": "2026-12-14",
+        "start": "11:20",
+        "end": "14:10"
+      }
+    },
+    {
+      "days": "F",
+      "class_start": "11:00",
+      "class_end": "13:45",
+      "pattern_key": "F 11:00",
+      "exam": {
+        "date": "2026-12-14",
+        "start": "11:20",
+        "end": "14:10"
+      }
+    },
+    {
+      "days": "F",
+      "class_start": "08:00",
+      "class_end": "10:45",
+      "pattern_key": "F 08:00",
+      "exam": {
+        "date": "2026-12-14",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "F",
+      "class_start": "08:25",
+      "class_end": "10:20",
+      "pattern_key": "F 08:25",
+      "exam": {
+        "date": "2026-12-14",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "M",
+      "class_start": "17:00",
+      "class_end": "18:55",
+      "pattern_key": "M 17:00",
+      "exam": {
+        "date": "2026-12-14",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "M",
+      "class_start": "17:00",
+      "class_end": "19:45",
+      "pattern_key": "M 17:00",
+      "exam": {
+        "date": "2026-12-14",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "M",
+      "class_start": "18:30",
+      "class_end": "20:25",
+      "pattern_key": "M 18:30",
+      "exam": {
+        "date": "2026-12-14",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "M",
+      "class_start": "18:30",
+      "class_end": "21:15",
+      "pattern_key": "M 18:30",
+      "exam": {
+        "date": "2026-12-14",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "MTWR",
+      "class_start": "18:30",
+      "class_end": "19:20",
+      "pattern_key": "MTWR 18:30",
+      "exam": {
+        "date": "2026-12-14",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "MW",
+      "class_start": "18:30",
+      "class_end": "19:20",
+      "pattern_key": "MW 18:30",
+      "exam": {
+        "date": "2026-12-14",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "MW",
+      "class_start": "18:30",
+      "class_end": "19:45",
+      "pattern_key": "MW 18:30",
+      "exam": {
+        "date": "2026-12-14",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "MW",
+      "class_start": "18:30",
+      "class_end": "20:25",
+      "pattern_key": "MW 18:30",
+      "exam": {
+        "date": "2026-12-14",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "MWF",
+      "class_start": "18:30",
+      "class_end": "19:20",
+      "pattern_key": "MWF 18:30",
+      "exam": {
+        "date": "2026-12-14",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "WF",
+      "class_start": "18:30",
+      "class_end": "19:20",
+      "pattern_key": "WF 18:30",
+      "exam": {
+        "date": "2026-12-14",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "WF",
+      "class_start": "18:30",
+      "class_end": "19:45",
+      "pattern_key": "WF 18:30",
+      "exam": {
+        "date": "2026-12-14",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "WF",
+      "class_start": "18:30",
+      "class_end": "20:25",
+      "pattern_key": "WF 18:30",
+      "exam": {
+        "date": "2026-12-14",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "TR",
+      "class_start": "11:00",
+      "class_end": "12:15",
+      "pattern_key": "TR 11:00",
+      "exam": {
+        "date": "2026-12-15",
+        "start": "11:20",
+        "end": "14:10"
+      }
+    },
+    {
+      "days": "TR",
+      "class_start": "15:30",
+      "class_end": "16:20",
+      "pattern_key": "TR 15:30",
+      "exam": {
+        "date": "2026-12-15",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "TR",
+      "class_start": "15:30",
+      "class_end": "16:45",
+      "pattern_key": "TR 15:30",
+      "exam": {
+        "date": "2026-12-15",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "TRF",
+      "class_start": "15:30",
+      "class_end": "16:20",
+      "pattern_key": "TRF 15:30",
+      "exam": {
+        "date": "2026-12-15",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "TWRF",
+      "class_start": "15:30",
+      "class_end": "16:20",
+      "pattern_key": "TWRF 15:30",
+      "exam": {
+        "date": "2026-12-15",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "T",
+      "class_start": "17:00",
+      "class_end": "18:55",
+      "pattern_key": "T 17:00",
+      "exam": {
+        "date": "2026-12-15",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "T",
+      "class_start": "17:00",
+      "class_end": "19:45",
+      "pattern_key": "T 17:00",
+      "exam": {
+        "date": "2026-12-15",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "T",
+      "class_start": "18:30",
+      "class_end": "20:25",
+      "pattern_key": "T 18:30",
+      "exam": {
+        "date": "2026-12-15",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "T",
+      "class_start": "18:30",
+      "class_end": "21:15",
+      "pattern_key": "T 18:30",
+      "exam": {
+        "date": "2026-12-15",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "TR",
+      "class_start": "18:30",
+      "class_end": "19:20",
+      "pattern_key": "TR 18:30",
+      "exam": {
+        "date": "2026-12-15",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "TR",
+      "class_start": "18:30",
+      "class_end": "19:45",
+      "pattern_key": "TR 18:30",
+      "exam": {
+        "date": "2026-12-15",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "TR",
+      "class_start": "18:30",
+      "class_end": "20:25",
+      "pattern_key": "TR 18:30",
+      "exam": {
+        "date": "2026-12-15",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "TRF",
+      "class_start": "18:30",
+      "class_end": "19:20",
+      "pattern_key": "TRF 18:30",
+      "exam": {
+        "date": "2026-12-15",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "TWRF",
+      "class_start": "18:30",
+      "class_end": "19:20",
+      "pattern_key": "TWRF 18:30",
+      "exam": {
+        "date": "2026-12-15",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "MTWR",
+      "class_start": "09:30",
+      "class_end": "10:20",
+      "pattern_key": "MTWR 09:30",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "MW",
+      "class_start": "09:30",
+      "class_end": "10:20",
+      "pattern_key": "MW 09:30",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "MW",
+      "class_start": "09:30",
+      "class_end": "10:45",
+      "pattern_key": "MW 09:30",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "MWF",
+      "class_start": "09:30",
+      "class_end": "10:20",
+      "pattern_key": "MWF 09:30",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "W",
+      "class_start": "08:00",
+      "class_end": "10:45",
+      "pattern_key": "W 08:00",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "W",
+      "class_start": "08:25",
+      "class_end": "10:20",
+      "pattern_key": "W 08:25",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "WF",
+      "class_start": "08:25",
+      "class_end": "10:20",
+      "pattern_key": "WF 08:25",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "WF",
+      "class_start": "09:30",
+      "class_end": "10:20",
+      "pattern_key": "WF 09:30",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "WF",
+      "class_start": "09:30",
+      "class_end": "10:45",
+      "pattern_key": "WF 09:30",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "MTWR",
+      "class_start": "12:30",
+      "class_end": "13:20",
+      "pattern_key": "MTWR 12:30",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "11:20",
+        "end": "14:10"
+      }
+    },
+    {
+      "days": "MW",
+      "class_start": "12:30",
+      "class_end": "13:20",
+      "pattern_key": "MW 12:30",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "11:20",
+        "end": "14:10"
+      }
+    },
+    {
+      "days": "MW",
+      "class_start": "12:30",
+      "class_end": "13:45",
+      "pattern_key": "MW 12:30",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "11:20",
+        "end": "14:10"
+      }
+    },
+    {
+      "days": "MWF",
+      "class_start": "12:30",
+      "class_end": "13:20",
+      "pattern_key": "MWF 12:30",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "11:20",
+        "end": "14:10"
+      }
+    },
+    {
+      "days": "WF",
+      "class_start": "12:30",
+      "class_end": "13:20",
+      "pattern_key": "WF 12:30",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "11:20",
+        "end": "14:10"
+      }
+    },
+    {
+      "days": "WF",
+      "class_start": "12:30",
+      "class_end": "13:45",
+      "pattern_key": "WF 12:30",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "11:20",
+        "end": "14:10"
+      }
+    },
+    {
+      "days": "MTWR",
+      "class_start": "14:00",
+      "class_end": "14:50",
+      "pattern_key": "MTWR 14:00",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "MW",
+      "class_start": "14:00",
+      "class_end": "14:50",
+      "pattern_key": "MW 14:00",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "MW",
+      "class_start": "14:00",
+      "class_end": "15:15",
+      "pattern_key": "MW 14:00",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "MWF",
+      "class_start": "14:00",
+      "class_end": "14:50",
+      "pattern_key": "MWF 14:00",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "WF",
+      "class_start": "14:00",
+      "class_end": "14:50",
+      "pattern_key": "WF 14:00",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "WF",
+      "class_start": "14:00",
+      "class_end": "15:15",
+      "pattern_key": "WF 14:00",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "MTWR",
+      "class_start": "20:00",
+      "class_end": "20:50",
+      "pattern_key": "MTWR 20:00",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "MW",
+      "class_start": "20:00",
+      "class_end": "20:50",
+      "pattern_key": "MW 20:00",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "MW",
+      "class_start": "20:00",
+      "class_end": "21:15",
+      "pattern_key": "MW 20:00",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "MWF",
+      "class_start": "20:00",
+      "class_end": "20:50",
+      "pattern_key": "MWF 20:00",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "W",
+      "class_start": "17:00",
+      "class_end": "18:55",
+      "pattern_key": "W 17:00",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "W",
+      "class_start": "17:00",
+      "class_end": "19:45",
+      "pattern_key": "W 17:00",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "W",
+      "class_start": "18:30",
+      "class_end": "20:25",
+      "pattern_key": "W 18:30",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "W",
+      "class_start": "18:30",
+      "class_end": "21:15",
+      "pattern_key": "W 18:30",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "WF",
+      "class_start": "20:00",
+      "class_end": "20:50",
+      "pattern_key": "WF 20:00",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "WF",
+      "class_start": "20:00",
+      "class_end": "21:15",
+      "pattern_key": "WF 20:00",
+      "exam": {
+        "date": "2026-12-16",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "T",
+      "class_start": "08:00",
+      "class_end": "10:45",
+      "pattern_key": "T 08:00",
+      "exam": {
+        "date": "2026-12-17",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "T",
+      "class_start": "08:25",
+      "class_end": "10:20",
+      "pattern_key": "T 08:25",
+      "exam": {
+        "date": "2026-12-17",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "TR",
+      "class_start": "08:00",
+      "class_end": "09:15",
+      "pattern_key": "TR 08:00",
+      "exam": {
+        "date": "2026-12-17",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "TR",
+      "class_start": "08:25",
+      "class_end": "09:15",
+      "pattern_key": "TR 08:25",
+      "exam": {
+        "date": "2026-12-17",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "TR",
+      "class_start": "08:25",
+      "class_end": "10:20",
+      "pattern_key": "TR 08:25",
+      "exam": {
+        "date": "2026-12-17",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "TRF",
+      "class_start": "08:25",
+      "class_end": "09:15",
+      "pattern_key": "TRF 08:25",
+      "exam": {
+        "date": "2026-12-17",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "TWRF",
+      "class_start": "08:25",
+      "class_end": "09:15",
+      "pattern_key": "TWRF 08:25",
+      "exam": {
+        "date": "2026-12-17",
+        "start": "08:00",
+        "end": "10:50"
+      }
+    },
+    {
+      "days": "TR",
+      "class_start": "12:30",
+      "class_end": "13:20",
+      "pattern_key": "TR 12:30",
+      "exam": {
+        "date": "2026-12-17",
+        "start": "11:20",
+        "end": "14:10"
+      }
+    },
+    {
+      "days": "TR",
+      "class_start": "12:30",
+      "class_end": "13:45",
+      "pattern_key": "TR 12:30",
+      "exam": {
+        "date": "2026-12-17",
+        "start": "11:20",
+        "end": "14:10"
+      }
+    },
+    {
+      "days": "TRF",
+      "class_start": "12:30",
+      "class_end": "13:20",
+      "pattern_key": "TRF 12:30",
+      "exam": {
+        "date": "2026-12-17",
+        "start": "11:20",
+        "end": "14:10"
+      }
+    },
+    {
+      "days": "TWRF",
+      "class_start": "12:30",
+      "class_end": "13:20",
+      "pattern_key": "TWRF 12:30",
+      "exam": {
+        "date": "2026-12-17",
+        "start": "11:20",
+        "end": "14:10"
+      }
+    },
+    {
+      "days": "F",
+      "class_start": "14:00",
+      "class_end": "15:55",
+      "pattern_key": "F 14:00",
+      "exam": {
+        "date": "2026-12-17",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "F",
+      "class_start": "14:00",
+      "class_end": "16:45",
+      "pattern_key": "F 14:00",
+      "exam": {
+        "date": "2026-12-17",
+        "start": "14:40",
+        "end": "17:30"
+      }
+    },
+    {
+      "days": "R",
+      "class_start": "17:00",
+      "class_end": "18:55",
+      "pattern_key": "R 17:00",
+      "exam": {
+        "date": "2026-12-17",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "R",
+      "class_start": "17:00",
+      "class_end": "19:45",
+      "pattern_key": "R 17:00",
+      "exam": {
+        "date": "2026-12-17",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "R",
+      "class_start": "18:30",
+      "class_end": "20:25",
+      "pattern_key": "R 18:30",
+      "exam": {
+        "date": "2026-12-17",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "R",
+      "class_start": "18:30",
+      "class_end": "21:15",
+      "pattern_key": "R 18:30",
+      "exam": {
+        "date": "2026-12-17",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "TR",
+      "class_start": "20:00",
+      "class_end": "20:50",
+      "pattern_key": "TR 20:00",
+      "exam": {
+        "date": "2026-12-17",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "TR",
+      "class_start": "20:00",
+      "class_end": "21:15",
+      "pattern_key": "TR 20:00",
+      "exam": {
+        "date": "2026-12-17",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "TRF",
+      "class_start": "20:00",
+      "class_end": "20:50",
+      "pattern_key": "TRF 20:00",
+      "exam": {
+        "date": "2026-12-17",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "days": "TWRF",
+      "class_start": "20:00",
+      "class_end": "20:50",
+      "pattern_key": "TWRF 20:00",
+      "exam": {
+        "date": "2026-12-17",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    }
+  ],
+  "common_exams": [
+    {
+      "label": "ECE 3710",
+      "course_keys": [
+        "ECE 3710"
+      ],
+      "qualifier": "online",
+      "exam": {
+        "date": "2026-12-10",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "label": "MATH 1551",
+      "course_keys": [
+        "MATH 1551"
+      ],
+      "qualifier": null,
+      "exam": {
+        "date": "2026-12-10",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "label": "PHYS 2211",
+      "course_keys": [
+        "PHYS 2211"
+      ],
+      "qualifier": null,
+      "exam": {
+        "date": "2026-12-11",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "label": "PHYS 2212",
+      "course_keys": [
+        "PHYS 2212"
+      ],
+      "qualifier": null,
+      "exam": {
+        "date": "2026-12-14",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "label": "MATH 1553/1554",
+      "course_keys": [
+        "MATH 1553",
+        "MATH 1554"
+      ],
+      "qualifier": null,
+      "exam": {
+        "date": "2026-12-15",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    },
+    {
+      "label": "MATH 1552",
+      "course_keys": [
+        "MATH 1552"
+      ],
+      "qualifier": null,
+      "exam": {
+        "date": "2026-12-16",
+        "start": "18:00",
+        "end": "20:50"
+      }
+    }
+  ],
+  "special_periods": [
+    {
+      "kind": "reading",
+      "date": "2026-12-10",
+      "start": "08:00",
+      "end": "10:50"
+    },
+    {
+      "kind": "reading",
+      "date": "2026-12-10",
+      "start": "11:20",
+      "end": "14:10"
+    },
+    {
+      "kind": "reading",
+      "date": "2026-12-15",
+      "start": "08:00",
+      "end": "10:50"
+    },
+    {
+      "kind": "conflict",
+      "date": "2026-12-18",
+      "start": "08:00",
+      "end": "10:50"
+    },
+    {
+      "kind": "conflict",
+      "date": "2026-12-18",
+      "start": "11:20",
+      "end": "14:10"
+    }
+  ],
+  "end_sensitive_patterns": [
+    "WF 08:25"
+  ],
+  "parse_issues": []
+}

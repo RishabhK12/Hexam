@@ -1,0 +1,278 @@
+[
+  {
+    "schedule_id": "baseline-gt-matrix-202608",
+    "name": "GT official Fall 2026 final exam matrix (baseline)",
+    "kind": "baseline",
+    "assignments": [
+      {
+        "exam_group_id": "EG-COMMON-MATH-1551",
+        "timeslot_id": "TS-20261210-1800",
+        "locked": true
+      },
+      {
+        "exam_group_id": "EG-COMMON-MATH-1552",
+        "timeslot_id": "TS-20261216-1800",
+        "locked": true
+      },
+      {
+        "exam_group_id": "EG-COMMON-MATH-1553-1554",
+        "timeslot_id": "TS-20261215-1800",
+        "locked": true
+      },
+      {
+        "exam_group_id": "EG-COMMON-PHYS-2211",
+        "timeslot_id": "TS-20261211-1800",
+        "locked": true
+      },
+      {
+        "exam_group_id": "EG-COMMON-PHYS-2212",
+        "timeslot_id": "TS-20261214-1800",
+        "locked": true
+      },
+      {
+        "exam_group_id": "EG-F-1100-1255",
+        "timeslot_id": "TS-20261214-1120",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MW-0800-0915",
+        "timeslot_id": "TS-20261211-0800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MW-0825-0915",
+        "timeslot_id": "TS-20261211-0800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MW-0930-1020",
+        "timeslot_id": "TS-20261216-0800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MW-0930-1045",
+        "timeslot_id": "TS-20261216-0800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MW-1100-1150",
+        "timeslot_id": "TS-20261211-1120",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MW-1100-1215",
+        "timeslot_id": "TS-20261211-1120",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MW-1230-1320",
+        "timeslot_id": "TS-20261216-1120",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MW-1230-1345",
+        "timeslot_id": "TS-20261216-1120",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MW-1400-1450",
+        "timeslot_id": "TS-20261216-1440",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MW-1400-1515",
+        "timeslot_id": "TS-20261216-1440",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MW-1530-1620",
+        "timeslot_id": "TS-20261211-1440",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MW-1530-1645",
+        "timeslot_id": "TS-20261211-1440",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MW-1700-1750",
+        "timeslot_id": "TS-20261211-1800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MW-1700-1815",
+        "timeslot_id": "TS-20261211-1800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MW-1830-1920",
+        "timeslot_id": "TS-20261214-1800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MW-1830-1945",
+        "timeslot_id": "TS-20261214-1800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MWF-0825-0915",
+        "timeslot_id": "TS-20261211-0800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MWF-0930-1020",
+        "timeslot_id": "TS-20261216-0800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MWF-1100-1150",
+        "timeslot_id": "TS-20261211-1120",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MWF-1230-1320",
+        "timeslot_id": "TS-20261216-1120",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MWF-1400-1450",
+        "timeslot_id": "TS-20261216-1440",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-R-1700-1815",
+        "timeslot_id": "TS-20261217-1800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-0800-0915",
+        "timeslot_id": "TS-20261217-0800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-0825-0915",
+        "timeslot_id": "TS-20261217-0800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-0825-1020",
+        "timeslot_id": "TS-20261217-0800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-0930-1020",
+        "timeslot_id": "TS-20261214-0800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-0930-1045",
+        "timeslot_id": "TS-20261214-0800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-1100-1150",
+        "timeslot_id": "TS-20261215-1120",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-1100-1215",
+        "timeslot_id": "TS-20261215-1120",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-1230-1320",
+        "timeslot_id": "TS-20261217-1120",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-1230-1345",
+        "timeslot_id": "TS-20261217-1120",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-1400-1450",
+        "timeslot_id": "TS-20261210-1440",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-1400-1515",
+        "timeslot_id": "TS-20261210-1440",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-1530-1620",
+        "timeslot_id": "TS-20261215-1440",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-1530-1645",
+        "timeslot_id": "TS-20261215-1440",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-1700-1750",
+        "timeslot_id": "TS-20261210-1800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-1700-1815",
+        "timeslot_id": "TS-20261210-1800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-1830-1920",
+        "timeslot_id": "TS-20261215-1800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TRF-0930-1020",
+        "timeslot_id": "TS-20261214-0800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TRF-1530-1620",
+        "timeslot_id": "TS-20261215-1440",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-W-1700-1815",
+        "timeslot_id": "TS-20261216-1800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-WF-0825-0915",
+        "timeslot_id": "TS-20261211-0800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-WF-0825-1020",
+        "timeslot_id": "TS-20261216-0800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-WF-0930-1020",
+        "timeslot_id": "TS-20261216-0800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-WF-1530-1645",
+        "timeslot_id": "TS-20261211-1440",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-WF-1700-1855",
+        "timeslot_id": "TS-20261211-1800",
+        "locked": false
+      }
+    ],
+    "created_at": "2026-11-14T16:21:01-05:00",
+    "source_run_id": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Each exam group placed in the period the official matrix assigns to its meeting pattern or common exam. This is the registrar's published rule applied to the subset, not an optimized or approved Hexam schedule.",
+      "field_sources": {}
+    }
+  }
+]

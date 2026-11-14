@@ -1,0 +1,333 @@
+{
+  "term": "202608",
+  "dataset_name": "fall2026",
+  "exam_group_granularity": "meeting_time",
+  "num_students": 1000,
+  "seed": 42,
+
+  "courses": [
+    {"key": "MATH 1551", "role": "foundation"},
+    {"key": "MATH 1552", "role": "foundation"},
+    {"key": "MATH 1553", "role": "foundation"},
+    {"key": "MATH 1554", "role": "foundation"},
+    {"key": "MATH 2551", "role": "foundation"},
+    {"key": "MATH 2552", "role": "foundation"},
+    {"key": "MATH 2106", "role": "major_core"},
+    {"key": "MATH 3012", "role": "major_core"},
+    {"key": "MATH 3215", "role": "major_core"},
+    {"key": "MATH 3670", "role": "major_core"},
+    {"key": "MATH 4317", "role": "upper_level"},
+    {"key": "PHYS 2211", "role": "foundation"},
+    {"key": "PHYS 2212", "role": "foundation"},
+    {"key": "PHYS 3201", "role": "upper_level"},
+    {"key": "CHEM 1310", "role": "foundation"},
+    {"key": "CHEM 1211K", "role": "foundation"},
+    {"key": "BIOS 1107", "role": "foundation"},
+    {"key": "CS 1301", "role": "foundation"},
+    {"key": "CS 1331", "role": "foundation"},
+    {"key": "CS 1332", "role": "major_core"},
+    {"key": "CS 1371", "role": "foundation"},
+    {"key": "CS 2050", "role": "major_core"},
+    {"key": "CS 2110", "role": "major_core"},
+    {"key": "CS 2200", "role": "major_core"},
+    {"key": "CS 2340", "role": "major_core"},
+    {"key": "CS 3001", "role": "major_core"},
+    {"key": "CS 3510", "role": "major_core"},
+    {"key": "CS 3600", "role": "upper_level"},
+    {"key": "CS 4510", "role": "upper_level"},
+    {"key": "CS 4641", "role": "upper_level"},
+    {"key": "ECE 2020", "role": "major_core"},
+    {"key": "ECE 2035", "role": "major_core"},
+    {"key": "ECE 2040", "role": "major_core"},
+    {"key": "ECE 3077", "role": "major_core"},
+    {"key": "ECE 3084", "role": "upper_level"},
+    {"key": "ECE 3710", "role": "major_core"},
+    {"key": "ME 1670", "role": "foundation"},
+    {"key": "ME 2016", "role": "major_core"},
+    {"key": "ME 2202", "role": "major_core"},
+    {"key": "ME 3017", "role": "major_core"},
+    {"key": "ME 3322", "role": "major_core"},
+    {"key": "ME 3340", "role": "major_core"},
+    {"key": "ME 3345", "role": "upper_level"},
+    {"key": "COE 2001", "role": "foundation"},
+    {"key": "COE 3001", "role": "major_core"},
+    {"key": "ISYE 2027", "role": "major_core"},
+    {"key": "ISYE 3044", "role": "upper_level"},
+    {"key": "ISYE 3133", "role": "major_core"},
+    {"key": "ISYE 3232", "role": "major_core"},
+    {"key": "ISYE 3770", "role": "major_core"},
+    {"key": "ISYE 4031", "role": "upper_level"},
+    {"key": "AE 2010", "role": "major_core"},
+    {"key": "AE 2220", "role": "major_core"},
+    {"key": "AE 3030", "role": "upper_level"},
+    {"key": "AE 3140", "role": "upper_level"},
+    {"key": "BMED 3100", "role": "major_core"},
+    {"key": "CHBE 2100", "role": "major_core"},
+    {"key": "CEE 2300", "role": "major_core"},
+    {"key": "MSE 2001", "role": "major_core"},
+    {"key": "ECON 2105", "role": "gen_ed"},
+    {"key": "ECON 2106", "role": "gen_ed"},
+    {"key": "PSYC 1101", "role": "gen_ed"},
+    {"key": "HIST 2111", "role": "gen_ed"},
+    {"key": "APPH 1040", "role": "gen_ed"}
+  ],
+
+  "course_load_distribution": {"3": 0.12, "4": 0.40, "5": 0.38, "6": 0.10},
+
+  "tracks": {
+    "calculus": {
+      "MATH 1551": [6.0, 0.6, 0.1, 0.0, 0.0],
+      "MATH 1552": [7.0, 2.5, 0.4, 0.1, 0.1],
+      "MATH 1553": [2.5, 1.0, 0.3, 0.1, 0.1],
+      "MATH 1554": [5.0, 3.0, 0.6, 0.2, 0.1],
+      "MATH 2551": [3.0, 6.0, 1.2, 0.3, 0.2],
+      "MATH 2552": [0.8, 5.0, 2.0, 0.5, 0.3]
+    },
+    "physics": {
+      "PHYS 2211": [5.0, 3.0, 0.8, 0.2, 0.1],
+      "PHYS 2212": [2.0, 5.0, 1.2, 0.3, 0.2]
+    },
+    "chemistry_engr": {
+      "CHEM 1310": [4.0, 1.2, 0.3, 0.1, 0.1]
+    },
+    "chemistry_sci": {
+      "CHEM 1211K": [4.0, 1.2, 0.3, 0.1, 0.1]
+    },
+    "computing_engr": {
+      "CS 1371": [5.0, 2.0, 0.5, 0.2, 0.1]
+    },
+    "engr_mechanics": {
+      "COE 2001": [1.0, 5.0, 1.2, 0.3, 0.2],
+      "COE 3001": [0.0, 3.0, 4.0, 0.6, 0.3]
+    },
+    "gen_ed": {
+      "ECON 2105": [0.6, 0.6, 0.5, 0.4, 0.3],
+      "ECON 2106": [0.7, 0.6, 0.5, 0.4, 0.3],
+      "PSYC 1101": [0.6, 0.5, 0.4, 0.3, 0.3],
+      "HIST 2111": [0.5, 0.4, 0.4, 0.4, 0.3],
+      "APPH 1040": [3.0, 0.8, 0.3, 0.2, 0.2]
+    }
+  },
+
+  "majors": {
+    "CS": {
+      "name": "Computer Science",
+      "headcount": {"source": "factbook_college", "college": "College of Computing", "share": 0.85,
+                    "notes": "Fact Book Fall 2025 College of Computing undergraduate total x assumed CS share (remainder: Computational Media)."},
+      "college": "College of Computing (C)",
+      "year_distribution": "engineering_average",
+      "tracks": {"calculus": 0.8, "physics": 0.5, "gen_ed": 1.0},
+      "courses": {
+        "MATH 2552": [0.0, 0.0, 0.0, 0.0, 0.0],
+        "CS 1301": [5.0, 1.0, 0.2, 0.0, 0.0],
+        "CS 1331": [6.0, 3.0, 0.5, 0.2, 0.1],
+        "CS 1332": [2.0, 6.0, 2.0, 0.5, 0.2],
+        "CS 2050": [3.0, 5.0, 1.5, 0.3, 0.2],
+        "CS 2110": [0.8, 5.0, 2.5, 0.5, 0.3],
+        "CS 2200": [0.0, 1.5, 4.0, 2.0, 1.0],
+        "CS 2340": [0.0, 2.0, 4.0, 2.0, 1.0],
+        "CS 3001": [0.0, 2.0, 3.0, 1.5, 0.5],
+        "CS 3510": [0.0, 0.5, 4.0, 3.0, 1.5],
+        "CS 3600": [0.0, 0.3, 2.5, 3.0, 2.0],
+        "CS 4641": [0.0, 0.2, 2.0, 4.0, 3.0],
+        "CS 4510": [0.0, 0.0, 1.0, 2.5, 2.0],
+        "MATH 3012": [0.5, 3.0, 3.0, 1.5, 1.0],
+        "MATH 3215": [0.0, 0.5, 1.5, 1.0, 0.5],
+        "ISYE 3770": [0.0, 0.5, 1.5, 1.0, 0.5]
+      }
+    },
+    "CMPE": {
+      "name": "Computer Engineering",
+      "headcount": {"source": "irp_coe", "irp_major_name": "Computer Engineering"},
+      "college": "College of Engineering (E)",
+      "tracks": {"calculus": 1.0, "physics": 1.0, "chemistry_engr": 0.6, "gen_ed": 0.8},
+      "courses": {
+        "CS 1301": [3.0, 0.5, 0.0, 0.0, 0.0],
+        "CS 1331": [3.0, 2.0, 0.3, 0.0, 0.0],
+        "CS 1332": [0.3, 2.0, 1.5, 0.5, 0.2],
+        "ECE 2020": [2.0, 5.0, 2.0, 0.5, 0.3],
+        "ECE 2035": [0.5, 4.0, 3.0, 0.5, 0.3],
+        "ECE 2040": [0.0, 4.0, 3.0, 0.5, 0.3],
+        "ECE 3077": [0.0, 1.0, 4.0, 1.0, 0.5],
+        "ECE 3084": [0.0, 0.5, 3.0, 2.0, 0.5],
+        "CS 2200": [0.0, 0.3, 1.5, 1.5, 0.5],
+        "MATH 3012": [0.0, 0.5, 1.0, 0.5, 0.3]
+      }
+    },
+    "EE": {
+      "name": "Electrical Engineering",
+      "headcount": {"source": "irp_coe", "irp_major_name": "Electrical Engineering"},
+      "college": "College of Engineering (E)",
+      "tracks": {"calculus": 1.0, "physics": 1.0, "chemistry_engr": 0.8, "computing_engr": 0.4, "gen_ed": 0.8},
+      "courses": {
+        "CS 1301": [2.5, 0.5, 0.0, 0.0, 0.0],
+        "CS 1331": [1.5, 1.5, 0.3, 0.0, 0.0],
+        "ECE 2020": [2.0, 5.0, 2.0, 0.5, 0.3],
+        "ECE 2035": [0.3, 3.0, 2.5, 0.5, 0.3],
+        "ECE 2040": [0.0, 5.0, 3.0, 0.5, 0.3],
+        "ECE 3077": [0.0, 1.0, 4.0, 1.0, 0.5],
+        "ECE 3084": [0.0, 0.8, 4.0, 2.0, 0.5]
+      }
+    },
+    "ME": {
+      "name": "Mechanical Engineering",
+      "headcount": {"source": "irp_coe", "irp_major_name": "Mechanical Engineering"},
+      "college": "College of Engineering (E)",
+      "tracks": {"calculus": 1.0, "physics": 1.0, "chemistry_engr": 1.0, "computing_engr": 1.0, "engr_mechanics": 1.2, "gen_ed": 0.8},
+      "courses": {
+        "ME 1670": [5.0, 2.0, 0.5, 0.1, 0.0],
+        "ME 2016": [0.5, 4.0, 2.0, 0.5, 0.2],
+        "ME 2202": [0.0, 4.0, 3.0, 0.5, 0.3],
+        "ME 3017": [0.0, 0.5, 4.0, 2.0, 1.0],
+        "ME 3322": [0.0, 2.0, 4.0, 1.0, 0.5],
+        "ME 3340": [0.0, 0.5, 4.0, 2.0, 1.0],
+        "ME 3345": [0.0, 0.0, 2.0, 4.0, 2.0],
+        "ECE 3710": [0.0, 0.5, 2.5, 2.0, 1.0],
+        "ISYE 3770": [0.0, 0.5, 1.5, 1.0, 0.5]
+      }
+    },
+    "AE": {
+      "name": "Aerospace Engineering",
+      "headcount": {"source": "irp_coe", "irp_major_name": "Aerospace Engineering"},
+      "college": "College of Engineering (E)",
+      "tracks": {"calculus": 1.0, "physics": 1.0, "chemistry_engr": 1.0, "computing_engr": 1.0, "engr_mechanics": 1.2, "gen_ed": 0.8},
+      "courses": {
+        "ME 1670": [4.0, 1.5, 0.3, 0.0, 0.0],
+        "AE 2010": [0.0, 3.0, 3.0, 1.0, 0.5],
+        "AE 2220": [0.0, 3.0, 3.0, 1.0, 0.5],
+        "AE 3030": [0.0, 0.3, 4.0, 2.0, 1.0],
+        "AE 3140": [0.0, 0.3, 3.5, 2.0, 1.0],
+        "ECE 3710": [0.0, 0.5, 2.0, 1.5, 1.0],
+        "ISYE 3770": [0.0, 0.3, 1.0, 1.0, 0.5]
+      }
+    },
+    "IE": {
+      "name": "Industrial Engineering",
+      "headcount": {"source": "irp_coe", "irp_major_name": "Industrial Engineering"},
+      "college": "College of Engineering (E)",
+      "tracks": {"calculus": 1.0, "physics": 0.8, "chemistry_engr": 0.6, "computing_engr": 0.8, "gen_ed": 1.0},
+      "courses": {
+        "CS 1301": [2.0, 0.5, 0.0, 0.0, 0.0],
+        "ECON 2106": [2.0, 2.0, 1.0, 0.5, 0.3],
+        "ISYE 2027": [0.5, 4.0, 2.0, 0.5, 0.3],
+        "ISYE 3133": [0.0, 1.0, 4.0, 2.0, 0.8],
+        "ISYE 3232": [0.0, 0.5, 3.5, 2.0, 1.0],
+        "ISYE 3044": [0.0, 0.3, 2.5, 3.5, 1.5],
+        "ISYE 3770": [0.0, 2.0, 4.0, 1.0, 0.5],
+        "ISYE 4031": [0.0, 0.2, 2.0, 3.5, 1.5],
+        "MATH 3012": [0.0, 0.3, 0.5, 0.3, 0.2]
+      }
+    },
+    "BMED": {
+      "name": "Biomedical Engineering",
+      "headcount": {"source": "irp_coe", "irp_major_name": "Biomedical Engineering"},
+      "college": "College of Engineering (E)",
+      "tracks": {"calculus": 1.0, "physics": 1.0, "chemistry_sci": 1.0, "computing_engr": 1.0, "engr_mechanics": 0.6, "gen_ed": 0.8},
+      "courses": {
+        "BIOS 1107": [3.0, 1.5, 0.3, 0.1, 0.0],
+        "BMED 3100": [0.0, 0.5, 4.0, 2.0, 0.8],
+        "ECE 3710": [0.0, 0.5, 2.0, 2.0, 1.0],
+        "ISYE 3770": [0.0, 0.5, 1.5, 1.0, 0.5],
+        "MATH 3670": [0.0, 0.3, 1.0, 0.8, 0.5]
+      }
+    },
+    "CHBE": {
+      "name": "Chemical & Biomolecular Engineering",
+      "headcount": {"source": "irp_coe", "irp_major_name": "Chemical & Biomolecular Engineering"},
+      "college": "College of Engineering (E)",
+      "tracks": {"calculus": 1.0, "physics": 1.0, "chemistry_sci": 1.2, "computing_engr": 1.0, "gen_ed": 0.8},
+      "courses": {
+        "CHBE 2100": [0.0, 4.0, 2.0, 0.5, 0.3],
+        "MSE 2001": [0.0, 0.5, 1.0, 0.5, 0.3],
+        "ECE 3710": [0.0, 0.3, 1.0, 1.0, 0.5],
+        "ISYE 3770": [0.0, 0.3, 1.0, 1.0, 0.5]
+      }
+    },
+    "CE": {
+      "name": "Civil Engineering",
+      "headcount": {"source": "irp_coe", "irp_major_name": "Civil Engineering"},
+      "college": "College of Engineering (E)",
+      "tracks": {"calculus": 1.0, "physics": 1.0, "chemistry_engr": 1.0, "computing_engr": 1.0, "engr_mechanics": 1.3, "gen_ed": 0.8},
+      "courses": {
+        "CEE 2300": [0.0, 3.0, 3.0, 1.0, 0.5],
+        "ISYE 3770": [0.0, 0.5, 1.5, 1.0, 0.5],
+        "ECE 3710": [0.0, 0.2, 0.8, 0.8, 0.5]
+      }
+    },
+    "MSE": {
+      "name": "Materials Science & Engineering",
+      "headcount": {"source": "irp_coe", "irp_major_name": "Materials Science & Engineering"},
+      "college": "College of Engineering (E)",
+      "tracks": {"calculus": 1.0, "physics": 1.0, "chemistry_engr": 1.0, "computing_engr": 1.0, "engr_mechanics": 0.8, "gen_ed": 0.8},
+      "courses": {
+        "MSE 2001": [0.5, 4.0, 2.0, 0.5, 0.3],
+        "ECE 3710": [0.0, 0.3, 1.5, 1.0, 0.5],
+        "ISYE 3770": [0.0, 0.3, 1.0, 1.0, 0.5]
+      }
+    },
+    "MATH": {
+      "name": "Applied Mathematics",
+      "headcount": {"source": "factbook_college", "college": "College of Sciences", "share": 0.12,
+                    "notes": "Fact Book Fall 2025 College of Sciences undergraduate total x assumed Applied Mathematics share."},
+      "college": "College of Sciences (S)",
+      "year_distribution": "engineering_average",
+      "tracks": {"calculus": 1.0, "physics": 0.7, "gen_ed": 1.0},
+      "courses": {
+        "CS 1301": [2.0, 0.5, 0.2, 0.0, 0.0],
+        "CS 1331": [0.5, 0.8, 0.3, 0.1, 0.0],
+        "MATH 2106": [0.5, 4.0, 2.0, 0.5, 0.3],
+        "MATH 3012": [0.0, 2.0, 3.0, 1.5, 1.0],
+        "MATH 3215": [0.0, 1.0, 3.0, 2.0, 1.0],
+        "MATH 3670": [0.0, 0.3, 1.0, 1.0, 0.5],
+        "MATH 4317": [0.0, 0.2, 2.0, 3.5, 2.0]
+      }
+    },
+    "PHYS": {
+      "name": "Physics",
+      "headcount": {"source": "factbook_college", "college": "College of Sciences", "share": 0.08,
+                    "notes": "Fact Book Fall 2025 College of Sciences undergraduate total x assumed Physics share."},
+      "college": "College of Sciences (S)",
+      "year_distribution": "engineering_average",
+      "tracks": {"calculus": 1.0, "physics": 1.5, "chemistry_sci": 0.5, "gen_ed": 1.0},
+      "courses": {
+        "CS 1301": [1.5, 0.5, 0.2, 0.0, 0.0],
+        "PHYS 3201": [0.0, 1.0, 4.0, 2.0, 1.0],
+        "MATH 2106": [0.0, 0.5, 0.5, 0.3, 0.2],
+        "MATH 3215": [0.0, 0.3, 0.5, 0.3, 0.2]
+      }
+    }
+  },
+
+  "exclusive_groups": [
+    ["MATH 1553", "MATH 1554"],
+    ["CS 1301", "CS 1371"],
+    ["CHEM 1310", "CHEM 1211K"],
+    ["ISYE 3770", "MATH 3670", "MATH 3215", "ECE 3077"]
+  ],
+
+  "pair_affinities": [
+    {"a": "MATH 1552", "b": "PHYS 2211", "factor": 2.0, "reason": "typical first-year STEM semester"},
+    {"a": "MATH 1551", "b": "PHYS 2211", "factor": 1.4, "reason": "typical first-year STEM semester"},
+    {"a": "MATH 1554", "b": "PHYS 2212", "factor": 1.4, "reason": "second-semester foundation pairing"},
+    {"a": "MATH 2551", "b": "PHYS 2212", "factor": 1.8, "reason": "second-year foundation pairing"},
+    {"a": "MATH 1552", "b": "CHEM 1310", "factor": 1.5, "reason": "first-year engineering semester"},
+    {"a": "MATH 1552", "b": "CS 1371", "factor": 1.4, "reason": "first-year engineering semester"},
+    {"a": "MATH 1554", "b": "CS 1331", "factor": 1.4, "reason": "first-year computing semester"},
+    {"a": "CS 1332", "b": "CS 2050", "factor": 2.0, "reason": "CS second-year core taken together"},
+    {"a": "CS 2110", "b": "CS 1332", "factor": 1.5, "reason": "CS second-year core taken together"},
+    {"a": "CS 2340", "b": "CS 2200", "factor": 1.5, "reason": "CS junior core"},
+    {"a": "CS 3510", "b": "CS 2200", "factor": 1.3, "reason": "CS junior core"},
+    {"a": "COE 2001", "b": "MATH 2551", "factor": 1.5, "reason": "second-year engineering semester"},
+    {"a": "COE 3001", "b": "ME 2202", "factor": 1.8, "reason": "ME/AE mechanics sequence"},
+    {"a": "ME 3340", "b": "ME 3017", "factor": 1.6, "reason": "ME junior core"},
+    {"a": "ME 3322", "b": "ME 2202", "factor": 1.3, "reason": "ME second/third-year core"},
+    {"a": "ECE 2020", "b": "ECE 2040", "factor": 1.5, "reason": "ECE second-year core"},
+    {"a": "ECE 2035", "b": "ECE 2040", "factor": 1.3, "reason": "ECE second-year core"},
+    {"a": "ISYE 3133", "b": "ISYE 3232", "factor": 1.6, "reason": "IE junior core"},
+    {"a": "ISYE 2027", "b": "MATH 2551", "factor": 1.3, "reason": "IE second-year semester"},
+    {"a": "AE 2010", "b": "AE 2220", "factor": 1.8, "reason": "AE second-year core"},
+    {"a": "AE 3030", "b": "AE 3140", "factor": 1.6, "reason": "AE junior core"},
+    {"a": "APPH 1040", "b": "MATH 1552", "factor": 1.3, "reason": "first-year requirement"},
+    {"a": "ME 1670", "b": "CHEM 1310", "factor": 1.3, "reason": "first-year ME/AE semester"}
+  ]
+}

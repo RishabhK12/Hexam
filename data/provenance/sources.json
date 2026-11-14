@@ -1,0 +1,216 @@
+{
+  "term": "202608",
+  "term_substitution": null,
+  "generated_at": "2026-11-14T16:30:01-05:00",
+  "sources": [
+    {
+      "key": "gt_scheduler_index",
+      "url": "https://gt-scheduler.github.io/crawler-v2/index.json",
+      "category": "course_data",
+      "description": "GT Scheduler crawler-v2 term index",
+      "status": "cached",
+      "local_path": "gt_scheduler_index.json",
+      "http_status": 200,
+      "retrieved_at": "2026-11-14T16:20:17-05:00",
+      "sha256": "33e6fce13b694b3909c56ebf70b1d613fd5239565c815bf1abac8a46ba2a6023",
+      "bytes": 717,
+      "error": null,
+      "notes": null,
+      "git_ignored": false,
+      "used_for": [
+        "term availability check"
+      ]
+    },
+    {
+      "key": "gt_scheduler_term",
+      "url": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "category": "course_data",
+      "description": "GT Scheduler crawler-v2 OSCAR snapshot for term 202608 (source: github.com/gt-scheduler/crawler-v2)",
+      "status": "cached",
+      "local_path": "gt_scheduler_202608.json",
+      "http_status": 200,
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "sha256": "5fc90861f40a36e34ec86962061fa51ed68d03aab4aa578caae0ee889a63837c",
+      "bytes": 2543949,
+      "error": null,
+      "notes": null,
+      "git_ignored": false,
+      "used_for": [
+        "courses",
+        "sections",
+        "CRNs",
+        "instructors",
+        "meeting times",
+        "credit hours",
+        "prerequisites",
+        "section restrictions"
+      ]
+    },
+    {
+      "key": "registrar_exam_guidelines",
+      "url": "https://registrar.gatech.edu/faculty-and-staff/exams",
+      "category": "exam_policy",
+      "description": "Registrar final exam guidelines (which courses get a matrix final; conflict rules)",
+      "status": "cached",
+      "local_path": "registrar_exam_guidelines.html",
+      "http_status": 200,
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "sha256": "918db2d682506dafac0b2114b67d57fbeccd888e88ecc7d1f5fd9713d59bb4e7",
+      "bytes": 81841,
+      "error": null,
+      "notes": null,
+      "git_ignored": false,
+      "used_for": [
+        "exam-bearing section filter (lecture, >= 2 credits)"
+      ]
+    },
+    {
+      "key": "registrar_matrix_page",
+      "url": "https://registrar.gatech.edu/info/current-term-final-exam-matrices",
+      "category": "verification",
+      "description": "Registrar current-term final exam matrix landing page",
+      "status": "cached",
+      "local_path": "registrar_matrix_page.html",
+      "http_status": 200,
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "sha256": "800ce9742325ff3669ee70105f01ba5e62ab993d302e0b0b460c94d12ff6d664",
+      "bytes": 73268,
+      "error": null,
+      "notes": null,
+      "git_ignored": false,
+      "used_for": [
+        "verify the matrix PDF is the currently published one"
+      ]
+    },
+    {
+      "key": "irp_coe_enrollment",
+      "url": "https://irp.gatech.edu/dashboards/COE/Enrollment",
+      "category": "enrollment_stats",
+      "description": "GT IRP College of Engineering enrollment by major and year (engineering majors only)",
+      "status": "cached",
+      "local_path": "irp_coe_enrollment.html",
+      "http_status": 200,
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "sha256": "d3543cd672b1c024546a86b9144658b5e1f0204a4cf1cb3aaec2049ae328a1a9",
+      "bytes": 161506,
+      "error": null,
+      "notes": null,
+      "git_ignored": false,
+      "used_for": [
+        "engineering major weights",
+        "academic-year distribution"
+      ]
+    },
+    {
+      "key": "irp_factbook_2025",
+      "url": "https://irp.gatech.edu/sites/default/files/FactBook/2025_FactBook_Final.pdf",
+      "category": "enrollment_stats",
+      "description": "GT IRP 2025 Fact Book (undergraduate enrollment by college, Fall 2025)",
+      "status": "cached",
+      "local_path": "irp_factbook_2025.pdf",
+      "http_status": 200,
+      "retrieved_at": "2026-11-14T16:20:19-05:00",
+      "sha256": "6be83115dc7cb76b970c78c1d8cfc70e1679b26ffcfc19d420e73896acb343bc",
+      "bytes": 5968135,
+      "error": null,
+      "notes": null,
+      "git_ignored": true,
+      "used_for": [
+        "College of Computing / College of Sciences undergraduate headcounts"
+      ]
+    },
+    {
+      "key": "oscar",
+      "url": "https://oscar.gatech.edu/",
+      "category": "verification",
+      "description": "OSCAR landing page (reachability only). Section capacity/enrollment lives behind Banner class search, which this pipeline does not scrape; capacities therefore remain unknown.",
+      "status": "failed",
+      "local_path": null,
+      "http_status": null,
+      "retrieved_at": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "no cached copy",
+      "notes": null,
+      "git_ignored": false,
+      "used_for": [
+        "reachability only"
+      ]
+    },
+    {
+      "key": "registrar_schedule_of_classes",
+      "url": "https://registrar.gatech.edu/academic-scheduling/schedule-of-classes",
+      "category": "verification",
+      "description": "Registrar schedule of classes landing page",
+      "status": "failed",
+      "local_path": null,
+      "http_status": null,
+      "retrieved_at": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "no cached copy",
+      "notes": null,
+      "git_ignored": false,
+      "used_for": [
+        "reachability only"
+      ]
+    },
+    {
+      "key": "catalog_cs_courses",
+      "url": "https://catalog.gatech.edu/courses-undergrad/cs/",
+      "category": "curriculum",
+      "description": "GT Catalog: undergraduate CS course listings",
+      "status": "failed",
+      "local_path": null,
+      "http_status": null,
+      "retrieved_at": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "no cached copy",
+      "notes": null,
+      "git_ignored": false,
+      "used_for": [
+        "curriculum verification"
+      ]
+    },
+    {
+      "key": "catalog_cs_bs",
+      "url": "https://catalog.gatech.edu/programs/computer-science-bs/",
+      "category": "curriculum",
+      "description": "GT Catalog: BS Computer Science program requirements",
+      "status": "failed",
+      "local_path": null,
+      "http_status": null,
+      "retrieved_at": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "no cached copy",
+      "notes": null,
+      "git_ignored": false,
+      "used_for": [
+        "curriculum verification"
+      ]
+    },
+    {
+      "key": "final_exam_matrix",
+      "url": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "category": "exam_matrix",
+      "description": "Official GT registrar final exam matrix for term 202608",
+      "status": "cached",
+      "local_path": "final_exam_matrix_202608.pdf",
+      "http_status": 200,
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "sha256": "c7f978583cfdb25028eacecb3ac426c8f48b393b8c7ae016ba40e99892c50912",
+      "bytes": 143325,
+      "error": null,
+      "notes": "registrar landing page links Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "git_ignored": false,
+      "used_for": [
+        "exam periods",
+        "meeting-pattern → exam slot mapping",
+        "common exams",
+        "reading/conflict periods"
+      ]
+    }
+  ]
+}

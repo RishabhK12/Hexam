@@ -9,7 +9,8 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8"]
+data = ["pypdf>=5"] # final exam matrix / IRP Fact Book PDF parsing (hexam.data_generation)
+dev = ["pytest>=8", "pypdf>=5"]
 
 [build-system]
 requires = ["setuptools>=68"]
@@ -17,6 +18,9 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 include = ["hexam*"]
+
+[tool.setuptools.package-data]
+"hexam.data_generation" = ["config/*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

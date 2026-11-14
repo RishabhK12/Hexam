@@ -1,0 +1,317 @@
+[
+  {
+    "timeslot_id": "TS-20261210-1440",
+    "start": "2026-12-10T14:40:00-05:00",
+    "end": "2026-12-10T17:30:00-05:00",
+    "label": "Thu Dec 10, 2:40 PM–5:30 PM",
+    "max_students": null,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "FALL 2026 final exam period (official matrix).",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261210-1800",
+    "start": "2026-12-10T18:00:00-05:00",
+    "end": "2026-12-10T20:50:00-05:00",
+    "label": "Thu Dec 10, 6:00 PM–8:50 PM",
+    "max_students": null,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "FALL 2026 final exam period (official matrix).",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261211-0800",
+    "start": "2026-12-11T08:00:00-05:00",
+    "end": "2026-12-11T10:50:00-05:00",
+    "label": "Fri Dec 11, 8:00 AM–10:50 AM",
+    "max_students": null,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "FALL 2026 final exam period (official matrix).",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261211-1120",
+    "start": "2026-12-11T11:20:00-05:00",
+    "end": "2026-12-11T14:10:00-05:00",
+    "label": "Fri Dec 11, 11:20 AM–2:10 PM",
+    "max_students": null,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "FALL 2026 final exam period (official matrix).",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261211-1440",
+    "start": "2026-12-11T14:40:00-05:00",
+    "end": "2026-12-11T17:30:00-05:00",
+    "label": "Fri Dec 11, 2:40 PM–5:30 PM",
+    "max_students": null,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "FALL 2026 final exam period (official matrix).",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261211-1800",
+    "start": "2026-12-11T18:00:00-05:00",
+    "end": "2026-12-11T20:50:00-05:00",
+    "label": "Fri Dec 11, 6:00 PM–8:50 PM",
+    "max_students": null,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "FALL 2026 final exam period (official matrix).",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261214-0800",
+    "start": "2026-12-14T08:00:00-05:00",
+    "end": "2026-12-14T10:50:00-05:00",
+    "label": "Mon Dec 14, 8:00 AM–10:50 AM",
+    "max_students": null,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "FALL 2026 final exam period (official matrix).",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261214-1120",
+    "start": "2026-12-14T11:20:00-05:00",
+    "end": "2026-12-14T14:10:00-05:00",
+    "label": "Mon Dec 14, 11:20 AM–2:10 PM",
+    "max_students": null,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "FALL 2026 final exam period (official matrix).",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261214-1440",
+    "start": "2026-12-14T14:40:00-05:00",
+    "end": "2026-12-14T17:30:00-05:00",
+    "label": "Mon Dec 14, 2:40 PM–5:30 PM",
+    "max_students": null,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "FALL 2026 final exam period (official matrix).",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261214-1800",
+    "start": "2026-12-14T18:00:00-05:00",
+    "end": "2026-12-14T20:50:00-05:00",
+    "label": "Mon Dec 14, 6:00 PM–8:50 PM",
+    "max_students": null,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "FALL 2026 final exam period (official matrix).",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261215-1120",
+    "start": "2026-12-15T11:20:00-05:00",
+    "end": "2026-12-15T14:10:00-05:00",
+    "label": "Tue Dec 15, 11:20 AM–2:10 PM",
+    "max_students": null,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "FALL 2026 final exam period (official matrix).",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261215-1440",
+    "start": "2026-12-15T14:40:00-05:00",
+    "end": "2026-12-15T17:30:00-05:00",
+    "label": "Tue Dec 15, 2:40 PM–5:30 PM",
+    "max_students": null,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "FALL 2026 final exam period (official matrix).",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261215-1800",
+    "start": "2026-12-15T18:00:00-05:00",
+    "end": "2026-12-15T20:50:00-05:00",
+    "label": "Tue Dec 15, 6:00 PM–8:50 PM",
+    "max_students": null,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "FALL 2026 final exam period (official matrix).",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261216-0800",
+    "start": "2026-12-16T08:00:00-05:00",
+    "end": "2026-12-16T10:50:00-05:00",
+    "label": "Wed Dec 16, 8:00 AM–10:50 AM",
+    "max_students": null,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "FALL 2026 final exam period (official matrix).",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261216-1120",
+    "start": "2026-12-16T11:20:00-05:00",
+    "end": "2026-12-16T14:10:00-05:00",
+    "label": "Wed Dec 16, 11:20 AM–2:10 PM",
+    "max_students": null,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "FALL 2026 final exam period (official matrix).",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261216-1440",
+    "start": "2026-12-16T14:40:00-05:00",
+    "end": "2026-12-16T17:30:00-05:00",
+    "label": "Wed Dec 16, 2:40 PM–5:30 PM",
+    "max_students": null,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "FALL 2026 final exam period (official matrix).",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261216-1800",
+    "start": "2026-12-16T18:00:00-05:00",
+    "end": "2026-12-16T20:50:00-05:00",
+    "label": "Wed Dec 16, 6:00 PM–8:50 PM",
+    "max_students": null,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "FALL 2026 final exam period (official matrix).",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261217-0800",
+    "start": "2026-12-17T08:00:00-05:00",
+    "end": "2026-12-17T10:50:00-05:00",
+    "label": "Thu Dec 17, 8:00 AM–10:50 AM",
+    "max_students": null,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "FALL 2026 final exam period (official matrix).",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261217-1120",
+    "start": "2026-12-17T11:20:00-05:00",
+    "end": "2026-12-17T14:10:00-05:00",
+    "label": "Thu Dec 17, 11:20 AM–2:10 PM",
+    "max_students": null,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "FALL 2026 final exam period (official matrix).",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261217-1440",
+    "start": "2026-12-17T14:40:00-05:00",
+    "end": "2026-12-17T17:30:00-05:00",
+    "label": "Thu Dec 17, 2:40 PM–5:30 PM",
+    "max_students": null,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "FALL 2026 final exam period (official matrix).",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261217-1800",
+    "start": "2026-12-17T18:00:00-05:00",
+    "end": "2026-12-17T20:50:00-05:00",
+    "label": "Thu Dec 17, 6:00 PM–8:50 PM",
+    "max_students": null,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "FALL 2026 final exam period (official matrix).",
+      "field_sources": {}
+    }
+  }
+]

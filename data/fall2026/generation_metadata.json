@@ -1,0 +1,2462 @@
+{
+  "generator": "hexam.data_generation.generate",
+  "generator_version": "1.0",
+  "term": "202608",
+  "seed": 42,
+  "num_students": 1000,
+  "config_sha256": "3d431fe2a4680c255fe775b8a4b9f17c7068ce3d4bc5cc0988a5cd9981f32377",
+  "input_fingerprint": {
+    "sections": "c9c5145b675061b6de4b4196f0cb103d0d43b0308be02ead8ed5ac7d1f832b45",
+    "section_metadata": "959f639470c09cadd67dad30d08b1243c95ba3e59ea79f52a104b98efa3ffd3b",
+    "course_metadata": "21a72931ff3763df16f582e234cb4ef4ab5babce2a826ca8fdcae7650a2544ab"
+  },
+  "output_sha256": {
+    "students": "e1c57440b4d2586c0606bed68a82e7c55fa4ef7b28757b7d7be88581f1eb5f9b",
+    "section_enrollment": "2fb43f35054d06ec3eb197982ab57cf131c1112e5238a31d19eb4b9b07cfbd38"
+  },
+  "data_categories": {
+    "gt_public": "courses, sections (CRN, instructors, meeting times, credits, restrictions), exam periods, matrix exam groups, baseline schedule",
+    "assumed": "curriculum/track weights, pair affinities, exclusive alternatives, course-load distribution, non-engineering major shares, synthetic section capacities",
+    "synthetic": "every student record, every registration, Section.enrollment (count of synthetic registrations)"
+  },
+  "sample_note": "1000 synthetic students are a sample of a STEM sub-population, not Georgia Tech's full enrollment; section enrollment counts reflect this sample only and real section sizes are unknown.",
+  "population_model": [
+    {
+      "major": "AE",
+      "name": "Aerospace Engineering",
+      "headcount": 1393.0,
+      "sampling_weight": 0.1011,
+      "headcount_source": "gt_public",
+      "headcount_detail": "IRP COE enrollment 2026-2027: Aerospace Engineering undergraduates",
+      "year_distribution": [
+        0.3037,
+        0.2541,
+        0.1953,
+        0.1802,
+        0.0668
+      ],
+      "year_distribution_source": "gt_public"
+    },
+    {
+      "major": "BMED",
+      "name": "Biomedical Engineering",
+      "headcount": 1154.0,
+      "sampling_weight": 0.0837,
+      "headcount_source": "gt_public",
+      "headcount_detail": "IRP COE enrollment 2026-2027: Biomedical Engineering undergraduates",
+      "year_distribution": [
+        0.2868,
+        0.2504,
+        0.2123,
+        0.2054,
+        0.0451
+      ],
+      "year_distribution_source": "gt_public"
+    },
+    {
+      "major": "CE",
+      "name": "Civil Engineering",
+      "headcount": 548.0,
+      "sampling_weight": 0.0398,
+      "headcount_source": "gt_public",
+      "headcount_detail": "IRP COE enrollment 2026-2027: Civil Engineering undergraduates",
+      "year_distribution": [
+        0.3029,
+        0.2974,
+        0.2099,
+        0.1478,
+        0.042
+      ],
+      "year_distribution_source": "gt_public"
+    },
+    {
+      "major": "CHBE",
+      "name": "Chemical & Biomolecular Engineering",
+      "headcount": 717.0,
+      "sampling_weight": 0.052,
+      "headcount_source": "gt_public",
+      "headcount_detail": "IRP COE enrollment 2026-2027: Chemical & Biomolecular Engineering undergraduates",
+      "year_distribution": [
+        0.2915,
+        0.2636,
+        0.2385,
+        0.1674,
+        0.0391
+      ],
+      "year_distribution_source": "gt_public"
+    },
+    {
+      "major": "CMPE",
+      "name": "Computer Engineering",
+      "headcount": 1124.0,
+      "sampling_weight": 0.0816,
+      "headcount_source": "gt_public",
+      "headcount_detail": "IRP COE enrollment 2026-2027: Computer Engineering undergraduates",
+      "year_distribution": [
+        0.234,
+        0.3354,
+        0.2749,
+        0.1201,
+        0.0356
+      ],
+      "year_distribution_source": "gt_public"
+    },
+    {
+      "major": "CS",
+      "name": "Computer Science",
+      "headcount": 3281.0,
+      "sampling_weight": 0.2381,
+      "headcount_source": "assumed",
+      "headcount_detail": "IRP Fact Book Fall 2025 College of Computing undergraduates (3860) x assumed share 0.85",
+      "year_distribution": [
+        0.2847,
+        0.2856,
+        0.2177,
+        0.1604,
+        0.0516
+      ],
+      "year_distribution_source": "assumed"
+    },
+    {
+      "major": "EE",
+      "name": "Electrical Engineering",
+      "headcount": 991.0,
+      "sampling_weight": 0.0719,
+      "headcount_source": "gt_public",
+      "headcount_detail": "IRP COE enrollment 2026-2027: Electrical Engineering undergraduates",
+      "year_distribution": [
+        0.2977,
+        0.336,
+        0.2079,
+        0.1201,
+        0.0383
+      ],
+      "year_distribution_source": "gt_public"
+    },
+    {
+      "major": "IE",
+      "name": "Industrial Engineering",
+      "headcount": 1536.0,
+      "sampling_weight": 0.1115,
+      "headcount_source": "gt_public",
+      "headcount_detail": "IRP COE enrollment 2026-2027: Industrial Engineering undergraduates",
+      "year_distribution": [
+        0.248,
+        0.2943,
+        0.2253,
+        0.1784,
+        0.054
+      ],
+      "year_distribution_source": "gt_public"
+    },
+    {
+      "major": "MATH",
+      "name": "Applied Mathematics",
+      "headcount": 297.6,
+      "sampling_weight": 0.0216,
+      "headcount_source": "assumed",
+      "headcount_detail": "IRP Fact Book Fall 2025 College of Sciences undergraduates (2480) x assumed share 0.12",
+      "year_distribution": [
+        0.2847,
+        0.2856,
+        0.2177,
+        0.1604,
+        0.0516
+      ],
+      "year_distribution_source": "assumed"
+    },
+    {
+      "major": "ME",
+      "name": "Mechanical Engineering",
+      "headcount": 2300.0,
+      "sampling_weight": 0.1669,
+      "headcount_source": "gt_public",
+      "headcount_detail": "IRP COE enrollment 2026-2027: Mechanical Engineering undergraduates",
+      "year_distribution": [
+        0.3096,
+        0.277,
+        0.2,
+        0.1504,
+        0.063
+      ],
+      "year_distribution_source": "gt_public"
+    },
+    {
+      "major": "MSE",
+      "name": "Materials Science & Engineering",
+      "headcount": 240.0,
+      "sampling_weight": 0.0174,
+      "headcount_source": "gt_public",
+      "headcount_detail": "IRP COE enrollment 2026-2027: Materials Science & Engineering undergraduates",
+      "year_distribution": [
+        0.2833,
+        0.2625,
+        0.225,
+        0.1708,
+        0.0583
+      ],
+      "year_distribution_source": "gt_public"
+    },
+    {
+      "major": "PHYS",
+      "name": "Physics",
+      "headcount": 198.4,
+      "sampling_weight": 0.0144,
+      "headcount_source": "assumed",
+      "headcount_detail": "IRP Fact Book Fall 2025 College of Sciences undergraduates (2480) x assumed share 0.08",
+      "year_distribution": [
+        0.2847,
+        0.2856,
+        0.2177,
+        0.1604,
+        0.0516
+      ],
+      "year_distribution_source": "assumed"
+    }
+  ],
+  "synthetic_section_capacities": {
+    "source": "assumed",
+    "rule": "ceil(course demand x (1 + 0.15) / number of primary sections) + 1; components split their primary's capacity",
+    "capacities": {
+      "AE-2010-A": 7,
+      "AE-2010-B": 7,
+      "AE-2220-A": 8,
+      "AE-2220-B": 8,
+      "AE-2220-C": 8,
+      "AE-3030-A": 9,
+      "AE-3030-B": 9,
+      "AE-3030-C": 9,
+      "AE-3140-A": 8,
+      "AE-3140-B": 8,
+      "APPH-1040-A": 35,
+      "APPH-1040-B": 35,
+      "APPH-1040-C": 35,
+      "APPH-1040-D": 35,
+      "APPH-1040-E": 35,
+      "APPH-1040-H": 35,
+      "APPH-1040-J": 35,
+      "BIOS-1107-A": 8,
+      "BIOS-1107-B": 8,
+      "BMED-3100-A": 24,
+      "BMED-3100-A02": 29,
+      "CEE-2300-A": 7,
+      "CEE-2300-B": 7,
+      "CHBE-2100-A": 7,
+      "CHBE-2100-B": 7,
+      "CHBE-2100-C": 7,
+      "CHEM-1211K-B": 20,
+      "CHEM-1211K-B01": 4,
+      "CHEM-1211K-B02": 4,
+      "CHEM-1211K-B03": 4,
+      "CHEM-1211K-B04": 4,
+      "CHEM-1211K-B06": 4,
+      "CHEM-1211K-B08": 4,
+      "CHEM-1211K-B09": 4,
+      "CHEM-1211K-B12": 4,
+      "CHEM-1211K-B22": 4,
+      "CHEM-1211K-B32": 4,
+      "CHEM-1211K-B34": 4,
+      "CHEM-1211K-C": 20,
+      "CHEM-1211K-C03": 3,
+      "CHEM-1211K-C04": 3,
+      "CHEM-1211K-C06": 3,
+      "CHEM-1211K-C07": 3,
+      "CHEM-1211K-C08": 3,
+      "CHEM-1211K-C09": 3,
+      "CHEM-1211K-C12": 3,
+      "CHEM-1211K-C14": 3,
+      "CHEM-1211K-C18": 3,
+      "CHEM-1211K-C27": 3,
+      "CHEM-1211K-C29": 3,
+      "CHEM-1211K-C32": 3,
+      "CHEM-1211K-C34": 3,
+      "CHEM-1310-A": 34,
+      "CHEM-1310-A01": 5,
+      "CHEM-1310-A02": 5,
+      "CHEM-1310-A03": 5,
+      "CHEM-1310-A04": 5,
+      "CHEM-1310-A06": 5,
+      "CHEM-1310-A07": 5,
+      "CHEM-1310-A08": 5,
+      "CHEM-1310-A09": 5,
+      "CHEM-1310-A12": 5,
+      "CHEM-1310-A24": 5,
+      "CHEM-1310-A34": 5,
+      "CHEM-1310-A44": 5,
+      "CHEM-1310-G": 34,
+      "CHEM-1310-G02": 6,
+      "CHEM-1310-G04": 6,
+      "CHEM-1310-G06": 6,
+      "CHEM-1310-G07": 6,
+      "CHEM-1310-G08": 6,
+      "CHEM-1310-G09": 6,
+      "CHEM-1310-G12": 6,
+      "CHEM-1310-G14": 6,
+      "CHEM-1310-G32": 6,
+      "CHEM-1310-L": 34,
+      "CHEM-1310-L01": 5,
+      "CHEM-1310-L02": 5,
+      "CHEM-1310-L03": 5,
+      "CHEM-1310-L06": 5,
+      "CHEM-1310-L07": 5,
+      "CHEM-1310-L08": 5,
+      "CHEM-1310-L09": 5,
+      "CHEM-1310-L11": 5,
+      "CHEM-1310-L14": 5,
+      "CHEM-1310-L21": 5,
+      "CHEM-1310-L23": 5,
+      "COE-2001-A": 9,
+      "COE-2001-B": 9,
+      "COE-2001-C": 9,
+      "COE-2001-D": 9,
+      "COE-2001-E": 9,
+      "COE-2001-F": 9,
+      "COE-2001-G": 9,
+      "COE-2001-H": 9,
+      "COE-2001-I": 9,
+      "COE-2001-J": 9,
+      "COE-2001-K": 9,
+      "COE-2001-M": 9,
+      "COE-2001-N": 9,
+      "COE-2001-P": 9,
+      "COE-3001-A": 15,
+      "COE-3001-B": 15,
+      "COE-3001-F": 15,
+      "COE-3001-G": 15,
+      "COE-3001-H": 15,
+      "COE-3001-I": 15,
+      "COE-3001-J": 15,
+      "COE-3001-L": 15,
+      "COE-3001-O": 15,
+      "COE-3001-P": 15,
+      "CS-1301-A": 15,
+      "CS-1301-C": 15,
+      "CS-1301-D": 15,
+      "CS-1301-FAA": 15,
+      "CS-1301-FAC": 15,
+      "CS-1301-FAD": 15,
+      "CS-1331-A": 14,
+      "CS-1331-B": 14,
+      "CS-1331-C": 14,
+      "CS-1331-FAA": 14,
+      "CS-1331-FAB": 14,
+      "CS-1331-FAC": 14,
+      "CS-1332-A": 15,
+      "CS-1332-B": 15,
+      "CS-1332-C": 15,
+      "CS-1332-FAA": 15,
+      "CS-1332-FAB": 15,
+      "CS-1332-FAC": 15,
+      "CS-1332-O1": 15,
+      "CS-1371-A": 28,
+      "CS-1371-B": 28,
+      "CS-1371-C": 28,
+      "CS-1371-D": 28,
+      "CS-1371-FAA": 28,
+      "CS-1371-FAB": 28,
+      "CS-1371-FAC": 28,
+      "CS-1371-FAD": 28,
+      "CS-1371-O1": 28,
+      "CS-2050-A": 17,
+      "CS-2050-C": 17,
+      "CS-2050-D": 17,
+      "CS-2050-FAA": 17,
+      "CS-2050-FAC": 17,
+      "CS-2050-FAD": 17,
+      "CS-2110-A": 11,
+      "CS-2110-A01": 5,
+      "CS-2110-A02": 5,
+      "CS-2110-A03": 5,
+      "CS-2110-A04": 5,
+      "CS-2110-B": 11,
+      "CS-2110-B01": 3,
+      "CS-2110-B02": 3,
+      "CS-2110-B03": 3,
+      "CS-2110-B04": 3,
+      "CS-2110-B05": 3,
+      "CS-2110-B06": 3,
+      "CS-2110-B07": 3,
+      "CS-2110-C": 11,
+      "CS-2110-C01": 4,
+      "CS-2110-C02": 4,
+      "CS-2110-C03": 4,
+      "CS-2110-C04": 4,
+      "CS-2110-C05": 4,
+      "CS-2110-C06": 4,
+      "CS-2110-D": 11,
+      "CS-2110-D01": 5,
+      "CS-2110-D02": 5,
+      "CS-2110-D03": 5,
+      "CS-2110-D04": 5,
+      "CS-2110-FA1": 15,
+      "CS-2110-FA2": 15,
+      "CS-2110-FA3": 15,
+      "CS-2110-FA4": 15,
+      "CS-2110-FAA": 11,
+      "CS-2110-FAB": 11,
+      "CS-2110-FAC": 11,
+      "CS-2110-FAD": 11,
+      "CS-2110-O01": 15,
+      "CS-2110-O02": 15,
+      "CS-2200-A": 19,
+      "CS-2200-A01": 6,
+      "CS-2200-A02": 6,
+      "CS-2200-A03": 6,
+      "CS-2200-A04": 6,
+      "CS-2200-A05": 6,
+      "CS-2200-B": 19,
+      "CS-2200-B01": 6,
+      "CS-2200-B02": 6,
+      "CS-2200-B03": 6,
+      "CS-2200-B04": 6,
+      "CS-2200-B05": 6,
+      "CS-2200-C": 19,
+      "CS-2200-C01": 23,
+      "CS-2200-D": 19,
+      "CS-2200-D01": 23,
+      "CS-2200-FA1": 36,
+      "CS-2200-FB1": 36,
+      "CS-2340-A": 18,
+      "CS-2340-B": 18,
+      "CS-2340-C": 18,
+      "CS-2340-O1": 18,
+      "CS-3001-A": 17,
+      "CS-3001-A01": 3,
+      "CS-3001-A02": 3,
+      "CS-3001-A03": 3,
+      "CS-3001-A04": 3,
+      "CS-3001-A05": 3,
+      "CS-3001-A06": 3,
+      "CS-3001-A07": 3,
+      "CS-3001-A08": 3,
+      "CS-3001-A09": 3,
+      "CS-3001-A10": 3,
+      "CS-3001-B": 17,
+      "CS-3001-B01": 4,
+      "CS-3001-B02": 4,
+      "CS-3001-B03": 4,
+      "CS-3001-B04": 4,
+      "CS-3001-B05": 4,
+      "CS-3001-B06": 4,
+      "CS-3001-B07": 4,
+      "CS-3001-B08": 4,
+      "CS-3001-C": 17,
+      "CS-3001-C01": 3,
+      "CS-3001-C02": 3,
+      "CS-3001-C03": 3,
+      "CS-3001-C04": 3,
+      "CS-3001-C05": 3,
+      "CS-3001-C06": 3,
+      "CS-3001-C07": 3,
+      "CS-3001-C08": 3,
+      "CS-3001-C09": 3,
+      "CS-3001-C10": 3,
+      "CS-3001-C11": 3,
+      "CS-3001-C12": 3,
+      "CS-3001-D": 17,
+      "CS-3001-D01": 4,
+      "CS-3001-D02": 4,
+      "CS-3001-D03": 4,
+      "CS-3001-D04": 4,
+      "CS-3001-D05": 4,
+      "CS-3001-D06": 4,
+      "CS-3001-D07": 4,
+      "CS-3001-D08": 4,
+      "CS-3510-A": 15,
+      "CS-3510-B": 15,
+      "CS-3510-C": 15,
+      "CS-3600-A": 44,
+      "CS-4510-A": 10,
+      "CS-4510-B": 10,
+      "CS-4641-A": 15,
+      "CS-4641-B": 15,
+      "CS-4641-C": 15,
+      "CS-4641-D": 15,
+      "ECE-2020-A": 11,
+      "ECE-2020-B": 11,
+      "ECE-2020-C": 11,
+      "ECE-2020-D": 11,
+      "ECE-2020-IE1": 11,
+      "ECE-2020-IE2": 11,
+      "ECE-2020-IE3": 11,
+      "ECE-2035-A": 13,
+      "ECE-2035-B": 13,
+      "ECE-2035-C": 13,
+      "ECE-2035-D": 13,
+      "ECE-2040-A": 8,
+      "ECE-2040-B": 8,
+      "ECE-2040-C": 8,
+      "ECE-2040-D": 8,
+      "ECE-2040-E": 8,
+      "ECE-3077-A": 43,
+      "ECE-3084-A": 34,
+      "ECE-3710-A": 18,
+      "ECE-3710-B": 18,
+      "ECE-3710-C": 18,
+      "ECE-3710-F": 18,
+      "ECE-3710-G": 18,
+      "ECE-3710-H": 18,
+      "ECE-3710-K": 18,
+      "ECE-3710-L": 18,
+      "ECON-2105-GT2": 30,
+      "ECON-2105-GT6": 30,
+      "ECON-2105-GT7": 30,
+      "ECON-2105-GT9": 30,
+      "ECON-2106-GT1": 28,
+      "ECON-2106-GT2": 28,
+      "ECON-2106-GT4": 28,
+      "ECON-2106-GT5": 28,
+      "ECON-2106-GT6": 28,
+      "ECON-2106-GT8": 28,
+      "ECON-2106-GT9": 28,
+      "HIST-2111-A": 26,
+      "HIST-2111-B": 26,
+      "HIST-2111-D": 26,
+      "HIST-2111-E": 26,
+      "ISYE-2027-A": 7,
+      "ISYE-2027-B": 7,
+      "ISYE-2027-C": 7,
+      "ISYE-2027-D": 7,
+      "ISYE-3044-M12": 9,
+      "ISYE-3044-M14": 9,
+      "ISYE-3044-T14": 9,
+      "ISYE-3044-T15": 9,
+      "ISYE-3133-LEC": 27,
+      "ISYE-3133-MW1": 5,
+      "ISYE-3133-MW2": 5,
+      "ISYE-3133-MW3": 5,
+      "ISYE-3133-MW4": 5,
+      "ISYE-3133-MW5": 5,
+      "ISYE-3133-MW6": 5,
+      "ISYE-3133-TR1": 5,
+      "ISYE-3133-TR2": 5,
+      "ISYE-3232-M17": 8,
+      "ISYE-3232-T12": 8,
+      "ISYE-3232-T14": 8,
+      "ISYE-3232-T17": 8,
+      "ISYE-3770-M08": 13,
+      "ISYE-3770-M09": 13,
+      "ISYE-3770-M11": 13,
+      "ISYE-3770-M12": 13,
+      "ISYE-3770-M14": 13,
+      "ISYE-3770-M15": 13,
+      "ISYE-3770-M17": 13,
+      "ISYE-3770-R14": 13,
+      "ISYE-3770-T08": 13,
+      "ISYE-3770-T09": 13,
+      "ISYE-3770-T12": 13,
+      "ISYE-3770-T14": 13,
+      "ISYE-3770-T15": 13,
+      "ISYE-3770-T17": 13,
+      "ISYE-4031-M11": 10,
+      "ISYE-4031-T08": 10,
+      "ISYE-4031-T09": 10,
+      "ISYE-4031-T12": 10,
+      "MATH-1551-A": 20,
+      "MATH-1551-A01": 9,
+      "MATH-1551-A02": 9,
+      "MATH-1551-A03": 9,
+      "MATH-1551-C": 20,
+      "MATH-1551-C01": 9,
+      "MATH-1551-C02": 9,
+      "MATH-1551-C03": 9,
+      "MATH-1551-F": 20,
+      "MATH-1551-F01": 9,
+      "MATH-1551-F02": 9,
+      "MATH-1551-F03": 9,
+      "MATH-1551-G": 20,
+      "MATH-1551-G01": 9,
+      "MATH-1551-G02": 9,
+      "MATH-1551-G03": 9,
+      "MATH-1551-H": 20,
+      "MATH-1551-H01": 9,
+      "MATH-1551-H02": 9,
+      "MATH-1551-H03": 9,
+      "MATH-1551-K": 20,
+      "MATH-1551-K01": 9,
+      "MATH-1551-K02": 9,
+      "MATH-1551-K03": 9,
+      "MATH-1551-M": 20,
+      "MATH-1551-M01": 9,
+      "MATH-1551-M02": 9,
+      "MATH-1551-M03": 9,
+      "MATH-1552-A": 33,
+      "MATH-1552-A01": 14,
+      "MATH-1552-A02": 14,
+      "MATH-1552-A03": 14,
+      "MATH-1552-C": 33,
+      "MATH-1552-C01": 14,
+      "MATH-1552-C02": 14,
+      "MATH-1552-C03": 14,
+      "MATH-1552-E": 33,
+      "MATH-1552-E01": 11,
+      "MATH-1552-E02": 11,
+      "MATH-1552-E03": 11,
+      "MATH-1552-E04": 11,
+      "MATH-1552-F": 33,
+      "MATH-1552-F01": 14,
+      "MATH-1552-F02": 14,
+      "MATH-1552-F03": 14,
+      "MATH-1552-G": 33,
+      "MATH-1552-G01": 14,
+      "MATH-1552-G02": 14,
+      "MATH-1552-G03": 14,
+      "MATH-1552-J": 33,
+      "MATH-1552-J01": 14,
+      "MATH-1552-J02": 14,
+      "MATH-1552-J03": 14,
+      "MATH-1552-M": 33,
+      "MATH-1552-M01": 14,
+      "MATH-1552-M02": 14,
+      "MATH-1552-M03": 14,
+      "MATH-1553-B": 8,
+      "MATH-1553-B01": 5,
+      "MATH-1553-B02": 5,
+      "MATH-1553-B03": 5,
+      "MATH-1553-C": 8,
+      "MATH-1553-C01": 4,
+      "MATH-1553-C02": 4,
+      "MATH-1553-C03": 4,
+      "MATH-1553-C04": 4,
+      "MATH-1553-D": 8,
+      "MATH-1553-D01": 4,
+      "MATH-1553-D02": 4,
+      "MATH-1553-D03": 4,
+      "MATH-1553-D04": 4,
+      "MATH-1553-E": 8,
+      "MATH-1553-E01": 4,
+      "MATH-1553-E02": 4,
+      "MATH-1553-E03": 4,
+      "MATH-1553-E04": 4,
+      "MATH-1553-F": 8,
+      "MATH-1553-F01": 3,
+      "MATH-1553-F02": 3,
+      "MATH-1553-F03": 3,
+      "MATH-1553-F04": 3,
+      "MATH-1553-F05": 3,
+      "MATH-1553-F06": 3,
+      "MATH-1553-G": 8,
+      "MATH-1553-G01": 4,
+      "MATH-1553-G02": 4,
+      "MATH-1553-G03": 4,
+      "MATH-1553-G04": 4,
+      "MATH-1553-H": 8,
+      "MATH-1553-H01": 4,
+      "MATH-1553-H02": 4,
+      "MATH-1553-H03": 4,
+      "MATH-1553-H04": 4,
+      "MATH-1553-I": 8,
+      "MATH-1553-I01": 4,
+      "MATH-1553-I02": 4,
+      "MATH-1553-I03": 4,
+      "MATH-1553-I04": 4,
+      "MATH-1553-J": 8,
+      "MATH-1553-J01": 5,
+      "MATH-1553-J02": 5,
+      "MATH-1553-J03": 5,
+      "MATH-1553-L": 8,
+      "MATH-1553-L01": 4,
+      "MATH-1553-L02": 4,
+      "MATH-1553-L03": 4,
+      "MATH-1553-L04": 4,
+      "MATH-1553-M": 8,
+      "MATH-1553-M01": 5,
+      "MATH-1553-M02": 5,
+      "MATH-1553-M03": 5,
+      "MATH-1553-N": 8,
+      "MATH-1553-N01": 4,
+      "MATH-1553-N02": 4,
+      "MATH-1553-N03": 4,
+      "MATH-1553-N04": 4,
+      "MATH-1554-A": 28,
+      "MATH-1554-A01": 12,
+      "MATH-1554-A02": 12,
+      "MATH-1554-A03": 12,
+      "MATH-1554-B": 28,
+      "MATH-1554-B01": 12,
+      "MATH-1554-B02": 12,
+      "MATH-1554-B04": 12,
+      "MATH-1554-D": 28,
+      "MATH-1554-D01": 12,
+      "MATH-1554-D02": 12,
+      "MATH-1554-D03": 12,
+      "MATH-1554-E": 28,
+      "MATH-1554-E01": 12,
+      "MATH-1554-E02": 12,
+      "MATH-1554-E03": 12,
+      "MATH-1554-F": 28,
+      "MATH-1554-F01": 12,
+      "MATH-1554-F02": 12,
+      "MATH-1554-F03": 12,
+      "MATH-1554-K": 28,
+      "MATH-1554-K01": 10,
+      "MATH-1554-K02": 10,
+      "MATH-1554-K03": 10,
+      "MATH-1554-K04": 10,
+      "MATH-1554-M": 28,
+      "MATH-1554-M01": 10,
+      "MATH-1554-M02": 10,
+      "MATH-1554-M03": 10,
+      "MATH-1554-M04": 10,
+      "MATH-1554-N": 28,
+      "MATH-1554-N01": 12,
+      "MATH-1554-N02": 12,
+      "MATH-1554-N03": 12,
+      "MATH-2106-A": 4,
+      "MATH-2106-B": 4,
+      "MATH-2106-D": 4,
+      "MATH-2106-G": 4,
+      "MATH-2551-B": 48,
+      "MATH-2551-B01": 15,
+      "MATH-2551-B02": 15,
+      "MATH-2551-B03": 15,
+      "MATH-2551-B04": 15,
+      "MATH-2551-D": 48,
+      "MATH-2551-D01": 15,
+      "MATH-2551-D02": 15,
+      "MATH-2551-D03": 15,
+      "MATH-2551-D04": 15,
+      "MATH-2551-G": 48,
+      "MATH-2551-G01": 20,
+      "MATH-2551-G02": 20,
+      "MATH-2551-G03": 20,
+      "MATH-2551-I": 48,
+      "MATH-2551-I01": 20,
+      "MATH-2551-I03": 20,
+      "MATH-2551-I04": 20,
+      "MATH-2551-J": 48,
+      "MATH-2551-J01": 20,
+      "MATH-2551-J02": 20,
+      "MATH-2551-J03": 20,
+      "MATH-2551-L": 48,
+      "MATH-2551-L01": 20,
+      "MATH-2551-L02": 20,
+      "MATH-2551-L03": 20,
+      "MATH-2551-N": 48,
+      "MATH-2551-N01": 15,
+      "MATH-2551-N02": 15,
+      "MATH-2551-N03": 15,
+      "MATH-2551-N04": 15,
+      "MATH-2552-A": 25,
+      "MATH-2552-A01": 11,
+      "MATH-2552-A02": 11,
+      "MATH-2552-A03": 11,
+      "MATH-2552-B": 25,
+      "MATH-2552-B01": 9,
+      "MATH-2552-B02": 9,
+      "MATH-2552-B03": 9,
+      "MATH-2552-B04": 9,
+      "MATH-2552-C": 25,
+      "MATH-2552-C01": 11,
+      "MATH-2552-C02": 11,
+      "MATH-2552-C03": 11,
+      "MATH-2552-D": 25,
+      "MATH-2552-D01": 11,
+      "MATH-2552-D02": 11,
+      "MATH-2552-D03": 11,
+      "MATH-2552-E": 25,
+      "MATH-2552-E01": 9,
+      "MATH-2552-E02": 9,
+      "MATH-2552-E03": 9,
+      "MATH-2552-E04": 9,
+      "MATH-2552-G": 25,
+      "MATH-2552-G01": 9,
+      "MATH-2552-G02": 9,
+      "MATH-2552-G03": 9,
+      "MATH-2552-G04": 9,
+      "MATH-2552-H": 25,
+      "MATH-2552-H01": 11,
+      "MATH-2552-H02": 11,
+      "MATH-2552-H03": 11,
+      "MATH-2552-J": 25,
+      "MATH-2552-J01": 9,
+      "MATH-2552-J02": 9,
+      "MATH-2552-J03": 9,
+      "MATH-2552-J04": 9,
+      "MATH-2552-K": 25,
+      "MATH-2552-K01": 9,
+      "MATH-2552-K02": 9,
+      "MATH-2552-K03": 9,
+      "MATH-2552-K04": 9,
+      "MATH-2552-N": 25,
+      "MATH-2552-N01": 9,
+      "MATH-2552-N02": 9,
+      "MATH-2552-N03": 9,
+      "MATH-2552-N04": 9,
+      "MATH-3012-B": 17,
+      "MATH-3012-D": 17,
+      "MATH-3012-I": 17,
+      "MATH-3012-J": 17,
+      "MATH-3012-K": 17,
+      "MATH-3012-L": 17,
+      "MATH-3012-M": 17,
+      "MATH-3215-H": 13,
+      "MATH-3215-J": 13,
+      "MATH-3215-N": 13,
+      "MATH-3670-B": 4,
+      "MATH-3670-J": 4,
+      "MATH-3670-L": 4,
+      "MATH-3670-N": 4,
+      "MATH-4317-AG": 2,
+      "MATH-4317-AU": 2,
+      "MATH-4317-BG": 2,
+      "MATH-4317-BU": 2,
+      "MATH-4317-CG": 2,
+      "MATH-4317-CU": 2,
+      "ME-1670-A": 9,
+      "ME-1670-A01": 12,
+      "ME-1670-B": 9,
+      "ME-1670-B01": 12,
+      "ME-1670-C": 9,
+      "ME-1670-C01": 12,
+      "ME-1670-D": 9,
+      "ME-1670-D01": 12,
+      "ME-1670-E": 9,
+      "ME-1670-E01": 12,
+      "ME-1670-F": 9,
+      "ME-1670-F01": 12,
+      "ME-1670-G": 9,
+      "ME-1670-G01": 12,
+      "ME-1670-H": 9,
+      "ME-1670-H01": 12,
+      "ME-1670-I": 9,
+      "ME-1670-I01": 12,
+      "ME-1670-J": 9,
+      "ME-1670-J01": 12,
+      "ME-1670-K": 9,
+      "ME-1670-K01": 12,
+      "ME-1670-L": 9,
+      "ME-1670-L01": 12,
+      "ME-2016-A": 7,
+      "ME-2016-B": 7,
+      "ME-2016-C": 7,
+      "ME-2016-D": 7,
+      "ME-2016-E": 7,
+      "ME-2016-F": 7,
+      "ME-2202-A": 6,
+      "ME-2202-B": 6,
+      "ME-2202-C": 6,
+      "ME-2202-D": 6,
+      "ME-2202-E": 6,
+      "ME-2202-F": 6,
+      "ME-3017-A": 11,
+      "ME-3017-B": 11,
+      "ME-3017-C": 11,
+      "ME-3017-D": 11,
+      "ME-3322-A": 7,
+      "ME-3322-B": 7,
+      "ME-3322-C": 7,
+      "ME-3322-D": 7,
+      "ME-3322-E": 7,
+      "ME-3322-F": 7,
+      "ME-3340-A": 9,
+      "ME-3340-B": 9,
+      "ME-3340-C": 9,
+      "ME-3340-D": 9,
+      "ME-3340-E": 9,
+      "ME-3345-A": 8,
+      "ME-3345-C": 8,
+      "ME-3345-D": 8,
+      "ME-3345-E": 8,
+      "MSE-2001-A": 5,
+      "MSE-2001-B": 5,
+      "MSE-2001-C": 5,
+      "MSE-2001-D": 5,
+      "MSE-2001-E": 5,
+      "MSE-2001-F": 5,
+      "MSE-2001-G": 5,
+      "PHYS-2211-A": 35,
+      "PHYS-2211-B": 35,
+      "PHYS-2211-C": 35,
+      "PHYS-2211-D": 35,
+      "PHYS-2211-E": 35,
+      "PHYS-2211-L01": 6,
+      "PHYS-2211-L02": 6,
+      "PHYS-2211-L03": 6,
+      "PHYS-2211-L04": 6,
+      "PHYS-2211-L05": 6,
+      "PHYS-2211-L06": 6,
+      "PHYS-2211-LS": 35,
+      "PHYS-2211-W01": 6,
+      "PHYS-2211-W02": 6,
+      "PHYS-2211-W03": 6,
+      "PHYS-2211-W04": 6,
+      "PHYS-2211-W05": 6,
+      "PHYS-2211-W06": 6,
+      "PHYS-2211-W07": 6,
+      "PHYS-2211-W08": 6,
+      "PHYS-2211-W09": 6,
+      "PHYS-2211-W10": 6,
+      "PHYS-2211-W11": 6,
+      "PHYS-2211-W12": 6,
+      "PHYS-2211-W13": 6,
+      "PHYS-2211-W14": 6,
+      "PHYS-2211-W15": 6,
+      "PHYS-2211-W16": 6,
+      "PHYS-2211-W17": 6,
+      "PHYS-2211-W18": 6,
+      "PHYS-2211-W19": 6,
+      "PHYS-2211-W20": 6,
+      "PHYS-2211-W21": 6,
+      "PHYS-2211-W22": 6,
+      "PHYS-2211-W23": 6,
+      "PHYS-2211-W24": 6,
+      "PHYS-2211-W25": 6,
+      "PHYS-2211-W26": 6,
+      "PHYS-2211-W27": 6,
+      "PHYS-2211-W28": 6,
+      "PHYS-2211-W29": 6,
+      "PHYS-2211-W30": 6,
+      "PHYS-2211-W31": 6,
+      "PHYS-2211-W32": 6,
+      "PHYS-2211-W33": 6,
+      "PHYS-2211-W34": 6,
+      "PHYS-2211-W35": 6,
+      "PHYS-2211-W36": 6,
+      "PHYS-2211-W37": 6,
+      "PHYS-2211-W38": 6,
+      "PHYS-2211-W39": 6,
+      "PHYS-2211-W40": 6,
+      "PHYS-2211-W41": 6,
+      "PHYS-2211-W42": 6,
+      "PHYS-2212-A": 51,
+      "PHYS-2212-B": 51,
+      "PHYS-2212-C": 51,
+      "PHYS-2212-D": 51,
+      "PHYS-2212-E": 51,
+      "PHYS-2212-E01": 13,
+      "PHYS-2212-E02": 13,
+      "PHYS-2212-E03": 13,
+      "PHYS-2212-E04": 13,
+      "PHYS-2212-E05": 13,
+      "PHYS-2212-LS": 51,
+      "PHYS-2212-Q01": 10,
+      "PHYS-2212-Q02": 10,
+      "PHYS-2212-Q03": 10,
+      "PHYS-2212-Q04": 10,
+      "PHYS-2212-Q05": 10,
+      "PHYS-2212-Q06": 10,
+      "PHYS-2212-Q07": 10,
+      "PHYS-2212-Q08": 10,
+      "PHYS-2212-Q09": 10,
+      "PHYS-2212-Q10": 10,
+      "PHYS-2212-Q11": 10,
+      "PHYS-2212-Q12": 10,
+      "PHYS-2212-Q13": 10,
+      "PHYS-2212-Q14": 10,
+      "PHYS-2212-Q15": 10,
+      "PHYS-2212-Q16": 10,
+      "PHYS-2212-Q17": 10,
+      "PHYS-2212-Q18": 10,
+      "PHYS-2212-Q19": 10,
+      "PHYS-2212-Q20": 10,
+      "PHYS-2212-Q21": 10,
+      "PHYS-2212-Q22": 10,
+      "PHYS-2212-Q23": 10,
+      "PHYS-2212-Q24": 10,
+      "PHYS-2212-Q25": 10,
+      "PHYS-2212-Q26": 10,
+      "PHYS-2212-Q27": 10,
+      "PHYS-2212-Q28": 10,
+      "PHYS-2212-Q29": 10,
+      "PHYS-2212-Q30": 10,
+      "PHYS-2212-Q31": 10,
+      "PHYS-2212-Q32": 10,
+      "PHYS-2212-Q33": 10,
+      "PHYS-2212-Q34": 10,
+      "PHYS-3201-A": 3,
+      "PHYS-3201-B": 3,
+      "PSYC-1101-A": 17,
+      "PSYC-1101-B": 17,
+      "PSYC-1101-C": 17,
+      "PSYC-1101-D": 17,
+      "PSYC-1101-E": 17,
+      "PSYC-1101-G": 17,
+      "PSYC-1101-H": 17,
+      "PSYC-1101-I": 17
+    }
+  },
+  "stats": {
+    "profiles_drawn": 1000,
+    "student_redraws": 0,
+    "redraw_reasons": {},
+    "course_replacements": 41,
+    "courses_dropped": 0,
+    "students_with_load_shortfall": 0,
+    "search_nodes": 9481
+  },
+  "config": {
+    "term": "202608",
+    "dataset_name": "fall2026",
+    "exam_group_granularity": "meeting_time",
+    "courses": [
+      {
+        "key": "MATH 1551",
+        "role": "foundation"
+      },
+      {
+        "key": "MATH 1552",
+        "role": "foundation"
+      },
+      {
+        "key": "MATH 1553",
+        "role": "foundation"
+      },
+      {
+        "key": "MATH 1554",
+        "role": "foundation"
+      },
+      {
+        "key": "MATH 2551",
+        "role": "foundation"
+      },
+      {
+        "key": "MATH 2552",
+        "role": "foundation"
+      },
+      {
+        "key": "MATH 2106",
+        "role": "major_core"
+      },
+      {
+        "key": "MATH 3012",
+        "role": "major_core"
+      },
+      {
+        "key": "MATH 3215",
+        "role": "major_core"
+      },
+      {
+        "key": "MATH 3670",
+        "role": "major_core"
+      },
+      {
+        "key": "MATH 4317",
+        "role": "upper_level"
+      },
+      {
+        "key": "PHYS 2211",
+        "role": "foundation"
+      },
+      {
+        "key": "PHYS 2212",
+        "role": "foundation"
+      },
+      {
+        "key": "PHYS 3201",
+        "role": "upper_level"
+      },
+      {
+        "key": "CHEM 1310",
+        "role": "foundation"
+      },
+      {
+        "key": "CHEM 1211K",
+        "role": "foundation"
+      },
+      {
+        "key": "BIOS 1107",
+        "role": "foundation"
+      },
+      {
+        "key": "CS 1301",
+        "role": "foundation"
+      },
+      {
+        "key": "CS 1331",
+        "role": "foundation"
+      },
+      {
+        "key": "CS 1332",
+        "role": "major_core"
+      },
+      {
+        "key": "CS 1371",
+        "role": "foundation"
+      },
+      {
+        "key": "CS 2050",
+        "role": "major_core"
+      },
+      {
+        "key": "CS 2110",
+        "role": "major_core"
+      },
+      {
+        "key": "CS 2200",
+        "role": "major_core"
+      },
+      {
+        "key": "CS 2340",
+        "role": "major_core"
+      },
+      {
+        "key": "CS 3001",
+        "role": "major_core"
+      },
+      {
+        "key": "CS 3510",
+        "role": "major_core"
+      },
+      {
+        "key": "CS 3600",
+        "role": "upper_level"
+      },
+      {
+        "key": "CS 4510",
+        "role": "upper_level"
+      },
+      {
+        "key": "CS 4641",
+        "role": "upper_level"
+      },
+      {
+        "key": "ECE 2020",
+        "role": "major_core"
+      },
+      {
+        "key": "ECE 2035",
+        "role": "major_core"
+      },
+      {
+        "key": "ECE 2040",
+        "role": "major_core"
+      },
+      {
+        "key": "ECE 3077",
+        "role": "major_core"
+      },
+      {
+        "key": "ECE 3084",
+        "role": "upper_level"
+      },
+      {
+        "key": "ECE 3710",
+        "role": "major_core"
+      },
+      {
+        "key": "ME 1670",
+        "role": "foundation"
+      },
+      {
+        "key": "ME 2016",
+        "role": "major_core"
+      },
+      {
+        "key": "ME 2202",
+        "role": "major_core"
+      },
+      {
+        "key": "ME 3017",
+        "role": "major_core"
+      },
+      {
+        "key": "ME 3322",
+        "role": "major_core"
+      },
+      {
+        "key": "ME 3340",
+        "role": "major_core"
+      },
+      {
+        "key": "ME 3345",
+        "role": "upper_level"
+      },
+      {
+        "key": "COE 2001",
+        "role": "foundation"
+      },
+      {
+        "key": "COE 3001",
+        "role": "major_core"
+      },
+      {
+        "key": "ISYE 2027",
+        "role": "major_core"
+      },
+      {
+        "key": "ISYE 3044",
+        "role": "upper_level"
+      },
+      {
+        "key": "ISYE 3133",
+        "role": "major_core"
+      },
+      {
+        "key": "ISYE 3232",
+        "role": "major_core"
+      },
+      {
+        "key": "ISYE 3770",
+        "role": "major_core"
+      },
+      {
+        "key": "ISYE 4031",
+        "role": "upper_level"
+      },
+      {
+        "key": "AE 2010",
+        "role": "major_core"
+      },
+      {
+        "key": "AE 2220",
+        "role": "major_core"
+      },
+      {
+        "key": "AE 3030",
+        "role": "upper_level"
+      },
+      {
+        "key": "AE 3140",
+        "role": "upper_level"
+      },
+      {
+        "key": "BMED 3100",
+        "role": "major_core"
+      },
+      {
+        "key": "CHBE 2100",
+        "role": "major_core"
+      },
+      {
+        "key": "CEE 2300",
+        "role": "major_core"
+      },
+      {
+        "key": "MSE 2001",
+        "role": "major_core"
+      },
+      {
+        "key": "ECON 2105",
+        "role": "gen_ed"
+      },
+      {
+        "key": "ECON 2106",
+        "role": "gen_ed"
+      },
+      {
+        "key": "PSYC 1101",
+        "role": "gen_ed"
+      },
+      {
+        "key": "HIST 2111",
+        "role": "gen_ed"
+      },
+      {
+        "key": "APPH 1040",
+        "role": "gen_ed"
+      }
+    ],
+    "reserved_restriction_categories": [
+      "Cohorts",
+      "Programs",
+      "Degrees",
+      "Special Approvals",
+      "Concentrations",
+      "Minors",
+      "Attributes",
+      "Departments"
+    ],
+    "min_exam_credit_hours": 2.0,
+    "num_students": 1000,
+    "seed": 42,
+    "majors": {
+      "CS": {
+        "name": "Computer Science",
+        "headcount": {
+          "source": "factbook_college",
+          "irp_major_name": null,
+          "college": "College of Computing",
+          "share": 0.85,
+          "value": null,
+          "notes": "Fact Book Fall 2025 College of Computing undergraduate total x assumed CS share (remainder: Computational Media)."
+        },
+        "college": "College of Computing (C)",
+        "year_distribution": "engineering_average",
+        "tracks": {
+          "calculus": 0.8,
+          "physics": 0.5,
+          "gen_ed": 1.0
+        },
+        "courses": {
+          "MATH 2552": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "CS 1301": [
+            5.0,
+            1.0,
+            0.2,
+            0.0,
+            0.0
+          ],
+          "CS 1331": [
+            6.0,
+            3.0,
+            0.5,
+            0.2,
+            0.1
+          ],
+          "CS 1332": [
+            2.0,
+            6.0,
+            2.0,
+            0.5,
+            0.2
+          ],
+          "CS 2050": [
+            3.0,
+            5.0,
+            1.5,
+            0.3,
+            0.2
+          ],
+          "CS 2110": [
+            0.8,
+            5.0,
+            2.5,
+            0.5,
+            0.3
+          ],
+          "CS 2200": [
+            0.0,
+            1.5,
+            4.0,
+            2.0,
+            1.0
+          ],
+          "CS 2340": [
+            0.0,
+            2.0,
+            4.0,
+            2.0,
+            1.0
+          ],
+          "CS 3001": [
+            0.0,
+            2.0,
+            3.0,
+            1.5,
+            0.5
+          ],
+          "CS 3510": [
+            0.0,
+            0.5,
+            4.0,
+            3.0,
+            1.5
+          ],
+          "CS 3600": [
+            0.0,
+            0.3,
+            2.5,
+            3.0,
+            2.0
+          ],
+          "CS 4641": [
+            0.0,
+            0.2,
+            2.0,
+            4.0,
+            3.0
+          ],
+          "CS 4510": [
+            0.0,
+            0.0,
+            1.0,
+            2.5,
+            2.0
+          ],
+          "MATH 3012": [
+            0.5,
+            3.0,
+            3.0,
+            1.5,
+            1.0
+          ],
+          "MATH 3215": [
+            0.0,
+            0.5,
+            1.5,
+            1.0,
+            0.5
+          ],
+          "ISYE 3770": [
+            0.0,
+            0.5,
+            1.5,
+            1.0,
+            0.5
+          ]
+        }
+      },
+      "CMPE": {
+        "name": "Computer Engineering",
+        "headcount": {
+          "source": "irp_coe",
+          "irp_major_name": "Computer Engineering",
+          "college": null,
+          "share": 1.0,
+          "value": null,
+          "notes": null
+        },
+        "college": "College of Engineering (E)",
+        "year_distribution": "irp",
+        "tracks": {
+          "calculus": 1.0,
+          "physics": 1.0,
+          "chemistry_engr": 0.6,
+          "gen_ed": 0.8
+        },
+        "courses": {
+          "CS 1301": [
+            3.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "CS 1331": [
+            3.0,
+            2.0,
+            0.3,
+            0.0,
+            0.0
+          ],
+          "CS 1332": [
+            0.3,
+            2.0,
+            1.5,
+            0.5,
+            0.2
+          ],
+          "ECE 2020": [
+            2.0,
+            5.0,
+            2.0,
+            0.5,
+            0.3
+          ],
+          "ECE 2035": [
+            0.5,
+            4.0,
+            3.0,
+            0.5,
+            0.3
+          ],
+          "ECE 2040": [
+            0.0,
+            4.0,
+            3.0,
+            0.5,
+            0.3
+          ],
+          "ECE 3077": [
+            0.0,
+            1.0,
+            4.0,
+            1.0,
+            0.5
+          ],
+          "ECE 3084": [
+            0.0,
+            0.5,
+            3.0,
+            2.0,
+            0.5
+          ],
+          "CS 2200": [
+            0.0,
+            0.3,
+            1.5,
+            1.5,
+            0.5
+          ],
+          "MATH 3012": [
+            0.0,
+            0.5,
+            1.0,
+            0.5,
+            0.3
+          ]
+        }
+      },
+      "EE": {
+        "name": "Electrical Engineering",
+        "headcount": {
+          "source": "irp_coe",
+          "irp_major_name": "Electrical Engineering",
+          "college": null,
+          "share": 1.0,
+          "value": null,
+          "notes": null
+        },
+        "college": "College of Engineering (E)",
+        "year_distribution": "irp",
+        "tracks": {
+          "calculus": 1.0,
+          "physics": 1.0,
+          "chemistry_engr": 0.8,
+          "computing_engr": 0.4,
+          "gen_ed": 0.8
+        },
+        "courses": {
+          "CS 1301": [
+            2.5,
+            0.5,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "CS 1331": [
+            1.5,
+            1.5,
+            0.3,
+            0.0,
+            0.0
+          ],
+          "ECE 2020": [
+            2.0,
+            5.0,
+            2.0,
+            0.5,
+            0.3
+          ],
+          "ECE 2035": [
+            0.3,
+            3.0,
+            2.5,
+            0.5,
+            0.3
+          ],
+          "ECE 2040": [
+            0.0,
+            5.0,
+            3.0,
+            0.5,
+            0.3
+          ],
+          "ECE 3077": [
+            0.0,
+            1.0,
+            4.0,
+            1.0,
+            0.5
+          ],
+          "ECE 3084": [
+            0.0,
+            0.8,
+            4.0,
+            2.0,
+            0.5
+          ]
+        }
+      },
+      "ME": {
+        "name": "Mechanical Engineering",
+        "headcount": {
+          "source": "irp_coe",
+          "irp_major_name": "Mechanical Engineering",
+          "college": null,
+          "share": 1.0,
+          "value": null,
+          "notes": null
+        },
+        "college": "College of Engineering (E)",
+        "year_distribution": "irp",
+        "tracks": {
+          "calculus": 1.0,
+          "physics": 1.0,
+          "chemistry_engr": 1.0,
+          "computing_engr": 1.0,
+          "engr_mechanics": 1.2,
+          "gen_ed": 0.8
+        },
+        "courses": {
+          "ME 1670": [
+            5.0,
+            2.0,
+            0.5,
+            0.1,
+            0.0
+          ],
+          "ME 2016": [
+            0.5,
+            4.0,
+            2.0,
+            0.5,
+            0.2
+          ],
+          "ME 2202": [
+            0.0,
+            4.0,
+            3.0,
+            0.5,
+            0.3
+          ],
+          "ME 3017": [
+            0.0,
+            0.5,
+            4.0,
+            2.0,
+            1.0
+          ],
+          "ME 3322": [
+            0.0,
+            2.0,
+            4.0,
+            1.0,
+            0.5
+          ],
+          "ME 3340": [
+            0.0,
+            0.5,
+            4.0,
+            2.0,
+            1.0
+          ],
+          "ME 3345": [
+            0.0,
+            0.0,
+            2.0,
+            4.0,
+            2.0
+          ],
+          "ECE 3710": [
+            0.0,
+            0.5,
+            2.5,
+            2.0,
+            1.0
+          ],
+          "ISYE 3770": [
+            0.0,
+            0.5,
+            1.5,
+            1.0,
+            0.5
+          ]
+        }
+      },
+      "AE": {
+        "name": "Aerospace Engineering",
+        "headcount": {
+          "source": "irp_coe",
+          "irp_major_name": "Aerospace Engineering",
+          "college": null,
+          "share": 1.0,
+          "value": null,
+          "notes": null
+        },
+        "college": "College of Engineering (E)",
+        "year_distribution": "irp",
+        "tracks": {
+          "calculus": 1.0,
+          "physics": 1.0,
+          "chemistry_engr": 1.0,
+          "computing_engr": 1.0,
+          "engr_mechanics": 1.2,
+          "gen_ed": 0.8
+        },
+        "courses": {
+          "ME 1670": [
+            4.0,
+            1.5,
+            0.3,
+            0.0,
+            0.0
+          ],
+          "AE 2010": [
+            0.0,
+            3.0,
+            3.0,
+            1.0,
+            0.5
+          ],
+          "AE 2220": [
+            0.0,
+            3.0,
+            3.0,
+            1.0,
+            0.5
+          ],
+          "AE 3030": [
+            0.0,
+            0.3,
+            4.0,
+            2.0,
+            1.0
+          ],
+          "AE 3140": [
+            0.0,
+            0.3,
+            3.5,
+            2.0,
+            1.0
+          ],
+          "ECE 3710": [
+            0.0,
+            0.5,
+            2.0,
+            1.5,
+            1.0
+          ],
+          "ISYE 3770": [
+            0.0,
+            0.3,
+            1.0,
+            1.0,
+            0.5
+          ]
+        }
+      },
+      "IE": {
+        "name": "Industrial Engineering",
+        "headcount": {
+          "source": "irp_coe",
+          "irp_major_name": "Industrial Engineering",
+          "college": null,
+          "share": 1.0,
+          "value": null,
+          "notes": null
+        },
+        "college": "College of Engineering (E)",
+        "year_distribution": "irp",
+        "tracks": {
+          "calculus": 1.0,
+          "physics": 0.8,
+          "chemistry_engr": 0.6,
+          "computing_engr": 0.8,
+          "gen_ed": 1.0
+        },
+        "courses": {
+          "CS 1301": [
+            2.0,
+            0.5,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "ECON 2106": [
+            2.0,
+            2.0,
+            1.0,
+            0.5,
+            0.3
+          ],
+          "ISYE 2027": [
+            0.5,
+            4.0,
+            2.0,
+            0.5,
+            0.3
+          ],
+          "ISYE 3133": [
+            0.0,
+            1.0,
+            4.0,
+            2.0,
+            0.8
+          ],
+          "ISYE 3232": [
+            0.0,
+            0.5,
+            3.5,
+            2.0,
+            1.0
+          ],
+          "ISYE 3044": [
+            0.0,
+            0.3,
+            2.5,
+            3.5,
+            1.5
+          ],
+          "ISYE 3770": [
+            0.0,
+            2.0,
+            4.0,
+            1.0,
+            0.5
+          ],
+          "ISYE 4031": [
+            0.0,
+            0.2,
+            2.0,
+            3.5,
+            1.5
+          ],
+          "MATH 3012": [
+            0.0,
+            0.3,
+            0.5,
+            0.3,
+            0.2
+          ]
+        }
+      },
+      "BMED": {
+        "name": "Biomedical Engineering",
+        "headcount": {
+          "source": "irp_coe",
+          "irp_major_name": "Biomedical Engineering",
+          "college": null,
+          "share": 1.0,
+          "value": null,
+          "notes": null
+        },
+        "college": "College of Engineering (E)",
+        "year_distribution": "irp",
+        "tracks": {
+          "calculus": 1.0,
+          "physics": 1.0,
+          "chemistry_sci": 1.0,
+          "computing_engr": 1.0,
+          "engr_mechanics": 0.6,
+          "gen_ed": 0.8
+        },
+        "courses": {
+          "BIOS 1107": [
+            3.0,
+            1.5,
+            0.3,
+            0.1,
+            0.0
+          ],
+          "BMED 3100": [
+            0.0,
+            0.5,
+            4.0,
+            2.0,
+            0.8
+          ],
+          "ECE 3710": [
+            0.0,
+            0.5,
+            2.0,
+            2.0,
+            1.0
+          ],
+          "ISYE 3770": [
+            0.0,
+            0.5,
+            1.5,
+            1.0,
+            0.5
+          ],
+          "MATH 3670": [
+            0.0,
+            0.3,
+            1.0,
+            0.8,
+            0.5
+          ]
+        }
+      },
+      "CHBE": {
+        "name": "Chemical & Biomolecular Engineering",
+        "headcount": {
+          "source": "irp_coe",
+          "irp_major_name": "Chemical & Biomolecular Engineering",
+          "college": null,
+          "share": 1.0,
+          "value": null,
+          "notes": null
+        },
+        "college": "College of Engineering (E)",
+        "year_distribution": "irp",
+        "tracks": {
+          "calculus": 1.0,
+          "physics": 1.0,
+          "chemistry_sci": 1.2,
+          "computing_engr": 1.0,
+          "gen_ed": 0.8
+        },
+        "courses": {
+          "CHBE 2100": [
+            0.0,
+            4.0,
+            2.0,
+            0.5,
+            0.3
+          ],
+          "MSE 2001": [
+            0.0,
+            0.5,
+            1.0,
+            0.5,
+            0.3
+          ],
+          "ECE 3710": [
+            0.0,
+            0.3,
+            1.0,
+            1.0,
+            0.5
+          ],
+          "ISYE 3770": [
+            0.0,
+            0.3,
+            1.0,
+            1.0,
+            0.5
+          ]
+        }
+      },
+      "CE": {
+        "name": "Civil Engineering",
+        "headcount": {
+          "source": "irp_coe",
+          "irp_major_name": "Civil Engineering",
+          "college": null,
+          "share": 1.0,
+          "value": null,
+          "notes": null
+        },
+        "college": "College of Engineering (E)",
+        "year_distribution": "irp",
+        "tracks": {
+          "calculus": 1.0,
+          "physics": 1.0,
+          "chemistry_engr": 1.0,
+          "computing_engr": 1.0,
+          "engr_mechanics": 1.3,
+          "gen_ed": 0.8
+        },
+        "courses": {
+          "CEE 2300": [
+            0.0,
+            3.0,
+            3.0,
+            1.0,
+            0.5
+          ],
+          "ISYE 3770": [
+            0.0,
+            0.5,
+            1.5,
+            1.0,
+            0.5
+          ],
+          "ECE 3710": [
+            0.0,
+            0.2,
+            0.8,
+            0.8,
+            0.5
+          ]
+        }
+      },
+      "MSE": {
+        "name": "Materials Science & Engineering",
+        "headcount": {
+          "source": "irp_coe",
+          "irp_major_name": "Materials Science & Engineering",
+          "college": null,
+          "share": 1.0,
+          "value": null,
+          "notes": null
+        },
+        "college": "College of Engineering (E)",
+        "year_distribution": "irp",
+        "tracks": {
+          "calculus": 1.0,
+          "physics": 1.0,
+          "chemistry_engr": 1.0,
+          "computing_engr": 1.0,
+          "engr_mechanics": 0.8,
+          "gen_ed": 0.8
+        },
+        "courses": {
+          "MSE 2001": [
+            0.5,
+            4.0,
+            2.0,
+            0.5,
+            0.3
+          ],
+          "ECE 3710": [
+            0.0,
+            0.3,
+            1.5,
+            1.0,
+            0.5
+          ],
+          "ISYE 3770": [
+            0.0,
+            0.3,
+            1.0,
+            1.0,
+            0.5
+          ]
+        }
+      },
+      "MATH": {
+        "name": "Applied Mathematics",
+        "headcount": {
+          "source": "factbook_college",
+          "irp_major_name": null,
+          "college": "College of Sciences",
+          "share": 0.12,
+          "value": null,
+          "notes": "Fact Book Fall 2025 College of Sciences undergraduate total x assumed Applied Mathematics share."
+        },
+        "college": "College of Sciences (S)",
+        "year_distribution": "engineering_average",
+        "tracks": {
+          "calculus": 1.0,
+          "physics": 0.7,
+          "gen_ed": 1.0
+        },
+        "courses": {
+          "CS 1301": [
+            2.0,
+            0.5,
+            0.2,
+            0.0,
+            0.0
+          ],
+          "CS 1331": [
+            0.5,
+            0.8,
+            0.3,
+            0.1,
+            0.0
+          ],
+          "MATH 2106": [
+            0.5,
+            4.0,
+            2.0,
+            0.5,
+            0.3
+          ],
+          "MATH 3012": [
+            0.0,
+            2.0,
+            3.0,
+            1.5,
+            1.0
+          ],
+          "MATH 3215": [
+            0.0,
+            1.0,
+            3.0,
+            2.0,
+            1.0
+          ],
+          "MATH 3670": [
+            0.0,
+            0.3,
+            1.0,
+            1.0,
+            0.5
+          ],
+          "MATH 4317": [
+            0.0,
+            0.2,
+            2.0,
+            3.5,
+            2.0
+          ]
+        }
+      },
+      "PHYS": {
+        "name": "Physics",
+        "headcount": {
+          "source": "factbook_college",
+          "irp_major_name": null,
+          "college": "College of Sciences",
+          "share": 0.08,
+          "value": null,
+          "notes": "Fact Book Fall 2025 College of Sciences undergraduate total x assumed Physics share."
+        },
+        "college": "College of Sciences (S)",
+        "year_distribution": "engineering_average",
+        "tracks": {
+          "calculus": 1.0,
+          "physics": 1.5,
+          "chemistry_sci": 0.5,
+          "gen_ed": 1.0
+        },
+        "courses": {
+          "CS 1301": [
+            1.5,
+            0.5,
+            0.2,
+            0.0,
+            0.0
+          ],
+          "PHYS 3201": [
+            0.0,
+            1.0,
+            4.0,
+            2.0,
+            1.0
+          ],
+          "MATH 2106": [
+            0.0,
+            0.5,
+            0.5,
+            0.3,
+            0.2
+          ],
+          "MATH 3215": [
+            0.0,
+            0.3,
+            0.5,
+            0.3,
+            0.2
+          ]
+        }
+      }
+    },
+    "course_load_distribution": {
+      "3": 0.12,
+      "4": 0.4,
+      "5": 0.38,
+      "6": 0.1
+    },
+    "tracks": {
+      "calculus": {
+        "MATH 1551": [
+          6.0,
+          0.6,
+          0.1,
+          0.0,
+          0.0
+        ],
+        "MATH 1552": [
+          7.0,
+          2.5,
+          0.4,
+          0.1,
+          0.1
+        ],
+        "MATH 1553": [
+          2.5,
+          1.0,
+          0.3,
+          0.1,
+          0.1
+        ],
+        "MATH 1554": [
+          5.0,
+          3.0,
+          0.6,
+          0.2,
+          0.1
+        ],
+        "MATH 2551": [
+          3.0,
+          6.0,
+          1.2,
+          0.3,
+          0.2
+        ],
+        "MATH 2552": [
+          0.8,
+          5.0,
+          2.0,
+          0.5,
+          0.3
+        ]
+      },
+      "physics": {
+        "PHYS 2211": [
+          5.0,
+          3.0,
+          0.8,
+          0.2,
+          0.1
+        ],
+        "PHYS 2212": [
+          2.0,
+          5.0,
+          1.2,
+          0.3,
+          0.2
+        ]
+      },
+      "chemistry_engr": {
+        "CHEM 1310": [
+          4.0,
+          1.2,
+          0.3,
+          0.1,
+          0.1
+        ]
+      },
+      "chemistry_sci": {
+        "CHEM 1211K": [
+          4.0,
+          1.2,
+          0.3,
+          0.1,
+          0.1
+        ]
+      },
+      "computing_engr": {
+        "CS 1371": [
+          5.0,
+          2.0,
+          0.5,
+          0.2,
+          0.1
+        ]
+      },
+      "engr_mechanics": {
+        "COE 2001": [
+          1.0,
+          5.0,
+          1.2,
+          0.3,
+          0.2
+        ],
+        "COE 3001": [
+          0.0,
+          3.0,
+          4.0,
+          0.6,
+          0.3
+        ]
+      },
+      "gen_ed": {
+        "ECON 2105": [
+          0.6,
+          0.6,
+          0.5,
+          0.4,
+          0.3
+        ],
+        "ECON 2106": [
+          0.7,
+          0.6,
+          0.5,
+          0.4,
+          0.3
+        ],
+        "PSYC 1101": [
+          0.6,
+          0.5,
+          0.4,
+          0.3,
+          0.3
+        ],
+        "HIST 2111": [
+          0.5,
+          0.4,
+          0.4,
+          0.4,
+          0.3
+        ],
+        "APPH 1040": [
+          3.0,
+          0.8,
+          0.3,
+          0.2,
+          0.2
+        ]
+      }
+    },
+    "level_suitability": {
+      "1": [
+        1.0,
+        0.8,
+        0.5,
+        0.4,
+        0.4
+      ],
+      "2": [
+        0.6,
+        1.0,
+        0.9,
+        0.6,
+        0.5
+      ],
+      "3": [
+        0.15,
+        0.6,
+        1.0,
+        0.9,
+        0.8
+      ],
+      "4": [
+        0.05,
+        0.25,
+        0.7,
+        1.0,
+        1.0
+      ]
+    },
+    "popularity_exponent": 0.5,
+    "prerequisite_same_term_factor": 0.05,
+    "exclusive_groups": [
+      [
+        "MATH 1553",
+        "MATH 1554"
+      ],
+      [
+        "CS 1301",
+        "CS 1371"
+      ],
+      [
+        "CHEM 1310",
+        "CHEM 1211K"
+      ],
+      [
+        "ISYE 3770",
+        "MATH 3670",
+        "MATH 3215",
+        "ECE 3077"
+      ]
+    ],
+    "pair_affinities": [
+      {
+        "a": "MATH 1552",
+        "b": "PHYS 2211",
+        "factor": 2.0,
+        "reason": "typical first-year STEM semester"
+      },
+      {
+        "a": "MATH 1551",
+        "b": "PHYS 2211",
+        "factor": 1.4,
+        "reason": "typical first-year STEM semester"
+      },
+      {
+        "a": "MATH 1554",
+        "b": "PHYS 2212",
+        "factor": 1.4,
+        "reason": "second-semester foundation pairing"
+      },
+      {
+        "a": "MATH 2551",
+        "b": "PHYS 2212",
+        "factor": 1.8,
+        "reason": "second-year foundation pairing"
+      },
+      {
+        "a": "MATH 1552",
+        "b": "CHEM 1310",
+        "factor": 1.5,
+        "reason": "first-year engineering semester"
+      },
+      {
+        "a": "MATH 1552",
+        "b": "CS 1371",
+        "factor": 1.4,
+        "reason": "first-year engineering semester"
+      },
+      {
+        "a": "MATH 1554",
+        "b": "CS 1331",
+        "factor": 1.4,
+        "reason": "first-year computing semester"
+      },
+      {
+        "a": "CS 1332",
+        "b": "CS 2050",
+        "factor": 2.0,
+        "reason": "CS second-year core taken together"
+      },
+      {
+        "a": "CS 2110",
+        "b": "CS 1332",
+        "factor": 1.5,
+        "reason": "CS second-year core taken together"
+      },
+      {
+        "a": "CS 2340",
+        "b": "CS 2200",
+        "factor": 1.5,
+        "reason": "CS junior core"
+      },
+      {
+        "a": "CS 3510",
+        "b": "CS 2200",
+        "factor": 1.3,
+        "reason": "CS junior core"
+      },
+      {
+        "a": "COE 2001",
+        "b": "MATH 2551",
+        "factor": 1.5,
+        "reason": "second-year engineering semester"
+      },
+      {
+        "a": "COE 3001",
+        "b": "ME 2202",
+        "factor": 1.8,
+        "reason": "ME/AE mechanics sequence"
+      },
+      {
+        "a": "ME 3340",
+        "b": "ME 3017",
+        "factor": 1.6,
+        "reason": "ME junior core"
+      },
+      {
+        "a": "ME 3322",
+        "b": "ME 2202",
+        "factor": 1.3,
+        "reason": "ME second/third-year core"
+      },
+      {
+        "a": "ECE 2020",
+        "b": "ECE 2040",
+        "factor": 1.5,
+        "reason": "ECE second-year core"
+      },
+      {
+        "a": "ECE 2035",
+        "b": "ECE 2040",
+        "factor": 1.3,
+        "reason": "ECE second-year core"
+      },
+      {
+        "a": "ISYE 3133",
+        "b": "ISYE 3232",
+        "factor": 1.6,
+        "reason": "IE junior core"
+      },
+      {
+        "a": "ISYE 2027",
+        "b": "MATH 2551",
+        "factor": 1.3,
+        "reason": "IE second-year semester"
+      },
+      {
+        "a": "AE 2010",
+        "b": "AE 2220",
+        "factor": 1.8,
+        "reason": "AE second-year core"
+      },
+      {
+        "a": "AE 3030",
+        "b": "AE 3140",
+        "factor": 1.6,
+        "reason": "AE junior core"
+      },
+      {
+        "a": "APPH 1040",
+        "b": "MATH 1552",
+        "factor": 1.3,
+        "reason": "first-year requirement"
+      },
+      {
+        "a": "ME 1670",
+        "b": "CHEM 1310",
+        "factor": 1.3,
+        "reason": "first-year ME/AE semester"
+      }
+    ],
+    "capacity_slack": 0.15,
+    "max_replacement_attempts": 25,
+    "min_courses_per_student": 3,
+    "max_course_share_warning": 0.45,
+    "max_identical_schedule_share": 0.05
+  }
+}
