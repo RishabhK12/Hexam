@@ -1,0 +1,568 @@
+[
+  {
+    "section_id": "CS-1331-A",
+    "course_id": "CS-1331",
+    "section_code": "A",
+    "crn": "81234",
+    "section_type": "lecture",
+    "instructors": [
+      "Synthetic Instructor 01"
+    ],
+    "enrollment": 282,
+    "capacity": 300,
+    "meeting_times": [
+      {
+        "days": [
+          "M",
+          "W",
+          "F"
+        ],
+        "start_time": "09:30:00",
+        "end_time": "10:20:00",
+        "location": null
+      }
+    ],
+    "exam_group_id": "EG-MWF-0930",
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": "Course is real; CRN, instructor, meeting time and enrollment are synthetic placeholders.",
+      "field_sources": {}
+    }
+  },
+  {
+    "section_id": "CS-1331-B",
+    "course_id": "CS-1331",
+    "section_code": "B",
+    "crn": "81235",
+    "section_type": "lecture",
+    "instructors": [
+      "Synthetic Instructor 02"
+    ],
+    "enrollment": 251,
+    "capacity": 260,
+    "meeting_times": [
+      {
+        "days": [
+          "T",
+          "R"
+        ],
+        "start_time": "12:30:00",
+        "end_time": "13:45:00",
+        "location": null
+      }
+    ],
+    "exam_group_id": "EG-TR-1230",
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": "Course is real; CRN, instructor, meeting time and enrollment are synthetic placeholders.",
+      "field_sources": {}
+    }
+  },
+  {
+    "section_id": "CS-1332-A",
+    "course_id": "CS-1332",
+    "section_code": "A",
+    "crn": "81240",
+    "section_type": "lecture",
+    "instructors": [
+      "Synthetic Instructor 03"
+    ],
+    "enrollment": 238,
+    "capacity": 250,
+    "meeting_times": [
+      {
+        "days": [
+          "T",
+          "R"
+        ],
+        "start_time": "09:30:00",
+        "end_time": "10:45:00",
+        "location": null
+      }
+    ],
+    "exam_group_id": "EG-TR-0930",
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": "Course is real; CRN, instructor, meeting time and enrollment are synthetic placeholders.",
+      "field_sources": {}
+    }
+  },
+  {
+    "section_id": "CS-1332-B",
+    "course_id": "CS-1332",
+    "section_code": "B",
+    "crn": "81241",
+    "section_type": "lecture",
+    "instructors": [
+      "Synthetic Instructor 04"
+    ],
+    "enrollment": 204,
+    "capacity": 220,
+    "meeting_times": [
+      {
+        "days": [
+          "T",
+          "R"
+        ],
+        "start_time": "14:00:00",
+        "end_time": "15:15:00",
+        "location": null
+      }
+    ],
+    "exam_group_id": "EG-TR-1400",
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": "Course is real; CRN, instructor, meeting time and enrollment are synthetic placeholders.",
+      "field_sources": {}
+    }
+  },
+  {
+    "section_id": "CS-2110-A",
+    "course_id": "CS-2110",
+    "section_code": "A",
+    "crn": "81250",
+    "section_type": "lecture",
+    "instructors": [
+      "Synthetic Instructor 05"
+    ],
+    "enrollment": 219,
+    "capacity": 230,
+    "meeting_times": [
+      {
+        "days": [
+          "M",
+          "W",
+          "F"
+        ],
+        "start_time": "14:00:00",
+        "end_time": "14:50:00",
+        "location": null
+      }
+    ],
+    "exam_group_id": "EG-MWF-1400",
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": "Course is real; CRN, instructor, meeting time and enrollment are synthetic placeholders.",
+      "field_sources": {}
+    }
+  },
+  {
+    "section_id": "MATH-1552-A",
+    "course_id": "MATH-1552",
+    "section_code": "A",
+    "crn": "82101",
+    "section_type": "lecture",
+    "instructors": [
+      "Synthetic Instructor 06"
+    ],
+    "enrollment": 148,
+    "capacity": 150,
+    "meeting_times": [
+      {
+        "days": [
+          "M",
+          "W",
+          "F"
+        ],
+        "start_time": "08:25:00",
+        "end_time": "09:15:00",
+        "location": null
+      }
+    ],
+    "exam_group_id": "EG-MWF-0825",
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": "Course is real; CRN, instructor, meeting time and enrollment are synthetic placeholders.",
+      "field_sources": {}
+    }
+  },
+  {
+    "section_id": "MATH-1554-A",
+    "course_id": "MATH-1554",
+    "section_code": "A",
+    "crn": "82110",
+    "section_type": "lecture",
+    "instructors": [
+      "Synthetic Instructor 07"
+    ],
+    "enrollment": 175,
+    "capacity": 180,
+    "meeting_times": [
+      {
+        "days": [
+          "M",
+          "W",
+          "F"
+        ],
+        "start_time": "11:00:00",
+        "end_time": "11:50:00",
+        "location": null
+      }
+    ],
+    "exam_group_id": "EG-COMMON-MATH-1554",
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": "Course is real; CRN, instructor, meeting time and enrollment are synthetic placeholders.",
+      "field_sources": {}
+    }
+  },
+  {
+    "section_id": "MATH-1554-B",
+    "course_id": "MATH-1554",
+    "section_code": "B",
+    "crn": "82111",
+    "section_type": "lecture",
+    "instructors": [
+      "Synthetic Instructor 08"
+    ],
+    "enrollment": 170,
+    "capacity": 180,
+    "meeting_times": [
+      {
+        "days": [
+          "T",
+          "R"
+        ],
+        "start_time": "08:00:00",
+        "end_time": "09:15:00",
+        "location": null
+      }
+    ],
+    "exam_group_id": "EG-COMMON-MATH-1554",
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": "Course is real; CRN, instructor, meeting time and enrollment are synthetic placeholders.",
+      "field_sources": {}
+    }
+  },
+  {
+    "section_id": "MATH-1554-C",
+    "course_id": "MATH-1554",
+    "section_code": "C",
+    "crn": "82112",
+    "section_type": "lecture",
+    "instructors": [
+      "Synthetic Instructor 09"
+    ],
+    "enrollment": 166,
+    "capacity": 180,
+    "meeting_times": [
+      {
+        "days": [
+          "T",
+          "R"
+        ],
+        "start_time": "11:00:00",
+        "end_time": "12:15:00",
+        "location": null
+      }
+    ],
+    "exam_group_id": "EG-COMMON-MATH-1554",
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": "Course is real; CRN, instructor, meeting time and enrollment are synthetic placeholders.",
+      "field_sources": {}
+    }
+  },
+  {
+    "section_id": "MATH-2551-A",
+    "course_id": "MATH-2551",
+    "section_code": "A",
+    "crn": "82120",
+    "section_type": "lecture",
+    "instructors": [
+      "Synthetic Instructor 10"
+    ],
+    "enrollment": 158,
+    "capacity": 160,
+    "meeting_times": [
+      {
+        "days": [
+          "M",
+          "W",
+          "F"
+        ],
+        "start_time": "12:30:00",
+        "end_time": "13:20:00",
+        "location": null
+      }
+    ],
+    "exam_group_id": "EG-COMMON-MATH-2551",
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": "Course is real; CRN, instructor, meeting time and enrollment are synthetic placeholders.",
+      "field_sources": {}
+    }
+  },
+  {
+    "section_id": "MATH-2551-B",
+    "course_id": "MATH-2551",
+    "section_code": "B",
+    "crn": "82121",
+    "section_type": "lecture",
+    "instructors": [
+      "Synthetic Instructor 11"
+    ],
+    "enrollment": 149,
+    "capacity": 160,
+    "meeting_times": [
+      {
+        "days": [
+          "T",
+          "R"
+        ],
+        "start_time": "15:30:00",
+        "end_time": "16:45:00",
+        "location": null
+      }
+    ],
+    "exam_group_id": "EG-COMMON-MATH-2551",
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": "Course is real; CRN, instructor, meeting time and enrollment are synthetic placeholders.",
+      "field_sources": {}
+    }
+  },
+  {
+    "section_id": "PHYS-2211-A",
+    "course_id": "PHYS-2211",
+    "section_code": "A",
+    "crn": "83201",
+    "section_type": "lecture",
+    "instructors": [
+      "Synthetic Instructor 12"
+    ],
+    "enrollment": 190,
+    "capacity": 200,
+    "meeting_times": [
+      {
+        "days": [
+          "T",
+          "R"
+        ],
+        "start_time": "09:30:00",
+        "end_time": "10:45:00",
+        "location": null
+      }
+    ],
+    "exam_group_id": "EG-COMMON-PHYS-2211",
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": "Course is real; CRN, instructor, meeting time and enrollment are synthetic placeholders.",
+      "field_sources": {}
+    }
+  },
+  {
+    "section_id": "PHYS-2211-B",
+    "course_id": "PHYS-2211",
+    "section_code": "B",
+    "crn": "83202",
+    "section_type": "lecture",
+    "instructors": [
+      "Synthetic Instructor 13"
+    ],
+    "enrollment": 184,
+    "capacity": 200,
+    "meeting_times": [
+      {
+        "days": [
+          "M",
+          "W",
+          "F"
+        ],
+        "start_time": "12:30:00",
+        "end_time": "13:20:00",
+        "location": null
+      }
+    ],
+    "exam_group_id": "EG-COMMON-PHYS-2211",
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": "Course is real; CRN, instructor, meeting time and enrollment are synthetic placeholders.",
+      "field_sources": {}
+    }
+  },
+  {
+    "section_id": "CHEM-1310-A",
+    "course_id": "CHEM-1310",
+    "section_code": "A",
+    "crn": "83101",
+    "section_type": "lecture",
+    "instructors": [
+      "Synthetic Instructor 14"
+    ],
+    "enrollment": 210,
+    "capacity": 220,
+    "meeting_times": [
+      {
+        "days": [
+          "T",
+          "R"
+        ],
+        "start_time": "08:00:00",
+        "end_time": "09:15:00",
+        "location": null
+      }
+    ],
+    "exam_group_id": "EG-TR-0800",
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": "Course is real; CRN, instructor, meeting time and enrollment are synthetic placeholders.",
+      "field_sources": {}
+    }
+  },
+  {
+    "section_id": "ENGL-1102-A",
+    "course_id": "ENGL-1102",
+    "section_code": "A",
+    "crn": "84101",
+    "section_type": "lecture",
+    "instructors": [
+      "Synthetic Instructor 15"
+    ],
+    "enrollment": 24,
+    "capacity": 25,
+    "meeting_times": [
+      {
+        "days": [
+          "T",
+          "R"
+        ],
+        "start_time": "14:00:00",
+        "end_time": "15:15:00",
+        "location": null
+      }
+    ],
+    "exam_group_id": null,
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": "Course is real; CRN, instructor, meeting time and enrollment are synthetic placeholders.",
+      "field_sources": {}
+    }
+  },
+  {
+    "section_id": "ENGL-1102-B",
+    "course_id": "ENGL-1102",
+    "section_code": "B",
+    "crn": "84102",
+    "section_type": "lecture",
+    "instructors": [
+      "Synthetic Instructor 16"
+    ],
+    "enrollment": 25,
+    "capacity": 25,
+    "meeting_times": [
+      {
+        "days": [
+          "M",
+          "W",
+          "F"
+        ],
+        "start_time": "11:00:00",
+        "end_time": "11:50:00",
+        "location": null
+      }
+    ],
+    "exam_group_id": null,
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": "Course is real; CRN, instructor, meeting time and enrollment are synthetic placeholders.",
+      "field_sources": {}
+    }
+  },
+  {
+    "section_id": "ISYE-3770-A",
+    "course_id": "ISYE-3770",
+    "section_code": "A",
+    "crn": "85101",
+    "section_type": "lecture",
+    "instructors": [
+      "Synthetic Instructor 17"
+    ],
+    "enrollment": 120,
+    "capacity": 130,
+    "meeting_times": [
+      {
+        "days": [
+          "M",
+          "W",
+          "F"
+        ],
+        "start_time": "11:00:00",
+        "end_time": "11:50:00",
+        "location": null
+      }
+    ],
+    "exam_group_id": "EG-MWF-1100",
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": "Course is real; CRN, instructor, meeting time and enrollment are synthetic placeholders.",
+      "field_sources": {}
+    }
+  },
+  {
+    "section_id": "ECON-2100-A",
+    "course_id": "ECON-2100",
+    "section_code": "A",
+    "crn": "86101",
+    "section_type": "lecture",
+    "instructors": [
+      "Synthetic Instructor 18"
+    ],
+    "enrollment": 140,
+    "capacity": 150,
+    "meeting_times": [
+      {
+        "days": [
+          "T",
+          "R"
+        ],
+        "start_time": "11:00:00",
+        "end_time": "12:15:00",
+        "location": null
+      }
+    ],
+    "exam_group_id": "EG-TR-1100",
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": "Course is real; CRN, instructor, meeting time and enrollment are synthetic placeholders.",
+      "field_sources": {}
+    }
+  }
+]

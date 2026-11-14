@@ -1,0 +1,1072 @@
+[
+  {
+    "student_id": "S000001",
+    "major": "CS",
+    "year": "first_year",
+    "section_ids": [
+      "CS-1331-A",
+      "MATH-1552-A",
+      "ISYE-3770-A",
+      "CS-2110-A",
+      "MATH-2551-B"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000002",
+    "major": "ISYE",
+    "year": "second_year",
+    "section_ids": [
+      "MATH-1552-A",
+      "ISYE-3770-A",
+      "CS-2110-A",
+      "MATH-2551-A",
+      "CHEM-1310-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000003",
+    "major": "ECON",
+    "year": "second_year",
+    "section_ids": [
+      "ECON-2100-A",
+      "PHYS-2211-A",
+      "MATH-1554-A",
+      "ENGL-1102-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000004",
+    "major": "ME",
+    "year": "first_year",
+    "section_ids": [
+      "PHYS-2211-B",
+      "MATH-1554-B",
+      "ENGL-1102-B",
+      "CS-1331-B"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000005",
+    "major": "CS",
+    "year": "second_year",
+    "section_ids": [
+      "CS-1332-A",
+      "CS-2110-A",
+      "MATH-1554-C",
+      "ENGL-1102-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000006",
+    "major": "BMED",
+    "year": "first_year",
+    "section_ids": [
+      "CHEM-1310-A",
+      "MATH-1552-A",
+      "CS-1331-B",
+      "ENGL-1102-B"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000007",
+    "major": "CS",
+    "year": "third_year",
+    "section_ids": [
+      "CS-1332-B",
+      "ISYE-3770-A",
+      "MATH-2551-A",
+      "ECON-2100-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000008",
+    "major": "CHBE",
+    "year": "third_year",
+    "section_ids": [
+      "CS-1332-A",
+      "ENGL-1102-B",
+      "MATH-1554-C",
+      "MATH-2551-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000009",
+    "major": "ISYE",
+    "year": "first_year",
+    "section_ids": [
+      "CS-1331-A",
+      "CS-2110-A",
+      "MATH-1554-C"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000010",
+    "major": "ME",
+    "year": "second_year",
+    "section_ids": [
+      "CS-1332-B",
+      "CS-2110-A",
+      "MATH-1552-A",
+      "MATH-1554-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000011",
+    "major": "ECON",
+    "year": "fourth_year",
+    "section_ids": [
+      "CS-2110-A",
+      "ENGL-1102-A",
+      "ISYE-3770-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000012",
+    "major": "AE",
+    "year": "third_year",
+    "section_ids": [
+      "CHEM-1310-A",
+      "CS-1332-A",
+      "MATH-1554-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000013",
+    "major": "BMED",
+    "year": "second_year",
+    "section_ids": [
+      "CS-1332-A",
+      "ISYE-3770-A",
+      "MATH-2551-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000014",
+    "major": "BMED",
+    "year": "second_year",
+    "section_ids": [
+      "CS-1331-B",
+      "ENGL-1102-A",
+      "MATH-2551-A",
+      "PHYS-2211-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000015",
+    "major": "ISYE",
+    "year": "first_year",
+    "section_ids": [
+      "CHEM-1310-A",
+      "CS-1331-B",
+      "CS-2110-A",
+      "ENGL-1102-A",
+      "PHYS-2211-B"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000016",
+    "major": "ECON",
+    "year": "first_year",
+    "section_ids": [
+      "CS-1331-B",
+      "CS-2110-A",
+      "MATH-1554-C",
+      "MATH-2551-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000017",
+    "major": "ISYE",
+    "year": "second_year",
+    "section_ids": [
+      "CS-1331-A",
+      "CS-2110-A",
+      "ENGL-1102-A",
+      "MATH-1554-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000018",
+    "major": "CS",
+    "year": "fourth_year",
+    "section_ids": [
+      "ECON-2100-A",
+      "ENGL-1102-A",
+      "MATH-1554-B",
+      "MATH-2551-A",
+      "PHYS-2211-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000019",
+    "major": "AE",
+    "year": "second_year",
+    "section_ids": [
+      "CHEM-1310-A",
+      "ISYE-3770-A",
+      "PHYS-2211-B"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000020",
+    "major": "ECON",
+    "year": "first_year",
+    "section_ids": [
+      "ECON-2100-A",
+      "ENGL-1102-A",
+      "MATH-1552-A",
+      "MATH-1554-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000021",
+    "major": "ECON",
+    "year": "second_year",
+    "section_ids": [
+      "CHEM-1310-A",
+      "CS-1332-A",
+      "ISYE-3770-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000022",
+    "major": "ME",
+    "year": "first_year",
+    "section_ids": [
+      "MATH-1554-C",
+      "MATH-2551-B",
+      "PHYS-2211-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000023",
+    "major": "ISYE",
+    "year": "first_year",
+    "section_ids": [
+      "CHEM-1310-A",
+      "CS-1332-A",
+      "ECON-2100-A",
+      "ISYE-3770-A",
+      "MATH-2551-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000024",
+    "major": "ECON",
+    "year": "first_year",
+    "section_ids": [
+      "CS-1331-B",
+      "CS-2110-A",
+      "ISYE-3770-A",
+      "MATH-2551-B",
+      "PHYS-2211-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000025",
+    "major": "ISYE",
+    "year": "second_year",
+    "section_ids": [
+      "CS-2110-A",
+      "ISYE-3770-A",
+      "MATH-2551-A",
+      "PHYS-2211-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000026",
+    "major": "ECON",
+    "year": "fourth_year",
+    "section_ids": [
+      "ECON-2100-A",
+      "ENGL-1102-A",
+      "ISYE-3770-A",
+      "MATH-2551-B",
+      "PHYS-2211-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000027",
+    "major": "CHBE",
+    "year": "first_year",
+    "section_ids": [
+      "CS-1332-A",
+      "ENGL-1102-B",
+      "MATH-1554-C",
+      "MATH-2551-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000028",
+    "major": "ISYE",
+    "year": "second_year",
+    "section_ids": [
+      "CS-1331-A",
+      "ENGL-1102-B",
+      "MATH-2551-B"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000029",
+    "major": "BMED",
+    "year": "fourth_year",
+    "section_ids": [
+      "CHEM-1310-A",
+      "CS-1331-B",
+      "CS-1332-B",
+      "ISYE-3770-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000030",
+    "major": "ISYE",
+    "year": "second_year",
+    "section_ids": [
+      "CHEM-1310-A",
+      "ENGL-1102-A",
+      "ISYE-3770-A",
+      "MATH-1554-C"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000031",
+    "major": "ME",
+    "year": "second_year",
+    "section_ids": [
+      "CS-2110-A",
+      "ECON-2100-A",
+      "ISYE-3770-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000032",
+    "major": "ISYE",
+    "year": "third_year",
+    "section_ids": [
+      "CS-1331-B",
+      "CS-2110-A",
+      "MATH-1554-B"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000033",
+    "major": "BMED",
+    "year": "third_year",
+    "section_ids": [
+      "CS-1332-A",
+      "ENGL-1102-B",
+      "MATH-1552-A",
+      "MATH-1554-C",
+      "PHYS-2211-B"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000034",
+    "major": "AE",
+    "year": "second_year",
+    "section_ids": [
+      "CS-1331-B",
+      "CS-1332-A",
+      "MATH-1554-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000035",
+    "major": "BMED",
+    "year": "second_year",
+    "section_ids": [
+      "CHEM-1310-A",
+      "CS-1332-A",
+      "MATH-2551-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000036",
+    "major": "BMED",
+    "year": "fourth_year",
+    "section_ids": [
+      "ECON-2100-A",
+      "ENGL-1102-A",
+      "MATH-2551-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000037",
+    "major": "CHBE",
+    "year": "second_year",
+    "section_ids": [
+      "CHEM-1310-A",
+      "CS-1331-B",
+      "CS-1332-A",
+      "MATH-1554-A",
+      "MATH-2551-B"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000038",
+    "major": "CHBE",
+    "year": "second_year",
+    "section_ids": [
+      "CHEM-1310-A",
+      "CS-2110-A",
+      "ISYE-3770-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000039",
+    "major": "BMED",
+    "year": "second_year",
+    "section_ids": [
+      "CS-2110-A",
+      "ENGL-1102-B",
+      "MATH-1554-C",
+      "PHYS-2211-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000040",
+    "major": "AE",
+    "year": "third_year",
+    "section_ids": [
+      "MATH-1552-A",
+      "MATH-1554-A",
+      "MATH-2551-B",
+      "PHYS-2211-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000041",
+    "major": "BMED",
+    "year": "second_year",
+    "section_ids": [
+      "CS-1331-A",
+      "CS-2110-A",
+      "ECON-2100-A",
+      "MATH-1554-B"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000042",
+    "major": "CS",
+    "year": "third_year",
+    "section_ids": [
+      "ENGL-1102-A",
+      "MATH-2551-A",
+      "PHYS-2211-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000043",
+    "major": "CHBE",
+    "year": "third_year",
+    "section_ids": [
+      "ISYE-3770-A",
+      "MATH-1554-C",
+      "MATH-2551-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000044",
+    "major": "ME",
+    "year": "fourth_year",
+    "section_ids": [
+      "CS-1332-B",
+      "ECON-2100-A",
+      "PHYS-2211-B"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000045",
+    "major": "ME",
+    "year": "first_year",
+    "section_ids": [
+      "CS-2110-A",
+      "MATH-1554-B",
+      "MATH-2551-B",
+      "PHYS-2211-B"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000046",
+    "major": "ECON",
+    "year": "fourth_year",
+    "section_ids": [
+      "ENGL-1102-B",
+      "MATH-2551-A",
+      "PHYS-2211-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000047",
+    "major": "ME",
+    "year": "second_year",
+    "section_ids": [
+      "CHEM-1310-A",
+      "CS-2110-A",
+      "ECON-2100-A",
+      "MATH-1554-A",
+      "MATH-2551-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000048",
+    "major": "AE",
+    "year": "third_year",
+    "section_ids": [
+      "CS-1331-B",
+      "MATH-2551-B",
+      "PHYS-2211-B"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000049",
+    "major": "BMED",
+    "year": "third_year",
+    "section_ids": [
+      "CS-1332-A",
+      "MATH-1554-C",
+      "MATH-2551-B"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000050",
+    "major": "ISYE",
+    "year": "fourth_year",
+    "section_ids": [
+      "CHEM-1310-A",
+      "CS-1332-A",
+      "ENGL-1102-A",
+      "ISYE-3770-A",
+      "MATH-2551-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000051",
+    "major": "ECON",
+    "year": "fourth_year",
+    "section_ids": [
+      "CS-2110-A",
+      "ECON-2100-A",
+      "MATH-1554-B",
+      "MATH-2551-B"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000052",
+    "major": "CHBE",
+    "year": "third_year",
+    "section_ids": [
+      "CS-1331-A",
+      "ENGL-1102-B",
+      "MATH-2551-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000053",
+    "major": "ME",
+    "year": "third_year",
+    "section_ids": [
+      "CHEM-1310-A",
+      "CS-1331-A",
+      "CS-1332-A",
+      "PHYS-2211-B"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000054",
+    "major": "CS",
+    "year": "first_year",
+    "section_ids": [
+      "CS-1331-A",
+      "ENGL-1102-A",
+      "MATH-1554-B",
+      "MATH-2551-B"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000055",
+    "major": "ME",
+    "year": "first_year",
+    "section_ids": [
+      "CS-1331-A",
+      "ENGL-1102-B",
+      "MATH-1554-B",
+      "MATH-2551-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000056",
+    "major": "ME",
+    "year": "third_year",
+    "section_ids": [
+      "CHEM-1310-A",
+      "ECON-2100-A",
+      "MATH-2551-A"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000057",
+    "major": "CS",
+    "year": "second_year",
+    "section_ids": [
+      "CS-1331-A",
+      "CS-1332-A",
+      "MATH-1554-C"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000058",
+    "major": "AE",
+    "year": "fourth_year",
+    "section_ids": [
+      "CHEM-1310-A",
+      "ISYE-3770-A",
+      "MATH-1552-A",
+      "PHYS-2211-B"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000059",
+    "major": "AE",
+    "year": "first_year",
+    "section_ids": [
+      "CS-1331-A",
+      "CS-1332-B",
+      "CS-2110-A",
+      "ECON-2100-A",
+      "MATH-2551-B"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  },
+  {
+    "student_id": "S000060",
+    "major": "CS",
+    "year": "second_year",
+    "section_ids": [
+      "CHEM-1310-A",
+      "CS-1332-A",
+      "CS-2110-A",
+      "ISYE-3770-A",
+      "MATH-2551-B"
+    ],
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": null,
+      "field_sources": {}
+    }
+  }
+]
