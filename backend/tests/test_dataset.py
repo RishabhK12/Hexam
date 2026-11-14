@@ -266,6 +266,6 @@ class TestConfigValidation:
 
 
 def test_weights_default_ordering():
-    """Sanity: conflicts dominate, then multi-exam days, then adjacency."""
+    """Hexam priority order: conflicts ≫ 3-in-a-day > back-to-back > 24/48 h clustering > late→early."""
     w = PenaltyWeights()
-    assert w.simultaneous_conflicts > w.three_in_one_day > w.four_in_48h > w.three_in_24h > w.back_to_back
+    assert w.simultaneous_conflicts > w.three_in_one_day > w.back_to_back > w.three_in_24h > w.four_in_48h > w.night_to_morning

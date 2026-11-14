@@ -6,11 +6,14 @@ requires-python = ">=3.11"
 dependencies = [
     "pydantic>=2.10",
     "tzdata>=2024.1", # IANA zones for zoneinfo on Windows
+    "ortools>=9.12", # CP-SAT solver
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
 ]
 
 [project.optional-dependencies]
 data = ["pypdf>=5"] # final exam matrix / IRP Fact Book PDF parsing (hexam.data_generation)
-dev = ["pytest>=8", "pypdf>=5"]
+dev = ["pytest>=8", "pypdf>=5", "httpx>=0.27"]
 
 [build-system]
 requires = ["setuptools>=68"]

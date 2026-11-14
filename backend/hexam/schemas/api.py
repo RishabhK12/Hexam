@@ -11,7 +11,8 @@ from typing import Self
 
 from pydantic import Field, model_validator
 
-from .base import ConfigId, DataSource, HexamModel, ScheduleId
+from .base import ConfigId, DataSource, EntityId, HexamModel, ScheduleId
+from .metrics import EvaluationSettings
 from .dataset import Dataset
 from .optimization import OptimizationConfig, OptimizationResult, PenaltyWeights
 from .schedules import ExamAssignment, ExamSchedule
@@ -75,6 +76,9 @@ class EvaluateScheduleRequest(HexamModel):
     schedule_id: ScheduleId | None = None
     assignments: list[ExamAssignment] | None = None
     weights: PenaltyWeights | None = None
+    dataset_id: EntityId = "fall2026"
+    settings: EvaluationSettings | None = None
+    include_students: bool = Field(default=False, description="Return every student's breakdown.")
 
     @model_validator(mode="after")
     def _exactly_one(self) -> Self:

@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens (RGB triplets so Tailwind can apply alpha). Georgia Tech navy + gold accents.
+   Chart series colors were validated for CVD separation and contrast in both modes. */
+:root {
+  color-scheme: light;
+  --bg: 245 246 248;
+  --surface: 255 255 255;
+  --raised: 249 250 251;
+  --line: 226 229 235;
+  --ink: 17 24 39;
+  --muted: 75 85 99;
+  --faint: 140 148 160;
+  --navy: 0 48 87;
+  --gold: 179 163 105;
+  --series-base: 184 137 42; /* #b8892a baseline */
+  --series-opt: 42 95 168; /* #2a5fa8 optimized */
+  --good: 21 128 61;
+  --bad: 185 28 28;
+  --warn: 180 83 9;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: 13 17 23;
+    --surface: 22 27 34;
+    --raised: 28 34 43;
+    --line: 48 54 61;
+    --ink: 230 237 243;
+    --muted: 168 177 189;
+    --faint: 118 128 140;
+    --navy: 120 160 220;
+    --gold: 200 182 118;
+    --series-base: 179 138 40; /* #b38a28 */
+    --series-opt: 91 143 220; /* #5b8fdc */
+    --good: 74 190 120;
+    --bad: 240 110 110;
+    --warn: 230 160 70;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: 13 17 23;
+  --surface: 22 27 34;
+  --raised: 28 34 43;
+  --line: 48 54 61;
+  --ink: 230 237 243;
+  --muted: 168 177 189;
+  --faint: 118 128 140;
+  --navy: 120 160 220;
+  --gold: 200 182 118;
+  --series-base: 179 138 40;
+  --series-opt: 91 143 220;
+  --good: 74 190 120;
+  --bad: 240 110 110;
+  --warn: 230 160 70;
+}
+
+html,
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--ink));
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border border-line bg-surface shadow-card;
+  }
+  .card-pad {
+    @apply p-5;
+  }
+  .h-section {
+    @apply text-[15px] font-semibold tracking-tight text-ink;
+  }
+  .sub {
+    @apply text-[13px] text-muted;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-3.5 py-2 text-sm font-medium transition
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-after/50 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-navy text-white hover:bg-navy/90 dark:text-bg;
+  }
+  .btn-ghost {
+    @apply btn border border-line bg-surface text-ink hover:bg-raised;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium leading-4;
+  }
+  .input {
+    @apply w-full rounded-lg border border-line bg-surface px-3 py-2 text-sm text-ink placeholder:text-faint
+      focus:border-after focus:outline-none focus:ring-2 focus:ring-after/20;
+  }
+  .label {
+    @apply text-xs font-medium uppercase tracking-wide text-faint;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+input[type="range"] {
+  accent-color: rgb(var(--navy));
+}
