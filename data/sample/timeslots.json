@@ -1,0 +1,287 @@
+[
+  {
+    "timeslot_id": "TS-20261207-0800",
+    "start": "2026-12-07T08:00:00-05:00",
+    "end": "2026-12-07T10:50:00-05:00",
+    "label": "Mon Dec 7, 8:00 AM–10:50 AM",
+    "max_students": 6000,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "GT-style 2h50m exam periods; Fall 2026 dates assumed. Replace with the registrar's published schedule.",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261207-1120",
+    "start": "2026-12-07T11:20:00-05:00",
+    "end": "2026-12-07T14:10:00-05:00",
+    "label": "Mon Dec 7, 11:20 AM–2:10 PM",
+    "max_students": 6000,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "GT-style 2h50m exam periods; Fall 2026 dates assumed. Replace with the registrar's published schedule.",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261207-1440",
+    "start": "2026-12-07T14:40:00-05:00",
+    "end": "2026-12-07T17:30:00-05:00",
+    "label": "Mon Dec 7, 2:40 PM–5:30 PM",
+    "max_students": 6000,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "GT-style 2h50m exam periods; Fall 2026 dates assumed. Replace with the registrar's published schedule.",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261207-1800",
+    "start": "2026-12-07T18:00:00-05:00",
+    "end": "2026-12-07T20:50:00-05:00",
+    "label": "Mon Dec 7, 6:00 PM–8:50 PM",
+    "max_students": 6000,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "GT-style 2h50m exam periods; Fall 2026 dates assumed. Replace with the registrar's published schedule.",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261208-0800",
+    "start": "2026-12-08T08:00:00-05:00",
+    "end": "2026-12-08T10:50:00-05:00",
+    "label": "Tue Dec 8, 8:00 AM–10:50 AM",
+    "max_students": 6000,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "GT-style 2h50m exam periods; Fall 2026 dates assumed. Replace with the registrar's published schedule.",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261208-1120",
+    "start": "2026-12-08T11:20:00-05:00",
+    "end": "2026-12-08T14:10:00-05:00",
+    "label": "Tue Dec 8, 11:20 AM–2:10 PM",
+    "max_students": 6000,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "GT-style 2h50m exam periods; Fall 2026 dates assumed. Replace with the registrar's published schedule.",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261208-1440",
+    "start": "2026-12-08T14:40:00-05:00",
+    "end": "2026-12-08T17:30:00-05:00",
+    "label": "Tue Dec 8, 2:40 PM–5:30 PM",
+    "max_students": 6000,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "GT-style 2h50m exam periods; Fall 2026 dates assumed. Replace with the registrar's published schedule.",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261208-1800",
+    "start": "2026-12-08T18:00:00-05:00",
+    "end": "2026-12-08T20:50:00-05:00",
+    "label": "Tue Dec 8, 6:00 PM–8:50 PM",
+    "max_students": 6000,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "GT-style 2h50m exam periods; Fall 2026 dates assumed. Replace with the registrar's published schedule.",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261209-0800",
+    "start": "2026-12-09T08:00:00-05:00",
+    "end": "2026-12-09T10:50:00-05:00",
+    "label": "Wed Dec 9, 8:00 AM–10:50 AM",
+    "max_students": 6000,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "GT-style 2h50m exam periods; Fall 2026 dates assumed. Replace with the registrar's published schedule.",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261209-1120",
+    "start": "2026-12-09T11:20:00-05:00",
+    "end": "2026-12-09T14:10:00-05:00",
+    "label": "Wed Dec 9, 11:20 AM–2:10 PM",
+    "max_students": 6000,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "GT-style 2h50m exam periods; Fall 2026 dates assumed. Replace with the registrar's published schedule.",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261209-1440",
+    "start": "2026-12-09T14:40:00-05:00",
+    "end": "2026-12-09T17:30:00-05:00",
+    "label": "Wed Dec 9, 2:40 PM–5:30 PM",
+    "max_students": 6000,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "GT-style 2h50m exam periods; Fall 2026 dates assumed. Replace with the registrar's published schedule.",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261209-1800",
+    "start": "2026-12-09T18:00:00-05:00",
+    "end": "2026-12-09T20:50:00-05:00",
+    "label": "Wed Dec 9, 6:00 PM–8:50 PM",
+    "max_students": 6000,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "GT-style 2h50m exam periods; Fall 2026 dates assumed. Replace with the registrar's published schedule.",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261210-0800",
+    "start": "2026-12-10T08:00:00-05:00",
+    "end": "2026-12-10T10:50:00-05:00",
+    "label": "Thu Dec 10, 8:00 AM–10:50 AM",
+    "max_students": 6000,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "GT-style 2h50m exam periods; Fall 2026 dates assumed. Replace with the registrar's published schedule.",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261210-1120",
+    "start": "2026-12-10T11:20:00-05:00",
+    "end": "2026-12-10T14:10:00-05:00",
+    "label": "Thu Dec 10, 11:20 AM–2:10 PM",
+    "max_students": 6000,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "GT-style 2h50m exam periods; Fall 2026 dates assumed. Replace with the registrar's published schedule.",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261210-1440",
+    "start": "2026-12-10T14:40:00-05:00",
+    "end": "2026-12-10T17:30:00-05:00",
+    "label": "Thu Dec 10, 2:40 PM–5:30 PM",
+    "max_students": 6000,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "GT-style 2h50m exam periods; Fall 2026 dates assumed. Replace with the registrar's published schedule.",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261210-1800",
+    "start": "2026-12-10T18:00:00-05:00",
+    "end": "2026-12-10T20:50:00-05:00",
+    "label": "Thu Dec 10, 6:00 PM–8:50 PM",
+    "max_students": 6000,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "GT-style 2h50m exam periods; Fall 2026 dates assumed. Replace with the registrar's published schedule.",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261211-0800",
+    "start": "2026-12-11T08:00:00-05:00",
+    "end": "2026-12-11T10:50:00-05:00",
+    "label": "Fri Dec 11, 8:00 AM–10:50 AM",
+    "max_students": 6000,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "GT-style 2h50m exam periods; Fall 2026 dates assumed. Replace with the registrar's published schedule.",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261211-1120",
+    "start": "2026-12-11T11:20:00-05:00",
+    "end": "2026-12-11T14:10:00-05:00",
+    "label": "Fri Dec 11, 11:20 AM–2:10 PM",
+    "max_students": 6000,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "GT-style 2h50m exam periods; Fall 2026 dates assumed. Replace with the registrar's published schedule.",
+      "field_sources": {}
+    }
+  },
+  {
+    "timeslot_id": "TS-20261211-1440",
+    "start": "2026-12-11T14:40:00-05:00",
+    "end": "2026-12-11T17:30:00-05:00",
+    "label": "Fri Dec 11, 2:40 PM–5:30 PM",
+    "max_students": 6000,
+    "max_exam_groups": null,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "GT-style 2h50m exam periods; Fall 2026 dates assumed. Replace with the registrar's published schedule.",
+      "field_sources": {}
+    }
+  }
+]

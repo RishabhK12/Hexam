@@ -1,0 +1,216 @@
+[
+  {
+    "exam_group_id": "EG-MWF-0825",
+    "name": "MWF 08:25 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MWF 08:25",
+    "description": null,
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "Meeting-time block modeled on GT's final exam matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MWF-0930",
+    "name": "MWF 09:30 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MWF 09:30",
+    "description": null,
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "Meeting-time block modeled on GT's final exam matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MWF-1100",
+    "name": "MWF 11:00 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MWF 11:00",
+    "description": null,
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "Meeting-time block modeled on GT's final exam matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MWF-1400",
+    "name": "MWF 14:00 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MWF 14:00",
+    "description": null,
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "Meeting-time block modeled on GT's final exam matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TR-0800",
+    "name": "TR 08:00 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TR 08:00",
+    "description": null,
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "Meeting-time block modeled on GT's final exam matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TR-0930",
+    "name": "TR 09:30 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TR 09:30",
+    "description": null,
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "Meeting-time block modeled on GT's final exam matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TR-1100",
+    "name": "TR 11:00 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TR 11:00",
+    "description": null,
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "Meeting-time block modeled on GT's final exam matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TR-1230",
+    "name": "TR 12:30 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TR 12:30",
+    "description": null,
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "Meeting-time block modeled on GT's final exam matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TR-1400",
+    "name": "TR 14:00 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TR 14:00",
+    "description": null,
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "Meeting-time block modeled on GT's final exam matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-COMMON-MATH-1554",
+    "name": "MATH 1554 common exam",
+    "kind": "common",
+    "meeting_pattern": null,
+    "description": "All MATH 1554 sections sit one exam.",
+    "fixed_timeslot_id": "TS-20261208-1800",
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "Assumed registrar-fixed evening common exam.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-COMMON-MATH-2551",
+    "name": "MATH 2551 common exam",
+    "kind": "common",
+    "meeting_pattern": null,
+    "description": null,
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": [
+      "TS-20261207-1800",
+      "TS-20261208-1800",
+      "TS-20261209-1800",
+      "TS-20261210-1800"
+    ],
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "Assumed restriction: common exams run in evening slots.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-COMMON-PHYS-2211",
+    "name": "PHYS 2211 common exam",
+    "kind": "common",
+    "meeting_pattern": null,
+    "description": null,
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [
+      "TS-20261207-1800",
+      "TS-20261208-1800",
+      "TS-20261209-1800",
+      "TS-20261210-1800"
+    ],
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "Assumed restriction: no evening exam (lab staffing).",
+      "field_sources": {}
+    }
+  }
+]

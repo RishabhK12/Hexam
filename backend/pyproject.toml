@@ -1,0 +1,23 @@
+[project]
+name = "hexam"
+version = "0.1.0"
+description = "Georgia Tech final exam schedule optimization"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.10",
+    "tzdata>=2024.1", # IANA zones for zoneinfo on Windows
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["hexam*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

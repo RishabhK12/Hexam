@@ -1,0 +1,156 @@
+[
+  {
+    "course_id": "CS-1331",
+    "subject": "CS",
+    "number": "1331",
+    "title": "Introduction to Object-Oriented Programming",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": "https://catalog.gatech.edu/coursesaz/",
+      "retrieved_at": null,
+      "notes": "Real GT course code; title/credits transcribed for the sample. Verify against the catalog, then mark gt_public.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "CS-1332",
+    "subject": "CS",
+    "number": "1332",
+    "title": "Data Structures and Algorithms for Applications",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": "https://catalog.gatech.edu/coursesaz/",
+      "retrieved_at": null,
+      "notes": "Real GT course code; title/credits transcribed for the sample. Verify against the catalog, then mark gt_public.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "CS-2110",
+    "subject": "CS",
+    "number": "2110",
+    "title": "Computer Organization and Programming",
+    "credit_hours": 4.0,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": "https://catalog.gatech.edu/coursesaz/",
+      "retrieved_at": null,
+      "notes": "Real GT course code; title/credits transcribed for the sample. Verify against the catalog, then mark gt_public.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "MATH-1552",
+    "subject": "MATH",
+    "number": "1552",
+    "title": "Integral Calculus",
+    "credit_hours": 4.0,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": "https://catalog.gatech.edu/coursesaz/",
+      "retrieved_at": null,
+      "notes": "Real GT course code; title/credits transcribed for the sample. Verify against the catalog, then mark gt_public.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "MATH-1554",
+    "subject": "MATH",
+    "number": "1554",
+    "title": "Linear Algebra",
+    "credit_hours": 4.0,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": "https://catalog.gatech.edu/coursesaz/",
+      "retrieved_at": null,
+      "notes": "Real GT course code; title/credits transcribed for the sample. Verify against the catalog, then mark gt_public.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "MATH-2551",
+    "subject": "MATH",
+    "number": "2551",
+    "title": "Multivariable Calculus",
+    "credit_hours": 4.0,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": "https://catalog.gatech.edu/coursesaz/",
+      "retrieved_at": null,
+      "notes": "Real GT course code; title/credits transcribed for the sample. Verify against the catalog, then mark gt_public.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "PHYS-2211",
+    "subject": "PHYS",
+    "number": "2211",
+    "title": "Introductory Physics I",
+    "credit_hours": 4.0,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": "https://catalog.gatech.edu/coursesaz/",
+      "retrieved_at": null,
+      "notes": "Real GT course code; title/credits transcribed for the sample. Verify against the catalog, then mark gt_public.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "CHEM-1310",
+    "subject": "CHEM",
+    "number": "1310",
+    "title": "Principles of General Chemistry for Engineers",
+    "credit_hours": 4.0,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": "https://catalog.gatech.edu/coursesaz/",
+      "retrieved_at": null,
+      "notes": "Real GT course code; title/credits transcribed for the sample. Verify against the catalog, then mark gt_public.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ENGL-1102",
+    "subject": "ENGL",
+    "number": "1102",
+    "title": "English Composition II",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": "https://catalog.gatech.edu/coursesaz/",
+      "retrieved_at": null,
+      "notes": "Real GT course code; title/credits transcribed for the sample. Verify against the catalog, then mark gt_public.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ISYE-3770",
+    "subject": "ISYE",
+    "number": "3770",
+    "title": "Statistics and Applications",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": "https://catalog.gatech.edu/coursesaz/",
+      "retrieved_at": null,
+      "notes": "Real GT course code; title/credits transcribed for the sample. Verify against the catalog, then mark gt_public.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ECON-2100",
+    "subject": "ECON",
+    "number": "2100",
+    "title": "Economic Analysis and Policy Problems",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": "https://catalog.gatech.edu/coursesaz/",
+      "retrieved_at": null,
+      "notes": "Real GT course code; title/credits transcribed for the sample. Verify against the catalog, then mark gt_public.",
+      "field_sources": {}
+    }
+  }
+]

@@ -1,0 +1,156 @@
+[
+  {
+    "schedule_id": "sched-baseline-202608",
+    "dataset_id": "gt-202608-sample",
+    "name": "Fall 2026 baseline (assumed GT-style)",
+    "kind": "baseline",
+    "assignments": [
+      {
+        "exam_group_id": "EG-MWF-0825",
+        "timeslot_id": "TS-20261207-0800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MWF-1100",
+        "timeslot_id": "TS-20261207-1120",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MWF-1400",
+        "timeslot_id": "TS-20261207-1440",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-COMMON-MATH-2551",
+        "timeslot_id": "TS-20261207-1800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-0800",
+        "timeslot_id": "TS-20261208-0800",
+        "locked": true
+      },
+      {
+        "exam_group_id": "EG-TR-1100",
+        "timeslot_id": "TS-20261208-1120",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-COMMON-PHYS-2211",
+        "timeslot_id": "TS-20261208-1120",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-COMMON-MATH-1554",
+        "timeslot_id": "TS-20261208-1800",
+        "locked": true
+      },
+      {
+        "exam_group_id": "EG-MWF-0930",
+        "timeslot_id": "TS-20261209-0800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-1230",
+        "timeslot_id": "TS-20261209-1120",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-0930",
+        "timeslot_id": "TS-20261210-0800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-1400",
+        "timeslot_id": "TS-20261210-1440",
+        "locked": false
+      }
+    ],
+    "created_at": "2026-11-14T12:01:00-05:00",
+    "source_run_id": null,
+    "provenance": {
+      "source": "assumed",
+      "source_ref": null,
+      "retrieved_at": null,
+      "notes": "Modeled on GT's meeting-time exam matrix; replace with the published Fall 2026 schedule.",
+      "field_sources": {}
+    }
+  },
+  {
+    "schedule_id": "sched-opt-run-0001",
+    "dataset_id": "gt-202608-sample",
+    "name": "Optimized (cfg-default)",
+    "kind": "optimized",
+    "assignments": [
+      {
+        "exam_group_id": "EG-TR-1100",
+        "timeslot_id": "TS-20261207-0800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-1230",
+        "timeslot_id": "TS-20261207-0800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MWF-1100",
+        "timeslot_id": "TS-20261207-1440",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-0800",
+        "timeslot_id": "TS-20261208-0800",
+        "locked": true
+      },
+      {
+        "exam_group_id": "EG-MWF-0930",
+        "timeslot_id": "TS-20261208-1120",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-COMMON-MATH-1554",
+        "timeslot_id": "TS-20261208-1800",
+        "locked": true
+      },
+      {
+        "exam_group_id": "EG-TR-1400",
+        "timeslot_id": "TS-20261209-1120",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-COMMON-MATH-2551",
+        "timeslot_id": "TS-20261209-1800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-COMMON-PHYS-2211",
+        "timeslot_id": "TS-20261210-1120",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MWF-0825",
+        "timeslot_id": "TS-20261210-1800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-MWF-1400",
+        "timeslot_id": "TS-20261211-0800",
+        "locked": false
+      },
+      {
+        "exam_group_id": "EG-TR-0930",
+        "timeslot_id": "TS-20261211-1440",
+        "locked": false
+      }
+    ],
+    "created_at": "2026-11-14T12:10:42-05:00",
+    "source_run_id": "run-0001",
+    "provenance": {
+      "source": "synthetic",
+      "source_ref": "hexam-sample-builder",
+      "retrieved_at": null,
+      "notes": "Sample output from local search, not CP-SAT.",
+      "field_sources": {}
+    }
+  }
+]
