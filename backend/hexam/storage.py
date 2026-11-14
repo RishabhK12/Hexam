@@ -1,5 +1,5 @@
-"""JSON file storage. One file per collection; each file is a JSON array
-(``meta.json`` is a single object). Swap this module out if a DB is ever needed."""
+"""JSON file storage. One file per collection; each file is a JSON array.
+Swap this module out if a DB is ever needed."""
 
 from __future__ import annotations
 
@@ -11,7 +11,6 @@ from pydantic import BaseModel, TypeAdapter
 from .schemas import (
     Course,
     Dataset,
-    DatasetMeta,
     ExamGroup,
     ExamSchedule,
     ExamTimeslot,
@@ -24,7 +23,6 @@ from .schemas import (
 
 M = TypeVar("M", bound=BaseModel)
 
-META_FILE = "meta.json"
 DATASET_FILES: dict[str, tuple[str, type[BaseModel]]] = {
     "courses": ("courses.json", Course),
     "sections": ("sections.json", Section),
@@ -51,9 +49,8 @@ def load_dataset(directory: str | Path, *, strict: bool = True) -> Dataset:
     """Load and parse a dataset. ``strict`` raises ``DatasetValidationError``
     on cross-record errors (warnings never raise)."""
     d = Path(directory)
-    meta = DatasetMeta.model_validate_json((d / META_FILE).read_bytes())
     parts = {name: read_models(d / fname, model) for name, (fname, model) in DATASET_FILES.items()}
-    ds = Dataset(meta=meta, **parts)
+    ds = Dataset(**parts)
     if strict:
         validate_dataset(ds).raise_if_invalid()
     return ds
@@ -62,7 +59,6 @@ def load_dataset(directory: str | Path, *, strict: bool = True) -> Dataset:
 def save_dataset(ds: Dataset, directory: str | Path) -> None:
     d = Path(directory)
     d.mkdir(parents=True, exist_ok=True)
-    (d / META_FILE).write_text(ds.meta.model_dump_json(indent=2) + "\n", encoding="utf-8")
     for name, (fname, _) in DATASET_FILES.items():
         write_models(d / fname, getattr(ds, name))
 

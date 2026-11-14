@@ -21,7 +21,6 @@ from .courses import Course, MeetingTime, Section, SectionType, Weekday
 from .dataset import (
     Dataset,
     DatasetIndex,
-    DatasetMeta,
     validate_config,
     validate_dataset,
     validate_schedule,

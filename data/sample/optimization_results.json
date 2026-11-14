@@ -2,7 +2,6 @@
   {
     "run_id": "run-0001",
     "config_id": "cfg-default",
-    "dataset_id": "gt-202608-sample",
     "status": "FEASIBLE",
     "started_at": "2026-11-14T12:10:00-05:00",
     "finished_at": "2026-11-14T12:10:42-05:00",

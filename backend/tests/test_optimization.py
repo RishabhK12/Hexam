@@ -91,7 +91,7 @@ class TestResult:
     def base(self, **kw):
         ev = {"schedule_id": "opt", "metrics": metrics().model_dump()}
         data = dict(
-            run_id="r", config_id="c", dataset_id="d", status="FEASIBLE",
+            run_id="r", config_id="c", status="FEASIBLE",
             started_at="2026-11-14T12:00:00-05:00", finished_at="2026-11-14T12:01:00-05:00",
             runtime_seconds=60, objective_value=0, optimized_schedule_id="opt", after=ev,
         )

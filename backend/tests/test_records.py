@@ -230,7 +230,7 @@ class TestExamGroup:
 class TestSchedule:
     def sched(self, **kw):
         base = dict(
-            schedule_id="s", dataset_id="d", name="n", kind="baseline",
+            schedule_id="s", name="n", kind="baseline",
             assignments=[ExamAssignment(exam_group_id="EG-1", timeslot_id="TS-1")],
             provenance=Provenance.assumed(),
         )

@@ -134,7 +134,6 @@ export interface ExamAssignment {
 
 export interface ExamSchedule {
   schedule_id: ID;
-  dataset_id: ID;
   name: string;
   kind: ScheduleKind;
   assignments: ExamAssignment[];
@@ -274,7 +273,6 @@ export type SolverStatus =
 export interface OptimizationResult {
   run_id: ID;
   config_id: ID;
-  dataset_id: ID;
   status: SolverStatus;
   started_at: ISODateTime;
   finished_at: ISODateTime;
@@ -307,22 +305,7 @@ export interface SyntheticGenerationConfig {
   avoid_meeting_time_conflicts: boolean;
 }
 
-export interface DatasetMeta {
-  dataset_id: ID;
-  schema_version: string;
-  term_code: string;
-  term_name: string;
-  timezone: CampusTimezone;
-  finals_start_date: ISODate;
-  finals_end_date: ISODate;
-  created_at: ISODateTime;
-  description: string | null;
-  provenance: Provenance;
-  generation: SyntheticGenerationConfig | null;
-}
-
 export interface Dataset {
-  meta: DatasetMeta;
   courses: Course[];
   sections: Section[];
   exam_groups: ExamGroup[];
@@ -352,9 +335,6 @@ export interface ValidationReport {
 // ----------------------------------------------------------------------- API
 
 export interface DatasetSummary {
-  dataset_id: ID;
-  term_code: string;
-  term_name: string;
   course_count: number;
   section_count: number;
   exam_group_count: number;

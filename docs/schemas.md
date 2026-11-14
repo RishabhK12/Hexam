@@ -24,9 +24,8 @@ OptimizationResult ──> config_id ──────────────�
 | `ExamSchedule` | `schedule_id` | List of `{exam_group_id, timeslot_id, locked}`; each group at most once. |
 | `OptimizationConfig` | `config_id` | Integer `PenaltyWeights`, `HardConstraints`, `SolverSettings`, per-run `fixed_assignments`, `excluded_timeslot_ids`. |
 | `OptimizationResult` | `run_id` | CP-SAT status, runtime, objective/bound, breakdown, before/after `ScheduleEvaluation`. |
-| `DatasetMeta` | `dataset_id` | Term, finals window, generator config. |
 
-`Dataset` bundles meta + courses + sections + exam_groups + timeslots + students.
+`Dataset` bundles courses + sections + exam_groups + timeslots + students (one dataset per data directory).
 `DatasetIndex` (`dataset.build_index()`) gives the solver/evaluator O(1) lookups,
 `student_exam_groups`, `group_students`, chronological `timeslots_by_day`,
 same-day `consecutive_pairs`, and evening→next-morning `overnight_pairs`.
@@ -69,14 +68,13 @@ Every course, section, exam group, timeslot, schedule and student carries
 
 | Function | Errors | Warnings |
 |---|---|---|
-| `validate_dataset` | `duplicate_id`, `duplicate_crn`, `duplicate_section_code`, `missing_reference`, `duplicate_course_registration`, `overlapping_timeslots`, `timeslot_outside_finals`, `capacity_exceeded` (fixed groups) | `empty_exam_group`, `split_common_exam`, `forced_conflict`, `registration_time_conflict`, `enrollment_mismatch` |
-| `validate_schedule` | `dataset_mismatch`, `missing_reference`, `conflicting_assignment`, `restriction_violation`, `unassigned_exam_group` (optimized) | `unassigned_exam_group` (baseline/manual), `capacity_exceeded` |
+| `validate_dataset` | `duplicate_id`, `duplicate_crn`, `duplicate_section_code`, `missing_reference`, `duplicate_course_registration`, `overlapping_timeslots`, `capacity_exceeded` (fixed groups) | `empty_exam_group`, `split_common_exam`, `forced_conflict`, `registration_time_conflict`, `enrollment_mismatch` |
+| `validate_schedule` | `missing_reference`, `conflicting_assignment`, `restriction_violation`, `unassigned_exam_group` (optimized) | `unassigned_exam_group` (baseline/manual), `capacity_exceeded` |
 | `validate_config` | `missing_reference`, `conflicting_assignment`, `restriction_violation`, `no_available_timeslots` | — |
 
 ## Storage
 
-`data/<dataset>/` holds one JSON file per collection (`meta.json` is an object;
-the rest are arrays): `courses`, `sections`, `exam_groups`, `timeslots`, `students`,
+`data/<dataset>/` holds one JSON array file per collection: `courses`, `sections`, `exam_groups`, `timeslots`, `students`,
 `schedules`, `optimization_configs`, `optimization_results`. See `hexam/storage.py`.
 
 ## Sample data (`data/sample/`)

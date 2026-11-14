@@ -12,24 +12,10 @@ from collections import defaultdict
 from collections.abc import Iterable
 from dataclasses import dataclass
 from datetime import date, timedelta
-from typing import Literal, Self
 
-from pydantic import Field, model_validator
-
-from .base import (
-    CAMPUS_TZ_NAME,
-    SCHEMA_VERSION,
-    CampusDateTime,
-    DatasetId,
-    HexamModel,
-    Provenance,
-    TermCode,
-    find_duplicates,
-    now_campus,
-)
+from .base import HexamModel, find_duplicates
 from .courses import Course, Section
 from .exam_groups import ExamGroup, ExamGroupKind
-from .generation import SyntheticGenerationConfig
 from .optimization import OptimizationConfig
 from .schedules import ExamSchedule, ScheduleKind
 from .students import Student
@@ -37,31 +23,10 @@ from .timeslots import ExamTimeslot
 from .validation import ValidationReport
 
 
-class DatasetMeta(HexamModel):
-    dataset_id: DatasetId
-    schema_version: str = SCHEMA_VERSION
-    term_code: TermCode
-    term_name: str = Field(min_length=1)
-    timezone: Literal["America/New_York"] = CAMPUS_TZ_NAME
-    finals_start_date: date
-    finals_end_date: date
-    created_at: CampusDateTime = Field(default_factory=now_campus)
-    description: str | None = None
-    provenance: Provenance
-    generation: SyntheticGenerationConfig | None = None
-
-    @model_validator(mode="after")
-    def _check(self) -> Self:
-        if self.finals_end_date < self.finals_start_date:
-            raise ValueError("finals_end_date precedes finals_start_date")
-        return self
-
-
 class Dataset(HexamModel):
     """Everything the solver needs for one term. Stored as one JSON file per
     collection (see ``hexam.storage``)."""
 
-    meta: DatasetMeta
     courses: list[Course]
     sections: list[Section]
     exam_groups: list[ExamGroup]
@@ -214,14 +179,11 @@ def validate_dataset(ds: Dataset) -> ValidationReport:
         if t and t.max_exam_groups is not None and n > t.max_exam_groups:
             r.error("capacity_exceeded", f"{n} exam groups fixed to {t_id} (max {t.max_exam_groups})", "timeslot", t_id)
 
-    # Timeslots: no overlaps; inside the finals window
+    # Timeslots: no overlaps
     slots = sorted(ds.timeslots, key=lambda t: t.start)
     for a, b in zip(slots, slots[1:]):
         if a.overlaps(b):
             r.error("overlapping_timeslots", f"timeslots {a.timeslot_id} and {b.timeslot_id} overlap", "timeslot", b.timeslot_id)
-    for t in slots:
-        if not ds.meta.finals_start_date <= t.local_date <= ds.meta.finals_end_date:
-            r.error("timeslot_outside_finals", f"timeslot {t.timeslot_id} is outside the finals window", "timeslot", t.timeslot_id)
 
     # Students -> sections; duplicate course registration; forced/meeting conflicts
     registered: dict[str, int] = defaultdict(int)
@@ -269,8 +231,6 @@ def validate_schedule(
     sid = schedule.schedule_id
     if require_complete is None:
         require_complete = schedule.kind is ScheduleKind.OPTIMIZED
-    if schedule.dataset_id != ds.meta.dataset_id:
-        r.error("dataset_mismatch", f"schedule {sid} belongs to dataset {schedule.dataset_id}", "schedule", sid)
 
     groups_per_slot: dict[str, int] = defaultdict(int)
     students_per_slot: dict[str, set[str]] = defaultdict(set)

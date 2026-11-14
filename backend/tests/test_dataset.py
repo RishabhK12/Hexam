@@ -8,12 +8,9 @@ from hexam.schemas import (
     DatasetSummary,
     DatasetValidationError,
     ExamAssignment,
-    ExamTimeslot,
     FixedAssignment,
     OptimizationConfig,
     PenaltyWeights,
-    Provenance,
-    Section,
     Student,
     validate_config,
     validate_dataset,
@@ -165,11 +162,6 @@ class TestDatasetValidation:
                                                   "end": t.end + timedelta(hours=1)}))
         assert "overlapping_timeslots" in errors(validate_dataset(ds))
 
-    def test_timeslot_outside_finals(self, ds):
-        ds.timeslots.append(ExamTimeslot(timeslot_id="TS-LATE", start="2026-12-14T08:00:00-05:00",
-                                         end="2026-12-14T10:50:00-05:00", provenance=Provenance.assumed()))
-        assert "timeslot_outside_finals" in errors(validate_dataset(ds))
-
     def test_enrollment_mismatch_warning(self, ds):
         ds.sections[0] = ds.sections[0].model_copy(update={"enrollment": 0})
         assert "enrollment_mismatch" in warnings(validate_dataset(ds))
@@ -216,10 +208,6 @@ class TestScheduleValidation:
         opt = schedules["sched-opt-run-0001"].model_copy(deep=True)
         opt.assignments = opt.assignments[1:]
         assert "unassigned_exam_group" in errors(validate_schedule(ds, opt))
-
-    def test_dataset_mismatch(self, ds, baseline):
-        baseline.dataset_id = "other-dataset"
-        assert "dataset_mismatch" in errors(validate_schedule(ds, baseline))
 
     def test_capacity_warning(self, ds, baseline):
         slot = baseline.assignments[0].timeslot_id

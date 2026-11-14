@@ -10,7 +10,6 @@ from pydantic import Field, model_validator
 from .base import (
     CampusDateTime,
     ConfigId,
-    DatasetId,
     ExamGroupId,
     HexamModel,
     RunId,
@@ -121,7 +120,6 @@ class OptimizationResult(HexamModel):
 
     run_id: RunId
     config_id: ConfigId
-    dataset_id: DatasetId
     status: SolverStatus
     started_at: CampusDateTime
     finished_at: CampusDateTime

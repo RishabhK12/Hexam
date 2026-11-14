@@ -55,7 +55,6 @@ TimeslotId = EntityId  # convention: "TS-20261207-0800"
 ScheduleId = EntityId
 ConfigId = EntityId
 RunId = EntityId
-DatasetId = EntityId
 
 CourseId = Annotated[str, StringConstraints(pattern=r"^[A-Z]{2,4}-\d{4}[A-Z]?$")]
 """``<SUBJECT>-<NUMBER>``, e.g. ``CS-1331`` or ``CHEM-1211K``."""
@@ -65,9 +64,6 @@ StudentId = Annotated[str, StringConstraints(pattern=r"^S\d{6}$")]
 
 Crn = Annotated[str, StringConstraints(pattern=r"^\d{5}$")]
 """Banner course reference number (5 digits, unique within a term)."""
-
-TermCode = Annotated[str, StringConstraints(pattern=r"^\d{4}(02|05|08)$")]
-"""GT term code: YYYY + 02 (Spring) / 05 (Summer) / 08 (Fall), e.g. ``202608``."""
 
 MajorCode = Annotated[str, StringConstraints(pattern=r"^[A-Z]{2,6}$")]
 

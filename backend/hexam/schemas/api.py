@@ -11,7 +11,7 @@ from typing import Self
 
 from pydantic import Field, model_validator
 
-from .base import ConfigId, DataSource, DatasetId, HexamModel, ScheduleId, TermCode
+from .base import ConfigId, DataSource, HexamModel, ScheduleId
 from .dataset import Dataset
 from .optimization import OptimizationConfig, OptimizationResult, PenaltyWeights
 from .schedules import ExamAssignment, ExamSchedule
@@ -20,9 +20,6 @@ from .schedules import ExamAssignment, ExamSchedule
 class DatasetSummary(HexamModel):
     """GET /dataset — counts and provenance mix for the dashboard header."""
 
-    dataset_id: DatasetId
-    term_code: TermCode
-    term_name: str
     course_count: int
     section_count: int
     exam_group_count: int
@@ -42,9 +39,6 @@ class DatasetSummary(HexamModel):
             "student": ds.students,
         }
         return cls(
-            dataset_id=ds.meta.dataset_id,
-            term_code=ds.meta.term_code,
-            term_name=ds.meta.term_name,
             course_count=len(ds.courses),
             section_count=len(ds.sections),
             exam_group_count=len(ds.exam_groups),

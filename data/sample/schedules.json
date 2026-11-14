@@ -1,7 +1,6 @@
 [
   {
     "schedule_id": "sched-baseline-202608",
-    "dataset_id": "gt-202608-sample",
     "name": "Fall 2026 baseline (assumed GT-style)",
     "kind": "baseline",
     "assignments": [
@@ -78,7 +77,6 @@
   },
   {
     "schedule_id": "sched-opt-run-0001",
-    "dataset_id": "gt-202608-sample",
     "name": "Optimized (cfg-default)",
     "kind": "optimized",
     "assignments": [

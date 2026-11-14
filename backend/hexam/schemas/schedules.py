@@ -9,7 +9,6 @@ from pydantic import Field, model_validator
 
 from .base import (
     CampusDateTime,
-    DatasetId,
     ExamGroupId,
     HexamModel,
     Provenance,
@@ -40,7 +39,6 @@ class ExamSchedule(ProvenancedModel):
     see ``validate_schedule``."""
 
     schedule_id: ScheduleId
-    dataset_id: DatasetId
     name: str = Field(min_length=1)
     kind: ScheduleKind
     assignments: list[ExamAssignment]
