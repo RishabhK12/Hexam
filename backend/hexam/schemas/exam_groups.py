@@ -29,7 +29,7 @@ class ExamGroup(ProvenancedModel):
     name: str = Field(min_length=1)
     kind: ExamGroupKind
     meeting_pattern: str | None = Field(
-        default=None, description="e.g. 'MWF 09:30'; required for meeting_pattern groups."
+        default=None, description="e.g. 'MWF 09:30-10:20' or 'MWF 09:30'; required for meeting_pattern groups."
     )
     description: str | None = None
     fixed_timeslot_id: TimeslotId | None = None

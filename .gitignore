@@ -5,3 +5,6 @@ __pycache__/
 node_modules/
 dist/
 *.egg-info/
+
+# Large source downloads; their small extracts are committed (see data/provenance/sources.json)
+data/raw/irp_factbook_2025.pdf

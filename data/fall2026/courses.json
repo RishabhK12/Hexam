@@ -1,0 +1,898 @@
+[
+  {
+    "course_id": "MATH-1551",
+    "subject": "MATH",
+    "number": "1551",
+    "title": "Differential Calculus",
+    "credit_hours": 2.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "MATH-1552",
+    "subject": "MATH",
+    "number": "1552",
+    "title": "Integral Calculus",
+    "credit_hours": 4.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "MATH-1553",
+    "subject": "MATH",
+    "number": "1553",
+    "title": "Intro to Linear Algebra",
+    "credit_hours": 2.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "MATH-1554",
+    "subject": "MATH",
+    "number": "1554",
+    "title": "Linear Algebra",
+    "credit_hours": 4.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "MATH-2551",
+    "subject": "MATH",
+    "number": "2551",
+    "title": "Multivariable Calculus",
+    "credit_hours": 4.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "MATH-2552",
+    "subject": "MATH",
+    "number": "2552",
+    "title": "Differential Equations",
+    "credit_hours": 4.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "MATH-2106",
+    "subject": "MATH",
+    "number": "2106",
+    "title": "Foundations Math Proof",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "MATH-3012",
+    "subject": "MATH",
+    "number": "3012",
+    "title": "Applied Combinatorics",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "MATH-3215",
+    "subject": "MATH",
+    "number": "3215",
+    "title": "Probability & Statistics",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "MATH-3670",
+    "subject": "MATH",
+    "number": "3670",
+    "title": "Statistics and Applns",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "MATH-4317",
+    "subject": "MATH",
+    "number": "4317",
+    "title": "Analysis I",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "PHYS-2211",
+    "subject": "PHYS",
+    "number": "2211",
+    "title": "Principles of Physics I",
+    "credit_hours": 4.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "PHYS-2212",
+    "subject": "PHYS",
+    "number": "2212",
+    "title": "Principles of Physics II",
+    "credit_hours": 4.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "PHYS-3201",
+    "subject": "PHYS",
+    "number": "3201",
+    "title": "Classical Mechanics I",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "CHEM-1310",
+    "subject": "CHEM",
+    "number": "1310",
+    "title": "Prin of Gen Chem for Engr",
+    "credit_hours": 4.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "CHEM-1211K",
+    "subject": "CHEM",
+    "number": "1211K",
+    "title": "Principles of Chemistry I",
+    "credit_hours": 4.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "BIOS-1107",
+    "subject": "BIOS",
+    "number": "1107",
+    "title": "Principles of Biology I",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "CS-1301",
+    "subject": "CS",
+    "number": "1301",
+    "title": "Intro to Computing",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "CS-1331",
+    "subject": "CS",
+    "number": "1331",
+    "title": "Intro-Object Orient Prog",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "CS-1332",
+    "subject": "CS",
+    "number": "1332",
+    "title": "Data Struct & Algorithms",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "CS-1371",
+    "subject": "CS",
+    "number": "1371",
+    "title": "Computing for Engineers",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "CS-2050",
+    "subject": "CS",
+    "number": "2050",
+    "title": "Intro Discrete Math CS",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "CS-2110",
+    "subject": "CS",
+    "number": "2110",
+    "title": "Computer Organiz&Program",
+    "credit_hours": 4.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "CS-2200",
+    "subject": "CS",
+    "number": "2200",
+    "title": "Systems and Networks",
+    "credit_hours": 4.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "CS-2340",
+    "subject": "CS",
+    "number": "2340",
+    "title": "Objects and Design",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "CS-3001",
+    "subject": "CS",
+    "number": "3001",
+    "title": "Computing & Society",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "CS-3510",
+    "subject": "CS",
+    "number": "3510",
+    "title": "Dsgn&Analysis-Algorithms",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "CS-3600",
+    "subject": "CS",
+    "number": "3600",
+    "title": "Intro-Artificial Intell",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "CS-4510",
+    "subject": "CS",
+    "number": "4510",
+    "title": "Automata and Complexity",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "CS-4641",
+    "subject": "CS",
+    "number": "4641",
+    "title": "Machine Learning",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ECE-2020",
+    "subject": "ECE",
+    "number": "2020",
+    "title": "Digital System Design",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ECE-2035",
+    "subject": "ECE",
+    "number": "2035",
+    "title": "Programming HW/SW System",
+    "credit_hours": 4.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ECE-2040",
+    "subject": "ECE",
+    "number": "2040",
+    "title": "Circuit Analysis",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ECE-3077",
+    "subject": "ECE",
+    "number": "3077",
+    "title": "Prob/Stats for ECE",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ECE-3084",
+    "subject": "ECE",
+    "number": "3084",
+    "title": "Signals and Systems",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ECE-3710",
+    "subject": "ECE",
+    "number": "3710",
+    "title": "Circuits & Electronics",
+    "credit_hours": 2.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ME-1670",
+    "subject": "ME",
+    "number": "1670",
+    "title": "Intro to Engr Graphics",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ME-2016",
+    "subject": "ME",
+    "number": "2016",
+    "title": "Computing Techniques",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ME-2202",
+    "subject": "ME",
+    "number": "2202",
+    "title": "Dynamics of Rigid Bodies",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ME-3017",
+    "subject": "ME",
+    "number": "3017",
+    "title": "System Dynamics",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ME-3322",
+    "subject": "ME",
+    "number": "3322",
+    "title": "Thermodynamics",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ME-3340",
+    "subject": "ME",
+    "number": "3340",
+    "title": "Fluid Mechanics",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ME-3345",
+    "subject": "ME",
+    "number": "3345",
+    "title": "Heat Transfer",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "COE-2001",
+    "subject": "COE",
+    "number": "2001",
+    "title": "Statics",
+    "credit_hours": 2.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "COE-3001",
+    "subject": "COE",
+    "number": "3001",
+    "title": "Deformable Bodies",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ISYE-2027",
+    "subject": "ISYE",
+    "number": "2027",
+    "title": "Probability With Apps",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ISYE-3044",
+    "subject": "ISYE",
+    "number": "3044",
+    "title": "Simulation Analy & Dsgn",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ISYE-3133",
+    "subject": "ISYE",
+    "number": "3133",
+    "title": "Engineering Optimization",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ISYE-3232",
+    "subject": "ISYE",
+    "number": "3232",
+    "title": "Stochastic Mfg&Serv Sys",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ISYE-3770",
+    "subject": "ISYE",
+    "number": "3770",
+    "title": "Statistics& Applications",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ISYE-4031",
+    "subject": "ISYE",
+    "number": "4031",
+    "title": "Regression/Forecasting",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "AE-2010",
+    "subject": "AE",
+    "number": "2010",
+    "title": "Thermodyn&Fluids Fundam",
+    "credit_hours": 4.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "AE-2220",
+    "subject": "AE",
+    "number": "2220",
+    "title": "Dynamics",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "AE-3030",
+    "subject": "AE",
+    "number": "3030",
+    "title": "Aerodynamics",
+    "credit_hours": 4.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "AE-3140",
+    "subject": "AE",
+    "number": "3140",
+    "title": "Structural Analysis",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "BMED-3100",
+    "subject": "BMED",
+    "number": "3100",
+    "title": "Systems Physiology",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "CHBE-2100",
+    "subject": "CHBE",
+    "number": "2100",
+    "title": "Chem Process Principles",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "CEE-2300",
+    "subject": "CEE",
+    "number": "2300",
+    "title": "Environmental Engr Prin",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "MSE-2001",
+    "subject": "MSE",
+    "number": "2001",
+    "title": "Prin&Appl-Engr Materials",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ECON-2105",
+    "subject": "ECON",
+    "number": "2105",
+    "title": "Prin of Macroeconomics",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "ECON-2106",
+    "subject": "ECON",
+    "number": "2106",
+    "title": "Prin of Microeconomics",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "PSYC-1101",
+    "subject": "PSYC",
+    "number": "1101",
+    "title": "Intro to Gen Psyc",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "HIST-2111",
+    "subject": "HIST",
+    "number": "2111",
+    "title": "Survey of U.S. History I",
+    "credit_hours": 3.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  },
+  {
+    "course_id": "APPH-1040",
+    "subject": "APPH",
+    "number": "1040",
+    "title": "Sci Foundation of Health",
+    "credit_hours": 2.0,
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://gt-scheduler.github.io/crawler-v2/202608.json",
+      "retrieved_at": "2026-11-14T16:20:18-05:00",
+      "notes": "GT Scheduler crawler-v2 snapshot of OSCAR (crawler updatedAt 2026-11-04T15:03Z, format v3); section capacity/enrollment are not published in this source.",
+      "field_sources": {}
+    }
+  }
+]

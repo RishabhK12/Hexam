@@ -1,0 +1,886 @@
+[
+  {
+    "exam_group_id": "EG-COMMON-MATH-1551",
+    "name": "MATH 1551 common exam",
+    "kind": "common",
+    "meeting_pattern": null,
+    "description": "Official common final exam: Thu Dec 10, 6:00 PM–8:50 PM. Fixed by the registrar.",
+    "fixed_timeslot_id": "TS-20261210-1800",
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Common exam row of the official matrix; preserved as a fixed assignment.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-COMMON-MATH-1552",
+    "name": "MATH 1552 common exam",
+    "kind": "common",
+    "meeting_pattern": null,
+    "description": "Official common final exam: Wed Dec 16, 6:00 PM–8:50 PM. Fixed by the registrar.",
+    "fixed_timeslot_id": "TS-20261216-1800",
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Common exam row of the official matrix; preserved as a fixed assignment.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-COMMON-MATH-1553-1554",
+    "name": "MATH 1553/1554 common exam",
+    "kind": "common",
+    "meeting_pattern": null,
+    "description": "Official common final exam: Tue Dec 15, 6:00 PM–8:50 PM. Fixed by the registrar.",
+    "fixed_timeslot_id": "TS-20261215-1800",
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Common exam row of the official matrix; preserved as a fixed assignment.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-COMMON-PHYS-2211",
+    "name": "PHYS 2211 common exam",
+    "kind": "common",
+    "meeting_pattern": null,
+    "description": "Official common final exam: Fri Dec 11, 6:00 PM–8:50 PM. Fixed by the registrar.",
+    "fixed_timeslot_id": "TS-20261211-1800",
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Common exam row of the official matrix; preserved as a fixed assignment.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-COMMON-PHYS-2212",
+    "name": "PHYS 2212 common exam",
+    "kind": "common",
+    "meeting_pattern": null,
+    "description": "Official common final exam: Mon Dec 14, 6:00 PM–8:50 PM. Fixed by the registrar.",
+    "fixed_timeslot_id": "TS-20261214-1800",
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Common exam row of the official matrix; preserved as a fixed assignment.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-F-1100-1255",
+    "name": "F 11:00-12:55 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "F 11:00-12:55",
+    "description": "Official matrix period: Mon Dec 14, 11:20 AM–2:10 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MW-0800-0915",
+    "name": "MW 08:00-09:15 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MW 08:00-09:15",
+    "description": "Official matrix period: Fri Dec 11, 8:00 AM–10:50 AM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MW-0825-0915",
+    "name": "MW 08:25-09:15 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MW 08:25-09:15",
+    "description": "Official matrix period: Fri Dec 11, 8:00 AM–10:50 AM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MW-0930-1020",
+    "name": "MW 09:30-10:20 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MW 09:30-10:20",
+    "description": "Official matrix period: Wed Dec 16, 8:00 AM–10:50 AM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MW-0930-1045",
+    "name": "MW 09:30-10:45 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MW 09:30-10:45",
+    "description": "Official matrix period: Wed Dec 16, 8:00 AM–10:50 AM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MW-1100-1150",
+    "name": "MW 11:00-11:50 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MW 11:00-11:50",
+    "description": "Official matrix period: Fri Dec 11, 11:20 AM–2:10 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MW-1100-1215",
+    "name": "MW 11:00-12:15 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MW 11:00-12:15",
+    "description": "Official matrix period: Fri Dec 11, 11:20 AM–2:10 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MW-1230-1320",
+    "name": "MW 12:30-13:20 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MW 12:30-13:20",
+    "description": "Official matrix period: Wed Dec 16, 11:20 AM–2:10 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MW-1230-1345",
+    "name": "MW 12:30-13:45 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MW 12:30-13:45",
+    "description": "Official matrix period: Wed Dec 16, 11:20 AM–2:10 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MW-1400-1450",
+    "name": "MW 14:00-14:50 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MW 14:00-14:50",
+    "description": "Official matrix period: Wed Dec 16, 2:40 PM–5:30 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MW-1400-1515",
+    "name": "MW 14:00-15:15 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MW 14:00-15:15",
+    "description": "Official matrix period: Wed Dec 16, 2:40 PM–5:30 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MW-1530-1620",
+    "name": "MW 15:30-16:20 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MW 15:30-16:20",
+    "description": "Official matrix period: Fri Dec 11, 2:40 PM–5:30 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MW-1530-1645",
+    "name": "MW 15:30-16:45 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MW 15:30-16:45",
+    "description": "Official matrix period: Fri Dec 11, 2:40 PM–5:30 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MW-1700-1750",
+    "name": "MW 17:00-17:50 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MW 17:00-17:50",
+    "description": "Official matrix period: Fri Dec 11, 6:00 PM–8:50 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MW-1700-1815",
+    "name": "MW 17:00-18:15 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MW 17:00-18:15",
+    "description": "Official matrix period: Fri Dec 11, 6:00 PM–8:50 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MW-1830-1920",
+    "name": "MW 18:30-19:20 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MW 18:30-19:20",
+    "description": "Official matrix period: Mon Dec 14, 6:00 PM–8:50 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MW-1830-1945",
+    "name": "MW 18:30-19:45 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MW 18:30-19:45",
+    "description": "Official matrix period: Mon Dec 14, 6:00 PM–8:50 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MWF-0825-0915",
+    "name": "MWF 08:25-09:15 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MWF 08:25-09:15",
+    "description": "Official matrix period: Fri Dec 11, 8:00 AM–10:50 AM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MWF-0930-1020",
+    "name": "MWF 09:30-10:20 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MWF 09:30-10:20",
+    "description": "Official matrix period: Wed Dec 16, 8:00 AM–10:50 AM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MWF-1100-1150",
+    "name": "MWF 11:00-11:50 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MWF 11:00-11:50",
+    "description": "Official matrix period: Fri Dec 11, 11:20 AM–2:10 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MWF-1230-1320",
+    "name": "MWF 12:30-13:20 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MWF 12:30-13:20",
+    "description": "Official matrix period: Wed Dec 16, 11:20 AM–2:10 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-MWF-1400-1450",
+    "name": "MWF 14:00-14:50 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "MWF 14:00-14:50",
+    "description": "Official matrix period: Wed Dec 16, 2:40 PM–5:30 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-R-1700-1815",
+    "name": "R 17:00-18:15 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "R 17:00-18:15",
+    "description": "Official matrix period: Thu Dec 17, 6:00 PM–8:50 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix. Class end time not listed in the matrix; matched on days + start time.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TR-0800-0915",
+    "name": "TR 08:00-09:15 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TR 08:00-09:15",
+    "description": "Official matrix period: Thu Dec 17, 8:00 AM–10:50 AM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TR-0825-0915",
+    "name": "TR 08:25-09:15 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TR 08:25-09:15",
+    "description": "Official matrix period: Thu Dec 17, 8:00 AM–10:50 AM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TR-0825-1020",
+    "name": "TR 08:25-10:20 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TR 08:25-10:20",
+    "description": "Official matrix period: Thu Dec 17, 8:00 AM–10:50 AM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TR-0930-1020",
+    "name": "TR 09:30-10:20 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TR 09:30-10:20",
+    "description": "Official matrix period: Mon Dec 14, 8:00 AM–10:50 AM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TR-0930-1045",
+    "name": "TR 09:30-10:45 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TR 09:30-10:45",
+    "description": "Official matrix period: Mon Dec 14, 8:00 AM–10:50 AM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TR-1100-1150",
+    "name": "TR 11:00-11:50 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TR 11:00-11:50",
+    "description": "Official matrix period: Tue Dec 15, 11:20 AM–2:10 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix. Class end time not listed in the matrix; matched on days + start time.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TR-1100-1215",
+    "name": "TR 11:00-12:15 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TR 11:00-12:15",
+    "description": "Official matrix period: Tue Dec 15, 11:20 AM–2:10 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TR-1230-1320",
+    "name": "TR 12:30-13:20 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TR 12:30-13:20",
+    "description": "Official matrix period: Thu Dec 17, 11:20 AM–2:10 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TR-1230-1345",
+    "name": "TR 12:30-13:45 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TR 12:30-13:45",
+    "description": "Official matrix period: Thu Dec 17, 11:20 AM–2:10 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TR-1400-1450",
+    "name": "TR 14:00-14:50 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TR 14:00-14:50",
+    "description": "Official matrix period: Thu Dec 10, 2:40 PM–5:30 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TR-1400-1515",
+    "name": "TR 14:00-15:15 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TR 14:00-15:15",
+    "description": "Official matrix period: Thu Dec 10, 2:40 PM–5:30 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TR-1530-1620",
+    "name": "TR 15:30-16:20 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TR 15:30-16:20",
+    "description": "Official matrix period: Tue Dec 15, 2:40 PM–5:30 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TR-1530-1645",
+    "name": "TR 15:30-16:45 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TR 15:30-16:45",
+    "description": "Official matrix period: Tue Dec 15, 2:40 PM–5:30 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TR-1700-1750",
+    "name": "TR 17:00-17:50 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TR 17:00-17:50",
+    "description": "Official matrix period: Thu Dec 10, 6:00 PM–8:50 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TR-1700-1815",
+    "name": "TR 17:00-18:15 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TR 17:00-18:15",
+    "description": "Official matrix period: Thu Dec 10, 6:00 PM–8:50 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TR-1830-1920",
+    "name": "TR 18:30-19:20 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TR 18:30-19:20",
+    "description": "Official matrix period: Tue Dec 15, 6:00 PM–8:50 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TRF-0930-1020",
+    "name": "TRF 09:30-10:20 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TRF 09:30-10:20",
+    "description": "Official matrix period: Mon Dec 14, 8:00 AM–10:50 AM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-TRF-1530-1620",
+    "name": "TRF 15:30-16:20 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "TRF 15:30-16:20",
+    "description": "Official matrix period: Tue Dec 15, 2:40 PM–5:30 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-W-1700-1815",
+    "name": "W 17:00-18:15 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "W 17:00-18:15",
+    "description": "Official matrix period: Wed Dec 16, 6:00 PM–8:50 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix. Class end time not listed in the matrix; matched on days + start time.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-WF-0825-0915",
+    "name": "WF 08:25-09:15 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "WF 08:25-09:15",
+    "description": "Official matrix period: Fri Dec 11, 8:00 AM–10:50 AM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-WF-0825-1020",
+    "name": "WF 08:25-10:20 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "WF 08:25-10:20",
+    "description": "Official matrix period: Wed Dec 16, 8:00 AM–10:50 AM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-WF-0930-1020",
+    "name": "WF 09:30-10:20 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "WF 09:30-10:20",
+    "description": "Official matrix period: Wed Dec 16, 8:00 AM–10:50 AM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-WF-1530-1645",
+    "name": "WF 15:30-16:45 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "WF 15:30-16:45",
+    "description": "Official matrix period: Fri Dec 11, 2:40 PM–5:30 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  },
+  {
+    "exam_group_id": "EG-WF-1700-1855",
+    "name": "WF 17:00-18:55 classes",
+    "kind": "meeting_pattern",
+    "meeting_pattern": "WF 17:00-18:55",
+    "description": "Official matrix period: Fri Dec 11, 6:00 PM–8:50 PM.",
+    "fixed_timeslot_id": null,
+    "allowed_timeslot_ids": null,
+    "forbidden_timeslot_ids": [],
+    "provenance": {
+      "source": "gt_public",
+      "source_ref": "https://registrar.gatech.edu/public/files/Final%20Exam%20Matrix%20202608%20Fall_3.pdf",
+      "retrieved_at": "2026-11-14T16:21:01-05:00",
+      "notes": "Meeting-pattern row of the official matrix.",
+      "field_sources": {}
+    }
+  }
+]

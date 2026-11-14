@@ -1,0 +1,555 @@
+{
+  "term": "202608",
+  "crawler_updated_at": "2026-11-04T15:03:56.566000+00:00",
+  "full_term_date_range": "08/24/2026 - 12/17/2026",
+  "exam_group_granularity": "meeting_time",
+  "counts": {
+    "courses_requested": 64,
+    "courses": 64,
+    "sections": 756,
+    "primary_sections": 337,
+    "component_sections": 419,
+    "exam_bearing_sections": 337,
+    "exam_groups": 52,
+    "common_exam_groups": 5,
+    "timeslots": 21,
+    "excluded_sections": 103
+  },
+  "exam_mapping_methods": {
+    "common": 46,
+    "matrix_exact": 286,
+    "matrix_days_start": 5
+  },
+  "ambiguous_meeting_times": {},
+  "exclusion_reasons": {
+    "not_atlanta_campus": 52,
+    "reserved_cohorts": 20,
+    "no_scheduled_meeting": 13,
+    "graduate_only": 9,
+    "reserved_special_approvals": 5,
+    "non_standard_meeting_pattern": 2,
+    "reserved_programs": 1,
+    "linked_primary_excluded": 1
+  },
+  "excluded_sections": [
+    {
+      "section": "MATH 1551 HP",
+      "crn": "89441",
+      "reason": "reserved_cohorts"
+    },
+    {
+      "section": "MATH 1551 R",
+      "crn": "89579",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "MATH 1551 G04",
+      "crn": "89278",
+      "reason": "reserved_cohorts"
+    },
+    {
+      "section": "MATH 1551 HP1",
+      "crn": "89442",
+      "reason": "reserved_cohorts"
+    },
+    {
+      "section": "MATH 1551 R01",
+      "crn": "89580",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "MATH 1552 R",
+      "crn": "87940",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "MATH 1552 R1",
+      "crn": "87941",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "MATH 1554 HP",
+      "crn": "89456",
+      "reason": "reserved_cohorts"
+    },
+    {
+      "section": "MATH 1554 PEP",
+      "crn": "95647",
+      "reason": "graduate_only"
+    },
+    {
+      "section": "MATH 1554 QH",
+      "crn": "86592",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "MATH 1554 R",
+      "crn": "87395",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "MATH 1554 A04",
+      "crn": "86065",
+      "reason": "reserved_cohorts"
+    },
+    {
+      "section": "MATH 1554 HP1",
+      "crn": "89458",
+      "reason": "reserved_cohorts"
+    },
+    {
+      "section": "MATH 1554 PES",
+      "crn": "95649",
+      "reason": "graduate_only"
+    },
+    {
+      "section": "MATH 1554 QHS",
+      "crn": "86647",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "MATH 1554 R01",
+      "crn": "87401",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "MATH 2551 R",
+      "crn": "87403",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "MATH 2551 RBS",
+      "crn": "88610",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "MATH 2551 R01",
+      "crn": "87404",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "MATH 2551 RS1",
+      "crn": "88611",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "MATH 2552 HP",
+      "crn": "89459",
+      "reason": "reserved_cohorts"
+    },
+    {
+      "section": "MATH 2552 R",
+      "crn": "87405",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "MATH 2552 C04",
+      "crn": "86010",
+      "reason": "reserved_cohorts"
+    },
+    {
+      "section": "MATH 2552 HP1",
+      "crn": "89460",
+      "reason": "reserved_cohorts"
+    },
+    {
+      "section": "MATH 2552 R01",
+      "crn": "87406",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "MATH 2106 PGP",
+      "crn": "93445",
+      "reason": "graduate_only"
+    },
+    {
+      "section": "MATH 3012 QHS",
+      "crn": "86072",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "MATH 3670 R",
+      "crn": "85025",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "PHYS 2211 HP",
+      "crn": "89629",
+      "reason": "reserved_cohorts"
+    },
+    {
+      "section": "PHYS 2211 QH",
+      "crn": "94622",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "PHYS 2211 R",
+      "crn": "85461",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "PHYS 2211 RBS",
+      "crn": "88645",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "PHYS 2211 HPL",
+      "crn": "88823",
+      "reason": "reserved_cohorts"
+    },
+    {
+      "section": "PHYS 2211 QHL",
+      "crn": "94623",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "PHYS 2211 RBL",
+      "crn": "88677",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "PHYS 2211 RL",
+      "crn": "85462",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "PHYS 2212 HP",
+      "crn": "89628",
+      "reason": "reserved_cohorts"
+    },
+    {
+      "section": "PHYS 2212 R",
+      "crn": "85463",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "PHYS 2212 RBS",
+      "crn": "88646",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "PHYS 2212 HPL",
+      "crn": "81861",
+      "reason": "reserved_cohorts"
+    },
+    {
+      "section": "PHYS 2212 RBL",
+      "crn": "88678",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "PHYS 2212 RL",
+      "crn": "85464",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "CHEM 1211K HP",
+      "crn": "89478",
+      "reason": "reserved_cohorts"
+    },
+    {
+      "section": "CHEM 1211K B24",
+      "crn": "86015",
+      "reason": "reserved_cohorts"
+    },
+    {
+      "section": "CHEM 1211K HP4",
+      "crn": "89480",
+      "reason": "reserved_cohorts"
+    },
+    {
+      "section": "BIOS 1107 HP",
+      "crn": "88805",
+      "reason": "reserved_cohorts"
+    },
+    {
+      "section": "CS 1301 FAO",
+      "crn": "95339",
+      "reason": "no_scheduled_meeting"
+    },
+    {
+      "section": "CS 1301 HP",
+      "crn": "85083",
+      "reason": "reserved_cohorts"
+    },
+    {
+      "section": "CS 1301 O1",
+      "crn": "87196",
+      "reason": "no_scheduled_meeting"
+    },
+    {
+      "section": "CS 1301 OIT",
+      "crn": "91113",
+      "reason": "reserved_programs"
+    },
+    {
+      "section": "CS 1301 QH",
+      "crn": "87497",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "CS 1301 R",
+      "crn": "87917",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "CS 1301 ROX",
+      "crn": "88795",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "CS 1331 GR",
+      "crn": "85796",
+      "reason": "graduate_only"
+    },
+    {
+      "section": "CS 1331 O1",
+      "crn": "86045",
+      "reason": "non_standard_meeting_pattern"
+    },
+    {
+      "section": "CS 1331 QH",
+      "crn": "88953",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "CS 1331 R",
+      "crn": "88302",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "CS 1332 GR",
+      "crn": "81973",
+      "reason": "graduate_only"
+    },
+    {
+      "section": "CS 1332 R",
+      "crn": "92566",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "CS 1371 GR",
+      "crn": "90947",
+      "reason": "reserved_special_approvals"
+    },
+    {
+      "section": "CS 1371 R",
+      "crn": "88807",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "CS 1371 ROX",
+      "crn": "89903",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "CS 2110 GR",
+      "crn": "86544",
+      "reason": "graduate_only"
+    },
+    {
+      "section": "CS 2110 O1",
+      "crn": "92108",
+      "reason": "non_standard_meeting_pattern"
+    },
+    {
+      "section": "CS 2110 GR1",
+      "crn": "86545",
+      "reason": "graduate_only"
+    },
+    {
+      "section": "CS 2200 FAA",
+      "crn": "91346",
+      "reason": "reserved_special_approvals"
+    },
+    {
+      "section": "CS 2200 FAB",
+      "crn": "91347",
+      "reason": "reserved_special_approvals"
+    },
+    {
+      "section": "CS 2200 GR",
+      "crn": "80742",
+      "reason": "graduate_only"
+    },
+    {
+      "section": "CS 2200 GR1",
+      "crn": "89783",
+      "reason": "linked_primary_excluded"
+    },
+    {
+      "section": "CS 2340 GR",
+      "crn": "85212",
+      "reason": "graduate_only"
+    },
+    {
+      "section": "ECE 2020 R",
+      "crn": "94490",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "ECE 2035 R",
+      "crn": "90835",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "ECE 2035 AL",
+      "crn": "86618",
+      "reason": "no_scheduled_meeting"
+    },
+    {
+      "section": "ECE 2035 BL",
+      "crn": "92088",
+      "reason": "no_scheduled_meeting"
+    },
+    {
+      "section": "ECE 2035 CL",
+      "crn": "93972",
+      "reason": "no_scheduled_meeting"
+    },
+    {
+      "section": "ECE 2035 DL",
+      "crn": "93973",
+      "reason": "no_scheduled_meeting"
+    },
+    {
+      "section": "ECE 2040 R",
+      "crn": "90834",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "ECE 3710 R",
+      "crn": "81628",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "ECE 3710 EX",
+      "crn": "87014",
+      "reason": "no_scheduled_meeting"
+    },
+    {
+      "section": "ME 3017 R",
+      "crn": "83456",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "ME 3322 R",
+      "crn": "81626",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "ME 3340 R",
+      "crn": "81627",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "COE 2001 HP",
+      "crn": "94634",
+      "reason": "reserved_cohorts"
+    },
+    {
+      "section": "COE 2001 R",
+      "crn": "84597",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "COE 2001 RBS",
+      "crn": "88615",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "COE 3001 R",
+      "crn": "84598",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "ISYE 2027 ASY",
+      "crn": "93556",
+      "reason": "no_scheduled_meeting"
+    },
+    {
+      "section": "ISYE 3770 R",
+      "crn": "85380",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "AE 2010 R",
+      "crn": "84605",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "AE 2220 R",
+      "crn": "84098",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "MSE 2001 R",
+      "crn": "83148",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "MSE 2001 RBS",
+      "crn": "88609",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "ECON 2105 GT5",
+      "crn": "80544",
+      "reason": "no_scheduled_meeting"
+    },
+    {
+      "section": "PSYC 1101 HP",
+      "crn": "85481",
+      "reason": "reserved_cohorts"
+    },
+    {
+      "section": "PSYC 1101 J",
+      "crn": "94639",
+      "reason": "no_scheduled_meeting"
+    },
+    {
+      "section": "PSYC 1101 K",
+      "crn": "95454",
+      "reason": "no_scheduled_meeting"
+    },
+    {
+      "section": "PSYC 1101 QH",
+      "crn": "94090",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "PSYC 1101 R",
+      "crn": "94474",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "HIST 2111 C",
+      "crn": "92337",
+      "reason": "no_scheduled_meeting"
+    },
+    {
+      "section": "APPH 1040 G",
+      "crn": "87593",
+      "reason": "no_scheduled_meeting"
+    },
+    {
+      "section": "APPH 1040 NAV",
+      "crn": "91360",
+      "reason": "reserved_special_approvals"
+    },
+    {
+      "section": "APPH 1040 RBS",
+      "crn": "89604",
+      "reason": "not_atlanta_campus"
+    },
+    {
+      "section": "APPH 1040 WC",
+      "crn": "90786",
+      "reason": "reserved_special_approvals"
+    }
+  ],
+  "matrix_issues": [],
+  "warnings": [
+    "ECE 3710: matrix common exam applies only to 'online' sections, which are not in the Atlanta subset; using the meeting-pattern matrix instead"
+  ]
+}

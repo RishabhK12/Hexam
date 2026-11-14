@@ -70,7 +70,8 @@ class MeetingTime(HexamModel):
 
     @property
     def pattern_key(self) -> str:
-        """e.g. ``"MWF 09:30"`` — matches ``ExamGroup.meeting_pattern``."""
+        """Days + start, e.g. ``"MWF 09:30"``. Exam groups keyed on the full meeting
+        time (``ExamGroup.meeting_pattern`` like ``"MWF 09:30-10:20"``) append the end."""
         return f"{''.join(d.value for d in self.days)} {self.start_time:%H:%M}"
 
 

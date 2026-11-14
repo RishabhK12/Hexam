@@ -1,0 +1,4133 @@
+{
+  "MATH-1551": {
+    "key": "MATH 1551",
+    "title": "Differential Calculus",
+    "role": "foundation",
+    "credit_hours": 2.0,
+    "description": "Differential calculus including applications and the underlying theory of limits for functions and sequences. Credit not awarded for both MATH 1551 and MATH 1501, MATH 1503, or MATH 1550.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "MATH 1113",
+        "grade": "C"
+      },
+      {
+        "id": "MATH 11X3",
+        "grade": "T"
+      },
+      {
+        "id": "MATH 1499",
+        "grade": "C"
+      }
+    ],
+    "prerequisite_keys": [
+      "MATH 1113",
+      "MATH 11X3",
+      "MATH 1499"
+    ],
+    "prerequisite_keys_in_subset": [],
+    "corequisites": [],
+    "exam": "common",
+    "common_exam_label": "MATH 1551",
+    "primary_sections": [
+      "MATH-1551-A",
+      "MATH-1551-C",
+      "MATH-1551-F",
+      "MATH-1551-G",
+      "MATH-1551-H",
+      "MATH-1551-K",
+      "MATH-1551-M"
+    ],
+    "component_sections": [
+      "MATH-1551-A01",
+      "MATH-1551-A02",
+      "MATH-1551-A03",
+      "MATH-1551-C01",
+      "MATH-1551-C02",
+      "MATH-1551-C03",
+      "MATH-1551-F01",
+      "MATH-1551-F02",
+      "MATH-1551-F03",
+      "MATH-1551-G01",
+      "MATH-1551-G02",
+      "MATH-1551-G03",
+      "MATH-1551-H01",
+      "MATH-1551-H02",
+      "MATH-1551-H03",
+      "MATH-1551-K01",
+      "MATH-1551-K02",
+      "MATH-1551-K03",
+      "MATH-1551-M01",
+      "MATH-1551-M02",
+      "MATH-1551-M03"
+    ],
+    "excluded_sections": {
+      "not_atlanta_campus": 2,
+      "reserved_cohorts": 3
+    }
+  },
+  "MATH-1552": {
+    "key": "MATH 1552",
+    "title": "Integral Calculus",
+    "role": "foundation",
+    "credit_hours": 4.0,
+    "description": "Integral calculus: Definite and indefinite integrals, techniques of integration, improper integrals, infinite series, applications. Credit not awarded for both MATH 1552 and MATH 1502, MATH 1504, MATH 1512 or MATH 1555.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "MATH 1551",
+        "grade": "D"
+      },
+      {
+        "id": "MATH 1X51",
+        "grade": "T"
+      }
+    ],
+    "prerequisite_keys": [
+      "MATH 1551",
+      "MATH 1X51"
+    ],
+    "prerequisite_keys_in_subset": [
+      "MATH 1551"
+    ],
+    "corequisites": [],
+    "exam": "common",
+    "common_exam_label": "MATH 1552",
+    "primary_sections": [
+      "MATH-1552-A",
+      "MATH-1552-C",
+      "MATH-1552-E",
+      "MATH-1552-F",
+      "MATH-1552-G",
+      "MATH-1552-J",
+      "MATH-1552-M"
+    ],
+    "component_sections": [
+      "MATH-1552-A01",
+      "MATH-1552-A02",
+      "MATH-1552-A03",
+      "MATH-1552-C01",
+      "MATH-1552-C02",
+      "MATH-1552-C03",
+      "MATH-1552-E01",
+      "MATH-1552-E02",
+      "MATH-1552-E03",
+      "MATH-1552-E04",
+      "MATH-1552-F01",
+      "MATH-1552-F02",
+      "MATH-1552-F03",
+      "MATH-1552-G01",
+      "MATH-1552-G02",
+      "MATH-1552-G03",
+      "MATH-1552-J01",
+      "MATH-1552-J02",
+      "MATH-1552-J03",
+      "MATH-1552-M01",
+      "MATH-1552-M02",
+      "MATH-1552-M03"
+    ],
+    "excluded_sections": {
+      "not_atlanta_campus": 2
+    }
+  },
+  "MATH-1553": {
+    "key": "MATH 1553",
+    "title": "Intro to Linear Algebra",
+    "role": "foundation",
+    "credit_hours": 2.0,
+    "description": "An introduction to linear alegbra including eigenvalues and eigenvectors, applications to linear systems, least squares. Credit not awarded for both MATH 1553 and MATH 1522, MATH 1502, MATH 1504, MATH 1512, MATH 1554 or MATH 1564.",
+    "prerequisites": [
+      "or",
+      [
+        "or",
+        {
+          "id": "MATH 1113",
+          "grade": "D"
+        },
+        {
+          "id": "MATH 11X3",
+          "grade": "T"
+        }
+      ],
+      {
+        "id": "MATH 1X51",
+        "grade": "T"
+      },
+      {
+        "id": "MATH 1551",
+        "grade": "D"
+      }
+    ],
+    "prerequisite_keys": [
+      "MATH 1113",
+      "MATH 11X3",
+      "MATH 1551",
+      "MATH 1X51"
+    ],
+    "prerequisite_keys_in_subset": [
+      "MATH 1551"
+    ],
+    "corequisites": [],
+    "exam": "common",
+    "common_exam_label": "MATH 1553/1554",
+    "primary_sections": [
+      "MATH-1553-B",
+      "MATH-1553-C",
+      "MATH-1553-D",
+      "MATH-1553-E",
+      "MATH-1553-F",
+      "MATH-1553-G",
+      "MATH-1553-H",
+      "MATH-1553-I",
+      "MATH-1553-J",
+      "MATH-1553-L",
+      "MATH-1553-M",
+      "MATH-1553-N"
+    ],
+    "component_sections": [
+      "MATH-1553-B01",
+      "MATH-1553-B02",
+      "MATH-1553-B03",
+      "MATH-1553-C01",
+      "MATH-1553-C02",
+      "MATH-1553-C03",
+      "MATH-1553-C04",
+      "MATH-1553-D01",
+      "MATH-1553-D02",
+      "MATH-1553-D03",
+      "MATH-1553-D04",
+      "MATH-1553-E01",
+      "MATH-1553-E02",
+      "MATH-1553-E03",
+      "MATH-1553-E04",
+      "MATH-1553-F01",
+      "MATH-1553-F02",
+      "MATH-1553-F03",
+      "MATH-1553-F04",
+      "MATH-1553-F05",
+      "MATH-1553-F06",
+      "MATH-1553-G01",
+      "MATH-1553-G02",
+      "MATH-1553-G03",
+      "MATH-1553-G04",
+      "MATH-1553-H01",
+      "MATH-1553-H02",
+      "MATH-1553-H03",
+      "MATH-1553-H04",
+      "MATH-1553-I01",
+      "MATH-1553-I02",
+      "MATH-1553-I03",
+      "MATH-1553-I04",
+      "MATH-1553-J01",
+      "MATH-1553-J02",
+      "MATH-1553-J03",
+      "MATH-1553-L01",
+      "MATH-1553-L02",
+      "MATH-1553-L03",
+      "MATH-1553-L04",
+      "MATH-1553-M01",
+      "MATH-1553-M02",
+      "MATH-1553-M03",
+      "MATH-1553-N01",
+      "MATH-1553-N02",
+      "MATH-1553-N03",
+      "MATH-1553-N04"
+    ],
+    "excluded_sections": {}
+  },
+  "MATH-1554": {
+    "key": "MATH 1554",
+    "title": "Linear Algebra",
+    "role": "foundation",
+    "credit_hours": 4.0,
+    "description": "Linear algebra eigenvalues, eigenvectors, applications to linear systems, least squares, diagnolization, quadratic forms.",
+    "prerequisites": [
+      "or",
+      [
+        "or",
+        {
+          "id": "MATH 1113",
+          "grade": "D"
+        },
+        {
+          "id": "MATH 11X3",
+          "grade": "T"
+        }
+      ],
+      {
+        "id": "MATH 1X51",
+        "grade": "T"
+      },
+      {
+        "id": "MATH 1551",
+        "grade": "D"
+      }
+    ],
+    "prerequisite_keys": [
+      "MATH 1113",
+      "MATH 11X3",
+      "MATH 1551",
+      "MATH 1X51"
+    ],
+    "prerequisite_keys_in_subset": [
+      "MATH 1551"
+    ],
+    "corequisites": [],
+    "exam": "common",
+    "common_exam_label": "MATH 1553/1554",
+    "primary_sections": [
+      "MATH-1554-A",
+      "MATH-1554-B",
+      "MATH-1554-D",
+      "MATH-1554-E",
+      "MATH-1554-F",
+      "MATH-1554-K",
+      "MATH-1554-M",
+      "MATH-1554-N"
+    ],
+    "component_sections": [
+      "MATH-1554-A01",
+      "MATH-1554-A02",
+      "MATH-1554-A03",
+      "MATH-1554-B01",
+      "MATH-1554-B02",
+      "MATH-1554-B04",
+      "MATH-1554-D01",
+      "MATH-1554-D02",
+      "MATH-1554-D03",
+      "MATH-1554-E01",
+      "MATH-1554-E02",
+      "MATH-1554-E03",
+      "MATH-1554-F01",
+      "MATH-1554-F02",
+      "MATH-1554-F03",
+      "MATH-1554-K01",
+      "MATH-1554-K02",
+      "MATH-1554-K03",
+      "MATH-1554-K04",
+      "MATH-1554-M01",
+      "MATH-1554-M02",
+      "MATH-1554-M03",
+      "MATH-1554-M04",
+      "MATH-1554-N01",
+      "MATH-1554-N02",
+      "MATH-1554-N03"
+    ],
+    "excluded_sections": {
+      "graduate_only": 2,
+      "not_atlanta_campus": 4,
+      "reserved_cohorts": 3
+    }
+  },
+  "MATH-2551": {
+    "key": "MATH 2551",
+    "title": "Multivariable Calculus",
+    "role": "foundation",
+    "credit_hours": 4.0,
+    "description": "Multivariable calculus: Linear approximation and Taylor's theorems, Lagrange multiples and constrained optimization, multiple integration and vector analysis including the theorems of Green, Gauss, and Stokes. Credit will not be awarded for both MATH 2551 and MATH 2401 or MATH 2411 or MATH 2561.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        [
+          "or",
+          {
+            "id": "MATH 1552",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1X52",
+            "grade": "T"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "MATH 1553",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1X54",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 1554",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1564",
+            "grade": "D"
+          }
+        ]
+      ]
+    ],
+    "prerequisite_keys": [
+      "MATH 1552",
+      "MATH 1553",
+      "MATH 1554",
+      "MATH 1564",
+      "MATH 1X52",
+      "MATH 1X54"
+    ],
+    "prerequisite_keys_in_subset": [
+      "MATH 1552",
+      "MATH 1553",
+      "MATH 1554"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "MATH-2551-B",
+      "MATH-2551-D",
+      "MATH-2551-G",
+      "MATH-2551-I",
+      "MATH-2551-J",
+      "MATH-2551-L",
+      "MATH-2551-N"
+    ],
+    "component_sections": [
+      "MATH-2551-B01",
+      "MATH-2551-B02",
+      "MATH-2551-B03",
+      "MATH-2551-B04",
+      "MATH-2551-D01",
+      "MATH-2551-D02",
+      "MATH-2551-D03",
+      "MATH-2551-D04",
+      "MATH-2551-G01",
+      "MATH-2551-G02",
+      "MATH-2551-G03",
+      "MATH-2551-I01",
+      "MATH-2551-I03",
+      "MATH-2551-I04",
+      "MATH-2551-J01",
+      "MATH-2551-J02",
+      "MATH-2551-J03",
+      "MATH-2551-L01",
+      "MATH-2551-L02",
+      "MATH-2551-L03",
+      "MATH-2551-N01",
+      "MATH-2551-N02",
+      "MATH-2551-N03",
+      "MATH-2551-N04"
+    ],
+    "excluded_sections": {
+      "not_atlanta_campus": 4
+    }
+  },
+  "MATH-2552": {
+    "key": "MATH 2552",
+    "title": "Differential Equations",
+    "role": "foundation",
+    "credit_hours": 4.0,
+    "description": "Methods for obtaining numerical and analytic solutions of elementary differential equations. Applications are also discussed with an emphasis on modeling. Credit not awarded for both MATH 2552 and MATH 2403 or MATH 2413 or MATH 2562.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        [
+          "or",
+          {
+            "id": "MATH 1552",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1X52",
+            "grade": "T"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "MATH 1553",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1X54",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 1554",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1564",
+            "grade": "D"
+          }
+        ]
+      ]
+    ],
+    "prerequisite_keys": [
+      "MATH 1552",
+      "MATH 1553",
+      "MATH 1554",
+      "MATH 1564",
+      "MATH 1X52",
+      "MATH 1X54"
+    ],
+    "prerequisite_keys_in_subset": [
+      "MATH 1552",
+      "MATH 1553",
+      "MATH 1554"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "MATH-2552-A",
+      "MATH-2552-B",
+      "MATH-2552-C",
+      "MATH-2552-D",
+      "MATH-2552-E",
+      "MATH-2552-G",
+      "MATH-2552-H",
+      "MATH-2552-J",
+      "MATH-2552-K",
+      "MATH-2552-N"
+    ],
+    "component_sections": [
+      "MATH-2552-A01",
+      "MATH-2552-A02",
+      "MATH-2552-A03",
+      "MATH-2552-B01",
+      "MATH-2552-B02",
+      "MATH-2552-B03",
+      "MATH-2552-B04",
+      "MATH-2552-C01",
+      "MATH-2552-C02",
+      "MATH-2552-C03",
+      "MATH-2552-D01",
+      "MATH-2552-D02",
+      "MATH-2552-D03",
+      "MATH-2552-E01",
+      "MATH-2552-E02",
+      "MATH-2552-E03",
+      "MATH-2552-E04",
+      "MATH-2552-G01",
+      "MATH-2552-G02",
+      "MATH-2552-G03",
+      "MATH-2552-G04",
+      "MATH-2552-H01",
+      "MATH-2552-H02",
+      "MATH-2552-H03",
+      "MATH-2552-J01",
+      "MATH-2552-J02",
+      "MATH-2552-J03",
+      "MATH-2552-J04",
+      "MATH-2552-K01",
+      "MATH-2552-K02",
+      "MATH-2552-K03",
+      "MATH-2552-K04",
+      "MATH-2552-N01",
+      "MATH-2552-N02",
+      "MATH-2552-N03",
+      "MATH-2552-N04"
+    ],
+    "excluded_sections": {
+      "not_atlanta_campus": 2,
+      "reserved_cohorts": 3
+    }
+  },
+  "MATH-2106": {
+    "key": "MATH 2106",
+    "title": "Foundations Math Proof",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "An introduction to proofs in advanced mathematics, intended as a transition to upper division courses including Abstract Algebra I and Analysis I.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        [
+          "or",
+          {
+            "id": "MATH 1552",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 15X2",
+            "grade": "T"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "MATH 1553",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1X54",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 1554",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1564",
+            "grade": "D"
+          }
+        ]
+      ]
+    ],
+    "prerequisite_keys": [
+      "MATH 1552",
+      "MATH 1553",
+      "MATH 1554",
+      "MATH 1564",
+      "MATH 15X2",
+      "MATH 1X54"
+    ],
+    "prerequisite_keys_in_subset": [
+      "MATH 1552",
+      "MATH 1553",
+      "MATH 1554"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "MATH-2106-A",
+      "MATH-2106-B",
+      "MATH-2106-D",
+      "MATH-2106-G"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "graduate_only": 1
+    }
+  },
+  "MATH-3012": {
+    "key": "MATH 3012",
+    "title": "Applied Combinatorics",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "Elementary combinatorial techniques used in discrete problem solving: counting methods, solving linear recurrences, graph and network models, related algorithms, and combinatorial designs.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        [
+          "or",
+          {
+            "id": "MATH 1552",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1X52",
+            "grade": "T"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "MATH 1553",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1554",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1X54",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 1564",
+            "grade": "D"
+          }
+        ]
+      ]
+    ],
+    "prerequisite_keys": [
+      "MATH 1552",
+      "MATH 1553",
+      "MATH 1554",
+      "MATH 1564",
+      "MATH 1X52",
+      "MATH 1X54"
+    ],
+    "prerequisite_keys_in_subset": [
+      "MATH 1552",
+      "MATH 1553",
+      "MATH 1554"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "MATH-3012-B",
+      "MATH-3012-D",
+      "MATH-3012-I",
+      "MATH-3012-J",
+      "MATH-3012-K",
+      "MATH-3012-L",
+      "MATH-3012-M"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "not_atlanta_campus": 1
+    }
+  },
+  "MATH-3215": {
+    "key": "MATH 3215",
+    "title": "Probability & Statistics",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "This course is a problem-oriented introduction to the basic concepts of probability and statistics, providing a foundation for applications and further study.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "MATH 2550",
+        "grade": "D"
+      },
+      {
+        "id": "MATH 2X51",
+        "grade": "T"
+      },
+      {
+        "id": "MATH 2551",
+        "grade": "D"
+      },
+      {
+        "id": "MATH 2561",
+        "grade": "D"
+      }
+    ],
+    "prerequisite_keys": [
+      "MATH 2550",
+      "MATH 2551",
+      "MATH 2561",
+      "MATH 2X51"
+    ],
+    "prerequisite_keys_in_subset": [
+      "MATH 2551"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "MATH-3215-H",
+      "MATH-3215-J",
+      "MATH-3215-N"
+    ],
+    "component_sections": [],
+    "excluded_sections": {}
+  },
+  "MATH-3670": {
+    "key": "MATH 3670",
+    "title": "Statistics and Applns",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "Introduction to probability, probability distributions, point estimation, confidence intervals, hypothesis testing, linear regression and analysis of variance. Students cannot receive credit for both MATH 3670 and MATH 3770 or ISYE 3770 or CEE 3770.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "MATH 2550",
+        "grade": "D"
+      },
+      {
+        "id": "MATH 2551",
+        "grade": "D"
+      },
+      {
+        "id": "MATH 2X51",
+        "grade": "T"
+      },
+      {
+        "id": "MATH 2561",
+        "grade": "D"
+      }
+    ],
+    "prerequisite_keys": [
+      "MATH 2550",
+      "MATH 2551",
+      "MATH 2561",
+      "MATH 2X51"
+    ],
+    "prerequisite_keys_in_subset": [
+      "MATH 2551"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "MATH-3670-B",
+      "MATH-3670-J",
+      "MATH-3670-L",
+      "MATH-3670-N"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "not_atlanta_campus": 1
+    }
+  },
+  "MATH-4317": {
+    "key": "MATH 4317",
+    "title": "Analysis I",
+    "role": "upper_level",
+    "credit_hours": 3.0,
+    "description": "Real numbers, topology of Euclidean spaces, Cauchy sequences, completeness, continuity and compactness, uniform continuity, series of functions, Fourier series.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "MATH 2106",
+        "grade": "D"
+      },
+      {
+        "id": "MATH 2740",
+        "grade": "D"
+      },
+      {
+        "id": "CS 2740",
+        "grade": "D"
+      }
+    ],
+    "prerequisite_keys": [
+      "CS 2740",
+      "MATH 2106",
+      "MATH 2740"
+    ],
+    "prerequisite_keys_in_subset": [
+      "MATH 2106"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "MATH-4317-AG",
+      "MATH-4317-AU",
+      "MATH-4317-BG",
+      "MATH-4317-BU",
+      "MATH-4317-CG",
+      "MATH-4317-CU"
+    ],
+    "component_sections": [],
+    "excluded_sections": {}
+  },
+  "PHYS-2211": {
+    "key": "PHYS 2211",
+    "title": "Principles of Physics I",
+    "role": "foundation",
+    "credit_hours": 4.0,
+    "description": "An introductory course which will include mechanics (kinematics, dynamics, work and energy, momentum and collisions, and rotational motion and statics), and may also include oscillations and computational methods. This is a calculus-based course.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "MATH 1552",
+        "grade": "D"
+      },
+      {
+        "id": "MATH 1555",
+        "grade": "D"
+      },
+      {
+        "id": "MATH 1X52",
+        "grade": "D"
+      },
+      {
+        "id": "MATH 15X2",
+        "grade": "D"
+      }
+    ],
+    "prerequisite_keys": [
+      "MATH 1552",
+      "MATH 1555",
+      "MATH 15X2",
+      "MATH 1X52"
+    ],
+    "prerequisite_keys_in_subset": [
+      "MATH 1552"
+    ],
+    "corequisites": [],
+    "exam": "common",
+    "common_exam_label": "PHYS 2211",
+    "primary_sections": [
+      "PHYS-2211-A",
+      "PHYS-2211-B",
+      "PHYS-2211-C",
+      "PHYS-2211-D",
+      "PHYS-2211-E",
+      "PHYS-2211-LS"
+    ],
+    "component_sections": [
+      "PHYS-2211-L01",
+      "PHYS-2211-L02",
+      "PHYS-2211-L03",
+      "PHYS-2211-L04",
+      "PHYS-2211-L05",
+      "PHYS-2211-L06",
+      "PHYS-2211-W01",
+      "PHYS-2211-W02",
+      "PHYS-2211-W03",
+      "PHYS-2211-W04",
+      "PHYS-2211-W05",
+      "PHYS-2211-W06",
+      "PHYS-2211-W07",
+      "PHYS-2211-W08",
+      "PHYS-2211-W09",
+      "PHYS-2211-W10",
+      "PHYS-2211-W11",
+      "PHYS-2211-W12",
+      "PHYS-2211-W13",
+      "PHYS-2211-W14",
+      "PHYS-2211-W15",
+      "PHYS-2211-W16",
+      "PHYS-2211-W17",
+      "PHYS-2211-W18",
+      "PHYS-2211-W19",
+      "PHYS-2211-W20",
+      "PHYS-2211-W21",
+      "PHYS-2211-W22",
+      "PHYS-2211-W23",
+      "PHYS-2211-W24",
+      "PHYS-2211-W25",
+      "PHYS-2211-W26",
+      "PHYS-2211-W27",
+      "PHYS-2211-W28",
+      "PHYS-2211-W29",
+      "PHYS-2211-W30",
+      "PHYS-2211-W31",
+      "PHYS-2211-W32",
+      "PHYS-2211-W33",
+      "PHYS-2211-W34",
+      "PHYS-2211-W35",
+      "PHYS-2211-W36",
+      "PHYS-2211-W37",
+      "PHYS-2211-W38",
+      "PHYS-2211-W39",
+      "PHYS-2211-W40",
+      "PHYS-2211-W41",
+      "PHYS-2211-W42"
+    ],
+    "excluded_sections": {
+      "not_atlanta_campus": 6,
+      "reserved_cohorts": 2
+    }
+  },
+  "PHYS-2212": {
+    "key": "PHYS 2212",
+    "title": "Principles of Physics II",
+    "role": "foundation",
+    "credit_hours": 4.0,
+    "description": "An introductory course which will include electrostatics, electric current and circuits,  electromagnetism, and may also include light and computational methods. This is a calculus-based course.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "PHYS 2211",
+        "grade": "D"
+      },
+      {
+        "id": "PHYS 2231",
+        "grade": "D"
+      }
+    ],
+    "prerequisite_keys": [
+      "PHYS 2211",
+      "PHYS 2231"
+    ],
+    "prerequisite_keys_in_subset": [
+      "PHYS 2211"
+    ],
+    "corequisites": [],
+    "exam": "common",
+    "common_exam_label": "PHYS 2212",
+    "primary_sections": [
+      "PHYS-2212-A",
+      "PHYS-2212-B",
+      "PHYS-2212-C",
+      "PHYS-2212-D",
+      "PHYS-2212-E",
+      "PHYS-2212-LS"
+    ],
+    "component_sections": [
+      "PHYS-2212-E01",
+      "PHYS-2212-E02",
+      "PHYS-2212-E03",
+      "PHYS-2212-E04",
+      "PHYS-2212-E05",
+      "PHYS-2212-Q01",
+      "PHYS-2212-Q02",
+      "PHYS-2212-Q03",
+      "PHYS-2212-Q04",
+      "PHYS-2212-Q05",
+      "PHYS-2212-Q06",
+      "PHYS-2212-Q07",
+      "PHYS-2212-Q08",
+      "PHYS-2212-Q09",
+      "PHYS-2212-Q10",
+      "PHYS-2212-Q11",
+      "PHYS-2212-Q12",
+      "PHYS-2212-Q13",
+      "PHYS-2212-Q14",
+      "PHYS-2212-Q15",
+      "PHYS-2212-Q16",
+      "PHYS-2212-Q17",
+      "PHYS-2212-Q18",
+      "PHYS-2212-Q19",
+      "PHYS-2212-Q20",
+      "PHYS-2212-Q21",
+      "PHYS-2212-Q22",
+      "PHYS-2212-Q23",
+      "PHYS-2212-Q24",
+      "PHYS-2212-Q25",
+      "PHYS-2212-Q26",
+      "PHYS-2212-Q27",
+      "PHYS-2212-Q28",
+      "PHYS-2212-Q29",
+      "PHYS-2212-Q30",
+      "PHYS-2212-Q31",
+      "PHYS-2212-Q32",
+      "PHYS-2212-Q33",
+      "PHYS-2212-Q34"
+    ],
+    "excluded_sections": {
+      "not_atlanta_campus": 4,
+      "reserved_cohorts": 2
+    }
+  },
+  "PHYS-3201": {
+    "key": "PHYS 3201",
+    "title": "Classical Mechanics I",
+    "role": "upper_level",
+    "credit_hours": 3.0,
+    "description": "Fundamental topics in classical mechanics including oscillations, planetary motion, and Lagrangian and Hamiltonian techniques.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        [
+          "or",
+          {
+            "id": "PHYS 2212",
+            "grade": "D"
+          },
+          {
+            "id": "PHYS 2232",
+            "grade": "D"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "MATH 2403",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 2413",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 24X3",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 2552",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 2562",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 2X52",
+            "grade": "T"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "MATH 2401",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 24X1",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 2551",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 2561",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 2X51",
+            "grade": "T"
+          }
+        ]
+      ]
+    ],
+    "prerequisite_keys": [
+      "MATH 2401",
+      "MATH 2403",
+      "MATH 2413",
+      "MATH 24X1",
+      "MATH 24X3",
+      "MATH 2551",
+      "MATH 2552",
+      "MATH 2561",
+      "MATH 2562",
+      "MATH 2X51",
+      "MATH 2X52",
+      "PHYS 2212",
+      "PHYS 2232"
+    ],
+    "prerequisite_keys_in_subset": [
+      "MATH 2551",
+      "MATH 2552",
+      "PHYS 2212"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "PHYS-3201-A",
+      "PHYS-3201-B"
+    ],
+    "component_sections": [],
+    "excluded_sections": {}
+  },
+  "CHEM-1310": {
+    "key": "CHEM 1310",
+    "title": "Prin of Gen Chem for Engr",
+    "role": "foundation",
+    "credit_hours": 4.0,
+    "description": "A first course in chemistry, surveying its fundamental laws and theories, for some engineering majors. It can serve as the first course in a two course sequence where CHEM 1315 is the second course. Topics include atomic structure; bonding theory; stoichiometry; properties of solids, liquids and gases; chemical thermodynamics; electrochemistry; and kinetics. Credit not allowed for both CHEM 1310 and CHEM 1211K.",
+    "prerequisites": [],
+    "prerequisite_keys": [],
+    "prerequisite_keys_in_subset": [],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "CHEM-1310-A",
+      "CHEM-1310-G",
+      "CHEM-1310-L"
+    ],
+    "component_sections": [
+      "CHEM-1310-A01",
+      "CHEM-1310-A02",
+      "CHEM-1310-A03",
+      "CHEM-1310-A04",
+      "CHEM-1310-A06",
+      "CHEM-1310-A07",
+      "CHEM-1310-A08",
+      "CHEM-1310-A09",
+      "CHEM-1310-A12",
+      "CHEM-1310-A24",
+      "CHEM-1310-A34",
+      "CHEM-1310-A44",
+      "CHEM-1310-G02",
+      "CHEM-1310-G04",
+      "CHEM-1310-G06",
+      "CHEM-1310-G07",
+      "CHEM-1310-G08",
+      "CHEM-1310-G09",
+      "CHEM-1310-G12",
+      "CHEM-1310-G14",
+      "CHEM-1310-G32",
+      "CHEM-1310-L01",
+      "CHEM-1310-L02",
+      "CHEM-1310-L03",
+      "CHEM-1310-L06",
+      "CHEM-1310-L07",
+      "CHEM-1310-L08",
+      "CHEM-1310-L09",
+      "CHEM-1310-L11",
+      "CHEM-1310-L14",
+      "CHEM-1310-L21",
+      "CHEM-1310-L23"
+    ],
+    "excluded_sections": {}
+  },
+  "CHEM-1211K": {
+    "key": "CHEM 1211K",
+    "title": "Principles of Chemistry I",
+    "role": "foundation",
+    "credit_hours": 4.0,
+    "description": "First course in a two-semester sequence covering the fundamental principles and applications of chemistry designed for science majors. Topics to be covered include composition of matter, stoichiometry, periodic relations, and nomenclature. Laboratory exercises supplement the lecture material. Credit not allowed for both CHEM 1310 and CHEM 1211K.",
+    "prerequisites": [],
+    "prerequisite_keys": [],
+    "prerequisite_keys_in_subset": [],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "CHEM-1211K-B",
+      "CHEM-1211K-C"
+    ],
+    "component_sections": [
+      "CHEM-1211K-B01",
+      "CHEM-1211K-B02",
+      "CHEM-1211K-B03",
+      "CHEM-1211K-B04",
+      "CHEM-1211K-B06",
+      "CHEM-1211K-B08",
+      "CHEM-1211K-B09",
+      "CHEM-1211K-B12",
+      "CHEM-1211K-B22",
+      "CHEM-1211K-B32",
+      "CHEM-1211K-B34",
+      "CHEM-1211K-C03",
+      "CHEM-1211K-C04",
+      "CHEM-1211K-C06",
+      "CHEM-1211K-C07",
+      "CHEM-1211K-C08",
+      "CHEM-1211K-C09",
+      "CHEM-1211K-C12",
+      "CHEM-1211K-C14",
+      "CHEM-1211K-C18",
+      "CHEM-1211K-C27",
+      "CHEM-1211K-C29",
+      "CHEM-1211K-C32",
+      "CHEM-1211K-C34"
+    ],
+    "excluded_sections": {
+      "reserved_cohorts": 3
+    }
+  },
+  "BIOS-1107": {
+    "key": "BIOS 1107",
+    "title": "Principles of Biology I",
+    "role": "foundation",
+    "credit_hours": 3.0,
+    "description": "Lecture part of a sequence designed for science majors. An introduction to biological principles, including biomacromolecules, bioenergetics, cell structure, genetics, evolution, and ecological relationships for STEM majors and prehealth students.",
+    "prerequisites": [],
+    "prerequisite_keys": [],
+    "prerequisite_keys_in_subset": [],
+    "corequisites": [
+      "BIOS 1107L"
+    ],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "BIOS-1107-A",
+      "BIOS-1107-B"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "reserved_cohorts": 1
+    }
+  },
+  "CS-1301": {
+    "key": "CS 1301",
+    "title": "Intro to Computing",
+    "role": "foundation",
+    "credit_hours": 3.0,
+    "description": "Introduction to computing principles and programming practices with an emphasis on the design, construction and implementation of problem solutions use of software tools.",
+    "prerequisites": [],
+    "prerequisite_keys": [],
+    "prerequisite_keys_in_subset": [],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "CS-1301-A",
+      "CS-1301-C",
+      "CS-1301-D",
+      "CS-1301-FAA",
+      "CS-1301-FAC",
+      "CS-1301-FAD"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "no_scheduled_meeting": 2,
+      "not_atlanta_campus": 3,
+      "reserved_cohorts": 1,
+      "reserved_programs": 1
+    }
+  },
+  "CS-1331": {
+    "key": "CS 1331",
+    "title": "Intro-Object Orient Prog",
+    "role": "foundation",
+    "credit_hours": 3.0,
+    "description": "Introduction to techniques and methods of object-oriented programming such an encapsulation, inheritance, and polymorphism. Emphasis on software development and individual programming skills.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "CS 1301",
+        "grade": "C"
+      },
+      {
+        "id": "CS 1315",
+        "grade": "C"
+      },
+      {
+        "id": "CS 1321",
+        "grade": "C"
+      },
+      {
+        "id": "CS 1371",
+        "grade": "C"
+      }
+    ],
+    "prerequisite_keys": [
+      "CS 1301",
+      "CS 1315",
+      "CS 1321",
+      "CS 1371"
+    ],
+    "prerequisite_keys_in_subset": [
+      "CS 1301",
+      "CS 1371"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "CS-1331-A",
+      "CS-1331-B",
+      "CS-1331-C",
+      "CS-1331-FAA",
+      "CS-1331-FAB",
+      "CS-1331-FAC"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "graduate_only": 1,
+      "non_standard_meeting_pattern": 1,
+      "not_atlanta_campus": 2
+    }
+  },
+  "CS-1332": {
+    "key": "CS 1332",
+    "title": "Data Struct & Algorithms",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "Computer data structures and algorithms in the context of object-oriented programming. Focus on software development towards applications.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "CS 1322",
+        "grade": "C"
+      },
+      {
+        "id": "CS 1331",
+        "grade": "C"
+      }
+    ],
+    "prerequisite_keys": [
+      "CS 1322",
+      "CS 1331"
+    ],
+    "prerequisite_keys_in_subset": [
+      "CS 1331"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "CS-1332-A",
+      "CS-1332-B",
+      "CS-1332-C",
+      "CS-1332-FAA",
+      "CS-1332-FAB",
+      "CS-1332-FAC",
+      "CS-1332-O1"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "graduate_only": 1,
+      "not_atlanta_campus": 1
+    }
+  },
+  "CS-1371": {
+    "key": "CS 1371",
+    "title": "Computing for Engineers",
+    "role": "foundation",
+    "credit_hours": 3.0,
+    "description": "Foundations of computing with an introduction to design and analysis of algorithms and an introduction to design and construction of programs for engineering problem-solving.",
+    "prerequisites": [],
+    "prerequisite_keys": [],
+    "prerequisite_keys_in_subset": [],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "CS-1371-A",
+      "CS-1371-B",
+      "CS-1371-C",
+      "CS-1371-D",
+      "CS-1371-FAA",
+      "CS-1371-FAB",
+      "CS-1371-FAC",
+      "CS-1371-FAD",
+      "CS-1371-O1"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "not_atlanta_campus": 2,
+      "reserved_special_approvals": 1
+    }
+  },
+  "CS-2050": {
+    "key": "CS 2050",
+    "title": "Intro Discrete Math CS",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "Proof methods, strategy, correctness of algorithms over discrete structures.  Induction and recursion.  Complexity and order of growth.  Number theoretic principles and algorithms.  Counting and computability.  Credit not allowed for both CS 2050 and CS 2051.",
+    "prerequisites": [],
+    "prerequisite_keys": [],
+    "prerequisite_keys_in_subset": [],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "CS-2050-A",
+      "CS-2050-C",
+      "CS-2050-D",
+      "CS-2050-FAA",
+      "CS-2050-FAC",
+      "CS-2050-FAD"
+    ],
+    "component_sections": [],
+    "excluded_sections": {}
+  },
+  "CS-2110": {
+    "key": "CS 2110",
+    "title": "Computer Organiz&Program",
+    "role": "major_core",
+    "credit_hours": 4.0,
+    "description": "An introduction to basic computer hardware, machine language, assembly language, and C programming.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "CS 1331",
+        "grade": "C"
+      }
+    ],
+    "prerequisite_keys": [
+      "CS 1331"
+    ],
+    "prerequisite_keys_in_subset": [
+      "CS 1331"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "CS-2110-A",
+      "CS-2110-B",
+      "CS-2110-C",
+      "CS-2110-D",
+      "CS-2110-FAA",
+      "CS-2110-FAB",
+      "CS-2110-FAC",
+      "CS-2110-FAD"
+    ],
+    "component_sections": [
+      "CS-2110-A01",
+      "CS-2110-A02",
+      "CS-2110-A03",
+      "CS-2110-A04",
+      "CS-2110-B01",
+      "CS-2110-B02",
+      "CS-2110-B03",
+      "CS-2110-B04",
+      "CS-2110-B05",
+      "CS-2110-B06",
+      "CS-2110-B07",
+      "CS-2110-C01",
+      "CS-2110-C02",
+      "CS-2110-C03",
+      "CS-2110-C04",
+      "CS-2110-C05",
+      "CS-2110-C06",
+      "CS-2110-D01",
+      "CS-2110-D02",
+      "CS-2110-D03",
+      "CS-2110-D04",
+      "CS-2110-FA1",
+      "CS-2110-FA2",
+      "CS-2110-FA3",
+      "CS-2110-FA4",
+      "CS-2110-O01",
+      "CS-2110-O02"
+    ],
+    "excluded_sections": {
+      "graduate_only": 2,
+      "non_standard_meeting_pattern": 1
+    }
+  },
+  "CS-2200": {
+    "key": "CS 2200",
+    "title": "Systems and Networks",
+    "role": "major_core",
+    "credit_hours": 4.0,
+    "description": "A broad exposure to computer system structure and networking including software abstractions in operating systems for orchestrating the usage of the computing resources. Credit is not awarded for both CS 2200 and ECE 3058.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "CS 2110",
+        "grade": "C"
+      },
+      [
+        "and",
+        {
+          "id": "ECE 2020",
+          "grade": "C"
+        },
+        {
+          "id": "ECE 2035",
+          "grade": "C"
+        }
+      ]
+    ],
+    "prerequisite_keys": [
+      "CS 2110",
+      "ECE 2020",
+      "ECE 2035"
+    ],
+    "prerequisite_keys_in_subset": [
+      "CS 2110",
+      "ECE 2020",
+      "ECE 2035"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "CS-2200-A",
+      "CS-2200-B",
+      "CS-2200-C",
+      "CS-2200-D"
+    ],
+    "component_sections": [
+      "CS-2200-A01",
+      "CS-2200-A02",
+      "CS-2200-A03",
+      "CS-2200-A04",
+      "CS-2200-A05",
+      "CS-2200-B01",
+      "CS-2200-B02",
+      "CS-2200-B03",
+      "CS-2200-B04",
+      "CS-2200-B05",
+      "CS-2200-C01",
+      "CS-2200-D01",
+      "CS-2200-FA1",
+      "CS-2200-FB1"
+    ],
+    "excluded_sections": {
+      "graduate_only": 1,
+      "linked_primary_excluded": 1,
+      "reserved_special_approvals": 2
+    }
+  },
+  "CS-2340": {
+    "key": "CS 2340",
+    "title": "Objects and Design",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "Object-oriented programming methods for dealing with large programs.  Focus on quality processes, effective debugging techniques, and testing to assure a quality product.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "CS 1332",
+        "grade": "C"
+      }
+    ],
+    "prerequisite_keys": [
+      "CS 1332"
+    ],
+    "prerequisite_keys_in_subset": [
+      "CS 1332"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "CS-2340-A",
+      "CS-2340-B",
+      "CS-2340-C",
+      "CS-2340-O1"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "graduate_only": 1
+    }
+  },
+  "CS-3001": {
+    "key": "CS 3001",
+    "title": "Computing & Society",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "Examines the role and impact of information and communication technology in society, with emphasis on ethical, professional, and public policy issues.",
+    "prerequisites": [],
+    "prerequisite_keys": [],
+    "prerequisite_keys_in_subset": [],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "CS-3001-A",
+      "CS-3001-B",
+      "CS-3001-C",
+      "CS-3001-D"
+    ],
+    "component_sections": [
+      "CS-3001-A01",
+      "CS-3001-A02",
+      "CS-3001-A03",
+      "CS-3001-A04",
+      "CS-3001-A05",
+      "CS-3001-A06",
+      "CS-3001-A07",
+      "CS-3001-A08",
+      "CS-3001-A09",
+      "CS-3001-A10",
+      "CS-3001-B01",
+      "CS-3001-B02",
+      "CS-3001-B03",
+      "CS-3001-B04",
+      "CS-3001-B05",
+      "CS-3001-B06",
+      "CS-3001-B07",
+      "CS-3001-B08",
+      "CS-3001-C01",
+      "CS-3001-C02",
+      "CS-3001-C03",
+      "CS-3001-C04",
+      "CS-3001-C05",
+      "CS-3001-C06",
+      "CS-3001-C07",
+      "CS-3001-C08",
+      "CS-3001-C09",
+      "CS-3001-C10",
+      "CS-3001-C11",
+      "CS-3001-C12",
+      "CS-3001-D01",
+      "CS-3001-D02",
+      "CS-3001-D03",
+      "CS-3001-D04",
+      "CS-3001-D05",
+      "CS-3001-D06",
+      "CS-3001-D07",
+      "CS-3001-D08"
+    ],
+    "excluded_sections": {}
+  },
+  "CS-3510": {
+    "key": "CS 3510",
+    "title": "Dsgn&Analysis-Algorithms",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "Basic techniques of design and analysis of efficient algorithms for standard computational problems. NP-Completeness.  Credit not allowed for both CS 3510 and CS 3511.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        [
+          "or",
+          {
+            "id": "CS 2050",
+            "grade": "C"
+          },
+          {
+            "id": "CS 2051",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2106",
+            "grade": "C"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "CS 1332",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 3012",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 3022",
+            "grade": "D"
+          }
+        ]
+      ]
+    ],
+    "prerequisite_keys": [
+      "CS 1332",
+      "CS 2050",
+      "CS 2051",
+      "MATH 2106",
+      "MATH 3012",
+      "MATH 3022"
+    ],
+    "prerequisite_keys_in_subset": [
+      "CS 1332",
+      "CS 2050",
+      "MATH 2106",
+      "MATH 3012"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "CS-3510-A",
+      "CS-3510-B",
+      "CS-3510-C"
+    ],
+    "component_sections": [],
+    "excluded_sections": {}
+  },
+  "CS-3600": {
+    "key": "CS 3600",
+    "title": "Intro-Artificial Intell",
+    "role": "upper_level",
+    "credit_hours": 3.0,
+    "description": "An introduction to artificial intelligence and machine learning. Topics include intelligent system design methodologies, search and problem solving, supervised and reinforced learning.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "CS 1332",
+        "grade": "C"
+      }
+    ],
+    "prerequisite_keys": [
+      "CS 1332"
+    ],
+    "prerequisite_keys_in_subset": [
+      "CS 1332"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "CS-3600-A"
+    ],
+    "component_sections": [],
+    "excluded_sections": {}
+  },
+  "CS-4510": {
+    "key": "CS 4510",
+    "title": "Automata and Complexity",
+    "role": "upper_level",
+    "credit_hours": 3.0,
+    "description": "Computational machine models and their language classes. Undecidability. Resource-bounded computations. Central complexity-theoretic concepts such as complexity classes, reducibility and completeness.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        [
+          "or",
+          {
+            "id": "CS 3510",
+            "grade": "C"
+          },
+          {
+            "id": "CS 3511",
+            "grade": "C"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "MATH 3012",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 3022",
+            "grade": "D"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "MATH 3215",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 3235",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 3225",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 3770",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 3670",
+            "grade": "D"
+          },
+          {
+            "id": "CEE 3770",
+            "grade": "D"
+          },
+          {
+            "id": "ISYE 3770",
+            "grade": "D"
+          },
+          [
+            "and",
+            {
+              "id": "ISYE 2027",
+              "grade": "D"
+            },
+            [
+              "or",
+              {
+                "id": "ISYE 2028",
+                "grade": "D"
+              },
+              {
+                "id": "ISYE 3030",
+                "grade": "D"
+              }
+            ]
+          ]
+        ]
+      ]
+    ],
+    "prerequisite_keys": [
+      "CEE 3770",
+      "CS 3510",
+      "CS 3511",
+      "ISYE 2027",
+      "ISYE 2028",
+      "ISYE 3030",
+      "ISYE 3770",
+      "MATH 3012",
+      "MATH 3022",
+      "MATH 3215",
+      "MATH 3225",
+      "MATH 3235",
+      "MATH 3670",
+      "MATH 3770"
+    ],
+    "prerequisite_keys_in_subset": [
+      "CS 3510",
+      "ISYE 2027",
+      "ISYE 3770",
+      "MATH 3012",
+      "MATH 3215",
+      "MATH 3670"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "CS-4510-A",
+      "CS-4510-B"
+    ],
+    "component_sections": [],
+    "excluded_sections": {}
+  },
+  "CS-4641": {
+    "key": "CS 4641",
+    "title": "Machine Learning",
+    "role": "upper_level",
+    "credit_hours": 3.0,
+    "description": "Machine learning techniques and applications. Topics include foundational issues; inductive, analytical, numerical, and theoretical approaches; and real-world applications. Credit not awarded for both CS 4641 and CS 7641/CSE 6740/ISYE 6740/ECE 4252.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        [
+          "or",
+          {
+            "id": "CS 1332",
+            "grade": "C"
+          },
+          {
+            "id": "ISYE 3133",
+            "grade": "C"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "MATH 1553",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1X53",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 1554",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1X54",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 1564",
+            "grade": "D"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "MATH 1551",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1X51",
+            "grade": "T"
+          }
+        ]
+      ]
+    ],
+    "prerequisite_keys": [
+      "CS 1332",
+      "ISYE 3133",
+      "MATH 1551",
+      "MATH 1553",
+      "MATH 1554",
+      "MATH 1564",
+      "MATH 1X51",
+      "MATH 1X53",
+      "MATH 1X54"
+    ],
+    "prerequisite_keys_in_subset": [
+      "CS 1332",
+      "ISYE 3133",
+      "MATH 1551",
+      "MATH 1553",
+      "MATH 1554"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "CS-4641-A",
+      "CS-4641-B",
+      "CS-4641-C",
+      "CS-4641-D"
+    ],
+    "component_sections": [],
+    "excluded_sections": {}
+  },
+  "ECE-2020": {
+    "key": "ECE 2020",
+    "title": "Digital System Design",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "Computer system and digital design principles.  Switch and gate design, Boolean algebra, number systems, arithmetic, storage elements.  Datapath, memory organization, instruction set architecture, assembly language.  Credit not allowed for both ECE 2020 and ECE 2030.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "CS 1371",
+        "grade": "C"
+      },
+      {
+        "id": "CS 1171",
+        "grade": "D"
+      },
+      {
+        "id": "CS 1301",
+        "grade": "C"
+      }
+    ],
+    "prerequisite_keys": [
+      "CS 1171",
+      "CS 1301",
+      "CS 1371"
+    ],
+    "prerequisite_keys_in_subset": [
+      "CS 1301",
+      "CS 1371"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "ECE-2020-A",
+      "ECE-2020-B",
+      "ECE-2020-C",
+      "ECE-2020-D",
+      "ECE-2020-IE1",
+      "ECE-2020-IE2",
+      "ECE-2020-IE3"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "not_atlanta_campus": 1
+    }
+  },
+  "ECE-2035": {
+    "key": "ECE 2035",
+    "title": "Programming HW/SW System",
+    "role": "major_core",
+    "credit_hours": 4.0,
+    "description": "Creation of complex execution and storage mechanisms, based on instruction set architecture, for software design including high-level programming languages and operating systems.  Programming design projects.  Credit not allowed for both ECE 2035 and ECE 3035.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "ECE 2020",
+        "grade": "C"
+      }
+    ],
+    "prerequisite_keys": [
+      "ECE 2020"
+    ],
+    "prerequisite_keys_in_subset": [
+      "ECE 2020"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "ECE-2035-A",
+      "ECE-2035-B",
+      "ECE-2035-C",
+      "ECE-2035-D"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "no_scheduled_meeting": 4,
+      "not_atlanta_campus": 1
+    }
+  },
+  "ECE-2040": {
+    "key": "ECE 2040",
+    "title": "Circuit Analysis",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "Basic concepts of DC and AC circuit theory and analysis.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        {
+          "id": "PHYS 2212",
+          "grade": "C"
+        },
+        [
+          "or",
+          {
+            "id": "MATH 2552",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2X52",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 25X2",
+            "grade": "T"
+          }
+        ]
+      ]
+    ],
+    "prerequisite_keys": [
+      "MATH 2552",
+      "MATH 25X2",
+      "MATH 2X52",
+      "PHYS 2212"
+    ],
+    "prerequisite_keys_in_subset": [
+      "MATH 2552",
+      "PHYS 2212"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "ECE-2040-A",
+      "ECE-2040-B",
+      "ECE-2040-C",
+      "ECE-2040-D",
+      "ECE-2040-E"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "not_atlanta_campus": 1
+    }
+  },
+  "ECE-3077": {
+    "key": "ECE 3077",
+    "title": "Prob/Stats for ECE",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "Introduction to probability, random variables, distributions, estimation, confidence intervals, linear regression and other tools for describing and managing uncertainty in electrical and computer engineering.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        [
+          "or",
+          {
+            "id": "MATH 2401",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2411",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 24X1",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2551",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2561",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2X51",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 2605",
+            "grade": "C"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "CS 1301",
+            "grade": "C"
+          },
+          {
+            "id": "CS 1371",
+            "grade": "C"
+          }
+        ]
+      ]
+    ],
+    "prerequisite_keys": [
+      "CS 1301",
+      "CS 1371",
+      "MATH 2401",
+      "MATH 2411",
+      "MATH 24X1",
+      "MATH 2551",
+      "MATH 2561",
+      "MATH 2605",
+      "MATH 2X51"
+    ],
+    "prerequisite_keys_in_subset": [
+      "CS 1301",
+      "CS 1371",
+      "MATH 2551"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "ECE-3077-A"
+    ],
+    "component_sections": [],
+    "excluded_sections": {}
+  },
+  "ECE-3084": {
+    "key": "ECE 3084",
+    "title": "Signals and Systems",
+    "role": "upper_level",
+    "credit_hours": 3.0,
+    "description": "Continuous-time linear systems and signals, their mathematical representations, and computational tools.  Fourier and Laplace transforms, convolutions, input-output responses, stability.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        {
+          "id": "ECE 2026",
+          "grade": "C"
+        },
+        [
+          "or",
+          {
+            "id": "ECE 2040",
+            "grade": "C"
+          },
+          [
+            "and",
+            {
+              "id": "ECE 3710",
+              "grade": "C"
+            },
+            {
+              "id": "MATH 2403",
+              "grade": "C"
+            },
+            {
+              "id": "MATH 2413",
+              "grade": "C"
+            },
+            {
+              "id": "MATH 24X3",
+              "grade": "C"
+            }
+          ],
+          [
+            "or",
+            [
+              "and",
+              {
+                "id": "ECE 3710",
+                "grade": "C"
+              },
+              {
+                "id": "MATH 2552",
+                "grade": "C"
+              }
+            ],
+            {
+              "id": "MATH 2562",
+              "grade": "C"
+            },
+            {
+              "id": "MATH 2X52",
+              "grade": "C"
+            }
+          ]
+        ]
+      ]
+    ],
+    "prerequisite_keys": [
+      "ECE 2026",
+      "ECE 2040",
+      "ECE 3710",
+      "MATH 2403",
+      "MATH 2413",
+      "MATH 24X3",
+      "MATH 2552",
+      "MATH 2562",
+      "MATH 2X52"
+    ],
+    "prerequisite_keys_in_subset": [
+      "ECE 2040",
+      "ECE 3710",
+      "MATH 2552"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "ECE-3084-A"
+    ],
+    "component_sections": [],
+    "excluded_sections": {}
+  },
+  "ECE-3710": {
+    "key": "ECE 3710",
+    "title": "Circuits & Electronics",
+    "role": "major_core",
+    "credit_hours": 2.0,
+    "description": "An introduction to electric circuit elements and electronic devices and a study of circuits containing such devices.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "PHYS 2212",
+        "grade": "D"
+      },
+      {
+        "id": "PHYS 2232",
+        "grade": "D"
+      }
+    ],
+    "prerequisite_keys": [
+      "PHYS 2212",
+      "PHYS 2232"
+    ],
+    "prerequisite_keys_in_subset": [
+      "PHYS 2212"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "ECE-3710-A",
+      "ECE-3710-B",
+      "ECE-3710-C",
+      "ECE-3710-F",
+      "ECE-3710-G",
+      "ECE-3710-H",
+      "ECE-3710-K",
+      "ECE-3710-L"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "no_scheduled_meeting": 1,
+      "not_atlanta_campus": 1
+    }
+  },
+  "ME-1670": {
+    "key": "ME 1670",
+    "title": "Intro to Engr Graphics",
+    "role": "foundation",
+    "credit_hours": 3.0,
+    "description": "Introduction to engineering graphics and visualization including sketching, line drawing, and solid modeling.  Development and interpretation of drawings and specifications for product realization.",
+    "prerequisites": [],
+    "prerequisite_keys": [],
+    "prerequisite_keys_in_subset": [],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "ME-1670-A",
+      "ME-1670-B",
+      "ME-1670-C",
+      "ME-1670-D",
+      "ME-1670-E",
+      "ME-1670-F",
+      "ME-1670-G",
+      "ME-1670-H",
+      "ME-1670-I",
+      "ME-1670-J",
+      "ME-1670-K",
+      "ME-1670-L"
+    ],
+    "component_sections": [
+      "ME-1670-A01",
+      "ME-1670-B01",
+      "ME-1670-C01",
+      "ME-1670-D01",
+      "ME-1670-E01",
+      "ME-1670-F01",
+      "ME-1670-G01",
+      "ME-1670-H01",
+      "ME-1670-I01",
+      "ME-1670-J01",
+      "ME-1670-K01",
+      "ME-1670-L01"
+    ],
+    "excluded_sections": {}
+  },
+  "ME-2016": {
+    "key": "ME 2016",
+    "title": "Computing Techniques",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "An introduction to the use of computers and MATLAB programming for the solution of mechanical engineering problems. Topics include: sources of error in computing, the use of modular software design, basic numerical methods, and signal processing.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        [
+          "or",
+          {
+            "id": "CS 1371",
+            "grade": "D"
+          },
+          [
+            "and",
+            {
+              "id": "CS 1301",
+              "grade": "D"
+            },
+            {
+              "id": "CS 1171",
+              "grade": "D"
+            }
+          ],
+          [
+            "and",
+            {
+              "id": "CS 1311",
+              "grade": "D"
+            },
+            {
+              "id": "CS 1171",
+              "grade": "D"
+            }
+          ],
+          [
+            "and",
+            {
+              "id": "CS 13X1",
+              "grade": "T"
+            },
+            {
+              "id": "CS 1171",
+              "grade": "D"
+            }
+          ],
+          [
+            "and",
+            {
+              "id": "CS 13X2",
+              "grade": "T"
+            },
+            {
+              "id": "CS 1171",
+              "grade": "D"
+            }
+          ],
+          [
+            "and",
+            {
+              "id": "CS 17XX",
+              "grade": "T"
+            },
+            {
+              "id": "CS 1171",
+              "grade": "D"
+            }
+          ],
+          [
+            "and",
+            {
+              "id": "CS 15XX",
+              "grade": "T"
+            },
+            {
+              "id": "CS 1171",
+              "grade": "D"
+            }
+          ]
+        ],
+        [
+          "or",
+          {
+            "id": "MATH 1552",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 1X52",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 1502",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 1512",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 15X2",
+            "grade": "T"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "MATH 1553",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 1564",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 1554",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 1502",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 1512",
+            "grade": "C"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "MATH 2552",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2X52",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 2562",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2403",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2413",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 24X3",
+            "grade": "T"
+          }
+        ]
+      ]
+    ],
+    "prerequisite_keys": [
+      "CS 1171",
+      "CS 1301",
+      "CS 1311",
+      "CS 1371",
+      "CS 13X1",
+      "CS 13X2",
+      "CS 15XX",
+      "CS 17XX",
+      "MATH 1502",
+      "MATH 1512",
+      "MATH 1552",
+      "MATH 1553",
+      "MATH 1554",
+      "MATH 1564",
+      "MATH 15X2",
+      "MATH 1X52",
+      "MATH 2403",
+      "MATH 2413",
+      "MATH 24X3",
+      "MATH 2552",
+      "MATH 2562",
+      "MATH 2X52"
+    ],
+    "prerequisite_keys_in_subset": [
+      "CS 1301",
+      "CS 1371",
+      "MATH 1552",
+      "MATH 1553",
+      "MATH 1554",
+      "MATH 2552"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "ME-2016-A",
+      "ME-2016-B",
+      "ME-2016-C",
+      "ME-2016-D",
+      "ME-2016-E",
+      "ME-2016-F"
+    ],
+    "component_sections": [],
+    "excluded_sections": {}
+  },
+  "ME-2202": {
+    "key": "ME 2202",
+    "title": "Dynamics of Rigid Bodies",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "Kinematics and dynamics of particles and rigid bodies in one, two, and three dimensions.  Work-energy and impulse-momentum concepts.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "COE 2001",
+        "grade": "C"
+      }
+    ],
+    "prerequisite_keys": [
+      "COE 2001"
+    ],
+    "prerequisite_keys_in_subset": [
+      "COE 2001"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "ME-2202-A",
+      "ME-2202-B",
+      "ME-2202-C",
+      "ME-2202-D",
+      "ME-2202-E",
+      "ME-2202-F"
+    ],
+    "component_sections": [],
+    "excluded_sections": {}
+  },
+  "ME-3017": {
+    "key": "ME 3017",
+    "title": "System Dynamics",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "Dynamic modeling and simulation of systems with mechanical, hydraulic, thermal and/or electrical elements.  Frequency response analysis, stability, and feedback control design of dynamic systems. Students cannot receive credit for ME 3017 and AE 3530.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        [
+          "or",
+          {
+            "id": "MATH 2552",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2X52",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 2403",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2413",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 24X3",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 2562",
+            "grade": "C"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "ME 2202",
+            "grade": "D"
+          },
+          {
+            "id": "AE 2220",
+            "grade": "D"
+          }
+        ],
+        {
+          "id": "ME 2016",
+          "grade": "D"
+        },
+        [
+          "or",
+          {
+            "id": "ECE 3710",
+            "grade": "D"
+          },
+          {
+            "id": "ECE 2040",
+            "grade": "D"
+          }
+        ]
+      ]
+    ],
+    "prerequisite_keys": [
+      "AE 2220",
+      "ECE 2040",
+      "ECE 3710",
+      "MATH 2403",
+      "MATH 2413",
+      "MATH 24X3",
+      "MATH 2552",
+      "MATH 2562",
+      "MATH 2X52",
+      "ME 2016",
+      "ME 2202"
+    ],
+    "prerequisite_keys_in_subset": [
+      "AE 2220",
+      "ECE 2040",
+      "ECE 3710",
+      "MATH 2552",
+      "ME 2016",
+      "ME 2202"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "ME-3017-A",
+      "ME-3017-B",
+      "ME-3017-C",
+      "ME-3017-D"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "not_atlanta_campus": 1
+    }
+  },
+  "ME-3322": {
+    "key": "ME 3322",
+    "title": "Thermodynamics",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "Introduction to thermodynamics. Thermodynamic properties, energy and mass conservation, entropy and the second law. Second-law analysis of thermodynamic systems, gas cycles, vapor cycles.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        [
+          "or",
+          {
+            "id": "PHYS 2211",
+            "grade": "C"
+          },
+          {
+            "id": "PHYS 2231",
+            "grade": "C"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "MATH 2403",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 24X3",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 2413",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2552",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2X52",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 2562",
+            "grade": "C"
+          }
+        ]
+      ]
+    ],
+    "prerequisite_keys": [
+      "MATH 2403",
+      "MATH 2413",
+      "MATH 24X3",
+      "MATH 2552",
+      "MATH 2562",
+      "MATH 2X52",
+      "PHYS 2211",
+      "PHYS 2231"
+    ],
+    "prerequisite_keys_in_subset": [
+      "MATH 2552",
+      "PHYS 2211"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "ME-3322-A",
+      "ME-3322-B",
+      "ME-3322-C",
+      "ME-3322-D",
+      "ME-3322-E",
+      "ME-3322-F"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "not_atlanta_campus": 1
+    }
+  },
+  "ME-3340": {
+    "key": "ME 3340",
+    "title": "Fluid Mechanics",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "The fundamentals of fluid mechanics. Topics include fluid statics; control-volume analysis; the Navier-Stokes equations; similitude; viscous, inviscid and turbulent flows; boundary layers.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        [
+          "or",
+          {
+            "id": "ME 2202",
+            "grade": "D"
+          },
+          {
+            "id": "AE 2220",
+            "grade": "D"
+          },
+          {
+            "id": "NRE 2110",
+            "grade": "D"
+          },
+          {
+            "id": "NRE 3301",
+            "grade": "D"
+          },
+          {
+            "id": "MSE 3005",
+            "grade": "D"
+          },
+          {
+            "id": "PTFE 2200",
+            "grade": "D"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "ME 3322",
+            "grade": "D"
+          },
+          {
+            "id": "CHEM 3411",
+            "grade": "D"
+          },
+          {
+            "id": "MSE 3001",
+            "grade": "D"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "MATH 2401",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2411",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 24X1",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 2551",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2X51",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 2561",
+            "grade": "C"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "MATH 2403",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2413",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 24X3",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 2552",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2562",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2X52",
+            "grade": "T"
+          }
+        ],
+        {
+          "id": "COE 2001",
+          "grade": "C"
+        }
+      ]
+    ],
+    "prerequisite_keys": [
+      "AE 2220",
+      "CHEM 3411",
+      "COE 2001",
+      "MATH 2401",
+      "MATH 2403",
+      "MATH 2411",
+      "MATH 2413",
+      "MATH 24X1",
+      "MATH 24X3",
+      "MATH 2551",
+      "MATH 2552",
+      "MATH 2561",
+      "MATH 2562",
+      "MATH 2X51",
+      "MATH 2X52",
+      "ME 2202",
+      "ME 3322",
+      "MSE 3001",
+      "MSE 3005",
+      "NRE 2110",
+      "NRE 3301",
+      "PTFE 2200"
+    ],
+    "prerequisite_keys_in_subset": [
+      "AE 2220",
+      "COE 2001",
+      "MATH 2551",
+      "MATH 2552",
+      "ME 2202",
+      "ME 3322"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "ME-3340-A",
+      "ME-3340-B",
+      "ME-3340-C",
+      "ME-3340-D",
+      "ME-3340-E"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "not_atlanta_campus": 1
+    }
+  },
+  "ME-3345": {
+    "key": "ME 3345",
+    "title": "Heat Transfer",
+    "role": "upper_level",
+    "credit_hours": 3.0,
+    "description": "Introduction to the study of heat transfer, transport coefficients, steady state conduction, transient conduction, radiative heat transfer, and forced and natural convection.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        [
+          "or",
+          {
+            "id": "MATH 2403",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2413",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 24X3",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 2552",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2X52",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 2562",
+            "grade": "C"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "ME 3340",
+            "grade": "D"
+          },
+          {
+            "id": "CEE 3040",
+            "grade": "D"
+          }
+        ],
+        {
+          "id": "ME 3322",
+          "grade": "D"
+        }
+      ]
+    ],
+    "prerequisite_keys": [
+      "CEE 3040",
+      "MATH 2403",
+      "MATH 2413",
+      "MATH 24X3",
+      "MATH 2552",
+      "MATH 2562",
+      "MATH 2X52",
+      "ME 3322",
+      "ME 3340"
+    ],
+    "prerequisite_keys_in_subset": [
+      "MATH 2552",
+      "ME 3322",
+      "ME 3340"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "ME-3345-A",
+      "ME-3345-C",
+      "ME-3345-D",
+      "ME-3345-E"
+    ],
+    "component_sections": [],
+    "excluded_sections": {}
+  },
+  "COE-2001": {
+    "key": "COE 2001",
+    "title": "Statics",
+    "role": "foundation",
+    "credit_hours": 2.0,
+    "description": "Elements of statics in two and three dimensions, free-body diagrams, distributed loads, centroids, and friction.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        [
+          "or",
+          {
+            "id": "MATH 1502",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 15X2",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 1512",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1552",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1X52",
+            "grade": "T"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "PHYS 2211",
+            "grade": "D"
+          },
+          {
+            "id": "PHYS 2231",
+            "grade": "D"
+          }
+        ]
+      ]
+    ],
+    "prerequisite_keys": [
+      "MATH 1502",
+      "MATH 1512",
+      "MATH 1552",
+      "MATH 15X2",
+      "MATH 1X52",
+      "PHYS 2211",
+      "PHYS 2231"
+    ],
+    "prerequisite_keys_in_subset": [
+      "MATH 1552",
+      "PHYS 2211"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "COE-2001-A",
+      "COE-2001-B",
+      "COE-2001-C",
+      "COE-2001-D",
+      "COE-2001-E",
+      "COE-2001-F",
+      "COE-2001-G",
+      "COE-2001-H",
+      "COE-2001-I",
+      "COE-2001-J",
+      "COE-2001-K",
+      "COE-2001-M",
+      "COE-2001-N",
+      "COE-2001-P"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "not_atlanta_campus": 2,
+      "reserved_cohorts": 1
+    }
+  },
+  "COE-3001": {
+    "key": "COE 3001",
+    "title": "Deformable Bodies",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "Stress and strain analysis applied to beams, vessels, pipes, and combined loading; stress and strain transformations; beam deflection; column buckling.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        [
+          "or",
+          {
+            "id": "MATH 2403",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 2413",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 24X3",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 2552",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 2562",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 2X52",
+            "grade": "T"
+          }
+        ],
+        {
+          "id": "COE 2001",
+          "grade": "D"
+        }
+      ]
+    ],
+    "prerequisite_keys": [
+      "COE 2001",
+      "MATH 2403",
+      "MATH 2413",
+      "MATH 24X3",
+      "MATH 2552",
+      "MATH 2562",
+      "MATH 2X52"
+    ],
+    "prerequisite_keys_in_subset": [
+      "COE 2001",
+      "MATH 2552"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "COE-3001-A",
+      "COE-3001-B",
+      "COE-3001-F",
+      "COE-3001-G",
+      "COE-3001-H",
+      "COE-3001-I",
+      "COE-3001-J",
+      "COE-3001-L",
+      "COE-3001-O",
+      "COE-3001-P"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "not_atlanta_campus": 1
+    }
+  },
+  "ISYE-2027": {
+    "key": "ISYE 2027",
+    "title": "Probability With Apps",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "Topics include conditional probability, density and distribution functions from engineering, expectation, conditional expectation, laws of large numbers, central limit theorem, and introduction to Poisson Processes.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "MATH 2550",
+        "grade": "C"
+      },
+      {
+        "id": "MATH 2551",
+        "grade": "C"
+      },
+      {
+        "id": "MATH 2561",
+        "grade": "C"
+      },
+      [
+        "and",
+        {
+          "id": "MATH 2X51",
+          "grade": "T"
+        },
+        [
+          "or",
+          {
+            "id": "MATH 1522",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 1553",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 1554",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 1564",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 1X53",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 1X54",
+            "grade": "T"
+          }
+        ]
+      ]
+    ],
+    "prerequisite_keys": [
+      "MATH 1522",
+      "MATH 1553",
+      "MATH 1554",
+      "MATH 1564",
+      "MATH 1X53",
+      "MATH 1X54",
+      "MATH 2550",
+      "MATH 2551",
+      "MATH 2561",
+      "MATH 2X51"
+    ],
+    "prerequisite_keys_in_subset": [
+      "MATH 1553",
+      "MATH 1554",
+      "MATH 2551"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "ISYE-2027-A",
+      "ISYE-2027-B",
+      "ISYE-2027-C",
+      "ISYE-2027-D"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "no_scheduled_meeting": 1
+    }
+  },
+  "ISYE-3044": {
+    "key": "ISYE 3044",
+    "title": "Simulation Analy & Dsgn",
+    "role": "upper_level",
+    "credit_hours": 3.0,
+    "description": "Discrete event simulation methodology emphasizing the statistical basis for simulation modeling and analysis. Overview of computer languages and simulation design applied to various industrial situations.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        {
+          "id": "ISYE 3030",
+          "grade": "D"
+        },
+        {
+          "id": "ISYE 3232",
+          "grade": "D"
+        }
+      ]
+    ],
+    "prerequisite_keys": [
+      "ISYE 3030",
+      "ISYE 3232"
+    ],
+    "prerequisite_keys_in_subset": [
+      "ISYE 3232"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "ISYE-3044-M12",
+      "ISYE-3044-M14",
+      "ISYE-3044-T14",
+      "ISYE-3044-T15"
+    ],
+    "component_sections": [],
+    "excluded_sections": {}
+  },
+  "ISYE-3133": {
+    "key": "ISYE 3133",
+    "title": "Engineering Optimization",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "Topics include modeling with networks and graphs; linear, nonlinear, and integer programming, construction of models employing modern modeling languages; and general solution strategies.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        {
+          "id": "ISYE 2027",
+          "grade": "D"
+        },
+        [
+          "or",
+          {
+            "id": "MATH 2602",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2603",
+            "grade": "C"
+          }
+        ],
+        {
+          "id": "CS 2316",
+          "grade": "D"
+        }
+      ],
+      [
+        "or",
+        {
+          "id": "MATH 3215",
+          "grade": "C"
+        },
+        {
+          "id": "MATH 3225",
+          "grade": "C"
+        },
+        {
+          "id": "MATH 3235",
+          "grade": "C"
+        },
+        {
+          "id": "MATH 3236",
+          "grade": "C"
+        }
+      ]
+    ],
+    "prerequisite_keys": [
+      "CS 2316",
+      "ISYE 2027",
+      "MATH 2602",
+      "MATH 2603",
+      "MATH 3215",
+      "MATH 3225",
+      "MATH 3235",
+      "MATH 3236"
+    ],
+    "prerequisite_keys_in_subset": [
+      "ISYE 2027",
+      "MATH 3215"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "ISYE-3133-LEC"
+    ],
+    "component_sections": [
+      "ISYE-3133-MW1",
+      "ISYE-3133-MW2",
+      "ISYE-3133-MW3",
+      "ISYE-3133-MW4",
+      "ISYE-3133-MW5",
+      "ISYE-3133-MW6",
+      "ISYE-3133-TR1",
+      "ISYE-3133-TR2"
+    ],
+    "excluded_sections": {}
+  },
+  "ISYE-3232": {
+    "key": "ISYE 3232",
+    "title": "Stochastic Mfg&Serv Sys",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "Methods for describing stochastic movements of material in manufacturing facilities, supply chain, and equipment maintenance networks. Includes analysis of congestion, delays, and inventory ordering policies.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "ISYE 2027",
+        "grade": "D"
+      },
+      {
+        "id": "MATH 3215",
+        "grade": "C"
+      },
+      {
+        "id": "MATH 3225",
+        "grade": "C"
+      },
+      {
+        "id": "MATH 3235",
+        "grade": "C"
+      },
+      {
+        "id": "MATH 3236",
+        "grade": "C"
+      }
+    ],
+    "prerequisite_keys": [
+      "ISYE 2027",
+      "MATH 3215",
+      "MATH 3225",
+      "MATH 3235",
+      "MATH 3236"
+    ],
+    "prerequisite_keys_in_subset": [
+      "ISYE 2027",
+      "MATH 3215"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "ISYE-3232-M17",
+      "ISYE-3232-T12",
+      "ISYE-3232-T14",
+      "ISYE-3232-T17"
+    ],
+    "component_sections": [],
+    "excluded_sections": {}
+  },
+  "ISYE-3770": {
+    "key": "ISYE 3770",
+    "title": "Statistics& Applications",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "Introduction to probability, probability distributions, point estimation, confidence intervals, hypothesis testing, linear regression, and analysis of variance. Crosslisted with MATH 3770 and CEE 3770. Also, credit not awarded for both ISYE 3770 and MATH 3670.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "MATH 2550",
+        "grade": "D"
+      },
+      {
+        "id": "MATH 2551",
+        "grade": "D"
+      },
+      {
+        "id": "MATH 2561",
+        "grade": "D"
+      },
+      [
+        "and",
+        {
+          "id": "MATH 2X51",
+          "grade": "T"
+        },
+        [
+          "or",
+          {
+            "id": "MATH 1522",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1553",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1554",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1564",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1X53",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 1X54",
+            "grade": "T"
+          }
+        ]
+      ]
+    ],
+    "prerequisite_keys": [
+      "MATH 1522",
+      "MATH 1553",
+      "MATH 1554",
+      "MATH 1564",
+      "MATH 1X53",
+      "MATH 1X54",
+      "MATH 2550",
+      "MATH 2551",
+      "MATH 2561",
+      "MATH 2X51"
+    ],
+    "prerequisite_keys_in_subset": [
+      "MATH 1553",
+      "MATH 1554",
+      "MATH 2551"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "ISYE-3770-M08",
+      "ISYE-3770-M09",
+      "ISYE-3770-M11",
+      "ISYE-3770-M12",
+      "ISYE-3770-M14",
+      "ISYE-3770-M15",
+      "ISYE-3770-M17",
+      "ISYE-3770-R14",
+      "ISYE-3770-T08",
+      "ISYE-3770-T09",
+      "ISYE-3770-T12",
+      "ISYE-3770-T14",
+      "ISYE-3770-T15",
+      "ISYE-3770-T17"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "not_atlanta_campus": 1
+    }
+  },
+  "ISYE-4031": {
+    "key": "ISYE 4031",
+    "title": "Regression/Forecasting",
+    "role": "upper_level",
+    "credit_hours": 3.0,
+    "description": "Regression analysis: multiple linear regression, diagnostics, and variable selection.  Forecasting: exponential smoothing techniques and autoregressive moving average models.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "ISYE 3030",
+        "grade": "D"
+      }
+    ],
+    "prerequisite_keys": [
+      "ISYE 3030"
+    ],
+    "prerequisite_keys_in_subset": [],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "ISYE-4031-M11",
+      "ISYE-4031-T08",
+      "ISYE-4031-T09",
+      "ISYE-4031-T12"
+    ],
+    "component_sections": [],
+    "excluded_sections": {}
+  },
+  "AE-2010": {
+    "key": "AE 2010",
+    "title": "Thermodyn&Fluids Fundam",
+    "role": "major_core",
+    "credit_hours": 4.0,
+    "description": "Thermodynamic and fluid properties. Conservation laws, Isentropic flow, shocks and expansions, introduction to flows with friction and heat transfer. Applications to aerospace devices. Students cannot receive credit for both AE 2010 and AE 3450.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        [
+          "or",
+          {
+            "id": "MATH 2401",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2411",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 24X1",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 2551",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2561",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2X51",
+            "grade": "T"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "PHYS 2211",
+            "grade": "C"
+          },
+          {
+            "id": "PHYS 2231",
+            "grade": "C"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "CHEM 1310",
+            "grade": "C"
+          },
+          {
+            "id": "CHEM 1211K",
+            "grade": "C"
+          }
+        ]
+      ]
+    ],
+    "prerequisite_keys": [
+      "CHEM 1211K",
+      "CHEM 1310",
+      "MATH 2401",
+      "MATH 2411",
+      "MATH 24X1",
+      "MATH 2551",
+      "MATH 2561",
+      "MATH 2X51",
+      "PHYS 2211",
+      "PHYS 2231"
+    ],
+    "prerequisite_keys_in_subset": [
+      "CHEM 1211K",
+      "CHEM 1310",
+      "MATH 2551",
+      "PHYS 2211"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "AE-2010-A",
+      "AE-2010-B"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "not_atlanta_campus": 1
+    }
+  },
+  "AE-2220": {
+    "key": "AE 2220",
+    "title": "Dynamics",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "Motion of particles and mass center of bodies, kinematics and kinetics of rigid bodies in plane motion, work-energy and impulse-momentum methods, 3-D dynamics of rigid bodies.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        {
+          "id": "COE 2001",
+          "grade": "C"
+        },
+        [
+          "or",
+          {
+            "id": "MATH 2403",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2413",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 24X3",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2552",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2562",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 2X52",
+            "grade": "T"
+          }
+        ]
+      ]
+    ],
+    "prerequisite_keys": [
+      "COE 2001",
+      "MATH 2403",
+      "MATH 2413",
+      "MATH 24X3",
+      "MATH 2552",
+      "MATH 2562",
+      "MATH 2X52"
+    ],
+    "prerequisite_keys_in_subset": [
+      "COE 2001",
+      "MATH 2552"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "AE-2220-A",
+      "AE-2220-B",
+      "AE-2220-C"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "not_atlanta_campus": 1
+    }
+  },
+  "AE-3030": {
+    "key": "AE 3030",
+    "title": "Aerodynamics",
+    "role": "upper_level",
+    "credit_hours": 4.0,
+    "description": "Aerodynamics of airfoils and wings in subsonic, transonic and supersonic flight. Laminar and turbulent boundary layers and effects of viscosity on aerodynamic performance.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "AE 2010",
+        "grade": "C"
+      }
+    ],
+    "prerequisite_keys": [
+      "AE 2010"
+    ],
+    "prerequisite_keys_in_subset": [
+      "AE 2010"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "AE-3030-A",
+      "AE-3030-B",
+      "AE-3030-C"
+    ],
+    "component_sections": [],
+    "excluded_sections": {}
+  },
+  "AE-3140": {
+    "key": "AE 3140",
+    "title": "Structural Analysis",
+    "role": "upper_level",
+    "credit_hours": 3.0,
+    "description": "Application to structural analysis. Basic equations of elasticity. Bending, shearing and torsion of thin walled structures. Energy methods for structural analysis and application to finite element theory for trusses and beam structures. Students cannot receive credit for both AE 3140 and AE 3125.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "COE 3001",
+        "grade": "D"
+      }
+    ],
+    "prerequisite_keys": [
+      "COE 3001"
+    ],
+    "prerequisite_keys_in_subset": [
+      "COE 3001"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "AE-3140-A",
+      "AE-3140-B"
+    ],
+    "component_sections": [],
+    "excluded_sections": {}
+  },
+  "BMED-3100": {
+    "key": "BMED 3100",
+    "title": "Systems Physiology",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "An introduction to human physiology emphasizing biomedical engineering aproaches to the understanding of basic organ function, disease states, and medical intervention.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "BMED 3600",
+        "grade": "D"
+      }
+    ],
+    "prerequisite_keys": [
+      "BMED 3600"
+    ],
+    "prerequisite_keys_in_subset": [],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "BMED-3100-A"
+    ],
+    "component_sections": [
+      "BMED-3100-A02"
+    ],
+    "excluded_sections": {}
+  },
+  "CHBE-2100": {
+    "key": "CHBE 2100",
+    "title": "Chem Process Principles",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "Material and energy balances for single-phase and multi-phase processes common to chemical engineering. Phase equilibrium and analysis of reacting systems.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        {
+          "id": "CS 1371",
+          "grade": "D"
+        },
+        [
+          "or",
+          {
+            "id": "CHEM 1310",
+            "grade": "D"
+          },
+          {
+            "id": "CHEM 1211K",
+            "grade": "D"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "MATH 1502",
+            "grade": "C"
+          },
+          {
+            "id": "MATH 1512",
+            "grade": "C"
+          },
+          [
+            "and",
+            [
+              "or",
+              {
+                "id": "MATH 15X2",
+                "grade": "T"
+              },
+              {
+                "id": "MATH 1X52",
+                "grade": "T"
+              },
+              {
+                "id": "MATH 1552",
+                "grade": "C"
+              }
+            ],
+            [
+              "or",
+              {
+                "id": "MATH 1522",
+                "grade": "C"
+              },
+              {
+                "id": "MATH 1553",
+                "grade": "C"
+              },
+              {
+                "id": "MATH 1554",
+                "grade": "C"
+              },
+              {
+                "id": "MATH 1564",
+                "grade": "C"
+              }
+            ]
+          ]
+        ]
+      ]
+    ],
+    "prerequisite_keys": [
+      "CHEM 1211K",
+      "CHEM 1310",
+      "CS 1371",
+      "MATH 1502",
+      "MATH 1512",
+      "MATH 1522",
+      "MATH 1552",
+      "MATH 1553",
+      "MATH 1554",
+      "MATH 1564",
+      "MATH 15X2",
+      "MATH 1X52"
+    ],
+    "prerequisite_keys_in_subset": [
+      "CHEM 1211K",
+      "CHEM 1310",
+      "CS 1371",
+      "MATH 1552",
+      "MATH 1553",
+      "MATH 1554"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "CHBE-2100-A",
+      "CHBE-2100-B",
+      "CHBE-2100-C"
+    ],
+    "component_sections": [],
+    "excluded_sections": {}
+  },
+  "CEE-2300": {
+    "key": "CEE 2300",
+    "title": "Environmental Engr Prin",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "Introduction to chemical, biological, and physical processes in the environment. Discussion of the basic processes governing air, water, and land quality, and the behavior and impacts of contaminants associated with human and industrial activities.",
+    "prerequisites": [
+      "or",
+      [
+        "and",
+        [
+          "or",
+          {
+            "id": "CHEM 1310",
+            "grade": "D"
+          },
+          {
+            "id": "CHEM 1211K",
+            "grade": "D"
+          },
+          {
+            "id": "CHEM 12X1",
+            "grade": "T"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "PHYS 2211",
+            "grade": "D"
+          },
+          {
+            "id": "PHYS 2231",
+            "grade": "D"
+          }
+        ],
+        [
+          "or",
+          {
+            "id": "MATH 1502",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1512",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 15X2",
+            "grade": "T"
+          },
+          {
+            "id": "MATH 1552",
+            "grade": "D"
+          },
+          {
+            "id": "MATH 1X52",
+            "grade": "T"
+          }
+        ]
+      ]
+    ],
+    "prerequisite_keys": [
+      "CHEM 1211K",
+      "CHEM 12X1",
+      "CHEM 1310",
+      "MATH 1502",
+      "MATH 1512",
+      "MATH 1552",
+      "MATH 15X2",
+      "MATH 1X52",
+      "PHYS 2211",
+      "PHYS 2231"
+    ],
+    "prerequisite_keys_in_subset": [
+      "CHEM 1211K",
+      "CHEM 1310",
+      "MATH 1552",
+      "PHYS 2211"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "CEE-2300-A",
+      "CEE-2300-B"
+    ],
+    "component_sections": [],
+    "excluded_sections": {}
+  },
+  "MSE-2001": {
+    "key": "MSE 2001",
+    "title": "Prin&Appl-Engr Materials",
+    "role": "major_core",
+    "credit_hours": 3.0,
+    "description": "The structure-property-processing-performance relationships of engineering materials are described. Materials selection is treated as a part of engineering design.",
+    "prerequisites": [
+      "or",
+      {
+        "id": "CHEM 1310",
+        "grade": "D"
+      },
+      {
+        "id": "CHEM 1102",
+        "grade": "D"
+      },
+      {
+        "id": "CHEM 12X1",
+        "grade": "D"
+      },
+      {
+        "id": "CHEM 1211K",
+        "grade": "D"
+      },
+      {
+        "id": "CHEM 1112",
+        "grade": "D"
+      }
+    ],
+    "prerequisite_keys": [
+      "CHEM 1102",
+      "CHEM 1112",
+      "CHEM 1211K",
+      "CHEM 12X1",
+      "CHEM 1310"
+    ],
+    "prerequisite_keys_in_subset": [
+      "CHEM 1211K",
+      "CHEM 1310"
+    ],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "MSE-2001-A",
+      "MSE-2001-B",
+      "MSE-2001-C",
+      "MSE-2001-D",
+      "MSE-2001-E",
+      "MSE-2001-F",
+      "MSE-2001-G"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "not_atlanta_campus": 2
+    }
+  },
+  "ECON-2105": {
+    "key": "ECON 2105",
+    "title": "Prin of Macroeconomics",
+    "role": "gen_ed",
+    "credit_hours": 3.0,
+    "description": "This principles of economics course is intended to introduce students to concepts that will enable them to understand and analyze economic aggregates and evaluate economic policies. Students can receive credit for either ECON 2100 or ECON 2101,or for ECON 2105/2106. Students cannot receive credit for ECON 2100 and ECON 2101 or for ECON 2100 and ECON 2105/2106 or for  ECON 2101 and ECON 2105/2106.",
+    "prerequisites": [],
+    "prerequisite_keys": [],
+    "prerequisite_keys_in_subset": [],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "ECON-2105-GT2",
+      "ECON-2105-GT6",
+      "ECON-2105-GT7",
+      "ECON-2105-GT9"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "no_scheduled_meeting": 1
+    }
+  },
+  "ECON-2106": {
+    "key": "ECON 2106",
+    "title": "Prin of Microeconomics",
+    "role": "gen_ed",
+    "credit_hours": 3.0,
+    "description": "This principles of economics course is intended to introduce students to concepts that will enable them to understand and analyze structure and performance of the market economy. Students can receive credit for either ECON 2100 or ECON 2101,or for ECON 2105/2106. Students cannot receive credit  for ECON 2100 and ECON 2101 or for ECON 2100 and ECON 2105/2106 or for  ECON 2101 and ECON 2105/2106.",
+    "prerequisites": [],
+    "prerequisite_keys": [],
+    "prerequisite_keys_in_subset": [],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "ECON-2106-GT1",
+      "ECON-2106-GT2",
+      "ECON-2106-GT4",
+      "ECON-2106-GT5",
+      "ECON-2106-GT6",
+      "ECON-2106-GT8",
+      "ECON-2106-GT9"
+    ],
+    "component_sections": [],
+    "excluded_sections": {}
+  },
+  "PSYC-1101": {
+    "key": "PSYC 1101",
+    "title": "Intro to Gen Psyc",
+    "role": "gen_ed",
+    "credit_hours": 3.0,
+    "description": "A broad survey of the major topics in psychology including, but not limited to, research methodology, biological and social factors influencing behavior, development, learning, memory, personality, and abnormal.",
+    "prerequisites": [],
+    "prerequisite_keys": [],
+    "prerequisite_keys_in_subset": [],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "PSYC-1101-A",
+      "PSYC-1101-B",
+      "PSYC-1101-C",
+      "PSYC-1101-D",
+      "PSYC-1101-E",
+      "PSYC-1101-G",
+      "PSYC-1101-H",
+      "PSYC-1101-I"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "no_scheduled_meeting": 2,
+      "not_atlanta_campus": 2,
+      "reserved_cohorts": 1
+    }
+  },
+  "HIST-2111": {
+    "key": "HIST 2111",
+    "title": "Survey of U.S. History I",
+    "role": "gen_ed",
+    "credit_hours": 3.0,
+    "description": "A survey of U.S. History to the post-Civil War period. Colonial settlement, the American Revolution and the Constitution, antebellum expansion, slavery and plantation economy, sectional conflict and Civil War, Reconstruction. Includes study of Georgia history during this period.",
+    "prerequisites": [],
+    "prerequisite_keys": [],
+    "prerequisite_keys_in_subset": [],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "HIST-2111-A",
+      "HIST-2111-B",
+      "HIST-2111-D",
+      "HIST-2111-E"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "no_scheduled_meeting": 1
+    }
+  },
+  "APPH-1040": {
+    "key": "APPH 1040",
+    "title": "Sci Foundation of Health",
+    "role": "gen_ed",
+    "credit_hours": 2.0,
+    "description": "Students will learn how genetics, the environment and human behavior influence well-being.  Topics include health fitness, immunity, nutrition, stress management and chronic disease prevention. Credit not allowed for both APPH 1040 and APPH 1050 or HPS 1040 or APPH 1060.",
+    "prerequisites": [],
+    "prerequisite_keys": [],
+    "prerequisite_keys_in_subset": [],
+    "corequisites": [],
+    "exam": "matrix",
+    "common_exam_label": null,
+    "primary_sections": [
+      "APPH-1040-A",
+      "APPH-1040-B",
+      "APPH-1040-C",
+      "APPH-1040-D",
+      "APPH-1040-E",
+      "APPH-1040-H",
+      "APPH-1040-J"
+    ],
+    "component_sections": [],
+    "excluded_sections": {
+      "no_scheduled_meeting": 1,
+      "not_atlanta_campus": 1,
+      "reserved_special_approvals": 2
+    }
+  }
+}
