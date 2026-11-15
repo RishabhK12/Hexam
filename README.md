@@ -8,8 +8,7 @@ It compares the result against the **official Fall 2026 exam matrix** using an
 
 > **Synthetic data.** Courses, sections and exam periods are real public Georgia Tech data.
 > Every student and registration is synthetic. Hexam is a hackathon proof of concept, not
-> an official Georgia Tech scheduling system. Approach inspired by
-> [arXiv 2509.11031](https://arxiv.org/html/2509.11031v1).
+> an official Georgia Tech scheduling system.
 
 ```
 backend/hexam/schemas/          Pydantic models (mirrored in frontend/src/types/hexam.ts)

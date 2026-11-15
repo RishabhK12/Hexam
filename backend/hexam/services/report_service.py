@@ -298,17 +298,11 @@ def build_run_report(h: DatasetHandle, run: OptimizationRun, art: RunArtifacts) 
     def kpi(label: str, value: str, sub: str):
         return [Paragraph(label, st["kpi_label"]), Paragraph(value, st["kpi_value"]), Paragraph(sub, st["kpi_sub"])]
 
-    n = before.metrics.students_evaluated
     kpis = [
         kpi("Inconvenience score", f"{_num(pb)} to {_num(pa)}", f"{_pct(pct)} (lower is better)"),
-        kpi("Students with any issue", f"{_num(before.metrics.students_with_any_issue)} to {_num(after.metrics.students_with_any_issue)}",
-            f"of {_num(n)} students"),
-        kpi("Students better / worse off",
-            f"{_num(cmp.students_improved) if cmp else '-'} / {_num(cmp.students_worsened) if cmp else '-'}",
-            f"{_num(cmp.students_unchanged) if cmp else '-'} unchanged"),
         kpi("Exam groups moved", f"{_num(cmp.exam_groups_moved) if cmp else '-'}", f"of {_num(len(idx.exam_groups))} exam groups"),
     ]
-    kt = Table([kpis], colWidths=[CONTENT_W / 4] * 4)
+    kt = Table([kpis], colWidths=[CONTENT_W / 2] * 2)
     kt.setStyle(TableStyle([
         ("BACKGROUND", (0, 0), (-1, -1), RAISED),
         ("BOX", (0, 0), (-1, -1), 0.5, LINE),
