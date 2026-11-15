@@ -54,7 +54,7 @@ For comparison, the separate per-exam metrics reached −65 % to −68 % and lef
 
 ## Possible next steps
 - Reuse the move scorer (`MoveScorer.move_costs()` gives the full group × period cost matrix in about 3 ms) for live drag-and-drop scoring and a "best periods for this exam" heatmap.
-- Remaining proposals from the paper comparison: do-no-harm fairness (cap students made worse off), change-budget frontier (at most k groups moved), held-out validation on a second synthetic population, difficulty-aware weights.
+- Remaining proposals: do-no-harm fairness (cap students made worse off), change-budget frontier (at most k groups moved), held-out validation on a second synthetic population, difficulty-aware weights.
 - The lower bound is still weak (1,465 against 15,705 in the saved run); nothing here improves it.
 - Add a unit test that forces the "warm-start incumbent" fallback path (the main search returns UNKNOWN → the warm schedule is returned as FEASIBLE).
 - Optional: code-split Recharts (about 526 kB minified, 151 kB gzipped).

@@ -17,8 +17,8 @@ late→early metric uses ``EvaluationSettings.evening_start``, which has the sam
 class ExamTimeslot(ProvenancedModel):
     """``start``/``end`` are aware ISO 8601 datetimes in America/New_York.
 
-    Capacity limits are optional global caps (the paper uses a per-slot
-    student cap rather than per-room capacity); ``None`` means unlimited.
+    Capacity limits are optional global per-slot student caps (not per-room
+    capacity); ``None`` means unlimited.
     """
 
     timeslot_id: TimeslotId

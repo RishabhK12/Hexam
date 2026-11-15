@@ -11,3 +11,6 @@ data/raw/irp_factbook_2025.pdf
 
 # frontend build artifacts
 *.tsbuildinfo
+
+# Claude Code local settings
+.claude/

@@ -41,7 +41,7 @@ class ExamGroupGranularity(StrEnum):
     """How exam-bearing sections are bundled into exam groups (all non-common modes keep
     official common exams as one group per common-exam row).
 
-    * ``meeting_time`` — Bucknell paper (arXiv 2509.11031, §3.1): one *course group* per
+    * ``meeting_time`` — default: one *course group* per
       common-exam course, every other section grouped by its regular meeting time
       (days + start + end), e.g. ``MWF 09:30-10:20``. Also exactly one GT matrix row.
     * ``meeting_pattern`` — coarser: days + start only (end added only where the GT

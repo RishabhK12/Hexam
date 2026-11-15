@@ -76,11 +76,10 @@ end time matters for that one pattern (its exam groups carry the end time).
 * `capacity` stays `null` (unknown); `enrollment` = synthetic registration count,
   labelled via `provenance.field_sources.enrollment = "synthetic"`.
 
-**Exam groups** (`exam_group_granularity`) follow the Bucknell paper
-([arXiv 2509.11031](https://arxiv.org/html/2509.11031v1), §3.1 and App. A): "course
+**Exam groups** (`exam_group_granularity`): "course
 groups" are (1) one per multi-section course with a coordinated/common exam and
 (2) one per *regular meeting time* (days + start + end) for everything else.
-* `meeting_time` (**default, as in the paper**): e.g. `EG-MWF-0930-1020`;
+* `meeting_time` (**default**): e.g. `EG-MWF-0930-1020`;
   **52 groups** (47 meeting-time + 5 common). Each equals one GT matrix row, so
   every group has exactly one official baseline period. Sections whose several
   meetings map to different periods are flagged in
@@ -89,13 +88,13 @@ groups" are (1) one per multi-section course with a coordinated/common exam and
   `EG-MWF-0930`; 38 groups.
 * `course`: one group per (course, meeting time), e.g. `EG-CS-1331-MWF-0930-1020`; 256 groups.
 * Common exams (`EG-COMMON-MATH-1553-1554`, …) are `kind=common` with
-  `fixed_timeslot_id` = the official period in every mode (the paper's r_gt).
+  `fixed_timeslot_id` = the official period in every mode.
 
 Because the generator forbids overlapping class meetings and every section in a
 meeting-time group meets at the same time, no student can have two courses in one
-group, so the paper's "forced overlaps" are zero by construction.
+group, so "forced overlaps" are zero by construction.
 
-Paper features outside this data step: the optimizer implements the per-slot student cap
+Features outside this data step: the optimizer implements the per-slot student cap
 (M₁ → `ExamTimeslot.max_students` or a run-level cap) and the two-phase heuristic
 (largest groups first, 18 by default). Faculty overlap / back-to-back penalties
 (derivable from `Section.instructors`) and a weight portfolio are not implemented.
@@ -165,7 +164,7 @@ baseline = load_schedules("../data/fall2026")[0].as_mapping()   # {exam_group_id
 fixed = {g.exam_group_id: g.fixed_timeslot_id for g in ds.exam_groups if g.fixed_timeslot_id}
 ```
 
-* Decision variables: the paper's x_gt, one per (non-fixed exam group, timeslot) —
+* Decision variables: x_gt, one per (non-fixed exam group, timeslot) —
   47 × 21 at the default granularity; common groups are pinned by `fixed_timeslot_id`.
 * Compare optimized schedules against `baseline-gt-matrix-202608` with the same
   `ScheduleEvaluation` metrics.
