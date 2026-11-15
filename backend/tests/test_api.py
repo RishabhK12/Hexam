@@ -170,3 +170,27 @@ def test_async_job_pattern(client):
 def test_run_dataset_mismatch_and_missing(client, run):
     assert client.get("/api/runs/run-nope").status_code == 404
     assert client.get("/api/compare", params={"run_id": run.run_id, "dataset_id": "sample"}).status_code == 409
+
+
+def test_run_report_pdf(client, run):
+    from io import BytesIO
+
+    from pypdf import PdfReader
+
+    r = client.get(f"/api/runs/{run.run_id}/report.pdf")
+    assert r.status_code == 200, r.text
+    assert r.headers["content-type"] == "application/pdf"
+    assert f'hexam-report-{run.run_id}.pdf' in r.headers["content-disposition"]
+    reader = PdfReader(BytesIO(r.content))
+    assert len(reader.pages) >= 4
+    text = "\n".join(p.extract_text() for p in reader.pages)
+    for needle in ("Final exam schedule comparison", "Late-evening exams", "Early-morning exams",
+                   "Exam times: official vs optimized", "Integrity checks", run.run_id):
+        assert needle in text, needle
+    moved = run.comparison.exam_groups_moved
+    assert f"{moved} of 52 exam groups moved." in text
+    assert f"{run.result.after.weighted_penalty:,.0f}" in text  # same score the API reports
+
+
+def test_run_report_missing_run(client):
+    assert client.get("/api/runs/run-nope/report.pdf").status_code == 404

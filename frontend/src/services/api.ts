@@ -67,6 +67,26 @@ async function request<T>(path: string, init?: RequestInit & { json?: unknown })
   return (await res.json()) as T;
 }
 
+/** Download a binary response (e.g. the PDF report) as a Blob, with the same error handling as JSON calls. */
+async function requestBlob(path: string): Promise<Blob> {
+  let res: Response;
+  try {
+    res = await fetch(BASE + path);
+  } catch {
+    throw new ApiError(0, ["Cannot reach the Hexam backend. Is it running on port 8000?"]);
+  }
+  if (!res.ok) {
+    let problems: string[] = [];
+    try {
+      problems = detailToProblems((await res.json()).detail);
+    } catch {
+      problems = [res.statusText];
+    }
+    throw new ApiError(res.status, problems);
+  }
+  return res.blob();
+}
+
 const qs = (params: Record<string, string | number | undefined | null>) => {
   const p = new URLSearchParams();
   for (const [k, v] of Object.entries(params)) if (v !== undefined && v !== null && v !== "") p.set(k, String(v));
@@ -91,6 +111,7 @@ export const api = {
   run: (run_id: string) => request<OptimizationRun>(`/api/runs/${encodeURIComponent(run_id)}`),
   runStudents: (run_id: string, order: "improved" | "worsened" | "remaining" | "baseline", limit = 25) =>
     request<StudentRankItem[]>(`/api/runs/${encodeURIComponent(run_id)}/students${qs({ order, limit })}`),
+  runReport: (run_id: string) => requestBlob(`/api/runs/${encodeURIComponent(run_id)}/report.pdf`),
   compare: (dataset_id: string, run_id: string) => request<ScheduleComparison>(`/api/compare${qs({ dataset_id, run_id })}`),
   compareAdhoc: (body: Partial<CompareRequest>) => request<ScheduleComparison>("/api/compare", { method: "POST", json: body }),
 };

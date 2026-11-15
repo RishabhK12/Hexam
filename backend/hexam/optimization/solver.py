@@ -15,15 +15,16 @@ Hard constraints
     (+) optional: per-student max exams per day
 
 Objective (minimized) — *exactly* the evaluator's weighted penalty:
-    pair metrics (conflicts in relaxed mode, back-to-back, late→early):
+    late_evening / early_morning: linear, per group g and late/early slot t,
+        cost = weight × students(g) × x[g,t]   (exact, no auxiliary variable)
+    pair metrics (conflicts in relaxed mode, back-to-back):
         one Boolean p[g,h] per co-enrolled pair, forced to 1 by
         x[g,t] + Σ_{u ∈ R(t)} x[h,u] ≤ 1 + p[g,h]   for each t,
         cost = weight × shared_students(g,h) × p[g,h]
-    three_in_one_day: per distinct student exam-set S and day d,
-        Σ_{g∈S} y[g,d] ≤ 2 + (|S|−2)·z[S,d],  cost = weight × students(S) × z[S,d]
-    three_in_24h / four_in_48h: per set S, one Boolean q[S] with
-        Σ_{g∈S} y[g,W] ≤ k−1 + (|S|−k+1)·q[S] for every rolling window W
-    where y[g,d] / y[g,W] = Σ_{t∈d / t∈W} x[g,t].
+    three_in_24h / four_in_48h: per distinct student exam-set S, one Boolean
+        q[S] with Σ_{g∈S} y[g,W] ≤ k−1 + (|S|−k+1)·q[S] for every rolling
+        window W, where y[g,W] = Σ_{t∈W} x[g,t]. (3 exams in one calendar
+        day is a special case of 3 in 24 h, so it has no separate term.)
 
 Auxiliary Booleans are only bounded from below, so for any feasible solution
 the solver objective is ≥ the true penalty, with equality at a proven optimum
@@ -38,6 +39,7 @@ groups moved from the baseline, and the main model is hinted with it.
 
 from __future__ import annotations
 
+import math
 import time
 from dataclasses import dataclass, field, replace
 
@@ -110,7 +112,6 @@ def _build(prob: Problem, weights: PenaltyWeights, groups: list[str], pins: dict
         return {b for a, b in rel_pairs if a == t} | {a for a, b in rel_pairs if b == t}
 
     b2b_nb = {t: neighbors(rel.b2b, t) for t in rel.slot_ids}
-    late_nb = {t: neighbors(rel.late_early, t) for t in rel.slot_ids}
 
     def pair_indicator(g: str, h: str, nb: dict[str, set[str]] | dict[str, frozenset[str]], name: str):
         """Boolean forced to 1 when g's slot and h's slot are related by ``nb``; None if impossible."""
@@ -144,10 +145,19 @@ def _build(prob: Problem, weights: PenaltyWeights, groups: list[str], pins: dict
                 p = pair_indicator(g, h, b2b_nb, "b2b")
                 if p is not None:
                     terms[K.BACK_TO_BACK.value].append((weights.back_to_back * n, p))
-            if weights.night_to_morning:
-                p = pair_indicator(g, h, late_nb, "late")
-                if p is not None:
-                    terms[K.NIGHT_TO_MORNING.value].append((weights.night_to_morning * n, p))
+
+    # late-evening / early-morning exams: linear in x (one sitting per student in the group)
+    if opt.objective:
+        for key, w, slots in (
+            (K.LATE_EVENING, weights.late_evening, rel.late),
+            (K.EARLY_MORNING, weights.early_morning, rel.early),
+        ):
+            if not w:
+                continue
+            for g in groups:
+                size = prob.group_size[g]
+                if size:
+                    terms[key.value].extend((w * size, x[g, t]) for t in elig[g] if t in slots)
 
     # day / window indicators per group
     def group_in(g: str, slots, cache: dict) -> cp_model.LinearExpr | int:
@@ -190,13 +200,6 @@ def _build(prob: Problem, weights: PenaltyWeights, groups: list[str], pins: dict
                     m.add(sum(v) + c <= opt.max_per_slot)
         if not opt.objective:
             continue
-        if k >= 3 and weights.three_in_one_day:
-            for d in days:
-                c, v = count_expr(s, d)
-                if c + len(v) >= 3:
-                    z = m.new_bool_var("z")
-                    m.add(sum(v) + c <= 2 + (c + len(v) - 2) * z)
-                    terms[K.THREE_IN_ONE_DAY.value].append((weights.three_in_one_day * n, z))
         for size, wins, key, w in (
             (3, rel.windows24, K.THREE_IN_24H, weights.three_in_24h),
             (4, rel.windows48, K.FOUR_IN_48H, weights.four_in_48h),
@@ -283,7 +286,7 @@ def _full_hint(built: _Built, cfg: OptimizationConfig, mapping: dict[str, str]) 
         built.model.add_hint(built.model.get_int_var_from_proto_index(i), s.value(c.get_int_var_from_proto_index(i)))
     val = lambda v: s.value(c.get_int_var_from_proto_index(v.index))  # noqa: E731
     breakdown = {k: float(sum(coef * val(v) for coef, v in lst)) for k, lst in built.terms.items()}
-    return _Incumbent(dict(mapping), float(s.objective_value), breakdown)
+    return _Incumbent(dict(mapping), float(round(s.objective_value)), breakdown)
 
 
 def _warm_start(prob: Problem, cfg: OptimizationConfig, opt: _Options, groups: list[str], pins: dict[str, str],
@@ -392,6 +395,7 @@ def solve(prob: Problem, cfg: OptimizationConfig, hint: dict[str, str] | None = 
         hint = warm
     limit = max(0.5, limit - (time.perf_counter() - t_w))
 
+    t_b = time.perf_counter()
     built = _build(prob, cfg.weights, groups, pins, opt)
     incumbent = _full_hint(built, cfg, warm) if warm is not None else None
     if incumbent is None:
@@ -399,7 +403,7 @@ def solve(prob: Problem, cfg: OptimizationConfig, hint: dict[str, str] | None = 
     proto = built.model.proto
     stats["variables"] = len(proto.variables)
     stats["constraints"] = len(proto.constraints)
-    stats["build_ms"] = int((time.perf_counter() - t0) * 1000)
+    stats["build_ms"] = int((time.perf_counter() - t_b) * 1000)  # model build + full hint only
 
     # the time limit is a wall-clock budget for the whole run (warm start + build + search)
     remaining = max(1.0, cfg.solver.time_limit_seconds - (time.perf_counter() - t0))
@@ -425,8 +429,8 @@ def solve(prob: Problem, cfg: OptimizationConfig, hint: dict[str, str] | None = 
     elif st in (cp_model.OPTIMAL, cp_model.FEASIBLE):
         warnings.extend(f"Input issue (ignored by the model): {i.message}" for i in prob.issues)
         mapping, breakdown = _extract(solver, built)
-        obj = float(solver.objective_value)
-        bound = float(solver.best_objective_bound)
+        obj = float(round(solver.objective_value))  # integer coefficients; drop float noise
+        bound = float(math.ceil(solver.best_objective_bound - 1e-6))  # integer objective ⇒ integer lower bound
         if strategy is OptimizationStrategy.TWO_PHASE:
             bound = None
             if status == "OPTIMAL":

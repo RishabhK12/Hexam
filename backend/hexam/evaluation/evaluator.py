@@ -39,7 +39,8 @@ from .rules import (
     campus_date,
     count_windows,
     is_back_to_back,
-    is_late_to_early,
+    is_early_morning,
+    is_late_evening,
     overlaps,
 )
 
@@ -60,8 +61,8 @@ class StudentFindings:
 
     conflict_pairs: list[tuple[str, str]] = field(default_factory=list)
     back_to_back_pairs: list[tuple[str, str]] = field(default_factory=list)
-    late_early_pairs: list[tuple[str, str]] = field(default_factory=list)
-    heavy_days: dict[date, int] = field(default_factory=dict)  # day -> exams (only days with >= 3)
+    late_exams: list[str] = field(default_factory=list)  # exam groups starting in the evening
+    early_exams: list[str] = field(default_factory=list)  # exam groups starting early morning
     three_in_24h_patterns: int = 0
     four_in_48h_patterns: int = 0
 
@@ -155,7 +156,6 @@ class Evaluator:
                 affected[k] += v > 0
             if any(counts.values()):
                 any_issue += 1
-            diag["excess"] += sum(n - 2 for n in f.heavy_days.values())
             diag["p24"] += f.three_in_24h_patterns
             diag["p48"] += f.four_in_48h_patterns
             per_day = Counter(campus_date(e.start) for e in exams)
@@ -226,7 +226,6 @@ class Evaluator:
             diagnostics=EvaluationDiagnostics(
                 unassigned_exam_group_ids=unassigned,
                 students_with_unassigned_exams=students_missing,
-                three_in_one_day_excess_exams=diag["excess"],
                 three_in_24h_patterns=diag["p24"],
                 four_in_48h_patterns=diag["p48"],
                 max_exams_one_day=max_day,
@@ -240,7 +239,7 @@ class Evaluator:
     @staticmethod
     def _score_student(exams: list[StudentExam], cfg: EvaluationSettings) -> tuple[dict[str, int], StudentFindings]:
         """Counts for one student's chronologically sorted exams."""
-        conflicts, b2b, late = [], [], []
+        conflicts, b2b = [], []
         n = len(exams)
         for i in range(n):
             a = exams[i]
@@ -252,11 +251,9 @@ class Evaluator:
                 first, second = (a, b) if a.end <= b.start else (b, a)
                 if is_back_to_back(first.end, second.start, cfg):
                     b2b.append((first.exam_group_id, second.exam_group_id))
-                if is_late_to_early(first.start, first.end, second.start, cfg):
-                    late.append((first.exam_group_id, second.exam_group_id))
 
-        per_day = Counter(campus_date(e.start) for e in exams)
-        heavy = {d: c for d, c in sorted(per_day.items()) if c >= 3}
+        late = [e.exam_group_id for e in exams if is_late_evening(e.start, cfg)]
+        early = [e.exam_group_id for e in exams if is_early_morning(e.start, cfg)]
         starts = [e.start for e in exams]
         hit24, p24 = count_windows(starts, 3, WINDOW_24H)
         hit48, p48 = count_windows(starts, 4, WINDOW_48H)
@@ -264,12 +261,12 @@ class Evaluator:
         counts = {
             K.SIMULTANEOUS_CONFLICTS.value: len(conflicts),
             K.BACK_TO_BACK.value: len(b2b),
-            K.NIGHT_TO_MORNING.value: len(late),
-            K.THREE_IN_ONE_DAY.value: len(heavy),
+            K.LATE_EVENING.value: len(late),
+            K.EARLY_MORNING.value: len(early),
             K.THREE_IN_24H.value: int(hit24),
             K.FOUR_IN_48H.value: int(hit48),
         }
-        return counts, StudentFindings(conflicts, b2b, late, heavy, p24, p48)
+        return counts, StudentFindings(conflicts, b2b, late, early, p24, p48)
 
     # -------------------------------------------------------------- validity
 

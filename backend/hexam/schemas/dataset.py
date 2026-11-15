@@ -11,7 +11,7 @@ from __future__ import annotations
 from collections import defaultdict
 from collections.abc import Iterable
 from dataclasses import dataclass
-from datetime import date, timedelta
+from datetime import date
 
 from .base import HexamModel, find_duplicates
 from .courses import Course, Section
@@ -61,8 +61,6 @@ class DatasetIndex:
     student_exam_groups: dict[str, tuple[str, ...]]
     group_students: dict[str, frozenset[str]]
     timeslots_by_day: dict[date, list[str]]
-    consecutive_pairs: list[tuple[str, str]]
-    overnight_pairs: list[tuple[str, str]]
 
     @classmethod
     def build(cls, ds: Dataset) -> DatasetIndex:
@@ -95,14 +93,6 @@ class DatasetIndex:
             by_day[t.local_date].append(t.timeslot_id)
         slot_map = {t.timeslot_id: t for t in slots_sorted}
 
-        consecutive: list[tuple[str, str]] = []
-        overnight: list[tuple[str, str]] = []
-        for day, ids in by_day.items():
-            consecutive.extend(zip(ids, ids[1:]))
-            nxt = by_day.get(day + timedelta(days=1))
-            if nxt and slot_map[ids[-1]].is_evening:
-                overnight.append((ids[-1], nxt[0]))
-
         return cls(
             courses={c.course_id: c for c in ds.courses},
             sections=sections,
@@ -114,8 +104,6 @@ class DatasetIndex:
             student_exam_groups=student_groups,
             group_students={g: frozenset(s) for g, s in group_students.items()},
             timeslots_by_day=dict(by_day),
-            consecutive_pairs=consecutive,
-            overnight_pairs=overnight,
         )
 
     def group_size(self, exam_group_id: str) -> int:

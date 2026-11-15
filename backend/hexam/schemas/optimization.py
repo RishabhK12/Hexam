@@ -26,16 +26,16 @@ class PenaltyWeights(HexamModel):
 
     Integers because CP-SAT objectives require integer coefficients.
     Defaults are assumptions (the paper does not publish its weights), ordered
-    by Hexam's priorities: conflicts ≫ 3-in-a-day > back-to-back > 24/48 h
-    clustering > late→early. ``simultaneous_conflicts`` only matters when
+    by Hexam's priorities: conflicts ≫ 3-in-24 h > back-to-back > 4-in-48 h
+    > late-evening / early-morning exams (each weighted on its own, per exam). ``three_in_24h`` also covers 3 exams in one calendar day. ``simultaneous_conflicts`` only matters when
     conflicts are relaxed (strict mode forbids them outright).
     """
 
     simultaneous_conflicts: int = Field(default=1000, ge=0, le=1_000_000)
     back_to_back: int = Field(default=30, ge=0, le=1_000_000)
-    night_to_morning: int = Field(default=10, ge=0, le=1_000_000)
-    three_in_one_day: int = Field(default=100, ge=0, le=1_000_000)
-    three_in_24h: int = Field(default=20, ge=0, le=1_000_000)
+    late_evening: int = Field(default=3, ge=0, le=1_000_000)
+    early_morning: int = Field(default=3, ge=0, le=1_000_000)
+    three_in_24h: int = Field(default=100, ge=0, le=1_000_000)
     four_in_48h: int = Field(default=15, ge=0, le=1_000_000)
 
     def get(self, key: ImpactMetricKey | str) -> int:

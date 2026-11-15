@@ -20,7 +20,7 @@ export function Methodology() {
             <p>
               The objective minimizes the same weighted score the evaluator reports: <code className="rounded bg-raised px-1">Σ weight × count</code> over the
               six metrics below. Pairwise metrics are modeled on the co-enrollment graph (one Boolean per pair of groups sharing students, weighted by how many
-              students they share). Day and rolling-window metrics use one Boolean per distinct student exam-set with cardinality constraints. The solver never
+              students they share). Rolling-window metrics (3 in 24 h, which also covers 3+ exams in one day, and 4 in 48 h) use one Boolean per distinct student exam-set with cardinality constraints. Late-evening and early-morning exams are weighted separately and are linear: weight × students in the group, for each group placed in an evening (5 PM or later) or early (before 10 AM) period. The solver never
               iterates every student × exam × period.
             </p>
             <p>

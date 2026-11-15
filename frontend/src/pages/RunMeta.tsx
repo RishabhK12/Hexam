@@ -1,3 +1,4 @@
+import { ReportButton } from "../components/ReportButton";
 import { StatusPill } from "../components/ui";
 import { campusDay, campusTime, num } from "../lib/format";
 import type { OptimizationRun } from "../types/hexam";
@@ -56,6 +57,7 @@ export function RunMeta({ run, compact = false }: { run: OptimizationRun; compac
           passed
         </p>
       )}
+      {!compact && <ReportButton run={run} />}
     </div>
   );
 }

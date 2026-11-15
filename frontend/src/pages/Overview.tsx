@@ -1,8 +1,9 @@
 import { useMemo } from "react";
 import { PairBars, type PairRow } from "../components/charts";
+import { ReportButton } from "../components/ReportButton";
 import { Card, Delta, Empty, Kpi, Legend, Spinner } from "../components/ui";
 import { useHexam } from "../hooks/useHexam";
-import { METRICS, campusDay, dayFromKey, num, pct, shortDay, campusTime } from "../lib/format";
+import { METRICS, campusDay, dayFromKey, num, pct, shortDay, campusTime, weekday } from "../lib/format";
 import type { ScheduleEvaluation } from "../types/hexam";
 import { RunMeta } from "./RunMeta";
 
@@ -57,8 +58,11 @@ export function Overview({ go }: { go: (tab: string) => void }) {
       .map((d) => {
         const s = byId.get(d.timeslot_id);
         return {
-          label: s ? `${shortDay(s.start)} ${campusTime(s.start).replace(":00", "")}` : d.timeslot_id,
-          detail: s ? `${campusDay(s.start)} · ${d.exam_group_count} → ${a.get(d.timeslot_id)?.exam_group_count ?? "–"} exam groups` : undefined,
+          label: s ? `${campusDay(s.start)} · ${campusTime(s.start)}` : d.timeslot_id,
+          group: s ? weekday(s.start) : undefined,
+          groupSub: s ? shortDay(s.start) : undefined,
+          minor: s ? campusTime(s.start).replace(/ [AP]M$/, "") : undefined,
+          detail: s ? `${d.exam_group_count} → ${a.get(d.timeslot_id)?.exam_group_count ?? "–"} exam groups` : undefined,
           base: d.student_count,
           opt: after ? (a.get(d.timeslot_id)?.student_count ?? 0) : null,
         };
@@ -104,6 +108,7 @@ export function Overview({ go }: { go: (tab: string) => void }) {
               <button className="btn-ghost" onClick={() => go("students")}>
                 Explore a student
               </button>
+              {cmp && run && <ReportButton run={run} />}
             </div>
           </div>
           <div className="rounded-xl border border-line bg-raised p-5">
@@ -130,10 +135,10 @@ export function Overview({ go }: { go: (tab: string) => void }) {
           unit={`overlapping exam pairs · ${num(m.simultaneous_conflicts.students_affected)} students in baseline`}
         />
         <Kpi
-          label="Students with 3+ exams/day"
-          baseline={m.three_in_one_day.students_affected}
-          optimized={after?.metrics.three_in_one_day.students_affected}
-          unit="students"
+          label="Students with 3 exams in 24 h"
+          baseline={m.three_in_24h.students_affected}
+          optimized={after?.metrics.three_in_24h.students_affected}
+          unit="students (incl. 3+ in one day)"
         />
         <Kpi label="Back-to-back exams" baseline={m.back_to_back.count} optimized={after?.metrics.back_to_back.count} unit="exam pairs ≤ 30 min apart" />
         <Kpi
@@ -164,7 +169,7 @@ export function Overview({ go }: { go: (tab: string) => void }) {
         <Card title="Exam load by day" sub="Student-exam sittings per final-exam day" right={<Legend />}>
           <PairBars data={dayRows} unit="sittings" height={260} />
         </Card>
-        <Card title="Concentration across periods" sub="Distinct students sitting an exam in each official period" right={<Legend />}>
+        <Card title="Concentration across periods" sub="Distinct students sitting an exam in each official period, grouped by day (periods start 8:00, 11:20, 2:40 and 6:00)" right={<Legend />}>
           <PairBars data={slotRows} unit="students" height={260} />
         </Card>
       </div>

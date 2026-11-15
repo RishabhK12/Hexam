@@ -7,8 +7,8 @@ import type { ImpactMetricKey, OptimizationRun, ScheduleEvaluation } from "../ty
 
 // ------------------------------------------------------------------ fixtures
 
-const KEYS: ImpactMetricKey[] = ["simultaneous_conflicts", "back_to_back", "night_to_morning", "three_in_one_day", "three_in_24h", "four_in_48h"];
-const W = { simultaneous_conflicts: 1000, back_to_back: 30, night_to_morning: 10, three_in_one_day: 100, three_in_24h: 20, four_in_48h: 15 };
+const KEYS: ImpactMetricKey[] = ["simultaneous_conflicts", "back_to_back", "late_evening", "early_morning", "three_in_24h", "four_in_48h"];
+const W = { simultaneous_conflicts: 1000, back_to_back: 30, late_evening: 3, early_morning: 3, three_in_24h: 100, four_in_48h: 15 };
 
 function evaluation(id: string, scale: number): ScheduleEvaluation {
   const metrics = Object.fromEntries(KEYS.map((k) => [k, { count: 10 * scale, students_affected: 5 * scale }]));
@@ -28,7 +28,6 @@ function evaluation(id: string, scale: number): ScheduleEvaluation {
     diagnostics: {
       unassigned_exam_group_ids: [],
       students_with_unassigned_exams: 0,
-      three_in_one_day_excess_exams: 0,
       three_in_24h_patterns: 0,
       four_in_48h_patterns: 0,
       max_exams_one_day: 1,
@@ -228,6 +227,34 @@ describe("App", () => {
     expect(screen.getByText("50.0%")).toBeInTheDocument();
     expect(screen.getAllByText("FEASIBLE").length).toBeGreaterThan(0);
     expect(screen.getByText(/not claimed to be globally optimal/)).toBeInTheDocument();
+  });
+
+  it("downloads the PDF comparison report for the run", async () => {
+    const calls = mockFetch({
+      ...baseRoutes([{ run_id: "run-1", state: "completed", penalty_after: 1000 }]),
+      "GET /api/runs/run-1": () => completedRun,
+      "GET /api/runs/run-1/report.pdf": () => new Response(new Blob(["%PDF-1.4"], { type: "application/pdf" }), { status: 200 }),
+    });
+    const createObjectURL = vi.fn(() => "blob:report");
+    Object.assign(URL, { createObjectURL, revokeObjectURL: vi.fn() });
+    const click = vi.spyOn(HTMLAnchorElement.prototype, "click").mockImplementation(() => {});
+    render(<App />);
+    fireEvent.click(await screen.findByRole("button", { name: /Download PDF report/ }));
+    await waitFor(() => expect(click).toHaveBeenCalled());
+    expect(calls.some((c) => c.url.endsWith("/api/runs/run-1/report.pdf"))).toBe(true);
+    expect(createObjectURL).toHaveBeenCalled();
+    click.mockRestore();
+  });
+
+  it("shows the backend error if the report cannot be generated", async () => {
+    mockFetch({
+      ...baseRoutes([{ run_id: "run-1", state: "completed", penalty_after: 1000 }]),
+      "GET /api/runs/run-1": () => completedRun,
+      "GET /api/runs/run-1/report.pdf": () => new Response(JSON.stringify({ detail: "run run-1 has no optimized schedule" }), { status: 409 }),
+    });
+    render(<App />);
+    fireEvent.click(await screen.findByRole("button", { name: /Download PDF report/ }));
+    expect(await screen.findByRole("alert")).toHaveTextContent("no optimized schedule");
   });
 
   it("submits the optimization config and displays the result", async () => {

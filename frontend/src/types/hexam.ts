@@ -147,16 +147,16 @@ export interface ExamSchedule {
 export type ImpactMetricKey =
   | "simultaneous_conflicts"
   | "back_to_back"
-  | "night_to_morning"
-  | "three_in_one_day"
+  | "late_evening"
+  | "early_morning"
   | "three_in_24h"
   | "four_in_48h";
 
 export const IMPACT_METRIC_KEYS: readonly ImpactMetricKey[] = [
   "simultaneous_conflicts",
   "back_to_back",
-  "night_to_morning",
-  "three_in_one_day",
+  "late_evening",
+  "early_morning",
   "three_in_24h",
   "four_in_48h",
 ] as const;
@@ -166,7 +166,6 @@ export interface EvaluationSettings {
   back_to_back_max_gap_minutes: number;
   evening_start: LocalTime;
   morning_end: LocalTime;
-  overnight_max_gap_hours: number;
 }
 
 export interface MetricValue {
@@ -180,8 +179,8 @@ export interface StudentImpactMetrics {
   students_with_any_issue: number;
   simultaneous_conflicts: MetricValue;
   back_to_back: MetricValue;
-  night_to_morning: MetricValue;
-  three_in_one_day: MetricValue;
+  late_evening: MetricValue;
+  early_morning: MetricValue;
   three_in_24h: MetricValue;
   four_in_48h: MetricValue;
 }
@@ -192,8 +191,8 @@ export interface StudentImpactDetail {
   exam_timeslot_ids: ID[];
   simultaneous_conflicts: number;
   back_to_back: number;
-  night_to_morning: number;
-  three_in_one_day: number;
+  late_evening: number;
+  early_morning: number;
   three_in_24h: number;
   four_in_48h: number;
   exam_group_ids: ID[];
@@ -217,7 +216,6 @@ export interface DayLoad {
 export interface EvaluationDiagnostics {
   unassigned_exam_group_ids: ID[];
   students_with_unassigned_exams: number;
-  three_in_one_day_excess_exams: number;
   three_in_24h_patterns: number;
   four_in_48h_patterns: number;
   max_exams_one_day: number;
@@ -255,8 +253,8 @@ export interface MetricDelta {
 export interface PenaltyWeights {
   simultaneous_conflicts: number;
   back_to_back: number;
-  night_to_morning: number;
-  three_in_one_day: number;
+  late_evening: number;
+  early_morning: number;
   three_in_24h: number;
   four_in_48h: number;
 }

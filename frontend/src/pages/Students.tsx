@@ -225,7 +225,7 @@ function StudentImpactView({ impact, slots, loading }: { impact: StudentImpactRe
               return (
                 <tr key={m.key} className="border-b border-line/60 last:border-0">
                   <td className="py-2" title={m.help}>
-                    {m.label} <span className="text-xs text-faint">({m.unit === "students" ? "yes/no" : m.unit === "student-days" ? "days" : "pairs"})</span>
+                    {m.label} <span className="text-xs text-faint">({m.unit === "students" ? "yes/no" : m.unit === "student exams" ? "exams" : "pairs"})</span>
                   </td>
                   <td className="tabular py-2 text-right">{b}</td>
                   {a !== undefined && <td className="tabular py-2 text-right font-semibold">{a}</td>}

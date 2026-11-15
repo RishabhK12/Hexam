@@ -40,11 +40,11 @@ export const METRICS: { key: ImpactMetricKey; label: string; short: string; unit
     help: "Pairs of a student's exams whose actual time intervals overlap.",
   },
   {
-    key: "three_in_one_day",
-    label: "3+ exams in one day",
-    short: "3+ / day",
-    unit: "student-days",
-    help: "Student-days with three or more exams starting that calendar day (America/New_York).",
+    key: "three_in_24h",
+    label: "3 exams within 24 h",
+    short: "3 in 24 h",
+    unit: "students",
+    help: "Students with three exam starts inside a rolling window shorter than 24 hours (includes 3+ exams on one calendar day).",
   },
   {
     key: "back_to_back",
@@ -54,13 +54,6 @@ export const METRICS: { key: ImpactMetricKey; label: string; short: string; unit
     help: "Non-overlapping exam pairs separated by at most the back-to-back gap (default 30 min).",
   },
   {
-    key: "three_in_24h",
-    label: "3 exams within 24 h",
-    short: "3 in 24 h",
-    unit: "students",
-    help: "Students with three exam starts inside a rolling window shorter than 24 hours.",
-  },
-  {
     key: "four_in_48h",
     label: "4 exams within 48 h",
     short: "4 in 48 h",
@@ -68,11 +61,18 @@ export const METRICS: { key: ImpactMetricKey; label: string; short: string; unit
     help: "Students with four exam starts inside a rolling window shorter than 48 hours.",
   },
   {
-    key: "night_to_morning",
-    label: "Late-evening → early-morning",
-    short: "Late → early",
-    unit: "exam pairs",
-    help: "An exam starting at/after 5 PM followed by one starting before 10 AM the next day (break ≤ 14 h).",
+    key: "late_evening",
+    label: "Late-evening exams",
+    short: "Late evening",
+    unit: "student exams",
+    help: "Exams a student sits that start at or after 5 PM (each exam counts once per student).",
+  },
+  {
+    key: "early_morning",
+    label: "Early-morning exams",
+    short: "Early morning",
+    unit: "student exams",
+    help: "Exams a student sits that start before 10 AM (each exam counts once per student).",
   },
 ];
 
