@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+from collections import Counter
+
 from hexam.evaluation import EvaluationOutcome
-from hexam.evaluation.rules import campus
+from hexam.evaluation.rules import campus, campus_date
 from hexam.schemas import (
     ExamSchedule,
     ImpactVerdict,
@@ -128,8 +130,6 @@ def _schedule_impact(h: DatasetHandle, student_id: str, outcome: EvaluationOutco
     msgs = []
     for a, b in f.conflict_pairs:
         msgs.append(f"Overlapping exams: {_label(h, a, student_id)} and {_label(h, b, student_id)} ({_fmt_day(slot_of[a].start)})")
-    for day, n in f.heavy_days.items():
-        msgs.append(f"{n} exams on {day.strftime('%a %b %d').replace(' 0', ' ')}")
     for a, b in f.back_to_back_pairs:
         msgs.append(f"Back-to-back: {_label(h, a, student_id)} ends {_fmt_time(slot_of[a].end)}, "
                     f"{_label(h, b, student_id)} starts {_fmt_time(slot_of[b].start)} ({_fmt_day(slot_of[b].start)})")
@@ -137,7 +137,10 @@ def _schedule_impact(h: DatasetHandle, student_id: str, outcome: EvaluationOutco
         msgs.append(f"Late→early: {_label(h, a, student_id)} at {_fmt_time(slot_of[a].start)} {_fmt_day(slot_of[a].start)}, "
                     f"then {_label(h, b, student_id)} at {_fmt_time(slot_of[b].start)} next morning")
     if d.three_in_24h:
-        msgs.append("3 exams within 24 hours")
+        # 3 exams on one calendar day is the tightest form of 3-in-24 h; name the day(s).
+        per_day = Counter(campus_date(e.start) for e in outcome.exams[student_id])
+        heavy = [f"{n} on {day.strftime('%a %b %d').replace(' 0', ' ')}" for day, n in sorted(per_day.items()) if n >= 3]
+        msgs.append("3 exams within 24 hours" + (f" ({', '.join(heavy)})" if heavy else ""))
     if d.four_in_48h:
         msgs.append("4 exams within 48 hours")
     return StudentScheduleImpact(schedule_id=schedule_id, exams=exams, detail=d, findings=msgs)

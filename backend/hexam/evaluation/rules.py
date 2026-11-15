@@ -1,7 +1,7 @@
 """Time predicates behind every student-impact metric.
 
 These pure functions are the *only* definitions of "overlap", "back-to-back",
-"late→early", "same day" and the rolling windows. The evaluator applies them to
+"late evening → early morning", "same day" and the rolling windows. The evaluator applies them to
 each student's actual exam instants; the optimizer applies them once to
 timeslot pairs (``SlotRelations``) to build its model. Keeping one copy is what
 makes the CP-SAT objective and the independent evaluation agree.
@@ -44,15 +44,16 @@ def is_back_to_back(prev_end: datetime, next_start: datetime, s: EvaluationSetti
     return timedelta(0) <= gap <= timedelta(minutes=s.back_to_back_max_gap_minutes)
 
 
+def _wall_clock(dt: datetime):
+    return campus(dt).timetz().replace(tzinfo=None)
+
+
 def is_late_to_early(prev_start: datetime, prev_end: datetime, next_start: datetime, s: EvaluationSettings) -> bool:
-    """Late exam (starts ≥ evening_start) followed by an early exam (starts <
-    morning_end) on a later campus day, with an overnight break ≤ the max gap."""
-    ps, ns = campus(prev_start), campus(next_start)
-    if ns.date() <= ps.date():
+    """Late exam (starts >= evening_start) followed by an early exam (starts <
+    morning_end) on a later campus day, with an overnight break <= the max gap."""
+    if campus_date(next_start) <= campus_date(prev_start):
         return False
-    if ps.timetz().replace(tzinfo=None) < s.evening_start:
-        return False
-    if ns.timetz().replace(tzinfo=None) >= s.morning_end:
+    if _wall_clock(prev_start) < s.evening_start or _wall_clock(next_start) >= s.morning_end:
         return False
     gap = next_start - prev_end
     return timedelta(0) <= gap <= timedelta(hours=s.overnight_max_gap_hours)

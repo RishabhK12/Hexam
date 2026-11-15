@@ -87,7 +87,7 @@ class TestHardConstraints:
     def test_max_exams_per_day(self):
         ds = make_dataset(list("abc"), {"S000001": list("abc")}, standard_slots(days=(7, 8)))
         out, idx, _ = run(ds, config(hc={"max_exams_per_student_per_day": 1}, weights=PenaltyWeights(
-            simultaneous_conflicts=0, back_to_back=0, night_to_morning=0, three_in_one_day=0, three_in_24h=0, four_in_48h=0)))
+            simultaneous_conflicts=0, back_to_back=0, night_to_morning=0, three_in_24h=0, four_in_48h=0)))
         assert out.status == "INFEASIBLE"  # 3 exams, 2 days, ≤ 1 per day
 
 
@@ -128,7 +128,7 @@ class TestInfeasibility:
         assert any("capacity" in h for h in out.infeasibility_hints)
 
     def test_relaxation_mode_allows_penalized_conflict(self):
-        ds = make_dataset(list("ab"), {"S000001": ["a", "b"]}, standard_slots(days=(7,))[:1])
+        ds = make_dataset(list("ab"), {"S000001": ["a", "b"]}, standard_slots(days=(7,))[1:2])  # 11:20 only
         out, idx, cfg = run(ds, config(hc={"forbid_simultaneous_conflicts": False}))
         assert out.status == "OPTIMAL" and out.relaxed
         assert out.objective_value == W.simultaneous_conflicts == penalty(idx, out.assignments, cfg)
@@ -147,7 +147,7 @@ class TestObjective:
         slots = standard_slots(days=(7,))[:3]
         ds = make_dataset(list("abc"), {"S000001": list("abc"), "S000002": list("abc")}, slots)
         out, idx, cfg = run(ds)
-        expected = 2 * (2 * W.back_to_back + W.three_in_one_day + W.three_in_24h)
+        expected = 2 * (2 * W.back_to_back + W.three_in_24h)
         assert out.status == "OPTIMAL"
         assert out.objective_value == expected == penalty(idx, out.assignments, cfg)
         assert out.objective_breakdown["back_to_back"] == 4 * W.back_to_back
@@ -172,12 +172,21 @@ class TestObjective:
 
         slots = [slot("D7E", dt(7, 18), dt(7, 20, 50)), slot("D8M", dt(8, 8), dt(8, 10, 50)), slot("D8L", dt(8, 11, 20), dt(8, 14, 10))]
         ds = make_dataset(list("ab"), {"S000001": ["a", "b"]}, slots, fixed={"a": "D8M"})
-        w1 = PenaltyWeights(back_to_back=100, night_to_morning=1)
-        out1, *_ = run(ds, config(weights=w1))
+        out1, *_ = run(ds, config(weights=PenaltyWeights(back_to_back=100, night_to_morning=1)))
         assert out1.assignments["b"] == "D7E"
-        w2 = PenaltyWeights(back_to_back=1, night_to_morning=100)
-        out2, *_ = run(ds, config(weights=w2))
+        out2, *_ = run(ds, config(weights=PenaltyWeights(back_to_back=1, night_to_morning=100)))
         assert out2.assignments["b"] == "D8L"
+
+    def test_late_to_early_objective_is_exact(self):
+        # 3 students in a (evening), 2 of them also in b (next morning); c (afternoon) is unrelated
+        from .factories import dt, slot
+
+        slots = [slot("E", dt(7, 18), dt(7, 20, 50)), slot("M", dt(8, 8), dt(8, 10, 50)), slot("A", dt(8, 14, 40), dt(8, 17, 30))]
+        students = {"S000001": ["a", "b"], "S000002": ["a", "b"], "S000003": ["a", "c"]}
+        ds = make_dataset(list("abc"), students, slots, fixed={"a": "E", "b": "M", "c": "A"})
+        out, idx, cfg = run(ds)
+        assert out.objective_breakdown["night_to_morning"] == 2 * cfg.weights.night_to_morning
+        assert out.objective_value == penalty(idx, out.assignments, cfg)
 
 
 def test_two_phase_reports_no_global_bound():

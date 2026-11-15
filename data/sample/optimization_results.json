@@ -12,7 +12,6 @@
       "simultaneous_conflicts": 0.0,
       "back_to_back": 10.0,
       "night_to_morning": 15.0,
-      "three_in_one_day": 0.0,
       "three_in_24h": 0.0,
       "four_in_48h": 0.0
     },
@@ -37,10 +36,6 @@
           "count": 14,
           "students_affected": 14
         },
-        "three_in_one_day": {
-          "count": 8,
-          "students_affected": 8
-        },
         "three_in_24h": {
           "count": 18,
           "students_affected": 18
@@ -50,7 +45,7 @@
           "students_affected": 18
         }
       },
-      "weighted_penalty": 7400.0,
+      "weighted_penalty": 6600.0,
       "timeslot_loads": [
         {
           "timeslot_id": "TS-20261207-0800",
@@ -174,28 +169,21 @@
           "exam_timeslot_ids": [
             "TS-20261207-1800",
             "TS-20261208-1120",
-            "TS-20261208-1800"
-          ],
-          "simultaneous_conflicts": 1,
-          "back_to_back": 0,
-          "night_to_morning": 0,
-          "three_in_one_day": 1,
-          "three_in_24h": 1,
-          "four_in_48h": 1
-        },
-        {
-          "student_id": "S000003",
-          "exam_count": 3,
-          "exam_timeslot_ids": [
             "TS-20261208-1120",
             "TS-20261208-1800"
           ],
           "simultaneous_conflicts": 1,
           "back_to_back": 0,
           "night_to_morning": 0,
-          "three_in_one_day": 1,
           "three_in_24h": 1,
-          "four_in_48h": 0
+          "four_in_48h": 1,
+          "exam_group_ids": [
+            "EG-COMMON-MATH-2551",
+            "EG-COMMON-PHYS-2211",
+            "EG-TR-1100",
+            "EG-COMMON-MATH-1554"
+          ],
+          "weighted_penalty": 1125
         },
         {
           "student_id": "S000026",
@@ -203,28 +191,61 @@
           "exam_timeslot_ids": [
             "TS-20261207-1120",
             "TS-20261207-1800",
+            "TS-20261208-1120",
             "TS-20261208-1120"
           ],
           "simultaneous_conflicts": 1,
           "back_to_back": 0,
           "night_to_morning": 0,
-          "three_in_one_day": 0,
           "three_in_24h": 1,
-          "four_in_48h": 1
+          "four_in_48h": 1,
+          "exam_group_ids": [
+            "EG-MWF-1100",
+            "EG-COMMON-MATH-2551",
+            "EG-COMMON-PHYS-2211",
+            "EG-TR-1100"
+          ],
+          "weighted_penalty": 1125
+        },
+        {
+          "student_id": "S000003",
+          "exam_count": 3,
+          "exam_timeslot_ids": [
+            "TS-20261208-1120",
+            "TS-20261208-1120",
+            "TS-20261208-1800"
+          ],
+          "simultaneous_conflicts": 1,
+          "back_to_back": 0,
+          "night_to_morning": 0,
+          "three_in_24h": 1,
+          "four_in_48h": 0,
+          "exam_group_ids": [
+            "EG-COMMON-PHYS-2211",
+            "EG-TR-1100",
+            "EG-COMMON-MATH-1554"
+          ],
+          "weighted_penalty": 1050
         },
         {
           "student_id": "S000044",
           "exam_count": 3,
           "exam_timeslot_ids": [
             "TS-20261208-1120",
+            "TS-20261208-1120",
             "TS-20261210-1440"
           ],
           "simultaneous_conflicts": 1,
           "back_to_back": 0,
           "night_to_morning": 0,
-          "three_in_one_day": 0,
           "three_in_24h": 0,
-          "four_in_48h": 0
+          "four_in_48h": 0,
+          "exam_group_ids": [
+            "EG-COMMON-PHYS-2211",
+            "EG-TR-1100",
+            "EG-TR-1400"
+          ],
+          "weighted_penalty": 1000
         },
         {
           "student_id": "S000002",
@@ -239,9 +260,16 @@
           "simultaneous_conflicts": 0,
           "back_to_back": 3,
           "night_to_morning": 1,
-          "three_in_one_day": 1,
           "three_in_24h": 1,
-          "four_in_48h": 1
+          "four_in_48h": 1,
+          "exam_group_ids": [
+            "EG-MWF-0825",
+            "EG-MWF-1100",
+            "EG-MWF-1400",
+            "EG-COMMON-MATH-2551",
+            "EG-TR-0800"
+          ],
+          "weighted_penalty": 160
         }
       ]
     },
@@ -263,10 +291,6 @@
         "night_to_morning": {
           "count": 3,
           "students_affected": 3
-        },
-        "three_in_one_day": {
-          "count": 0,
-          "students_affected": 0
         },
         "three_in_24h": {
           "count": 0,
@@ -407,9 +431,15 @@
           "simultaneous_conflicts": 0,
           "back_to_back": 1,
           "night_to_morning": 0,
-          "three_in_one_day": 0,
           "three_in_24h": 0,
-          "four_in_48h": 0
+          "four_in_48h": 0,
+          "exam_group_ids": [
+            "EG-TR-0800",
+            "EG-MWF-0930",
+            "EG-COMMON-PHYS-2211",
+            "EG-TR-0930"
+          ],
+          "weighted_penalty": 10
         },
         {
           "student_id": "S000001",
@@ -424,9 +454,16 @@
           "simultaneous_conflicts": 0,
           "back_to_back": 0,
           "night_to_morning": 1,
-          "three_in_one_day": 0,
           "three_in_24h": 0,
-          "four_in_48h": 0
+          "four_in_48h": 0,
+          "exam_group_ids": [
+            "EG-MWF-1100",
+            "EG-MWF-0930",
+            "EG-COMMON-MATH-2551",
+            "EG-MWF-0825",
+            "EG-MWF-1400"
+          ],
+          "weighted_penalty": 5
         },
         {
           "student_id": "S000002",
@@ -441,9 +478,16 @@
           "simultaneous_conflicts": 0,
           "back_to_back": 0,
           "night_to_morning": 1,
-          "three_in_one_day": 0,
           "three_in_24h": 0,
-          "four_in_48h": 0
+          "four_in_48h": 0,
+          "exam_group_ids": [
+            "EG-MWF-1100",
+            "EG-TR-0800",
+            "EG-COMMON-MATH-2551",
+            "EG-MWF-0825",
+            "EG-MWF-1400"
+          ],
+          "weighted_penalty": 5
         },
         {
           "student_id": "S000010",
@@ -457,9 +501,15 @@
           "simultaneous_conflicts": 0,
           "back_to_back": 0,
           "night_to_morning": 1,
-          "three_in_one_day": 0,
           "three_in_24h": 0,
-          "four_in_48h": 0
+          "four_in_48h": 0,
+          "exam_group_ids": [
+            "EG-COMMON-MATH-1554",
+            "EG-TR-1400",
+            "EG-MWF-0825",
+            "EG-MWF-1400"
+          ],
+          "weighted_penalty": 5
         }
       ]
     },

@@ -155,8 +155,8 @@ export function Schedule() {
                       <td key={d} className="border-b border-l border-line p-1.5 align-top">
                         <div className="mb-1 flex items-center justify-between px-0.5 text-[11px] text-faint" title={timeRange(s.start, s.end)}>
                           <span>{list.length} exam{list.length === 1 ? "" : "s"}</span>
-                          <span className="tabular" title="Exam sittings in this period">
-                            {num(total)} seats
+                          <span className="tabular" title="Students sitting an exam in this period (exam sittings, not room capacity)">
+                            {num(total)} students
                           </span>
                         </div>
                         <div className="space-y-1">

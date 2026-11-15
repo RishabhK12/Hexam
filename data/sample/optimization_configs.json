@@ -8,7 +8,6 @@
       "simultaneous_conflicts": 1000,
       "back_to_back": 10,
       "night_to_morning": 5,
-      "three_in_one_day": 100,
       "three_in_24h": 50,
       "four_in_48h": 75
     },
@@ -46,7 +45,6 @@
       "simultaneous_conflicts": 1000,
       "back_to_back": 10,
       "night_to_morning": 5,
-      "three_in_one_day": 100,
       "three_in_24h": 50,
       "four_in_48h": 75
     },

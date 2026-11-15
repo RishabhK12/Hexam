@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { ErrorBox, Spinner, StatusPill } from "./components/ui";
 import { HexamProvider, useHexam } from "./hooks/useHexam";
 import { classNames, num } from "./lib/format";
-import { Methodology } from "./pages/Methodology";
 import { Optimize } from "./pages/Optimize";
 import { Overview } from "./pages/Overview";
 import { Schedule } from "./pages/Schedule";
@@ -13,7 +12,6 @@ const TABS = [
   { id: "schedule", label: "Exam schedule" },
   { id: "students", label: "Student impact" },
   { id: "optimize", label: "Optimize" },
-  { id: "method", label: "How it works" },
 ] as const;
 type TabId = (typeof TABS)[number]["id"];
 
@@ -84,13 +82,6 @@ function Shell() {
         </nav>
       </header>
 
-      <div className="border-b border-gold/30 bg-gold/10">
-        <p className="mx-auto max-w-[1440px] px-4 py-1.5 text-[12px] text-ink/80 md:px-6">
-          <b>Synthetic data.</b> Courses, sections and exam periods are real public Georgia Tech Fall 2026 data. All students and registrations are synthetic. A
-          proof of concept, not an official GT system.
-        </p>
-      </div>
-
       <main className="mx-auto max-w-[1440px] px-4 py-6 md:px-6">
         {status === "loading" && (
           <div className="flex items-center justify-center gap-3 py-24 text-muted">
@@ -114,7 +105,6 @@ function Shell() {
             {tab === "schedule" && <Schedule />}
             {tab === "students" && <Students />}
             {tab === "optimize" && <Optimize />}
-            {tab === "method" && <Methodology />}
           </>
         )}
       </main>

@@ -225,7 +225,7 @@ function StudentImpactView({ impact, slots, loading }: { impact: StudentImpactRe
               return (
                 <tr key={m.key} className="border-b border-line/60 last:border-0">
                   <td className="py-2" title={m.help}>
-                    {m.label} <span className="text-xs text-faint">({m.unit === "students" ? "yes/no" : m.unit === "student-days" ? "days" : "pairs"})</span>
+                    {m.label} <span className="text-xs text-faint">({m.unit === "students" ? "yes/no" : "pairs"})</span>
                   </td>
                   <td className="tabular py-2 text-right">{b}</td>
                   {a !== undefined && <td className="tabular py-2 text-right font-semibold">{a}</td>}
@@ -252,6 +252,35 @@ function hoursOf(iso: string) {
   return h + m / 60;
 }
 
+type Lane = { lane: number; lanes: number; conflict: boolean };
+
+/** Side-by-side columns for exams whose times overlap (calendar-style lane packing). */
+export function layoutDay(list: StudentScheduleImpact["exams"]): Map<string, Lane> {
+  const ms = (iso: string) => new Date(iso).getTime();
+  const sorted = [...list].sort((a, b) => ms(a.start!) - ms(b.start!) || ms(b.end!) - ms(a.end!));
+  const out = new Map<string, Lane>();
+  let cluster: { id: string; lane: number }[] = [];
+  let laneEnds: number[] = [];
+  let clusterEnd = -Infinity;
+  const flush = () => {
+    for (const c of cluster) out.set(c.id, { lane: c.lane, lanes: laneEnds.length, conflict: cluster.length > 1 });
+    cluster = [];
+    laneEnds = [];
+  };
+  for (const e of sorted) {
+    const start = ms(e.start!);
+    const end = ms(e.end!);
+    if (start >= clusterEnd) flush();
+    let lane = laneEnds.findIndex((t) => t <= start);
+    if (lane < 0) lane = laneEnds.push(end) - 1;
+    else laneEnds[lane] = end;
+    cluster.push({ id: e.exam_group_id, lane });
+    clusterEnd = Math.max(clusterEnd, end);
+  }
+  flush();
+  return out;
+}
+
 function MiniWeek({ impact, days, tone }: { impact: StudentScheduleImpact; days: string[]; tone: "before" | "after" }) {
   const byDay = new Map<string, typeof impact.exams>();
   for (const e of impact.exams) {
@@ -262,50 +291,60 @@ function MiniWeek({ impact, days, tone }: { impact: StudentScheduleImpact; days:
   }
   const H = 220;
   const y = (h: number) => ((h - DAY_START) / (DAY_END - DAY_START)) * H;
+  const lanes = new Map<string, Lane>();
+  for (const list of byDay.values()) for (const [id, l] of layoutDay(list)) lanes.set(id, l);
+  const anyConflict = [...lanes.values()].some((l) => l.conflict);
   return (
-    <div className="flex gap-1.5" role="img" aria-label="Exam calendar for the week">
-      <div className="relative w-9 shrink-0 text-[10px] text-faint" style={{ height: H + 22 }}>
-        {[8, 11, 14, 17, 20].map((h) => (
-          <span key={h} className="absolute right-1" style={{ top: 22 + y(h) - 6 }}>
-            {h > 12 ? h - 12 : h}
-            {h >= 12 ? "p" : "a"}
-          </span>
-        ))}
+    <>
+      <div className="flex gap-1.5" role="img" aria-label="Exam calendar for the week">
+        <div className="relative w-9 shrink-0 text-[10px] text-faint" style={{ height: H + 22 }}>
+          {[8, 11, 14, 17, 20].map((h) => (
+            <span key={h} className="absolute right-1" style={{ top: 22 + y(h) - 6 }}>
+              {h > 12 ? h - 12 : h}
+              {h >= 12 ? "p" : "a"}
+            </span>
+          ))}
+        </div>
+        {days.map((d) => {
+          const list = byDay.get(d) ?? [];
+          const heavy = list.length >= 3;
+          const clash = list.some((e) => lanes.get(e.exam_group_id)?.conflict);
+          return (
+            <div key={d} className="min-w-0 flex-1">
+              <div className={classNames("mb-1 truncate text-center text-[10.5px] font-medium", heavy || clash ? "text-bad" : "text-muted")}>
+                {dayFromKey(d).replace(",", "")}
+                {(heavy || clash) && " ⚠"}
+              </div>
+              <div className={classNames("relative rounded-md border", heavy || clash ? "border-bad/40 bg-bad/5" : "border-line bg-raised/60")} style={{ height: H }}>
+                {list.map((e) => {
+                  const top = y(hoursOf(e.start!));
+                  const h = Math.max(18, y(hoursOf(e.end!)) - top);
+                  const l = lanes.get(e.exam_group_id) ?? { lane: 0, lanes: 1, conflict: false };
+                  return (
+                    <div
+                      key={e.exam_group_id}
+                      title={`${courseLabel(e.course_ids, 4)} · ${campusTime(e.start!)}–${campusTime(e.end!)}${l.conflict ? " · overlaps another exam" : ""}${e.moved ? " · moved from baseline" : ""}`}
+                      className={classNames(
+                        "absolute overflow-hidden rounded px-1 py-0.5 text-[10px] leading-tight text-white",
+                        tone === "before" ? "bg-before" : "bg-after",
+                        l.conflict ? "ring-2 ring-bad" : e.moved && tone === "after" && "ring-2 ring-gold",
+                      )}
+                      style={{ top, height: h, left: `calc(${(l.lane / l.lanes) * 100}% + 2px)`, width: `calc(${100 / l.lanes}% - 4px)` }}
+                    >
+                      <span className="block truncate font-semibold">{courseLabel(e.course_ids, 1)}</span>
+                      <span className="block truncate opacity-90">{campusTime(e.start!)}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
       </div>
-      {days.map((d) => {
-        const list = byDay.get(d) ?? [];
-        const heavy = list.length >= 3;
-        return (
-          <div key={d} className="min-w-0 flex-1">
-            <div className={classNames("mb-1 truncate text-center text-[10.5px] font-medium", heavy ? "text-bad" : "text-muted")}>
-              {dayFromKey(d).replace(",", "")}
-              {heavy && " ⚠"}
-            </div>
-            <div className={classNames("relative rounded-md border", heavy ? "border-bad/40 bg-bad/5" : "border-line bg-raised/60")} style={{ height: H }}>
-              {list.map((e) => {
-                const top = y(hoursOf(e.start!));
-                const h = Math.max(18, y(hoursOf(e.end!)) - top);
-                return (
-                  <div
-                    key={e.exam_group_id}
-                    title={`${courseLabel(e.course_ids, 4)} · ${campusTime(e.start!)}–${campusTime(e.end!)}${e.moved ? " · moved from baseline" : ""}`}
-                    className={classNames(
-                      "absolute inset-x-0.5 overflow-hidden rounded px-1 py-0.5 text-[10px] leading-tight text-white",
-                      tone === "before" ? "bg-before" : "bg-after",
-                      e.moved && tone === "after" && "ring-2 ring-gold",
-                    )}
-                    style={{ top, height: h }}
-                  >
-                    <span className="block truncate font-semibold">{courseLabel(e.course_ids, 1)}</span>
-                    <span className="block truncate opacity-90">{campusTime(e.start!)}</span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        );
-      })}
-    </div>
+      {anyConflict && (
+        <p className="mt-2 text-[11.5px] text-bad">⚠ Overlapping exams are shown side by side and outlined in red.</p>
+      )}
+    </>
   );
 }
 

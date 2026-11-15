@@ -1,8 +1,8 @@
 # Hexam — Smarter Finals. Better Schedules.
 
 Hexam re-assigns Georgia Tech final-exam groups to the official exam periods with
-**OR-Tools CP-SAT**, minimizing student congestion: overlapping exams, 3+ exams in a day,
-back-to-back exams, 3 exams in 24 h, 4 in 48 h, and late-evening → early-morning pairs.
+**OR-Tools CP-SAT**, minimizing student congestion: overlapping exams, 3 exams in 24 h (which includes 3+ in one day),
+back-to-back exams, 4 in 48 h, and a late-evening exam followed by an early-morning exam the next day.
 It compares the result against the **official Fall 2026 exam matrix** using an
 **independent evaluator**, on **1,000 synthetic students** built from public GT data.
 
@@ -63,8 +63,8 @@ from the cached public sources, see `docs/data_pipeline.md`.
 3. **Exam schedule** shows the timetable in Baseline, Optimized or Compare mode. Moved exams show where they came from.
 4. **Student impact** opens the most-improved, most-worsened or highest-remaining students, or searches by synthetic ID,
    and shows before/after calendars and metrics.
-5. **Optimize** lets you change weights, the time limit, strategy, strict/relaxed mode, aggregate caps and locks, then re-run.
-6. **How it works** covers the model, constraints, provenance and limitations.
+5. **Download PDF report** (Overview, Optimize) saves a comparison report of the official exam times vs the optimized ones, with all the stats.
+6. **Optimize** lets you change weights, the time limit, strategy, strict/relaxed mode, aggregate caps and locks, then re-run.
 
 ## Metrics (evaluator = source of truth)
 
@@ -75,13 +75,12 @@ All times are actual exam intervals in America/New_York. A student's exams are t
 |---|---|
 | Simultaneous conflicts | exam **pairs** whose intervals overlap (end == start is not a conflict) |
 | Back-to-back | non-overlapping exam **pairs** with a break ≤ 30 min (configurable) |
-| Late → early | **pairs**: exam starting ≥ 17:00, then one starting < 10:00 on a later day, break ≤ 14 h |
-| 3+ in one day | **student-days** with ≥ 3 exams starting that calendar day |
-| 3 in 24 h | **students** with 3 exam starts within a rolling window < 24 h (once per student) |
+| Late → early | exam **pairs**: one starting ≥ 17:00, then one starting < 10:00 the next day, break ≤ 14 h |
+| 3 in 24 h | **students** with 3 exam starts within a rolling window < 24 h (once per student). Covers 3+ exams on one calendar day, which always span < 24 h |
 | 4 in 48 h | **students** with 4 exam starts within a rolling window < 48 h (once per student) |
 
-`penalty = Σ weight × count`. Default weights: conflict 1000 · 3/day 100 · back-to-back 30 ·
-3/24 h 20 · 4/48 h 15 · late→early 10 (assumptions in the spec's priority order; adjustable in the UI).
+`penalty = Σ weight × count`. Default weights: conflict 1000 · 3/24 h 100 · back-to-back 30 ·
+4/48 h 15 · late → early 10 (assumptions in the spec's priority order; adjustable in the UI).
 
 ## Optimization model (summary)
 
@@ -90,7 +89,7 @@ All times are actual exam intervals in America/New_York. A student's exams are t
   *hypothetical* mode is on); only permitted periods; **no student conflicts** (strict, the default) on the
   co-enrollment graph using real interval overlap; user locks; optional *aggregate* per-period caps.
 * **Objective:** exactly the evaluator's penalty. Pairwise metrics use one Boolean per co-enrolled
-  group pair, weighted by shared students. Day and rolling-window metrics use one Boolean per
+  group pair, weighted by shared students. Rolling-window metrics use one Boolean per
   distinct student exam-set with cardinality constraints (about 974 sets for 1,000 students).
 * **Warm start:** the official baseline has 30 student conflicts, so a quick hard-constraints-only
   solve first finds the feasible schedule closest to it and hints the main model.
@@ -115,6 +114,7 @@ All times are actual exam intervals in America/New_York. A student's exams are t
 | POST | `/api/optimize` | start a run (202 + poll, or `"wait": true`) |
 | GET | `/api/runs`, `/api/runs/{id}` | run list / full run (result, schedule, comparison, integrity) |
 | GET | `/api/runs/{id}/students?order=improved\|worsened\|remaining` | per-student ranking |
+| GET | `/api/runs/{id}/report.pdf` | PDF report: official vs optimized exam times, every metric, period/day loads, students most affected, integrity checks |
 | GET / POST | `/api/compare` | comparison for a run, or for ad-hoc assignments |
 
 Runs execute one at a time on a background worker (CP-SAT uses all cores) and are kept in memory.

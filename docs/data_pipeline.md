@@ -160,7 +160,7 @@ ds = load_dataset("../data/fall2026")          # strict cross-record validation
 idx = ds.build_index()
 idx.student_exam_groups["S000001"]             # exam groups per student (derived via sections)
 idx.group_students["EG-TR-1230-1345"]          # students per exam group
-idx.timeslots_by_day, idx.consecutive_pairs, idx.overnight_pairs
+idx.timeslots_by_day                           # chronological slot ids per campus day
 baseline = load_schedules("../data/fall2026")[0].as_mapping()   # {exam_group_id: timeslot_id}
 fixed = {g.exam_group_id: g.fixed_timeslot_id for g in ds.exam_groups if g.fixed_timeslot_id}
 ```

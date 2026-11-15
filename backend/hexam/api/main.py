@@ -17,6 +17,7 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
+from hexam import __version__
 from hexam.services.dataset_service import DatasetNotFound, DatasetRegistry
 from hexam.services.optimization_service import InvalidRequest, RunStore
 from hexam.services.student_service import StudentNotFound
@@ -46,7 +47,7 @@ def create_app(registry: DatasetRegistry | None = None, *, load_precomputed: boo
 
     app = FastAPI(
         title="Hexam API",
-        version="1.0.0",
+        version=__version__,
         description="Final-exam schedule evaluation and CP-SAT optimization on synthetic Georgia Tech enrollment data.",
         lifespan=lifespan,
     )

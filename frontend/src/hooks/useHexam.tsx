@@ -16,9 +16,8 @@ import type {
 
 export const DEFAULT_WEIGHTS: PenaltyWeights = {
   simultaneous_conflicts: 1000,
-  three_in_one_day: 100,
+  three_in_24h: 100,
   back_to_back: 30,
-  three_in_24h: 20,
   four_in_48h: 15,
   night_to_morning: 10,
 };

@@ -3,13 +3,9 @@ import { CAMPUS_TIMEZONE, type ImpactMetricKey, type ISODateTime } from "../type
 const fmt = (opts: Intl.DateTimeFormatOptions) => new Intl.DateTimeFormat("en-US", { ...opts, timeZone: CAMPUS_TIMEZONE });
 const timeF = fmt({ hour: "numeric", minute: "2-digit" });
 const dayF = fmt({ weekday: "short", month: "short", day: "numeric" });
-const weekdayF = fmt({ weekday: "short" });
-const shortDayF = fmt({ month: "short", day: "numeric" });
 
 export const campusTime = (iso: ISODateTime) => timeF.format(new Date(iso));
 export const campusDay = (iso: ISODateTime) => dayF.format(new Date(iso));
-export const weekday = (iso: ISODateTime) => weekdayF.format(new Date(iso));
-export const shortDay = (iso: ISODateTime) => shortDayF.format(new Date(iso));
 export const timeRange = (start: ISODateTime, end: ISODateTime) => `${campusTime(start)}–${campusTime(end)}`;
 
 /** "YYYY-MM-DD" in campus time. */
@@ -40,11 +36,11 @@ export const METRICS: { key: ImpactMetricKey; label: string; short: string; unit
     help: "Pairs of a student's exams whose actual time intervals overlap.",
   },
   {
-    key: "three_in_one_day",
-    label: "3+ exams in one day",
-    short: "3+ / day",
-    unit: "student-days",
-    help: "Student-days with three or more exams starting that calendar day (America/New_York).",
+    key: "three_in_24h",
+    label: "3 exams within 24 h",
+    short: "3 in 24 h",
+    unit: "students",
+    help: "Students with three exam starts inside a rolling window shorter than 24 hours (includes 3+ exams on one calendar day).",
   },
   {
     key: "back_to_back",
@@ -52,13 +48,6 @@ export const METRICS: { key: ImpactMetricKey; label: string; short: string; unit
     short: "Back-to-back",
     unit: "exam pairs",
     help: "Non-overlapping exam pairs separated by at most the back-to-back gap (default 30 min).",
-  },
-  {
-    key: "three_in_24h",
-    label: "3 exams within 24 h",
-    short: "3 in 24 h",
-    unit: "students",
-    help: "Students with three exam starts inside a rolling window shorter than 24 hours.",
   },
   {
     key: "four_in_48h",

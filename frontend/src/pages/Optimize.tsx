@@ -5,7 +5,7 @@ import { METRICS, campusDay, campusTime, classNames, courseLabel, num } from "..
 import type { ImpactMetricKey, OptimizationRun } from "../types/hexam";
 import { RunMeta } from "./RunMeta";
 
-const WEIGHT_KEYS: ImpactMetricKey[] = ["three_in_one_day", "back_to_back", "three_in_24h", "four_in_48h", "night_to_morning"];
+const WEIGHT_KEYS: ImpactMetricKey[] = ["three_in_24h", "back_to_back", "four_in_48h", "night_to_morning"];
 
 export function Optimize() {
   const { form, setForm, runOptimization, job, jobError, activeRun, runs, selectRun, exams, slots } = useHexam();
@@ -119,7 +119,7 @@ export function Optimize() {
               </label>
               <label className="flex flex-col gap-1">
                 <span className="label" title="Aggregate cap on students sitting exams in one period (all rooms together). Not a room assignment.">
-                  Seats / period
+                  Students / period
                 </span>
                 <input
                   className="input"

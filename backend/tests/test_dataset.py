@@ -91,10 +91,10 @@ class TestIndex:
 
     def test_slot_adjacency(self, ds):
         idx = ds.build_index()
-        # 5 days: Mon-Thu have 4 slots (3 pairs each), Fri has 3 (2 pairs)
-        assert len(idx.consecutive_pairs) == 4 * 3 + 2
-        # evening -> next morning for Mon->Tue ... Thu->Fri
-        assert [a[-4:] + ">" + b[-4:] for a, b in idx.overnight_pairs] == ["1800>0800"] * 4
+        # 5 days: Mon-Thu have 4 slots, Fri has 3, each day in chronological order
+        assert [len(v) for v in idx.timeslots_by_day.values()] == [4, 4, 4, 4, 3]
+        for ids in idx.timeslots_by_day.values():
+            assert ids == sorted(ids, key=lambda t: idx.timeslots[t].start)
         assert list(idx.timeslots) == sorted(idx.timeslots, key=lambda t: idx.timeslots[t].start)
 
 
@@ -266,6 +266,7 @@ class TestConfigValidation:
 
 
 def test_weights_default_ordering():
-    """Hexam priority order: conflicts ≫ 3-in-a-day > back-to-back > 24/48 h clustering > late→early."""
+    """Hexam priority order: conflicts ≫ 3-in-24 h (incl. 3 in a day) > back-to-back > 4-in-48 h > late→early pairs."""
     w = PenaltyWeights()
-    assert w.simultaneous_conflicts > w.three_in_one_day > w.back_to_back > w.three_in_24h > w.four_in_48h > w.night_to_morning
+    assert w.simultaneous_conflicts > w.three_in_24h > w.back_to_back > w.four_in_48h
+    assert w.four_in_48h > w.night_to_morning

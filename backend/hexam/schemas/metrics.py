@@ -19,10 +19,10 @@ night_to_morning       exam *pairs* where ``prev`` starts at/after
                        ``evening_start``, ``next`` starts before
                        ``morning_end`` on a later campus date, and
                        ``next.start - prev.end <= overnight_max_gap``        pairs
-three_in_one_day       *student-days* with ≥ 3 exams starting that
-                       campus calendar day                                    days
 three_in_24h           *students* with 3 exam starts inside a rolling
-                       window shorter than 24 h (once per student)            0/1
+                       window shorter than 24 h (once per student). This
+                       subsumes "3 exams in one calendar day": three starts
+                       on one day always span < 24 h                          0/1
 four_in_48h            *students* with 4 exam starts inside a rolling
                        window shorter than 48 h (once per student)            0/1
 =====================  ====================================================  ==========================
@@ -50,7 +50,6 @@ class ImpactMetricKey(StrEnum):
     SIMULTANEOUS_CONFLICTS = "simultaneous_conflicts"
     BACK_TO_BACK = "back_to_back"
     NIGHT_TO_MORNING = "night_to_morning"
-    THREE_IN_ONE_DAY = "three_in_one_day"
     THREE_IN_24H = "three_in_24h"
     FOUR_IN_48H = "four_in_48h"
 
@@ -96,7 +95,6 @@ class StudentImpactMetrics(HexamModel):
     simultaneous_conflicts: MetricValue
     back_to_back: MetricValue
     night_to_morning: MetricValue
-    three_in_one_day: MetricValue
     three_in_24h: MetricValue
     four_in_48h: MetricValue
 
@@ -122,7 +120,6 @@ class StudentImpactDetail(HexamModel):
     simultaneous_conflicts: int = Field(ge=0)
     back_to_back: int = Field(ge=0)
     night_to_morning: int = Field(ge=0)
-    three_in_one_day: int = Field(ge=0)
     three_in_24h: int = Field(ge=0, le=1)
     four_in_48h: int = Field(ge=0, le=1)
     exam_group_ids: list[ExamGroupId] = Field(default_factory=list)
@@ -146,7 +143,6 @@ class DayLoad(HexamModel):
 class EvaluationDiagnostics(HexamModel):
     unassigned_exam_group_ids: list[ExamGroupId] = Field(default_factory=list)
     students_with_unassigned_exams: int = Field(default=0, ge=0)
-    three_in_one_day_excess_exams: int = Field(default=0, ge=0, description="Σ over student-days of (exams − 2).")
     three_in_24h_patterns: int = Field(default=0, ge=0, description="Distinct exam triples inside a < 24 h window.")
     four_in_48h_patterns: int = Field(default=0, ge=0, description="Distinct exam quadruples inside a < 48 h window.")
     max_exams_one_day: int = Field(default=0, ge=0)

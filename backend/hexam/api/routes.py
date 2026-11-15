@@ -26,7 +26,7 @@ from hexam.schemas import (
     StudentPage,
     StudentRankItem,
 )
-from hexam.services import comparison_service, student_service
+from hexam.services import comparison_service, report_service, student_service
 from hexam.services.dataset_service import DatasetHandle, DatasetRegistry
 from hexam.services.optimization_service import RunStore
 
@@ -229,6 +229,24 @@ def run_students(
         raise HTTPException(409, f"run {run_id} has no optimized schedule (state {r.state.value})")
     art = _store(req).artifacts(run_id)
     return student_service.ranking(_handle(req, r.dataset_id), art.before, art.after, order, limit)
+
+
+@router.get(
+    "/runs/{run_id}/report.pdf", tags=["optimization"], response_class=Response,
+    responses={200: {"content": {"application/pdf": {}}, "description": "Baseline vs optimized comparison report"}},
+)
+def run_report(req: Request, run_id: str):
+    r = run(req, run_id)
+    if r.schedule is None or r.result is None or r.result.after is None:
+        raise HTTPException(409, f"run {run_id} has no optimized schedule to report on (state {r.state.value})")
+    h = _handle(req, r.dataset_id)
+    if r.dataset_version != h.version:
+        raise HTTPException(409, f"run {run_id} was computed on a different dataset version")
+    pdf = report_service.build_run_report(h, r, _store(req).artifacts(run_id))
+    return Response(
+        content=pdf, media_type="application/pdf",
+        headers={"Content-Disposition": f'attachment; filename="hexam-report-{run_id}.pdf"'},
+    )
 
 
 @router.get("/compare", response_model=ScheduleComparison, tags=["optimization"])

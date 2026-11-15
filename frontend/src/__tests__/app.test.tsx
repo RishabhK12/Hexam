@@ -3,12 +3,13 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import App from "../App";
 import { Delta, Kpi } from "../components/ui";
 import { campusDateKey, campusHHMM, campusTime, courseLabel, pct } from "../lib/format";
+import { layoutDay } from "../pages/Students";
 import type { ImpactMetricKey, OptimizationRun, ScheduleEvaluation } from "../types/hexam";
 
 // ------------------------------------------------------------------ fixtures
 
-const KEYS: ImpactMetricKey[] = ["simultaneous_conflicts", "back_to_back", "night_to_morning", "three_in_one_day", "three_in_24h", "four_in_48h"];
-const W = { simultaneous_conflicts: 1000, back_to_back: 30, night_to_morning: 10, three_in_one_day: 100, three_in_24h: 20, four_in_48h: 15 };
+const KEYS: ImpactMetricKey[] = ["simultaneous_conflicts", "back_to_back", "night_to_morning", "three_in_24h", "four_in_48h"];
+const W = { simultaneous_conflicts: 1000, back_to_back: 30, night_to_morning: 10, three_in_24h: 100, four_in_48h: 15 };
 
 function evaluation(id: string, scale: number): ScheduleEvaluation {
   const metrics = Object.fromEntries(KEYS.map((k) => [k, { count: 10 * scale, students_affected: 5 * scale }]));
@@ -28,7 +29,6 @@ function evaluation(id: string, scale: number): ScheduleEvaluation {
     diagnostics: {
       unassigned_exam_group_ids: [],
       students_with_unassigned_exams: 0,
-      three_in_one_day_excess_exams: 0,
       three_in_24h_patterns: 0,
       four_in_48h_patterns: 0,
       max_exams_one_day: 1,
@@ -184,6 +184,15 @@ describe("format helpers", () => {
 });
 
 describe("components", () => {
+  it("places overlapping exams side by side and flags them", () => {
+    const ex = (id: string, start: string, end: string) =>
+      ({ exam_group_id: id, course_ids: [id], start: `2026-12-07T${start}:00-05:00`, end: `2026-12-07T${end}:00-05:00` }) as never;
+    const l = layoutDay([ex("a", "08:00", "10:50"), ex("b", "09:00", "11:50"), ex("c", "14:40", "17:30")]);
+    expect(l.get("a")).toEqual({ lane: 0, lanes: 2, conflict: true });
+    expect(l.get("b")).toEqual({ lane: 1, lanes: 2, conflict: true });
+    expect(l.get("c")).toEqual({ lane: 0, lanes: 1, conflict: false });
+  });
+
   it("Delta shows improvement, worsening and undefined percentages", () => {
     const { rerender } = render(<Delta before={10} after={5} />);
     expect(screen.getByText("-50.0%")).toBeInTheDocument();
@@ -228,6 +237,34 @@ describe("App", () => {
     expect(screen.getByText("50.0%")).toBeInTheDocument();
     expect(screen.getAllByText("FEASIBLE").length).toBeGreaterThan(0);
     expect(screen.getByText(/not claimed to be globally optimal/)).toBeInTheDocument();
+  });
+
+  it("downloads the PDF comparison report for the run", async () => {
+    const calls = mockFetch({
+      ...baseRoutes([{ run_id: "run-1", state: "completed", penalty_after: 1000 }]),
+      "GET /api/runs/run-1": () => completedRun,
+      "GET /api/runs/run-1/report.pdf": () => new Response(new Blob(["%PDF-1.4"], { type: "application/pdf" }), { status: 200 }),
+    });
+    const createObjectURL = vi.fn(() => "blob:report");
+    Object.assign(URL, { createObjectURL, revokeObjectURL: vi.fn() });
+    const click = vi.spyOn(HTMLAnchorElement.prototype, "click").mockImplementation(() => {});
+    render(<App />);
+    fireEvent.click(await screen.findByRole("button", { name: /Download PDF report/ }));
+    await waitFor(() => expect(click).toHaveBeenCalled());
+    expect(calls.some((c) => c.url.endsWith("/api/runs/run-1/report.pdf"))).toBe(true);
+    expect(createObjectURL).toHaveBeenCalled();
+    click.mockRestore();
+  });
+
+  it("shows the backend error if the report cannot be generated", async () => {
+    mockFetch({
+      ...baseRoutes([{ run_id: "run-1", state: "completed", penalty_after: 1000 }]),
+      "GET /api/runs/run-1": () => completedRun,
+      "GET /api/runs/run-1/report.pdf": () => new Response(JSON.stringify({ detail: "run run-1 has no optimized schedule" }), { status: 409 }),
+    });
+    render(<App />);
+    fireEvent.click(await screen.findByRole("button", { name: /Download PDF report/ }));
+    expect(await screen.findByRole("alert")).toHaveTextContent("no optimized schedule");
   });
 
   it("submits the optimization config and displays the result", async () => {

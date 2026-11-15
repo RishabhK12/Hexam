@@ -1,14 +1,14 @@
 {
- "run_id": "run-20261114-174124-a5fb",
+ "run_id": "run-20261115-000737-0de9",
  "dataset_id": "fall2026",
  "dataset_version": "6c0f9920ccea90d0",
  "state": "completed",
- "created_at": "2026-11-14T17:41:24.084181-05:00",
- "finished_at": "2026-11-14T17:43:25.866022-05:00",
+ "created_at": "2026-11-15T00:07:37.437902-05:00",
+ "finished_at": "2026-11-15T00:09:38.620158-05:00",
  "precomputed": true,
  "label": "Precomputed demo run — real CP-SAT run, 120s limit, seed 0, default weights",
  "config": {
-  "config_id": "cfg-run-20261114-174124-a5fb",
+  "config_id": "cfg-run-20261115-000737-0de9",
   "name": "Precomputed demo run (default weights)",
   "description": null,
   "baseline_schedule_id": "baseline-gt-matrix-202608",
@@ -16,8 +16,7 @@
    "simultaneous_conflicts": 1000,
    "back_to_back": 30,
    "night_to_morning": 10,
-   "three_in_one_day": 100,
-   "three_in_24h": 20,
+   "three_in_24h": 100,
    "four_in_48h": 15
   },
   "hard_constraints": {
@@ -48,30 +47,29 @@
   },
   "fixed_assignments": [],
   "excluded_timeslot_ids": [],
-  "created_at": "2026-11-14T17:41:24.084169-05:00"
+  "created_at": "2026-11-15T00:07:37.437886-05:00"
  },
  "result": {
-  "run_id": "run-20261114-174124-a5fb",
-  "config_id": "cfg-run-20261114-174124-a5fb",
+  "run_id": "run-20261115-000737-0de9",
+  "config_id": "cfg-run-20261115-000737-0de9",
   "status": "FEASIBLE",
-  "started_at": "2026-11-14T17:41:24.126464-05:00",
-  "finished_at": "2026-11-14T17:43:25.734586-05:00",
-  "runtime_seconds": 121.602,
-  "objective_value": 16675.0,
-  "best_objective_bound": 1430.0,
+  "started_at": "2026-11-15T00:07:37.478869-05:00",
+  "finished_at": "2026-11-15T00:09:38.476497-05:00",
+  "runtime_seconds": 120.994,
+  "objective_value": 17765.0,
+  "best_objective_bound": 1475.0,
   "objective_breakdown": {
    "simultaneous_conflicts": 0.0,
-   "back_to_back": 9120.0,
-   "night_to_morning": 1110.0,
-   "three_in_one_day": 3400.0,
-   "three_in_24h": 1920.0,
-   "four_in_48h": 1125.0
+   "back_to_back": 9570.0,
+   "night_to_morning": 500.0,
+   "three_in_24h": 6600.0,
+   "four_in_48h": 1095.0
   },
   "baseline_schedule_id": "baseline-gt-matrix-202608",
-  "optimized_schedule_id": "opt-run-20261114-174124-a5fb",
+  "optimized_schedule_id": "opt-run-20261115-000737-0de9",
   "before": {
    "schedule_id": "baseline-gt-matrix-202608",
-   "evaluated_at": "2026-11-14T17:41:24.126344-05:00",
+   "evaluated_at": "2026-11-15T00:07:37.478746-05:00",
    "metrics": {
     "students_evaluated": 1000,
     "exam_enrollments": 4432,
@@ -88,10 +86,6 @@
      "count": 123,
      "students_affected": 119
     },
-    "three_in_one_day": {
-     "count": 90,
-     "students_affected": 89
-    },
     "three_in_24h": {
      "count": 187,
      "students_affected": 187
@@ -101,7 +95,7 @@
      "students_affected": 150
     }
    },
-   "weighted_penalty": 62840.0,
+   "weighted_penalty": 68800.0,
    "timeslot_loads": [
     {
      "timeslot_id": "TS-20261210-1440",
@@ -245,7 +239,6 @@
      "simultaneous_conflicts": 1,
      "back_to_back": 3,
      "night_to_morning": 0,
-     "three_in_one_day": 1,
      "three_in_24h": 1,
      "four_in_48h": 0,
      "exam_group_ids": [
@@ -256,7 +249,7 @@
       "EG-MW-1230-1345",
       "EG-TR-0800-0915"
      ],
-     "weighted_penalty": 1210
+     "weighted_penalty": 1190
     },
     {
      "student_id": "S000453",
@@ -271,7 +264,6 @@
      "simultaneous_conflicts": 1,
      "back_to_back": 2,
      "night_to_morning": 0,
-     "three_in_one_day": 1,
      "three_in_24h": 1,
      "four_in_48h": 1,
      "exam_group_ids": [
@@ -281,7 +273,7 @@
       "EG-TR-1830-1920",
       "EG-TR-1230-1345"
      ],
-     "weighted_penalty": 1195
+     "weighted_penalty": 1175
     },
     {
      "student_id": "S000515",
@@ -296,7 +288,6 @@
      "simultaneous_conflicts": 1,
      "back_to_back": 2,
      "night_to_morning": 0,
-     "three_in_one_day": 1,
      "three_in_24h": 1,
      "four_in_48h": 1,
      "exam_group_ids": [
@@ -306,7 +297,7 @@
       "EG-MW-1100-1150",
       "EG-TR-1100-1215"
      ],
-     "weighted_penalty": 1195
+     "weighted_penalty": 1175
     },
     {
      "student_id": "S000577",
@@ -321,7 +312,6 @@
      "simultaneous_conflicts": 1,
      "back_to_back": 2,
      "night_to_morning": 0,
-     "three_in_one_day": 1,
      "three_in_24h": 1,
      "four_in_48h": 1,
      "exam_group_ids": [
@@ -331,7 +321,7 @@
       "EG-COMMON-PHYS-2211",
       "EG-TR-1230-1345"
      ],
-     "weighted_penalty": 1195
+     "weighted_penalty": 1175
     },
     {
      "student_id": "S000789",
@@ -346,7 +336,6 @@
      "simultaneous_conflicts": 1,
      "back_to_back": 2,
      "night_to_morning": 0,
-     "three_in_one_day": 1,
      "three_in_24h": 1,
      "four_in_48h": 1,
      "exam_group_ids": [
@@ -356,180 +345,7 @@
       "EG-TR-1830-1920",
       "EG-MW-1230-1345"
      ],
-     "weighted_penalty": 1195
-    },
-    {
-     "student_id": "S000475",
-     "exam_count": 4,
-     "exam_timeslot_ids": [
-      "TS-20261211-1440",
-      "TS-20261211-1800",
-      "TS-20261211-1800",
-      "TS-20261214-0800"
-     ],
-     "simultaneous_conflicts": 1,
-     "back_to_back": 2,
-     "night_to_morning": 0,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 0,
-     "exam_group_ids": [
-      "EG-MW-1530-1645",
-      "EG-COMMON-PHYS-2211",
-      "EG-MW-1700-1750",
-      "EG-TR-0930-1045"
-     ],
-     "weighted_penalty": 1180
-    },
-    {
-     "student_id": "S000702",
-     "exam_count": 5,
-     "exam_timeslot_ids": [
-      "TS-20261211-1440",
-      "TS-20261211-1800",
-      "TS-20261211-1800",
-      "TS-20261215-1440",
-      "TS-20261216-1440"
-     ],
-     "simultaneous_conflicts": 1,
-     "back_to_back": 2,
-     "night_to_morning": 0,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 0,
-     "exam_group_ids": [
-      "EG-MW-1530-1645",
-      "EG-COMMON-PHYS-2211",
-      "EG-MW-1700-1815",
-      "EG-TR-1530-1645",
-      "EG-MW-1400-1515"
-     ],
-     "weighted_penalty": 1180
-    },
-    {
-     "student_id": "S000737",
-     "exam_count": 4,
-     "exam_timeslot_ids": [
-      "TS-20261211-0800",
-      "TS-20261211-1120",
-      "TS-20261211-1800",
-      "TS-20261211-1800"
-     ],
-     "simultaneous_conflicts": 1,
-     "back_to_back": 1,
-     "night_to_morning": 0,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 1,
-     "exam_group_ids": [
-      "EG-MW-0800-0915",
-      "EG-MWF-1100-1150",
-      "EG-COMMON-PHYS-2211",
-      "EG-WF-1700-1855"
-     ],
-     "weighted_penalty": 1165
-    },
-    {
-     "student_id": "S000617",
-     "exam_count": 5,
-     "exam_timeslot_ids": [
-      "TS-20261211-1120",
-      "TS-20261211-1800",
-      "TS-20261211-1800",
-      "TS-20261215-1440",
-      "TS-20261215-1800"
-     ],
-     "simultaneous_conflicts": 1,
-     "back_to_back": 1,
-     "night_to_morning": 0,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 0,
-     "exam_group_ids": [
-      "EG-MW-1100-1215",
-      "EG-COMMON-PHYS-2211",
-      "EG-MW-1700-1815",
-      "EG-TR-1530-1645",
-      "EG-COMMON-MATH-1553-1554"
-     ],
-     "weighted_penalty": 1150
-    },
-    {
-     "student_id": "S000127",
-     "exam_count": 5,
-     "exam_timeslot_ids": [
-      "TS-20261210-1440",
-      "TS-20261211-1120",
-      "TS-20261211-1800",
-      "TS-20261211-1800",
-      "TS-20261217-1120"
-     ],
-     "simultaneous_conflicts": 1,
-     "back_to_back": 0,
-     "night_to_morning": 0,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 1,
-     "exam_group_ids": [
-      "EG-TR-1400-1515",
-      "EG-MW-1100-1215",
-      "EG-COMMON-PHYS-2211",
-      "EG-MW-1700-1815",
-      "EG-TR-1230-1345"
-     ],
-     "weighted_penalty": 1135
-    },
-    {
-     "student_id": "S000280",
-     "exam_count": 6,
-     "exam_timeslot_ids": [
-      "TS-20261210-1440",
-      "TS-20261211-0800",
-      "TS-20261211-1800",
-      "TS-20261211-1800",
-      "TS-20261215-1800",
-      "TS-20261217-1800"
-     ],
-     "simultaneous_conflicts": 1,
-     "back_to_back": 0,
-     "night_to_morning": 0,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 1,
-     "exam_group_ids": [
-      "EG-TR-1400-1515",
-      "EG-MW-0800-0915",
-      "EG-COMMON-PHYS-2211",
-      "EG-MW-1700-1815",
-      "EG-COMMON-MATH-1553-1554",
-      "EG-R-1700-1815"
-     ],
-     "weighted_penalty": 1135
-    },
-    {
-     "student_id": "S000222",
-     "exam_count": 5,
-     "exam_timeslot_ids": [
-      "TS-20261211-1120",
-      "TS-20261211-1800",
-      "TS-20261211-1800",
-      "TS-20261215-1800",
-      "TS-20261216-1120"
-     ],
-     "simultaneous_conflicts": 1,
-     "back_to_back": 0,
-     "night_to_morning": 0,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 0,
-     "exam_group_ids": [
-      "EG-MW-1100-1215",
-      "EG-COMMON-PHYS-2211",
-      "EG-MW-1700-1815",
-      "EG-COMMON-MATH-1553-1554",
-      "EG-MW-1230-1345"
-     ],
-     "weighted_penalty": 1120
+     "weighted_penalty": 1175
     },
     {
      "student_id": "S000464",
@@ -545,7 +361,6 @@
      "simultaneous_conflicts": 1,
      "back_to_back": 1,
      "night_to_morning": 2,
-     "three_in_one_day": 0,
      "three_in_24h": 1,
      "four_in_48h": 1,
      "exam_group_ids": [
@@ -556,7 +371,219 @@
       "EG-TR-1530-1645",
       "EG-MW-1230-1320"
      ],
-     "weighted_penalty": 1085
+     "weighted_penalty": 1165
+    },
+    {
+     "student_id": "S000475",
+     "exam_count": 4,
+     "exam_timeslot_ids": [
+      "TS-20261211-1440",
+      "TS-20261211-1800",
+      "TS-20261211-1800",
+      "TS-20261214-0800"
+     ],
+     "simultaneous_conflicts": 1,
+     "back_to_back": 2,
+     "night_to_morning": 0,
+     "three_in_24h": 1,
+     "four_in_48h": 0,
+     "exam_group_ids": [
+      "EG-MW-1530-1645",
+      "EG-COMMON-PHYS-2211",
+      "EG-MW-1700-1750",
+      "EG-TR-0930-1045"
+     ],
+     "weighted_penalty": 1160
+    },
+    {
+     "student_id": "S000702",
+     "exam_count": 5,
+     "exam_timeslot_ids": [
+      "TS-20261211-1440",
+      "TS-20261211-1800",
+      "TS-20261211-1800",
+      "TS-20261215-1440",
+      "TS-20261216-1440"
+     ],
+     "simultaneous_conflicts": 1,
+     "back_to_back": 2,
+     "night_to_morning": 0,
+     "three_in_24h": 1,
+     "four_in_48h": 0,
+     "exam_group_ids": [
+      "EG-MW-1530-1645",
+      "EG-COMMON-PHYS-2211",
+      "EG-MW-1700-1815",
+      "EG-TR-1530-1645",
+      "EG-MW-1400-1515"
+     ],
+     "weighted_penalty": 1160
+    },
+    {
+     "student_id": "S000737",
+     "exam_count": 4,
+     "exam_timeslot_ids": [
+      "TS-20261211-0800",
+      "TS-20261211-1120",
+      "TS-20261211-1800",
+      "TS-20261211-1800"
+     ],
+     "simultaneous_conflicts": 1,
+     "back_to_back": 1,
+     "night_to_morning": 0,
+     "three_in_24h": 1,
+     "four_in_48h": 1,
+     "exam_group_ids": [
+      "EG-MW-0800-0915",
+      "EG-MWF-1100-1150",
+      "EG-COMMON-PHYS-2211",
+      "EG-WF-1700-1855"
+     ],
+     "weighted_penalty": 1145
+    },
+    {
+     "student_id": "S000617",
+     "exam_count": 5,
+     "exam_timeslot_ids": [
+      "TS-20261211-1120",
+      "TS-20261211-1800",
+      "TS-20261211-1800",
+      "TS-20261215-1440",
+      "TS-20261215-1800"
+     ],
+     "simultaneous_conflicts": 1,
+     "back_to_back": 1,
+     "night_to_morning": 0,
+     "three_in_24h": 1,
+     "four_in_48h": 0,
+     "exam_group_ids": [
+      "EG-MW-1100-1215",
+      "EG-COMMON-PHYS-2211",
+      "EG-MW-1700-1815",
+      "EG-TR-1530-1645",
+      "EG-COMMON-MATH-1553-1554"
+     ],
+     "weighted_penalty": 1130
+    },
+    {
+     "student_id": "S000744",
+     "exam_count": 3,
+     "exam_timeslot_ids": [
+      "TS-20261210-1800",
+      "TS-20261210-1800",
+      "TS-20261211-0800"
+     ],
+     "simultaneous_conflicts": 1,
+     "back_to_back": 0,
+     "night_to_morning": 2,
+     "three_in_24h": 1,
+     "four_in_48h": 0,
+     "exam_group_ids": [
+      "EG-COMMON-MATH-1551",
+      "EG-TR-1700-1815",
+      "EG-MWF-0825-0915"
+     ],
+     "weighted_penalty": 1120
+    },
+    {
+     "student_id": "S000127",
+     "exam_count": 5,
+     "exam_timeslot_ids": [
+      "TS-20261210-1440",
+      "TS-20261211-1120",
+      "TS-20261211-1800",
+      "TS-20261211-1800",
+      "TS-20261217-1120"
+     ],
+     "simultaneous_conflicts": 1,
+     "back_to_back": 0,
+     "night_to_morning": 0,
+     "three_in_24h": 1,
+     "four_in_48h": 1,
+     "exam_group_ids": [
+      "EG-TR-1400-1515",
+      "EG-MW-1100-1215",
+      "EG-COMMON-PHYS-2211",
+      "EG-MW-1700-1815",
+      "EG-TR-1230-1345"
+     ],
+     "weighted_penalty": 1115
+    },
+    {
+     "student_id": "S000151",
+     "exam_count": 6,
+     "exam_timeslot_ids": [
+      "TS-20261214-0800",
+      "TS-20261215-1800",
+      "TS-20261215-1800",
+      "TS-20261216-1440",
+      "TS-20261217-0800",
+      "TS-20261217-1800"
+     ],
+     "simultaneous_conflicts": 1,
+     "back_to_back": 0,
+     "night_to_morning": 0,
+     "three_in_24h": 1,
+     "four_in_48h": 1,
+     "exam_group_ids": [
+      "EG-TR-0930-1045",
+      "EG-COMMON-MATH-1553-1554",
+      "EG-TR-1830-1920",
+      "EG-MW-1400-1515",
+      "EG-TR-0800-0915",
+      "EG-R-1700-1815"
+     ],
+     "weighted_penalty": 1115
+    },
+    {
+     "student_id": "S000280",
+     "exam_count": 6,
+     "exam_timeslot_ids": [
+      "TS-20261210-1440",
+      "TS-20261211-0800",
+      "TS-20261211-1800",
+      "TS-20261211-1800",
+      "TS-20261215-1800",
+      "TS-20261217-1800"
+     ],
+     "simultaneous_conflicts": 1,
+     "back_to_back": 0,
+     "night_to_morning": 0,
+     "three_in_24h": 1,
+     "four_in_48h": 1,
+     "exam_group_ids": [
+      "EG-TR-1400-1515",
+      "EG-MW-0800-0915",
+      "EG-COMMON-PHYS-2211",
+      "EG-MW-1700-1815",
+      "EG-COMMON-MATH-1553-1554",
+      "EG-R-1700-1815"
+     ],
+     "weighted_penalty": 1115
+    },
+    {
+     "student_id": "S000222",
+     "exam_count": 5,
+     "exam_timeslot_ids": [
+      "TS-20261211-1120",
+      "TS-20261211-1800",
+      "TS-20261211-1800",
+      "TS-20261215-1800",
+      "TS-20261216-1120"
+     ],
+     "simultaneous_conflicts": 1,
+     "back_to_back": 0,
+     "night_to_morning": 0,
+     "three_in_24h": 1,
+     "four_in_48h": 0,
+     "exam_group_ids": [
+      "EG-MW-1100-1215",
+      "EG-COMMON-PHYS-2211",
+      "EG-MW-1700-1815",
+      "EG-COMMON-MATH-1553-1554",
+      "EG-MW-1230-1345"
+     ],
+     "weighted_penalty": 1100
     },
     {
      "student_id": "S000132",
@@ -572,7 +599,6 @@
      "simultaneous_conflicts": 1,
      "back_to_back": 1,
      "night_to_morning": 0,
-     "three_in_one_day": 0,
      "three_in_24h": 0,
      "four_in_48h": 1,
      "exam_group_ids": [
@@ -598,7 +624,6 @@
      "simultaneous_conflicts": 1,
      "back_to_back": 1,
      "night_to_morning": 0,
-     "three_in_one_day": 0,
      "three_in_24h": 0,
      "four_in_48h": 1,
      "exam_group_ids": [
@@ -609,54 +634,6 @@
       "EG-TR-1230-1320"
      ],
      "weighted_penalty": 1045
-    },
-    {
-     "student_id": "S000744",
-     "exam_count": 3,
-     "exam_timeslot_ids": [
-      "TS-20261210-1800",
-      "TS-20261210-1800",
-      "TS-20261211-0800"
-     ],
-     "simultaneous_conflicts": 1,
-     "back_to_back": 0,
-     "night_to_morning": 2,
-     "three_in_one_day": 0,
-     "three_in_24h": 1,
-     "four_in_48h": 0,
-     "exam_group_ids": [
-      "EG-COMMON-MATH-1551",
-      "EG-TR-1700-1815",
-      "EG-MWF-0825-0915"
-     ],
-     "weighted_penalty": 1040
-    },
-    {
-     "student_id": "S000151",
-     "exam_count": 6,
-     "exam_timeslot_ids": [
-      "TS-20261214-0800",
-      "TS-20261215-1800",
-      "TS-20261215-1800",
-      "TS-20261216-1440",
-      "TS-20261217-0800",
-      "TS-20261217-1800"
-     ],
-     "simultaneous_conflicts": 1,
-     "back_to_back": 0,
-     "night_to_morning": 0,
-     "three_in_one_day": 0,
-     "three_in_24h": 1,
-     "four_in_48h": 1,
-     "exam_group_ids": [
-      "EG-TR-0930-1045",
-      "EG-COMMON-MATH-1553-1554",
-      "EG-TR-1830-1920",
-      "EG-MW-1400-1515",
-      "EG-TR-0800-0915",
-      "EG-R-1700-1815"
-     ],
-     "weighted_penalty": 1035
     },
     {
      "student_id": "S000512",
@@ -670,7 +647,6 @@
      "simultaneous_conflicts": 1,
      "back_to_back": 1,
      "night_to_morning": 0,
-     "three_in_one_day": 0,
      "three_in_24h": 0,
      "four_in_48h": 0,
      "exam_group_ids": [
@@ -694,7 +670,6 @@
      "simultaneous_conflicts": 1,
      "back_to_back": 0,
      "night_to_morning": 0,
-     "three_in_one_day": 0,
      "three_in_24h": 0,
      "four_in_48h": 0,
      "exam_group_ids": [
@@ -717,7 +692,6 @@
      "simultaneous_conflicts": 1,
      "back_to_back": 0,
      "night_to_morning": 0,
-     "three_in_one_day": 0,
      "three_in_24h": 0,
      "four_in_48h": 0,
      "exam_group_ids": [
@@ -739,7 +713,6 @@
      "simultaneous_conflicts": 1,
      "back_to_back": 0,
      "night_to_morning": 0,
-     "three_in_one_day": 0,
      "three_in_24h": 0,
      "four_in_48h": 0,
      "exam_group_ids": [
@@ -762,7 +735,6 @@
      "simultaneous_conflicts": 1,
      "back_to_back": 0,
      "night_to_morning": 0,
-     "three_in_one_day": 0,
      "three_in_24h": 0,
      "four_in_48h": 0,
      "exam_group_ids": [
@@ -786,7 +758,6 @@
      "simultaneous_conflicts": 1,
      "back_to_back": 0,
      "night_to_morning": 0,
-     "three_in_one_day": 0,
      "three_in_24h": 0,
      "four_in_48h": 0,
      "exam_group_ids": [
@@ -810,7 +781,6 @@
      "simultaneous_conflicts": 1,
      "back_to_back": 0,
      "night_to_morning": 0,
-     "three_in_one_day": 0,
      "three_in_24h": 0,
      "four_in_48h": 0,
      "exam_group_ids": [
@@ -833,7 +803,6 @@
      "simultaneous_conflicts": 1,
      "back_to_back": 0,
      "night_to_morning": 0,
-     "three_in_one_day": 0,
      "three_in_24h": 0,
      "four_in_48h": 0,
      "exam_group_ids": [
@@ -849,16 +818,14 @@
     "simultaneous_conflicts": 30000,
     "back_to_back": 16620,
     "night_to_morning": 1230,
-    "three_in_one_day": 9000,
-    "three_in_24h": 3740,
+    "three_in_24h": 18700,
     "four_in_48h": 2250
    },
    "weights_used": {
     "simultaneous_conflicts": 1000,
     "back_to_back": 30,
     "night_to_morning": 10,
-    "three_in_one_day": 100,
-    "three_in_24h": 20,
+    "three_in_24h": 100,
     "four_in_48h": 15
    },
    "settings": {
@@ -910,7 +877,6 @@
    "diagnostics": {
     "unassigned_exam_group_ids": [],
     "students_with_unassigned_exams": 0,
-    "three_in_one_day_excess_exams": 94,
     "three_in_24h_patterns": 283,
     "four_in_48h_patterns": 243,
     "max_exams_one_day": 4,
@@ -923,297 +889,342 @@
    }
   },
   "after": {
-   "schedule_id": "opt-run-20261114-174124-a5fb",
-   "evaluated_at": "2026-11-14T17:43:25.851371-05:00",
+   "schedule_id": "opt-run-20261115-000737-0de9",
+   "evaluated_at": "2026-11-15T00:09:38.603201-05:00",
    "metrics": {
     "students_evaluated": 1000,
     "exam_enrollments": 4432,
-    "students_with_any_issue": 379,
+    "students_with_any_issue": 330,
     "simultaneous_conflicts": {
      "count": 0,
      "students_affected": 0
     },
     "back_to_back": {
-     "count": 304,
+     "count": 319,
      "students_affected": 283
     },
     "night_to_morning": {
-     "count": 111,
-     "students_affected": 111
-    },
-    "three_in_one_day": {
-     "count": 34,
-     "students_affected": 34
+     "count": 50,
+     "students_affected": 50
     },
     "three_in_24h": {
-     "count": 96,
-     "students_affected": 96
+     "count": 66,
+     "students_affected": 66
     },
     "four_in_48h": {
-     "count": 75,
-     "students_affected": 75
+     "count": 73,
+     "students_affected": 73
     }
    },
-   "weighted_penalty": 16675.0,
+   "weighted_penalty": 17765.0,
    "timeslot_loads": [
     {
      "timeslot_id": "TS-20261210-1440",
      "exam_group_count": 3,
-     "student_count": 347,
+     "student_count": 326,
      "over_capacity": false
     },
     {
      "timeslot_id": "TS-20261210-1800",
      "exam_group_count": 2,
-     "student_count": 146,
+     "student_count": 130,
      "over_capacity": false
     },
     {
      "timeslot_id": "TS-20261211-0800",
-     "exam_group_count": 4,
-     "student_count": 210,
+     "exam_group_count": 3,
+     "student_count": 235,
      "over_capacity": false
     },
     {
      "timeslot_id": "TS-20261211-1120",
-     "exam_group_count": 2,
-     "student_count": 137,
+     "exam_group_count": 1,
+     "student_count": 58,
      "over_capacity": false
     },
     {
      "timeslot_id": "TS-20261211-1440",
+     "exam_group_count": 5,
+     "student_count": 284,
+     "over_capacity": false
+    },
+    {
+     "timeslot_id": "TS-20261211-1800",
+     "exam_group_count": 3,
+     "student_count": 203,
+     "over_capacity": false
+    },
+    {
+     "timeslot_id": "TS-20261214-0800",
      "exam_group_count": 3,
      "student_count": 217,
      "over_capacity": false
     },
     {
-     "timeslot_id": "TS-20261211-1800",
-     "exam_group_count": 2,
-     "student_count": 189,
-     "over_capacity": false
-    },
-    {
-     "timeslot_id": "TS-20261214-0800",
-     "exam_group_count": 2,
-     "student_count": 335,
-     "over_capacity": false
-    },
-    {
      "timeslot_id": "TS-20261214-1120",
      "exam_group_count": 3,
-     "student_count": 78,
+     "student_count": 200,
      "over_capacity": false
     },
     {
      "timeslot_id": "TS-20261214-1440",
-     "exam_group_count": 4,
-     "student_count": 140,
+     "exam_group_count": 3,
+     "student_count": 215,
      "over_capacity": false
     },
     {
      "timeslot_id": "TS-20261214-1800",
-     "exam_group_count": 2,
-     "student_count": 270,
+     "exam_group_count": 5,
+     "student_count": 287,
      "over_capacity": false
     },
     {
      "timeslot_id": "TS-20261215-1120",
-     "exam_group_count": 3,
-     "student_count": 243,
+     "exam_group_count": 1,
+     "student_count": 241,
      "over_capacity": false
     },
     {
      "timeslot_id": "TS-20261215-1440",
-     "exam_group_count": 2,
-     "student_count": 253,
+     "exam_group_count": 3,
+     "student_count": 145,
      "over_capacity": false
     },
     {
      "timeslot_id": "TS-20261215-1800",
      "exam_group_count": 2,
-     "student_count": 262,
+     "student_count": 265,
      "over_capacity": false
     },
     {
      "timeslot_id": "TS-20261216-0800",
-     "exam_group_count": 4,
-     "student_count": 243,
+     "exam_group_count": 1,
+     "student_count": 160,
      "over_capacity": false
     },
     {
      "timeslot_id": "TS-20261216-1120",
-     "exam_group_count": 1,
-     "student_count": 47,
+     "exam_group_count": 2,
+     "student_count": 266,
      "over_capacity": false
     },
     {
      "timeslot_id": "TS-20261216-1440",
-     "exam_group_count": 2,
-     "student_count": 171,
+     "exam_group_count": 1,
+     "student_count": 79,
      "over_capacity": false
     },
     {
      "timeslot_id": "TS-20261216-1800",
-     "exam_group_count": 2,
-     "student_count": 327,
+     "exam_group_count": 3,
+     "student_count": 342,
      "over_capacity": false
     },
     {
      "timeslot_id": "TS-20261217-0800",
      "exam_group_count": 1,
-     "student_count": 287,
+     "student_count": 14,
      "over_capacity": false
     },
     {
      "timeslot_id": "TS-20261217-1120",
-     "exam_group_count": 2,
-     "student_count": 53,
+     "exam_group_count": 3,
+     "student_count": 340,
      "over_capacity": false
     },
     {
      "timeslot_id": "TS-20261217-1440",
-     "exam_group_count": 3,
-     "student_count": 209,
+     "exam_group_count": 2,
+     "student_count": 78,
      "over_capacity": false
     },
     {
      "timeslot_id": "TS-20261217-1800",
-     "exam_group_count": 3,
-     "student_count": 268,
+     "exam_group_count": 2,
+     "student_count": 347,
      "over_capacity": false
     }
    ],
    "worst_students": [
     {
-     "student_id": "S000087",
-     "exam_count": 5,
+     "student_id": "S000111",
+     "exam_count": 6,
      "exam_timeslot_ids": [
-      "TS-20261214-1800",
-      "TS-20261215-1120",
+      "TS-20261214-1120",
+      "TS-20261214-1440",
       "TS-20261215-1440",
       "TS-20261215-1800",
-      "TS-20261216-0800"
+      "TS-20261216-1120",
+      "TS-20261216-1440"
      ],
      "simultaneous_conflicts": 0,
-     "back_to_back": 2,
-     "night_to_morning": 1,
-     "three_in_one_day": 1,
+     "back_to_back": 3,
+     "night_to_morning": 0,
      "three_in_24h": 1,
      "four_in_48h": 1,
      "exam_group_ids": [
-      "EG-COMMON-PHYS-2212",
-      "EG-MW-0930-1020",
-      "EG-TR-0930-1045",
+      "EG-MW-1100-1215",
+      "EG-MW-1530-1645",
+      "EG-MW-1700-1815",
       "EG-COMMON-MATH-1553-1554",
-      "EG-R-1700-1815"
+      "EG-MW-1230-1345",
+      "EG-MW-0800-0915"
      ],
      "weighted_penalty": 205
     },
     {
-     "student_id": "S000187",
+     "student_id": "S000144",
+     "exam_count": 5,
+     "exam_timeslot_ids": [
+      "TS-20261214-0800",
+      "TS-20261214-1120",
+      "TS-20261214-1440",
+      "TS-20261214-1800",
+      "TS-20261216-1120"
+     ],
+     "simultaneous_conflicts": 0,
+     "back_to_back": 3,
+     "night_to_morning": 0,
+     "three_in_24h": 1,
+     "four_in_48h": 1,
+     "exam_group_ids": [
+      "EG-MW-1400-1515",
+      "EG-MW-1100-1215",
+      "EG-MW-1530-1645",
+      "EG-COMMON-PHYS-2212",
+      "EG-MW-1230-1345"
+     ],
+     "weighted_penalty": 205
+    },
+    {
+     "student_id": "S000621",
+     "exam_count": 4,
+     "exam_timeslot_ids": [
+      "TS-20261214-0800",
+      "TS-20261214-1120",
+      "TS-20261214-1440",
+      "TS-20261214-1800"
+     ],
+     "simultaneous_conflicts": 0,
+     "back_to_back": 3,
+     "night_to_morning": 0,
+     "three_in_24h": 1,
+     "four_in_48h": 1,
+     "exam_group_ids": [
+      "EG-MW-1400-1515",
+      "EG-MW-1100-1215",
+      "EG-MW-1530-1645",
+      "EG-TR-1830-1920"
+     ],
+     "weighted_penalty": 205
+    },
+    {
+     "student_id": "S000743",
      "exam_count": 6,
+     "exam_timeslot_ids": [
+      "TS-20261211-1440",
+      "TS-20261211-1800",
+      "TS-20261214-0800",
+      "TS-20261214-1120",
+      "TS-20261214-1440",
+      "TS-20261217-1120"
+     ],
+     "simultaneous_conflicts": 0,
+     "back_to_back": 3,
+     "night_to_morning": 0,
+     "three_in_24h": 1,
+     "four_in_48h": 0,
+     "exam_group_ids": [
+      "EG-MW-0930-1045",
+      "EG-COMMON-PHYS-2211",
+      "EG-MW-1400-1515",
+      "EG-MW-1100-1215",
+      "EG-MW-1530-1645",
+      "EG-TR-1530-1645"
+     ],
+     "weighted_penalty": 190
+    },
+    {
+     "student_id": "S000651",
+     "exam_count": 5,
+     "exam_timeslot_ids": [
+      "TS-20261215-1440",
+      "TS-20261215-1800",
+      "TS-20261216-0800",
+      "TS-20261216-1120",
+      "TS-20261217-0800"
+     ],
+     "simultaneous_conflicts": 0,
+     "back_to_back": 2,
+     "night_to_morning": 1,
+     "three_in_24h": 1,
+     "four_in_48h": 1,
+     "exam_group_ids": [
+      "EG-TR-0930-1020",
+      "EG-COMMON-MATH-1553-1554",
+      "EG-TR-1100-1215",
+      "EG-MW-1230-1320",
+      "EG-TR-0825-0915"
+     ],
+     "weighted_penalty": 185
+    },
+    {
+     "student_id": "S000195",
+     "exam_count": 5,
      "exam_timeslot_ids": [
       "TS-20261210-1800",
       "TS-20261211-1120",
       "TS-20261211-1440",
       "TS-20261211-1800",
-      "TS-20261215-1800",
-      "TS-20261216-0800"
-     ],
-     "simultaneous_conflicts": 0,
-     "back_to_back": 2,
-     "night_to_morning": 1,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 1,
-     "exam_group_ids": [
-      "EG-COMMON-MATH-1551",
-      "EG-MW-0800-0915",
-      "EG-MW-1400-1450",
-      "EG-COMMON-PHYS-2211",
-      "EG-COMMON-MATH-1553-1554",
-      "EG-R-1700-1815"
-     ],
-     "weighted_penalty": 205
-    },
-    {
-     "student_id": "S000492",
-     "exam_count": 4,
-     "exam_timeslot_ids": [
-      "TS-20261215-1800",
-      "TS-20261216-1120",
-      "TS-20261216-1440",
-      "TS-20261216-1800"
-     ],
-     "simultaneous_conflicts": 0,
-     "back_to_back": 2,
-     "night_to_morning": 0,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 1,
-     "exam_group_ids": [
-      "EG-COMMON-MATH-1553-1554",
-      "EG-MWF-1100-1150",
-      "EG-TR-1100-1215",
-      "EG-COMMON-MATH-1552"
-     ],
-     "weighted_penalty": 195
-    },
-    {
-     "student_id": "S000923",
-     "exam_count": 4,
-     "exam_timeslot_ids": [
-      "TS-20261214-1800",
-      "TS-20261215-1120",
-      "TS-20261215-1440",
       "TS-20261215-1800"
      ],
      "simultaneous_conflicts": 0,
      "back_to_back": 2,
      "night_to_morning": 0,
-     "three_in_one_day": 1,
      "three_in_24h": 1,
      "four_in_48h": 1,
      "exam_group_ids": [
-      "EG-COMMON-PHYS-2212",
-      "EG-MW-0930-1045",
-      "EG-TR-0930-1045",
+      "EG-COMMON-MATH-1551",
+      "EG-MWF-0825-0915",
+      "EG-MWF-0930-1020",
+      "EG-COMMON-PHYS-2211",
       "EG-COMMON-MATH-1553-1554"
      ],
-     "weighted_penalty": 195
+     "weighted_penalty": 175
     },
     {
-     "student_id": "S000648",
-     "exam_count": 5,
+     "student_id": "S000675",
+     "exam_count": 6,
      "exam_timeslot_ids": [
-      "TS-20261214-0800",
+      "TS-20261214-1120",
       "TS-20261214-1440",
       "TS-20261214-1800",
-      "TS-20261217-1440",
+      "TS-20261215-1440",
+      "TS-20261216-0800",
       "TS-20261217-1800"
      ],
      "simultaneous_conflicts": 0,
      "back_to_back": 2,
      "night_to_morning": 0,
-     "three_in_one_day": 1,
      "three_in_24h": 1,
-     "four_in_48h": 0,
+     "four_in_48h": 1,
      "exam_group_ids": [
-      "EG-TR-1530-1645",
-      "EG-MW-1700-1815",
-      "EG-COMMON-PHYS-2212",
+      "EG-MW-1100-1215",
       "EG-MW-1530-1645",
-      "EG-MW-1230-1345"
+      "EG-COMMON-PHYS-2212",
+      "EG-MW-1700-1750",
+      "EG-TR-1100-1215",
+      "EG-TR-1230-1345"
      ],
-     "weighted_penalty": 180
+     "weighted_penalty": 175
     },
     {
-     "student_id": "S000754",
+     "student_id": "S000741",
      "exam_count": 6,
      "exam_timeslot_ids": [
-      "TS-20261211-0800",
-      "TS-20261211-1440",
-      "TS-20261211-1800",
+      "TS-20261210-1440",
+      "TS-20261214-1440",
+      "TS-20261214-1800",
       "TS-20261215-1120",
       "TS-20261215-1440",
       "TS-20261216-1440"
@@ -1221,49 +1232,125 @@
      "simultaneous_conflicts": 0,
      "back_to_back": 2,
      "night_to_morning": 0,
-     "three_in_one_day": 1,
      "three_in_24h": 1,
-     "four_in_48h": 0,
+     "four_in_48h": 1,
      "exam_group_ids": [
-      "EG-MW-1100-1215",
-      "EG-MW-1400-1450",
-      "EG-COMMON-PHYS-2211",
-      "EG-MWF-0930-1020",
+      "EG-TR-1400-1515",
+      "EG-MW-1530-1645",
+      "EG-COMMON-PHYS-2212",
       "EG-TR-0930-1045",
-      "EG-TR-1100-1215"
+      "EG-MW-1700-1815",
+      "EG-MW-0800-0915"
      ],
-     "weighted_penalty": 180
+     "weighted_penalty": 175
     },
     {
-     "student_id": "S000774",
-     "exam_count": 5,
+     "student_id": "S000865",
+     "exam_count": 6,
      "exam_timeslot_ids": [
-      "TS-20261211-0800",
+      "TS-20261214-0800",
+      "TS-20261214-1120",
+      "TS-20261214-1800",
+      "TS-20261215-1440",
+      "TS-20261215-1800",
+      "TS-20261217-1120"
+     ],
+     "simultaneous_conflicts": 0,
+     "back_to_back": 2,
+     "night_to_morning": 0,
+     "three_in_24h": 1,
+     "four_in_48h": 1,
+     "exam_group_ids": [
+      "EG-MW-1400-1515",
+      "EG-MW-1100-1215",
+      "EG-COMMON-PHYS-2212",
+      "EG-TR-0930-1020",
+      "EG-COMMON-MATH-1553-1554",
+      "EG-TR-1530-1645"
+     ],
+     "weighted_penalty": 175
+    },
+    {
+     "student_id": "S000881",
+     "exam_count": 6,
+     "exam_timeslot_ids": [
+      "TS-20261210-1800",
       "TS-20261211-1120",
       "TS-20261211-1440",
+      "TS-20261211-1800",
+      "TS-20261216-1120",
+      "TS-20261217-1800"
+     ],
+     "simultaneous_conflicts": 0,
+     "back_to_back": 2,
+     "night_to_morning": 0,
+     "three_in_24h": 1,
+     "four_in_48h": 1,
+     "exam_group_ids": [
+      "EG-TR-1700-1750",
+      "EG-MWF-0825-0915",
+      "EG-MW-0930-1045",
+      "EG-COMMON-PHYS-2211",
+      "EG-MW-1230-1345",
+      "EG-TR-1230-1345"
+     ],
+     "weighted_penalty": 175
+    },
+    {
+     "student_id": "S000953",
+     "exam_count": 5,
+     "exam_timeslot_ids": [
+      "TS-20261211-1440",
+      "TS-20261214-1120",
+      "TS-20261214-1440",
       "TS-20261214-1800",
       "TS-20261215-1800"
      ],
      "simultaneous_conflicts": 0,
      "back_to_back": 2,
      "night_to_morning": 0,
-     "three_in_one_day": 1,
      "three_in_24h": 1,
-     "four_in_48h": 0,
+     "four_in_48h": 1,
      "exam_group_ids": [
+      "EG-MW-0930-1045",
       "EG-MW-1100-1215",
-      "EG-MWF-0825-0915",
-      "EG-MW-1400-1515",
+      "EG-MW-1530-1645",
       "EG-COMMON-PHYS-2212",
       "EG-COMMON-MATH-1553-1554"
      ],
-     "weighted_penalty": 180
+     "weighted_penalty": 175
     },
     {
-     "student_id": "S000908",
-     "exam_count": 4,
+     "student_id": "S000343",
+     "exam_count": 5,
      "exam_timeslot_ids": [
-      "TS-20261215-1120",
+      "TS-20261210-1440",
+      "TS-20261210-1800",
+      "TS-20261215-1800",
+      "TS-20261216-0800",
+      "TS-20261216-1120"
+     ],
+     "simultaneous_conflicts": 0,
+     "back_to_back": 2,
+     "night_to_morning": 1,
+     "three_in_24h": 1,
+     "four_in_48h": 0,
+     "exam_group_ids": [
+      "EG-TR-1400-1515",
+      "EG-COMMON-MATH-1551",
+      "EG-COMMON-MATH-1553-1554",
+      "EG-TR-1100-1215",
+      "EG-MW-1230-1320"
+     ],
+     "weighted_penalty": 170
+    },
+    {
+     "student_id": "S000032",
+     "exam_count": 6,
+     "exam_timeslot_ids": [
+      "TS-20261211-0800",
+      "TS-20261214-0800",
+      "TS-20261214-1800",
       "TS-20261217-1120",
       "TS-20261217-1440",
       "TS-20261217-1800"
@@ -1271,48 +1358,166 @@
      "simultaneous_conflicts": 0,
      "back_to_back": 2,
      "night_to_morning": 0,
-     "three_in_one_day": 1,
      "three_in_24h": 1,
      "four_in_48h": 0,
      "exam_group_ids": [
-      "EG-MW-0930-1045",
-      "EG-TR-1400-1450",
-      "EG-MW-1530-1645",
-      "EG-MW-1230-1320"
+      "EG-TR-1700-1815",
+      "EG-MW-1400-1450",
+      "EG-COMMON-PHYS-2212",
+      "EG-TR-1530-1645",
+      "EG-MWF-1100-1150",
+      "EG-TR-1230-1345"
      ],
-     "weighted_penalty": 180
+     "weighted_penalty": 160
     },
     {
-     "student_id": "S000075",
-     "exam_count": 5,
+     "student_id": "S000055",
+     "exam_count": 4,
      "exam_timeslot_ids": [
-      "TS-20261210-1800",
-      "TS-20261211-0800",
-      "TS-20261211-1120",
-      "TS-20261211-1800",
-      "TS-20261214-1120"
+      "TS-20261214-0800",
+      "TS-20261214-1120",
+      "TS-20261214-1440",
+      "TS-20261216-1120"
      ],
      "simultaneous_conflicts": 0,
-     "back_to_back": 1,
-     "night_to_morning": 1,
-     "three_in_one_day": 1,
+     "back_to_back": 2,
+     "night_to_morning": 0,
      "three_in_24h": 1,
-     "four_in_48h": 1,
+     "four_in_48h": 0,
      "exam_group_ids": [
-      "EG-COMMON-MATH-1551",
+      "EG-MW-1400-1450",
       "EG-MW-1100-1215",
-      "EG-MWF-0825-0915",
-      "EG-COMMON-PHYS-2211",
-      "EG-F-1100-1255"
+      "EG-MW-1530-1620",
+      "EG-MW-1230-1345"
      ],
-     "weighted_penalty": 175
+     "weighted_penalty": 160
     },
     {
-     "student_id": "S000604",
+     "student_id": "S000092",
+     "exam_count": 5,
+     "exam_timeslot_ids": [
+      "TS-20261211-0800",
+      "TS-20261211-1120",
+      "TS-20261211-1440",
+      "TS-20261214-1800",
+      "TS-20261215-1120"
+     ],
+     "simultaneous_conflicts": 0,
+     "back_to_back": 2,
+     "night_to_morning": 0,
+     "three_in_24h": 1,
+     "four_in_48h": 0,
+     "exam_group_ids": [
+      "EG-TR-1700-1815",
+      "EG-MWF-0825-0915",
+      "EG-WF-0930-1020",
+      "EG-TR-1830-1920",
+      "EG-TR-0930-1045"
+     ],
+     "weighted_penalty": 160
+    },
+    {
+     "student_id": "S000203",
      "exam_count": 6,
      "exam_timeslot_ids": [
       "TS-20261210-1440",
+      "TS-20261211-0800",
+      "TS-20261211-1120",
+      "TS-20261214-1120",
+      "TS-20261214-1440",
+      "TS-20261217-1800"
+     ],
+     "simultaneous_conflicts": 0,
+     "back_to_back": 2,
+     "night_to_morning": 0,
+     "three_in_24h": 1,
+     "four_in_48h": 0,
+     "exam_group_ids": [
+      "EG-TR-1400-1515",
+      "EG-TR-1700-1815",
+      "EG-MWF-0825-0915",
+      "EG-MW-1100-1215",
+      "EG-MW-1530-1620",
+      "EG-TR-1230-1345"
+     ],
+     "weighted_penalty": 160
+    },
+    {
+     "student_id": "S000670",
+     "exam_count": 5,
+     "exam_timeslot_ids": [
+      "TS-20261210-1440",
+      "TS-20261214-1120",
+      "TS-20261214-1440",
       "TS-20261214-1800",
+      "TS-20261216-1120"
+     ],
+     "simultaneous_conflicts": 0,
+     "back_to_back": 2,
+     "night_to_morning": 0,
+     "three_in_24h": 1,
+     "four_in_48h": 0,
+     "exam_group_ids": [
+      "EG-TR-1400-1515",
+      "EG-MW-1100-1215",
+      "EG-MW-1530-1620",
+      "EG-TR-1830-1920",
+      "EG-MW-1230-1345"
+     ],
+     "weighted_penalty": 160
+    },
+    {
+     "student_id": "S000816",
+     "exam_count": 5,
+     "exam_timeslot_ids": [
+      "TS-20261211-0800",
+      "TS-20261211-1440",
+      "TS-20261214-1120",
+      "TS-20261214-1440",
+      "TS-20261214-1800"
+     ],
+     "simultaneous_conflicts": 0,
+     "back_to_back": 2,
+     "night_to_morning": 0,
+     "three_in_24h": 1,
+     "four_in_48h": 0,
+     "exam_group_ids": [
+      "EG-TR-1700-1815",
+      "EG-MWF-0930-1020",
+      "EG-MW-1100-1215",
+      "EG-MW-1530-1645",
+      "EG-COMMON-PHYS-2212"
+     ],
+     "weighted_penalty": 160
+    },
+    {
+     "student_id": "S000860",
+     "exam_count": 5,
+     "exam_timeslot_ids": [
+      "TS-20261211-0800",
+      "TS-20261214-1120",
+      "TS-20261214-1440",
+      "TS-20261214-1800",
+      "TS-20261217-1800"
+     ],
+     "simultaneous_conflicts": 0,
+     "back_to_back": 2,
+     "night_to_morning": 0,
+     "three_in_24h": 1,
+     "four_in_48h": 0,
+     "exam_group_ids": [
+      "EG-TR-1700-1815",
+      "EG-MW-1100-1215",
+      "EG-MW-1530-1645",
+      "EG-COMMON-PHYS-2212",
+      "EG-TR-1230-1345"
+     ],
+     "weighted_penalty": 160
+    },
+    {
+     "student_id": "S000317",
+     "exam_count": 4,
+     "exam_timeslot_ids": [
       "TS-20261215-1800",
       "TS-20261216-0800",
       "TS-20261216-1120",
@@ -1321,415 +1526,149 @@
      "simultaneous_conflicts": 0,
      "back_to_back": 1,
      "night_to_morning": 1,
-     "three_in_one_day": 1,
      "three_in_24h": 1,
      "four_in_48h": 1,
      "exam_group_ids": [
-      "EG-TR-1230-1320",
-      "EG-COMMON-PHYS-2212",
       "EG-COMMON-MATH-1553-1554",
-      "EG-R-1700-1815",
-      "EG-MWF-1100-1150",
+      "EG-TR-1100-1215",
+      "EG-MW-1230-1320",
       "EG-COMMON-MATH-1552"
      ],
-     "weighted_penalty": 175
+     "weighted_penalty": 155
+    },
+    {
+     "student_id": "S000443",
+     "exam_count": 5,
+     "exam_timeslot_ids": [
+      "TS-20261211-1800",
+      "TS-20261215-1800",
+      "TS-20261216-0800",
+      "TS-20261216-1120",
+      "TS-20261216-1800"
+     ],
+     "simultaneous_conflicts": 0,
+     "back_to_back": 1,
+     "night_to_morning": 1,
+     "three_in_24h": 1,
+     "four_in_48h": 1,
+     "exam_group_ids": [
+      "EG-COMMON-PHYS-2211",
+      "EG-COMMON-MATH-1553-1554",
+      "EG-TR-1100-1215",
+      "EG-MW-1230-1320",
+      "EG-COMMON-MATH-1552"
+     ],
+     "weighted_penalty": 155
+    },
+    {
+     "student_id": "S000577",
+     "exam_count": 5,
+     "exam_timeslot_ids": [
+      "TS-20261210-1440",
+      "TS-20261210-1800",
+      "TS-20261211-0800",
+      "TS-20261211-1800",
+      "TS-20261217-1800"
+     ],
+     "simultaneous_conflicts": 0,
+     "back_to_back": 1,
+     "night_to_morning": 1,
+     "three_in_24h": 1,
+     "four_in_48h": 1,
+     "exam_group_ids": [
+      "EG-TR-1400-1515",
+      "EG-COMMON-MATH-1551",
+      "EG-TR-1700-1815",
+      "EG-COMMON-PHYS-2211",
+      "EG-TR-1230-1345"
+     ],
+     "weighted_penalty": 155
+    },
+    {
+     "student_id": "S000751",
+     "exam_count": 4,
+     "exam_timeslot_ids": [
+      "TS-20261215-1800",
+      "TS-20261216-0800",
+      "TS-20261216-1120",
+      "TS-20261216-1800"
+     ],
+     "simultaneous_conflicts": 0,
+     "back_to_back": 1,
+     "night_to_morning": 1,
+     "three_in_24h": 1,
+     "four_in_48h": 1,
+     "exam_group_ids": [
+      "EG-COMMON-MATH-1553-1554",
+      "EG-TR-1100-1215",
+      "EG-MW-1230-1320",
+      "EG-COMMON-MATH-1552"
+     ],
+     "weighted_penalty": 155
     },
     {
      "student_id": "S000791",
      "exam_count": 6,
      "exam_timeslot_ids": [
-      "TS-20261211-1440",
+      "TS-20261211-0800",
+      "TS-20261214-0800",
       "TS-20261215-1800",
       "TS-20261216-0800",
-      "TS-20261216-1440",
-      "TS-20261216-1800",
-      "TS-20261217-1800"
+      "TS-20261216-1120",
+      "TS-20261216-1800"
      ],
      "simultaneous_conflicts": 0,
      "back_to_back": 1,
      "night_to_morning": 1,
-     "three_in_one_day": 1,
      "three_in_24h": 1,
      "four_in_48h": 1,
      "exam_group_ids": [
-      "EG-MW-1400-1450",
-      "EG-COMMON-MATH-1553-1554",
       "EG-MW-0825-0915",
-      "EG-TR-1100-1215",
-      "EG-COMMON-MATH-1552",
-      "EG-MW-1230-1345"
-     ],
-     "weighted_penalty": 175
-    },
-    {
-     "student_id": "S000861",
-     "exam_count": 5,
-     "exam_timeslot_ids": [
-      "TS-20261210-1800",
-      "TS-20261211-0800",
-      "TS-20261211-1120",
-      "TS-20261211-1800",
-      "TS-20261214-0800"
-     ],
-     "simultaneous_conflicts": 0,
-     "back_to_back": 1,
-     "night_to_morning": 1,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 1,
-     "exam_group_ids": [
-      "EG-COMMON-MATH-1551",
-      "EG-MW-1100-1215",
-      "EG-MW-0800-0915",
-      "EG-COMMON-PHYS-2211",
-      "EG-TR-1530-1645"
-     ],
-     "weighted_penalty": 175
-    },
-    {
-     "student_id": "S000126",
-     "exam_count": 5,
-     "exam_timeslot_ids": [
-      "TS-20261210-1440",
-      "TS-20261216-0800",
-      "TS-20261217-0800",
-      "TS-20261217-1440",
-      "TS-20261217-1800"
-     ],
-     "simultaneous_conflicts": 0,
-     "back_to_back": 1,
-     "night_to_morning": 0,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 1,
-     "exam_group_ids": [
-      "EG-TR-1230-1345",
-      "EG-TR-1700-1815",
-      "EG-TR-1400-1515",
-      "EG-MW-1530-1645",
-      "EG-MW-1230-1345"
-     ],
-     "weighted_penalty": 165
-    },
-    {
-     "student_id": "S000130",
-     "exam_count": 6,
-     "exam_timeslot_ids": [
-      "TS-20261214-0800",
-      "TS-20261214-1440",
-      "TS-20261214-1800",
-      "TS-20261215-1800",
-      "TS-20261216-1800",
-      "TS-20261217-1440"
-     ],
-     "simultaneous_conflicts": 0,
-     "back_to_back": 1,
-     "night_to_morning": 0,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 1,
-     "exam_group_ids": [
-      "EG-TR-1530-1645",
-      "EG-MW-1700-1815",
-      "EG-COMMON-PHYS-2212",
-      "EG-COMMON-MATH-1553-1554",
-      "EG-COMMON-MATH-1552",
-      "EG-MW-1530-1645"
-     ],
-     "weighted_penalty": 165
-    },
-    {
-     "student_id": "S000157",
-     "exam_count": 5,
-     "exam_timeslot_ids": [
-      "TS-20261214-0800",
-      "TS-20261214-1120",
-      "TS-20261214-1800",
-      "TS-20261215-1440",
-      "TS-20261216-1440"
-     ],
-     "simultaneous_conflicts": 0,
-     "back_to_back": 1,
-     "night_to_morning": 0,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 1,
-     "exam_group_ids": [
-      "EG-TR-1530-1645",
-      "EG-F-1100-1255",
-      "EG-COMMON-PHYS-2212",
-      "EG-TR-0930-1045",
-      "EG-TR-1100-1215"
-     ],
-     "weighted_penalty": 165
-    },
-    {
-     "student_id": "S000254",
-     "exam_count": 5,
-     "exam_timeslot_ids": [
-      "TS-20261214-0800",
-      "TS-20261216-1440",
-      "TS-20261217-0800",
-      "TS-20261217-1440",
-      "TS-20261217-1800"
-     ],
-     "simultaneous_conflicts": 0,
-     "back_to_back": 1,
-     "night_to_morning": 0,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 1,
-     "exam_group_ids": [
-      "EG-TR-1530-1645",
-      "EG-TR-1100-1215",
-      "EG-TR-1400-1515",
-      "EG-MW-1530-1620",
-      "EG-MW-1230-1345"
-     ],
-     "weighted_penalty": 165
-    },
-    {
-     "student_id": "S000303",
-     "exam_count": 6,
-     "exam_timeslot_ids": [
-      "TS-20261210-1440",
-      "TS-20261211-1440",
-      "TS-20261215-1120",
-      "TS-20261216-0800",
-      "TS-20261216-1440",
-      "TS-20261216-1800"
-     ],
-     "simultaneous_conflicts": 0,
-     "back_to_back": 1,
-     "night_to_morning": 0,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 1,
-     "exam_group_ids": [
-      "EG-TR-1230-1345",
-      "EG-MW-1400-1515",
-      "EG-MW-0930-1045",
-      "EG-TR-1700-1815",
-      "EG-TR-1100-1215",
-      "EG-COMMON-MATH-1552"
-     ],
-     "weighted_penalty": 165
-    },
-    {
-     "student_id": "S000490",
-     "exam_count": 5,
-     "exam_timeslot_ids": [
-      "TS-20261210-1440",
-      "TS-20261211-0800",
-      "TS-20261211-1120",
-      "TS-20261211-1800",
-      "TS-20261215-1440"
-     ],
-     "simultaneous_conflicts": 0,
-     "back_to_back": 1,
-     "night_to_morning": 0,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 1,
-     "exam_group_ids": [
-      "EG-TR-1230-1345",
-      "EG-MW-1100-1215",
-      "EG-MW-0800-0915",
-      "EG-COMMON-PHYS-2211",
-      "EG-TR-0930-1045"
-     ],
-     "weighted_penalty": 165
-    },
-    {
-     "student_id": "S000698",
-     "exam_count": 5,
-     "exam_timeslot_ids": [
-      "TS-20261214-1440",
-      "TS-20261216-1440",
-      "TS-20261217-0800",
-      "TS-20261217-1440",
-      "TS-20261217-1800"
-     ],
-     "simultaneous_conflicts": 0,
-     "back_to_back": 1,
-     "night_to_morning": 0,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 1,
-     "exam_group_ids": [
-      "EG-MW-1700-1815",
-      "EG-TR-1100-1215",
-      "EG-TR-1400-1515",
-      "EG-MW-1530-1620",
-      "EG-MW-1230-1345"
-     ],
-     "weighted_penalty": 165
-    },
-    {
-     "student_id": "S000563",
-     "exam_count": 6,
-     "exam_timeslot_ids": [
-      "TS-20261211-0800",
-      "TS-20261211-1120",
-      "TS-20261211-1800",
-      "TS-20261215-1800",
-      "TS-20261216-0800",
-      "TS-20261216-1800"
-     ],
-     "simultaneous_conflicts": 0,
-     "back_to_back": 1,
-     "night_to_morning": 1,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 0,
-     "exam_group_ids": [
-      "EG-TR-1100-1150",
-      "EG-MWF-0825-0915",
-      "EG-COMMON-PHYS-2211",
-      "EG-COMMON-MATH-1553-1554",
-      "EG-R-1700-1815",
-      "EG-COMMON-MATH-1552"
-     ],
-     "weighted_penalty": 160
-    },
-    {
-     "student_id": "S000227",
-     "exam_count": 5,
-     "exam_timeslot_ids": [
-      "TS-20261214-0800",
-      "TS-20261215-1440",
-      "TS-20261217-0800",
-      "TS-20261217-1440",
-      "TS-20261217-1800"
-     ],
-     "simultaneous_conflicts": 0,
-     "back_to_back": 1,
-     "night_to_morning": 0,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 0,
-     "exam_group_ids": [
-      "EG-TR-1530-1645",
-      "EG-TR-0930-1045",
-      "EG-TR-1400-1515",
-      "EG-MW-1530-1645",
-      "EG-MW-1230-1345"
-     ],
-     "weighted_penalty": 150
-    },
-    {
-     "student_id": "S000239",
-     "exam_count": 4,
-     "exam_timeslot_ids": [
-      "TS-20261214-0800",
-      "TS-20261214-1440",
-      "TS-20261214-1800",
-      "TS-20261216-1440"
-     ],
-     "simultaneous_conflicts": 0,
-     "back_to_back": 1,
-     "night_to_morning": 0,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 0,
-     "exam_group_ids": [
-      "EG-TR-1530-1645",
-      "EG-MW-1700-1815",
-      "EG-COMMON-PHYS-2212",
-      "EG-TR-1100-1215"
-     ],
-     "weighted_penalty": 150
-    },
-    {
-     "student_id": "S000274",
-     "exam_count": 5,
-     "exam_timeslot_ids": [
-      "TS-20261211-1120",
-      "TS-20261211-1800",
-      "TS-20261217-0800",
-      "TS-20261217-1440",
-      "TS-20261217-1800"
-     ],
-     "simultaneous_conflicts": 0,
-     "back_to_back": 1,
-     "night_to_morning": 0,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 0,
-     "exam_group_ids": [
-      "EG-MW-0800-0915",
-      "EG-COMMON-PHYS-2211",
-      "EG-TR-1400-1515",
-      "EG-MW-1530-1645",
-      "EG-MW-1230-1345"
-     ],
-     "weighted_penalty": 150
-    },
-    {
-     "student_id": "S000286",
-     "exam_count": 5,
-     "exam_timeslot_ids": [
-      "TS-20261211-0800",
-      "TS-20261211-1440",
-      "TS-20261216-0800",
-      "TS-20261216-1440",
-      "TS-20261216-1800"
-     ],
-     "simultaneous_conflicts": 0,
-     "back_to_back": 1,
-     "night_to_morning": 0,
-     "three_in_one_day": 1,
-     "three_in_24h": 1,
-     "four_in_48h": 0,
-     "exam_group_ids": [
-      "EG-MW-1100-1215",
       "EG-MW-1400-1450",
-      "EG-R-1700-1815",
+      "EG-COMMON-MATH-1553-1554",
       "EG-TR-1100-1215",
+      "EG-MW-1230-1345",
       "EG-COMMON-MATH-1552"
      ],
-     "weighted_penalty": 150
+     "weighted_penalty": 155
     },
     {
-     "student_id": "S000363",
+     "student_id": "S000886",
      "exam_count": 5,
      "exam_timeslot_ids": [
-      "TS-20261210-1440",
-      "TS-20261214-1800",
-      "TS-20261217-0800",
-      "TS-20261217-1440",
-      "TS-20261217-1800"
+      "TS-20261214-0800",
+      "TS-20261215-1800",
+      "TS-20261216-0800",
+      "TS-20261216-1120",
+      "TS-20261216-1800"
      ],
      "simultaneous_conflicts": 0,
      "back_to_back": 1,
-     "night_to_morning": 0,
-     "three_in_one_day": 1,
+     "night_to_morning": 1,
      "three_in_24h": 1,
-     "four_in_48h": 0,
+     "four_in_48h": 1,
      "exam_group_ids": [
-      "EG-TR-1230-1345",
-      "EG-COMMON-PHYS-2212",
-      "EG-TR-1400-1515",
-      "EG-MW-1530-1645",
-      "EG-MW-1230-1345"
+      "EG-MW-1400-1450",
+      "EG-COMMON-MATH-1553-1554",
+      "EG-TR-1100-1215",
+      "EG-MW-1230-1320",
+      "EG-COMMON-MATH-1552"
      ],
-     "weighted_penalty": 150
+     "weighted_penalty": 155
     }
    ],
    "penalty_breakdown": {
     "simultaneous_conflicts": 0,
-    "back_to_back": 9120,
-    "night_to_morning": 1110,
-    "three_in_one_day": 3400,
-    "three_in_24h": 1920,
-    "four_in_48h": 1125
+    "back_to_back": 9570,
+    "night_to_morning": 500,
+    "three_in_24h": 6600,
+    "four_in_48h": 1095
    },
    "weights_used": {
     "simultaneous_conflicts": 1000,
     "back_to_back": 30,
     "night_to_morning": 10,
-    "three_in_one_day": 100,
-    "three_in_24h": 20,
+    "three_in_24h": 100,
     "four_in_48h": 15
    },
    "settings": {
@@ -1744,47 +1683,46 @@
     {
      "day": "2026-12-10",
      "exam_group_count": 5,
-     "student_exam_count": 493,
-     "student_count": 450
+     "student_exam_count": 456,
+     "student_count": 420
     },
     {
      "day": "2026-12-11",
-     "exam_group_count": 11,
-     "student_exam_count": 753,
-     "student_count": 600
+     "exam_group_count": 12,
+     "student_exam_count": 780,
+     "student_count": 605
     },
     {
      "day": "2026-12-14",
-     "exam_group_count": 11,
-     "student_exam_count": 823,
-     "student_count": 665
+     "exam_group_count": 14,
+     "student_exam_count": 919,
+     "student_count": 692
     },
     {
      "day": "2026-12-15",
-     "exam_group_count": 7,
-     "student_exam_count": 758,
-     "student_count": 626
+     "exam_group_count": 6,
+     "student_exam_count": 651,
+     "student_count": 590
     },
     {
      "day": "2026-12-16",
-     "exam_group_count": 9,
-     "student_exam_count": 788,
-     "student_count": 644
+     "exam_group_count": 7,
+     "student_exam_count": 847,
+     "student_count": 674
     },
     {
      "day": "2026-12-17",
-     "exam_group_count": 9,
-     "student_exam_count": 817,
-     "student_count": 653
+     "exam_group_count": 8,
+     "student_exam_count": 779,
+     "student_count": 646
     }
    ],
    "diagnostics": {
     "unassigned_exam_group_ids": [],
     "students_with_unassigned_exams": 0,
-    "three_in_one_day_excess_exams": 34,
-    "three_in_24h_patterns": 111,
+    "three_in_24h_patterns": 87,
     "four_in_48h_patterns": 99,
-    "max_exams_one_day": 3,
+    "max_exams_one_day": 4,
     "exam_count_histogram": {
      "3": 131,
      "4": 397,
@@ -1799,7 +1737,7 @@
   "strategy": "single_pass",
   "warnings": [
    "No seat/room capacity data exists for this dataset; no capacity constraint was applied. Set an aggregate per-slot cap to model one (rooms are not assigned).",
-   "Time limit reached with a feasible solution; optimality not proven (objective 16675, best bound 1430)."
+   "Time limit reached with a feasible solution; optimality not proven (objective 17765, best bound 1475)."
   ],
   "infeasibility_hints": [],
   "model_stats": {
@@ -1808,16 +1746,16 @@
    "pinned_groups": 5,
    "co_enrollment_edges": 792,
    "distinct_student_sets": 974,
-   "warm_start_ms": 261,
+   "warm_start_ms": 199,
    "warm_start_moved_groups": 6,
-   "variables": 10422,
-   "constraints": 53073,
-   "build_ms": 1452,
-   "solve_ms": 120087
+   "variables": 5294,
+   "constraints": 47945,
+   "build_ms": 798,
+   "solve_ms": 119941
   }
  },
  "schedule": {
-  "schedule_id": "opt-run-20261114-174124-a5fb",
+  "schedule_id": "opt-run-20261115-000737-0de9",
   "name": "Hexam optimized (feasible, single_pass)",
   "kind": "optimized",
   "assignments": [
@@ -1848,27 +1786,27 @@
    },
    {
     "exam_group_id": "EG-F-1100-1255",
-    "timeslot_id": "TS-20261214-1120",
+    "timeslot_id": "TS-20261217-1440",
     "locked": false
    },
    {
     "exam_group_id": "EG-MW-0800-0915",
-    "timeslot_id": "TS-20261211-1120",
+    "timeslot_id": "TS-20261216-1440",
     "locked": false
    },
    {
     "exam_group_id": "EG-MW-0825-0915",
-    "timeslot_id": "TS-20261216-0800",
+    "timeslot_id": "TS-20261211-0800",
     "locked": false
    },
    {
     "exam_group_id": "EG-MW-0930-1020",
-    "timeslot_id": "TS-20261215-1120",
+    "timeslot_id": "TS-20261211-1440",
     "locked": false
    },
    {
     "exam_group_id": "EG-MW-0930-1045",
-    "timeslot_id": "TS-20261215-1120",
+    "timeslot_id": "TS-20261211-1440",
     "locked": false
    },
    {
@@ -1878,52 +1816,52 @@
    },
    {
     "exam_group_id": "EG-MW-1100-1215",
-    "timeslot_id": "TS-20261211-0800",
-    "locked": false
-   },
-   {
-    "exam_group_id": "EG-MW-1230-1320",
-    "timeslot_id": "TS-20261217-1800",
-    "locked": false
-   },
-   {
-    "exam_group_id": "EG-MW-1230-1345",
-    "timeslot_id": "TS-20261217-1800",
-    "locked": false
-   },
-   {
-    "exam_group_id": "EG-MW-1400-1450",
-    "timeslot_id": "TS-20261211-1440",
-    "locked": false
-   },
-   {
-    "exam_group_id": "EG-MW-1400-1515",
-    "timeslot_id": "TS-20261211-1440",
-    "locked": false
-   },
-   {
-    "exam_group_id": "EG-MW-1530-1620",
-    "timeslot_id": "TS-20261217-1440",
-    "locked": false
-   },
-   {
-    "exam_group_id": "EG-MW-1530-1645",
-    "timeslot_id": "TS-20261217-1440",
-    "locked": false
-   },
-   {
-    "exam_group_id": "EG-MW-1700-1750",
     "timeslot_id": "TS-20261214-1120",
     "locked": false
    },
    {
-    "exam_group_id": "EG-MW-1700-1815",
+    "exam_group_id": "EG-MW-1230-1320",
+    "timeslot_id": "TS-20261216-1120",
+    "locked": false
+   },
+   {
+    "exam_group_id": "EG-MW-1230-1345",
+    "timeslot_id": "TS-20261216-1120",
+    "locked": false
+   },
+   {
+    "exam_group_id": "EG-MW-1400-1450",
+    "timeslot_id": "TS-20261214-0800",
+    "locked": false
+   },
+   {
+    "exam_group_id": "EG-MW-1400-1515",
+    "timeslot_id": "TS-20261214-0800",
+    "locked": false
+   },
+   {
+    "exam_group_id": "EG-MW-1530-1620",
     "timeslot_id": "TS-20261214-1440",
     "locked": false
    },
    {
+    "exam_group_id": "EG-MW-1530-1645",
+    "timeslot_id": "TS-20261214-1440",
+    "locked": false
+   },
+   {
+    "exam_group_id": "EG-MW-1700-1750",
+    "timeslot_id": "TS-20261215-1440",
+    "locked": false
+   },
+   {
+    "exam_group_id": "EG-MW-1700-1815",
+    "timeslot_id": "TS-20261215-1440",
+    "locked": false
+   },
+   {
     "exam_group_id": "EG-MW-1830-1920",
-    "timeslot_id": "TS-20261211-0800",
+    "timeslot_id": "TS-20261215-1800",
     "locked": false
    },
    {
@@ -1938,27 +1876,27 @@
    },
    {
     "exam_group_id": "EG-MWF-0930-1020",
-    "timeslot_id": "TS-20261215-1120",
-    "locked": false
-   },
-   {
-    "exam_group_id": "EG-MWF-1100-1150",
-    "timeslot_id": "TS-20261216-1120",
-    "locked": false
-   },
-   {
-    "exam_group_id": "EG-MWF-1230-1320",
-    "timeslot_id": "TS-20261216-0800",
-    "locked": false
-   },
-   {
-    "exam_group_id": "EG-MWF-1400-1450",
     "timeslot_id": "TS-20261211-1440",
     "locked": false
    },
    {
+    "exam_group_id": "EG-MWF-1100-1150",
+    "timeslot_id": "TS-20261217-1440",
+    "locked": false
+   },
+   {
+    "exam_group_id": "EG-MWF-1230-1320",
+    "timeslot_id": "TS-20261211-1440",
+    "locked": false
+   },
+   {
+    "exam_group_id": "EG-MWF-1400-1450",
+    "timeslot_id": "TS-20261214-0800",
+    "locked": false
+   },
+   {
     "exam_group_id": "EG-R-1700-1815",
-    "timeslot_id": "TS-20261216-0800",
+    "timeslot_id": "TS-20261211-0800",
     "locked": false
    },
    {
@@ -1968,12 +1906,12 @@
    },
    {
     "exam_group_id": "EG-TR-0825-0915",
-    "timeslot_id": "TS-20261217-1120",
+    "timeslot_id": "TS-20261217-0800",
     "locked": false
    },
    {
     "exam_group_id": "EG-TR-0825-1020",
-    "timeslot_id": "TS-20261216-1440",
+    "timeslot_id": "TS-20261214-1440",
     "locked": false
    },
    {
@@ -1983,72 +1921,72 @@
    },
    {
     "exam_group_id": "EG-TR-0930-1045",
-    "timeslot_id": "TS-20261215-1440",
+    "timeslot_id": "TS-20261215-1120",
     "locked": false
    },
    {
     "exam_group_id": "EG-TR-1100-1150",
-    "timeslot_id": "TS-20261211-0800",
+    "timeslot_id": "TS-20261214-1120",
     "locked": false
    },
    {
     "exam_group_id": "EG-TR-1100-1215",
-    "timeslot_id": "TS-20261216-1440",
-    "locked": false
-   },
-   {
-    "exam_group_id": "EG-TR-1230-1320",
-    "timeslot_id": "TS-20261210-1440",
-    "locked": false
-   },
-   {
-    "exam_group_id": "EG-TR-1230-1345",
-    "timeslot_id": "TS-20261210-1440",
-    "locked": false
-   },
-   {
-    "exam_group_id": "EG-TR-1400-1450",
-    "timeslot_id": "TS-20261217-1120",
-    "locked": false
-   },
-   {
-    "exam_group_id": "EG-TR-1400-1515",
-    "timeslot_id": "TS-20261217-0800",
-    "locked": false
-   },
-   {
-    "exam_group_id": "EG-TR-1530-1620",
-    "timeslot_id": "TS-20261214-0800",
-    "locked": false
-   },
-   {
-    "exam_group_id": "EG-TR-1530-1645",
-    "timeslot_id": "TS-20261214-0800",
-    "locked": false
-   },
-   {
-    "exam_group_id": "EG-TR-1700-1750",
-    "timeslot_id": "TS-20261214-1440",
-    "locked": false
-   },
-   {
-    "exam_group_id": "EG-TR-1700-1815",
     "timeslot_id": "TS-20261216-0800",
     "locked": false
    },
    {
-    "exam_group_id": "EG-TR-1830-1920",
-    "timeslot_id": "TS-20261214-1440",
-    "locked": false
-   },
-   {
-    "exam_group_id": "EG-TRF-0930-1020",
+    "exam_group_id": "EG-TR-1230-1320",
     "timeslot_id": "TS-20261217-1800",
     "locked": false
    },
    {
+    "exam_group_id": "EG-TR-1230-1345",
+    "timeslot_id": "TS-20261217-1800",
+    "locked": false
+   },
+   {
+    "exam_group_id": "EG-TR-1400-1450",
+    "timeslot_id": "TS-20261210-1440",
+    "locked": false
+   },
+   {
+    "exam_group_id": "EG-TR-1400-1515",
+    "timeslot_id": "TS-20261210-1440",
+    "locked": false
+   },
+   {
+    "exam_group_id": "EG-TR-1530-1620",
+    "timeslot_id": "TS-20261217-1120",
+    "locked": false
+   },
+   {
+    "exam_group_id": "EG-TR-1530-1645",
+    "timeslot_id": "TS-20261217-1120",
+    "locked": false
+   },
+   {
+    "exam_group_id": "EG-TR-1700-1750",
+    "timeslot_id": "TS-20261210-1800",
+    "locked": false
+   },
+   {
+    "exam_group_id": "EG-TR-1700-1815",
+    "timeslot_id": "TS-20261211-0800",
+    "locked": false
+   },
+   {
+    "exam_group_id": "EG-TR-1830-1920",
+    "timeslot_id": "TS-20261214-1800",
+    "locked": false
+   },
+   {
+    "exam_group_id": "EG-TRF-0930-1020",
+    "timeslot_id": "TS-20261214-1800",
+    "locked": false
+   },
+   {
     "exam_group_id": "EG-TRF-1530-1620",
-    "timeslot_id": "TS-20261217-1440",
+    "timeslot_id": "TS-20261217-1120",
     "locked": false
    },
    {
@@ -2058,35 +1996,35 @@
    },
    {
     "exam_group_id": "EG-WF-0825-0915",
-    "timeslot_id": "TS-20261214-1800",
+    "timeslot_id": "TS-20261216-1800",
     "locked": false
    },
    {
     "exam_group_id": "EG-WF-0825-1020",
-    "timeslot_id": "TS-20261211-0800",
+    "timeslot_id": "TS-20261211-1800",
     "locked": false
    },
    {
     "exam_group_id": "EG-WF-0930-1020",
-    "timeslot_id": "TS-20261210-1800",
+    "timeslot_id": "TS-20261211-1440",
     "locked": false
    },
    {
     "exam_group_id": "EG-WF-1530-1645",
-    "timeslot_id": "TS-20261215-1800",
+    "timeslot_id": "TS-20261214-1800",
     "locked": false
    },
    {
     "exam_group_id": "EG-WF-1700-1855",
-    "timeslot_id": "TS-20261214-1440",
+    "timeslot_id": "TS-20261214-1800",
     "locked": false
    }
   ],
-  "created_at": "2026-11-14T17:43:25.735131-05:00",
-  "source_run_id": "run-20261114-174124-a5fb",
+  "created_at": "2026-11-15T00:09:38.477338-05:00",
+  "source_run_id": "run-20261115-000737-0de9",
   "provenance": {
    "source": "synthetic",
-   "source_ref": "hexam-cp-sat:run-20261114-174124-a5fb",
+   "source_ref": "hexam-cp-sat:run-20261115-000737-0de9",
    "retrieved_at": null,
    "notes": "Produced by the Hexam CP-SAT optimizer from synthetic registrations; not an official schedule.",
    "field_sources": {}
@@ -2096,13 +2034,12 @@
   "dataset_id": "fall2026",
   "dataset_version": "6c0f9920ccea90d0",
   "before_schedule_id": "baseline-gt-matrix-202608",
-  "after_schedule_id": "opt-run-20261114-174124-a5fb",
+  "after_schedule_id": "opt-run-20261115-000737-0de9",
   "weights": {
    "simultaneous_conflicts": 1000,
    "back_to_back": 30,
    "night_to_morning": 10,
-   "three_in_one_day": 100,
-   "three_in_24h": 20,
+   "three_in_24h": 100,
    "four_in_48h": 15
   },
   "settings": {
@@ -2122,37 +2059,30 @@
    {
     "key": "back_to_back",
     "before": 554,
-    "after": 304,
-    "change": -250,
-    "percent_change": -45.13
+    "after": 319,
+    "change": -235,
+    "percent_change": -42.42
    },
    {
     "key": "night_to_morning",
     "before": 123,
-    "after": 111,
-    "change": -12,
-    "percent_change": -9.76
-   },
-   {
-    "key": "three_in_one_day",
-    "before": 90,
-    "after": 34,
-    "change": -56,
-    "percent_change": -62.22
+    "after": 50,
+    "change": -73,
+    "percent_change": -59.35
    },
    {
     "key": "three_in_24h",
     "before": 187,
-    "after": 96,
-    "change": -91,
-    "percent_change": -48.66
+    "after": 66,
+    "change": -121,
+    "percent_change": -64.71
    },
    {
     "key": "four_in_48h",
     "before": 150,
-    "after": 75,
-    "change": -75,
-    "percent_change": -50.0
+    "after": 73,
+    "change": -77,
+    "percent_change": -51.33
    }
   ],
   "students_affected_deltas": [
@@ -2173,42 +2103,35 @@
    {
     "key": "night_to_morning",
     "before": 119,
-    "after": 111,
-    "change": -8,
-    "percent_change": -6.72
-   },
-   {
-    "key": "three_in_one_day",
-    "before": 89,
-    "after": 34,
-    "change": -55,
-    "percent_change": -61.8
+    "after": 50,
+    "change": -69,
+    "percent_change": -57.98
    },
    {
     "key": "three_in_24h",
     "before": 187,
-    "after": 96,
-    "change": -91,
-    "percent_change": -48.66
+    "after": 66,
+    "change": -121,
+    "percent_change": -64.71
    },
    {
     "key": "four_in_48h",
     "before": 150,
-    "after": 75,
-    "change": -75,
-    "percent_change": -50.0
+    "after": 73,
+    "change": -77,
+    "percent_change": -51.33
    }
   ],
-  "penalty_before": 62840.0,
-  "penalty_after": 16675.0,
-  "penalty_change": -46165.0,
-  "penalty_percent_change": -73.46,
+  "penalty_before": 68800.0,
+  "penalty_after": 17765.0,
+  "penalty_change": -51035.0,
+  "penalty_percent_change": -74.18,
   "students_with_any_issue_before": 534,
-  "students_with_any_issue_after": 379,
+  "students_with_any_issue_after": 330,
   "students_improved": 424,
-  "students_worsened": 221,
-  "students_unchanged": 355,
-  "exam_groups_moved": 46,
+  "students_worsened": 173,
+  "students_unchanged": 403,
+  "exam_groups_moved": 40,
   "metrics_worsened": []
  },
  "integrity": {
@@ -2257,7 +2180,7 @@
    {
     "name": "solver_objective_consistent",
     "passed": true,
-    "message": "solver objective 16675 equals the independent evaluator penalty"
+    "message": "solver objective 17765 equals the independent evaluator penalty"
    }
   ]
  },

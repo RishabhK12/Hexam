@@ -60,8 +60,7 @@ class StudentFindings:
 
     conflict_pairs: list[tuple[str, str]] = field(default_factory=list)
     back_to_back_pairs: list[tuple[str, str]] = field(default_factory=list)
-    late_early_pairs: list[tuple[str, str]] = field(default_factory=list)
-    heavy_days: dict[date, int] = field(default_factory=dict)  # day -> exams (only days with >= 3)
+    late_early_pairs: list[tuple[str, str]] = field(default_factory=list)  # (evening exam, next-morning exam)
     three_in_24h_patterns: int = 0
     four_in_48h_patterns: int = 0
 
@@ -155,7 +154,6 @@ class Evaluator:
                 affected[k] += v > 0
             if any(counts.values()):
                 any_issue += 1
-            diag["excess"] += sum(n - 2 for n in f.heavy_days.values())
             diag["p24"] += f.three_in_24h_patterns
             diag["p48"] += f.four_in_48h_patterns
             per_day = Counter(campus_date(e.start) for e in exams)
@@ -226,7 +224,6 @@ class Evaluator:
             diagnostics=EvaluationDiagnostics(
                 unassigned_exam_group_ids=unassigned,
                 students_with_unassigned_exams=students_missing,
-                three_in_one_day_excess_exams=diag["excess"],
                 three_in_24h_patterns=diag["p24"],
                 four_in_48h_patterns=diag["p48"],
                 max_exams_one_day=max_day,
@@ -255,8 +252,6 @@ class Evaluator:
                 if is_late_to_early(first.start, first.end, second.start, cfg):
                     late.append((first.exam_group_id, second.exam_group_id))
 
-        per_day = Counter(campus_date(e.start) for e in exams)
-        heavy = {d: c for d, c in sorted(per_day.items()) if c >= 3}
         starts = [e.start for e in exams]
         hit24, p24 = count_windows(starts, 3, WINDOW_24H)
         hit48, p48 = count_windows(starts, 4, WINDOW_48H)
@@ -265,11 +260,10 @@ class Evaluator:
             K.SIMULTANEOUS_CONFLICTS.value: len(conflicts),
             K.BACK_TO_BACK.value: len(b2b),
             K.NIGHT_TO_MORNING.value: len(late),
-            K.THREE_IN_ONE_DAY.value: len(heavy),
             K.THREE_IN_24H.value: int(hit24),
             K.FOUR_IN_48H.value: int(hit48),
         }
-        return counts, StudentFindings(conflicts, b2b, late, heavy, p24, p48)
+        return counts, StudentFindings(conflicts, b2b, late, p24, p48)
 
     # -------------------------------------------------------------- validity
 
