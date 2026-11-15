@@ -38,7 +38,7 @@ export function RunMeta({ run, compact = false }: { run: OptimizationRun; compac
           </>
         )}
         <dt className="text-muted">Strategy</dt>
-        <dd className="text-right">{r.strategy === "two_phase" ? "Two-phase" : "Single pass"}</dd>
+        <dd className="text-right">{r.strategy === "two_phase" ? "Two-phase" : r.strategy === "hybrid" ? "Hybrid" : "Single pass"}</dd>
         <dt className="text-muted">Finished</dt>
         <dd className="text-right">
           {campusDay(r.finished_at)}, {campusTime(r.finished_at)}

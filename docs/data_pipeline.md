@@ -95,10 +95,10 @@ Because the generator forbids overlapping class meetings and every section in a
 meeting-time group meets at the same time, no student can have two courses in one
 group, so the paper's "forced overlaps" are zero by construction.
 
-Paper features not in this data step (for the optimizer): per-slot student cap
-(M₁ → `ExamTimeslot.max_students`), faculty overlap / back-to-back penalties
-(derivable from `Section.instructors`), the two-phase heuristic (fix the 17–21
-largest groups first), and a weight portfolio.
+Paper features outside this data step: the optimizer implements the per-slot student cap
+(M₁ → `ExamTimeslot.max_students` or a run-level cap) and the two-phase heuristic
+(largest groups first, 18 by default). Faculty overlap / back-to-back penalties
+(derivable from `Section.instructors`) and a weight portfolio are not implemented.
 
 **Timeslots**: the 21 official exam periods (Dec 10–17). The 3 reading periods
 and 2 conflict periods (Dec 18) are not schedulable timeslots; they are kept in

@@ -1,16 +1,16 @@
 # Hexam — granular project summary
 
-*Written 2026-11-14 from the working tree on branch `improve-algorithm`, which has uncommitted changes, and updated the same day after the loose ends in section 15 were fixed. Sources: every Markdown file plus the backend, frontend, scripts and data files.*
+*Written 2026-11-14 on branch `improve-algorithm`, and updated 2026-11-15 for the hybrid strategy (local search, then CP-SAT), the refreshed demo run and a pass over stale figures. Sources: every Markdown file plus the backend, frontend, scripts and data files.*
 
 ---
 
 ## 1. What Hexam is
 
-Hexam is a hackathon proof of concept that **re-assigns Georgia Tech Fall 2026 final-exam groups to the 21 official exam periods**. It uses Google **OR-Tools CP-SAT** to minimize student exam-week congestion. Every result is scored by an **independent pure-Python evaluator** and compared against the registrar's **official final-exam matrix**, which serves as the baseline.
+Hexam is a hackathon proof of concept that **re-assigns Georgia Tech Fall 2026 final-exam groups to the 21 official exam periods**. It minimizes student exam-week congestion with a **Kempe-chain local search** followed by Google **OR-Tools CP-SAT** (the default *hybrid* strategy; CP-SAT alone is still available). Every result is scored by an **independent pure-Python evaluator** and compared against the registrar's **official final-exam matrix**, which serves as the baseline.
 
 - **Real public data:** courses, sections, CRNs, meeting times, restrictions, the 21 exam periods, the 5 common exams, and IRP enrollment statistics.
 - **Synthetic data:** all **1,000 students** and every registration (seed 42).
-- **Stack:** Python ≥ 3.11 (Pydantic v2, FastAPI, OR-Tools, uvicorn) and React 18 + TypeScript + Tailwind + Recharts (Vite). There is no database, no auth and no API keys.
+- **Stack:** Python ≥ 3.11 (Pydantic v2, FastAPI, OR-Tools, numpy, ReportLab, uvicorn) and React 18 + TypeScript + Tailwind + Recharts (Vite). There is no database, no auth and no API keys.
 - **Inspiration:** Bucknell paper [arXiv 2509.11031](https://arxiv.org/html/2509.11031v1), which covers exam-group timeslot optimization, meeting-time "course groups" and the two-phase heuristic.
 - **Disclaimer (shown in the UI and in the API):** synthetic students only; not an official GT system.
 
@@ -28,16 +28,16 @@ docs/schemas.md                schema reference (entities, time handling, metric
 docs/data_pipeline.md          real-data ingestion + synthetic generation reference
 backend/
   pyproject.toml               package "hexam" 1.0.0 (= hexam.__version__, used by the API); extras: data=[pypdf], dev=[pytest,pypdf,httpx]
-  requirements.txt             ortools, fastapi, uvicorn[standard], pydantic, tzdata, reportlab
+  requirements.txt             ortools, numpy, fastapi, uvicorn[standard], pydantic, tzdata, reportlab
   hexam/
     schemas/       (11 files)  Pydantic models — the single contract
     data_generation/ (13 + 3 adapters + config JSON)  real-data ETL + synthetic students
-    evaluation/    (rules.py 135 lines, evaluator.py 311 lines)  independent scorer
-    optimization/  (problem.py 190 lines, solver.py 461 lines)   CP-SAT model
+    evaluation/    (rules.py 136 lines, evaluator.py 308 lines)  independent scorer
+    optimization/  (problem.py 190, local_search.py 521, solver.py 492 lines)   local search + CP-SAT model
     services/      dataset, optimization runs, integrity, comparison, student views, PDF report
     api/           main.py (app factory) + routes.py (thin handlers)
     storage.py     JSON-array-per-collection file storage
-  tests/           11 test modules (286 tests pass, counting parametrized cases)
+  tests/           12 test modules (303 tests pass, counting parametrized cases)
 frontend/          Vite app: App.tsx shell, 5 pages, 3 component files, hook/context, api client, types mirror
 data/
   raw/             cached public downloads (crawler JSON, matrix PDF, registrar + IRP HTML, Fact Book extract)
@@ -47,19 +47,23 @@ data/
 scripts/           dev.ps1, dev.sh (start both servers), precompute_demo.py
 ```
 
-The largest files are the data files: `sections.json` (25k lines), `section_metadata.json` (21k), `students.json` (20k), `course_metadata.json` (4k), `generation_metadata.json` (2.4k) and `precomputed_run.json` (2.2k). The largest code files are `solver.py` (461), `normalize.py` (537), `generate.py` (526) and `frontend/src/types/hexam.ts` (655).
+The largest files are the data files: `sections.json` (25k lines), `section_metadata.json` (21k), `students.json` (20k), `course_metadata.json` (4k), `generation_metadata.json` (2.4k) and `precomputed_run.json` (2.2k). The largest code files are `frontend/src/types/hexam.ts` (652), `normalize.py` (537), `generate.py` (526), `local_search.py` (521) and `solver.py` (492).
 
 ---
 
 ## 3. Current state (git)
 
 - The branch is `improve-algorithm`, based on `main` after merging PR #3 ("Built algorithm and dashboard"). The earlier PRs were #1 (schemas) and #2 (synthetic data).
-- The working tree has uncommitted changes that do four things:
+- Commits `68de5ff` and `b8a5241` on this branch did the following:
   - It removes the separate **3-exams-in-one-day** metric, which three-in-24 h already covers. The merged `three_in_24h` takes its weight of 100.
   - It keeps the **late-evening → early-morning** pair metric (`night_to_morning`). Separate per-exam late and early metrics were tried and reverted.
   - It adds a **PDF comparison report** (`GET /api/runs/{id}/report.pdf`, built with ReportLab) and a **Download PDF report** button.
   - It trims the dashboard: the Overview's day-load and period-concentration charts, the How it works tab and the synthetic-data banner are gone, and schedule cells say "students" instead of "seats".
   - It also regenerates `precomputed_run.json`, re-scores the sample results, and updates tests and docs.
+- The working tree has **uncommitted** changes (2026-11-15):
+  - the **hybrid strategy**: `optimization/local_search.py`, `tests/test_local_search.py`, the wiring in `solver.py`, the schema and UI option, and `numpy` as an explicit dependency;
+  - the demo run `precomputed_run.json`, regenerated with the hybrid strategy;
+  - updates to every Markdown file.
 
 ---
 
@@ -139,8 +143,8 @@ Supporting models:
   | `enforce_group_restrictions` | True | apply allowed/forbidden lists |
   | `allow_moving_fixed_exams` | False | HYPOTHETICAL mode |
 
-- **`OptimizationStrategy`**: `single_pass` (default) or `two_phase`.
-- **`SolverSettings`**: time limit 60 s (≤ 3600), 8 workers (1–64), seed 0, optional relative gap, `use_baseline_hint=True`, `log_search_progress`, strategy, `two_phase_large_groups=18`.
+- **`OptimizationStrategy`**: `hybrid` (default: Kempe-chain local search, then CP-SAT), `single_pass` or `two_phase`.
+- **`SolverSettings`**: time limit 60 s (≤ 3600), 8 workers (1–64), seed 0, optional relative gap, `use_baseline_hint=True`, `log_search_progress`, strategy, `two_phase_large_groups=18`, `local_search_seconds` (default 60; hybrid: cap on the local search, which never gets more than half the time limit).
 - **`OptimizationConfig`**: id, name, baseline id, weights, hard constraints, solver, evaluation, `fixed_assignments` (user locks; no group twice), `excluded_timeslot_ids` (unique; must not hold a lock).
 - **`SolverStatus`**: OPTIMAL, FEASIBLE, INFEASIBLE, MODEL_INVALID, UNKNOWN, ERROR; `.has_solution`.
 - **`OptimizationResult`**: status, timestamps, runtime, objective, bound, breakdown, before/after evaluations, message, `relaxed`, `hypothetical`, strategy, warnings, `infeasibility_hints`, `model_stats`. Validators: a solution needs a schedule id, `after` and an objective; a non-solution must not carry a schedule; ids must match. It also has a `.relative_gap` property.
@@ -315,7 +319,7 @@ Every period lasts 2 h 50 m with 30-minute gaps. This means **back-to-back = con
 
 ---
 
-## 7. CP-SAT optimizer — `backend/hexam/optimization/`
+## 7. Optimizer (local search + CP-SAT) — `backend/hexam/optimization/`
 
 ### 7.1 `problem.py` — precomputation
 
@@ -355,14 +359,33 @@ Every period lasts 2 h 50 m with 30-minute gaps. This means **back-to-back = con
 
 1. **Two-phase** (optional): solve the largest 18 movable groups plus the pinned groups with 40 % of the time budget, then pin the result. Phase 2 solves the rest, and the result is never reported as OPTIMAL or with a bound. If phase 1 fails, it falls back to a single pass.
 2. **Warm start:** a model with hard constraints only minimizes the number of groups moved from the baseline. Its budget is `min(3 s, max(0.5 s, 15 % of the limit))`. The baseline has 30 conflicts and is infeasible in strict mode; the warm start moved 6 groups to fix that.
-3. **Build** the main model. `_full_hint` clones it, fixes x to the warm schedule, solves (pure propagation, 5 s limit) and hints **every** variable. This yields an `_Incumbent`.
-4. **Solve** with the remaining **wall-clock** budget (the time limit covers warm start + build + search). Workers, seed and gap come from the config.
-5. Interpret the status:
-   - UNKNOWN with an incumbent → return the warm schedule as FEASIBLE, with a warning and no bound.
+3. **Local search** (hybrid strategy only, the default): `local_search()` improves the warm schedule (§7.3). Its budget is `min(local_search_seconds, half the remaining time)`, and its result replaces the warm schedule when it is better. If there is no warm schedule, CP-SAT runs alone and a warning says so.
+4. **Build** the main model. `_full_hint` clones it, fixes x to the starting schedule (the local-search result in hybrid, otherwise the warm schedule), solves (pure propagation, 5 s limit) and hints **every** variable. This yields an `_Incumbent`.
+5. **Solve** with the remaining **wall-clock** budget (the time limit covers warm start + local search + build + search). Workers, seed and gap come from the config.
+6. Interpret the status:
+   - UNKNOWN with an incumbent → return the starting schedule as FEASIBLE, with a warning and no bound.
+   - FEASIBLE in hybrid → if CP-SAT ended on a worse schedule than the one it started from, the starting schedule is returned (the bound still holds).
    - OPTIMAL or FEASIBLE → extract the schedule and breakdown. The objective is rounded and the bound is ceiled, since both are integers.
    - INFEASIBLE → `_diagnose` re-solves with one constraint family removed at a time (strict rule, capacity, per-day cap, user locks) and reports which family is responsible.
    - UNKNOWN without an incumbent → a hint to try a longer limit.
-6. `SolveOutcome` carries the status, assignments, objective, bound, breakdown, runtime, strategy, relaxed and hypothetical flags, warnings, hints and `model_stats`: groups, slots, pinned groups, edges, sets, warm-start ms and groups moved, variables, constraints, build ms and solve ms.
+7. `SolveOutcome` carries the status, assignments, objective, bound, breakdown, runtime, strategy, relaxed and hypothetical flags, warnings, hints and `model_stats`: groups, slots, pinned groups, edges, sets, warm-start ms and groups moved, variables, constraints, build ms and solve ms. Hybrid runs add `local_search_ms`, `local_search_start_penalty`, `local_search_penalty`, `local_search_rounds`, `local_search_moves_scored` and `cp_sat_improvement` (how much CP-SAT improved on the local search; 0 in every real-data run so far).
+
+### 7.3 `local_search.py` — move scorer and Kempe-chain search (hybrid strategy)
+
+Numpy only, no OR-Tools. It works on the same `Problem` structures as the model.
+
+- **`MoveScorer`** scores schedules at group level, and its score equals the evaluator's weighted penalty exactly (tested on random schedules and on the real dataset):
+  - Pair metrics: one cost matrix per timeslot pair (back-to-back, late → early, and conflicts in relaxed mode), weighted by shared students.
+  - Set metrics: for each distinct student exam-set, the number of its exams in each rolling window; a set is hit when a window reaches the threshold (3 in 24 h, 4 in 48 h).
+  - Hard constraints: eligible slots, the strict no-conflict rule, aggregate caps, the per-day cap and the relaxed per-slot cap. `evaluate()` reports whether a schedule satisfies all of them.
+  - `move_costs()` returns the full group × slot matrix of penalty changes for single moves (about 3 ms on the real data); `cost_of()` scores a multi-group move as a change from the current schedule; `apply()` and `load()` keep the window counts up to date.
+- **Moves.** In strict mode only 145 of 940 single-group moves are legal on the Fall 2026 data, so the basic move is a **Kempe chain** (`kempe(g, u)`): group g goes to slot u, the groups in u that share students with g go back to g's old slot, and so on until nothing clashes. `compound_candidates()` also yields whole-slot swaps and whole-day swaps.
+- **`local_search()`** is simulated annealing over random Kempe chains (in relaxed mode half the proposals are plain single moves):
+  - The start temperature is half the mean worsening move sampled from the starting schedule, so it follows the weights; each round cools by a factor of 150.
+  - A round is 40 proposals per movable group and slot, at most 40,000. Each round restarts from the best schedule and ends with `descend()`: the best single move while one improves, otherwise the best compound move.
+  - It stops at the time limit, after `stall_rounds` rounds without a better schedule (5 in the hybrid strategy), at `max_rounds`, or at a penalty of zero.
+  - It returns `None` if the starting schedule breaks a hard constraint; otherwise the result is legal and never worse than the start. With `max_rounds` set and enough time the result depends only on the seed.
+- On the real data it scores about 13,000 chain moves per second and takes the warm schedule from about 36,000 to about 16,000 in 10 s.
 
 ---
 
@@ -414,11 +437,11 @@ Every period lasts 2 h 50 m with 30-minute gaps. This means **back-to-back = con
 
 ### 10.1 Architecture
 
-- **`types/hexam.ts`** (655 lines) mirrors every Pydantic model and enum. Its helpers are `formatCampusTime`, `campusDate` and `compareMetrics`. **`backend/tests/test_ts_sync.py` parses this file** and checks that field names, nullability (`| null` exactly when Python accepts None) and enum unions all match.
+- **`types/hexam.ts`** (652 lines) mirrors every Pydantic model and enum. Its helpers are `formatCampusTime`, `campusDate` and `compareMetrics`. **`backend/tests/test_ts_sync.py` parses this file** and checks that field names, nullability (`| null` exactly when Python accepts None) and enum unions all match.
 - **`services/api.ts`** is a typed `fetch` client. `VITE_API_BASE` is an optional prefix. `ApiError(status, problems)` flattens FastAPI `detail` (strings or `{loc,msg}` objects); a network failure becomes "Cannot reach the Hexam backend…".
 - **`hooks/useHexam.tsx`** provides a `HexamProvider` context:
   - On load it calls `datasets`, then in parallel `exams`, `slots`, `baseline`, `evaluate(baseline)` and `runs`, then fetches the latest completed run.
-  - It holds the form state. `DEFAULT_WEIGHTS` match the backend; `DEFAULT_FORM` uses 20 s, seed 0 and single pass.
+  - It holds the form state. `DEFAULT_WEIGHTS` match the backend; `DEFAULT_FORM` uses 20 s, seed 0 and the hybrid strategy.
   - `runOptimization()` posts `/optimize` and polls `/runs/{id}` every **700 ms** until the run completes or fails, then refreshes the run list.
   - `selectRun` and `optimizedMapping()` are exported helpers.
 - **`lib/format.ts`** formats everything in campus time with `Intl` (`campusTime`, `campusDay`, `campusDateKey`, `campusHHMM`, `dayFromKey`). It also has `num`, `pct` and `courseLabel`. **`METRICS`** lists the 5 metrics in priority order (label, short label, unit, help text). It also defines `STANDING` and `classNames`.
@@ -445,7 +468,7 @@ Every period lasts 2 h 50 m with 30-minute gaps. This means **back-to-back = con
 | **Overview** | Hero sentence: "lowered inconvenience by X % … with zero exam conflicts", or the baseline-only "N of 1,000 face a problem". Run, Adjust weights, Explore a student and **Download PDF report** buttons; `RunMeta` card. **6 KPIs**: students evaluated, groups scheduled, conflicts, students with 3 in 24 h, back-to-back pairs, inconvenience score. **Mini stats**: better off, unchanged, groups moved. **2 charts**: students affected per metric; penalty points per metric (weight × count). **All-metrics table** with count, delta, students affected (baseline → optimized), weight, and a total row. |
 | **Exam schedule** | A **Baseline / Optimized / Compare** segmented control (optimized modes are disabled with no run). Department, course and "only moved" filters. A day × start-time **timetable** with per-period exam counts and student totals (exam sittings in the period, not room capacity). `ExamCard` shows courses and size, 🔒 for common exams, and "from Fri 8 AM" for moved exams; dashed "↗ … moved out" ghosts mark old positions. A sticky `ExamDetail` side panel shows students, sections, meeting pattern, baseline vs optimized slot and source. |
 | **Student impact** | Left list in **Improved / Worse / Highest / Search** modes (search by id plus a major dropdown, 60 results). Rankings come from `/runs/{id}/students` (40). The top student is selected by default. Right panel: synthetic id, major, year, number of exams, a verdict chip, and personal score before → after. Course chips. Two **MiniWeek** calendars (7:30–21:30, days with ≥ 3 exams or an overlap flagged ⚠, overlapping exams drawn side by side and outlined in red, moved exams ringed in gold) with finding bullets. A per-metric table with deltas; each row's unit is shown as (pairs) or (yes/no). |
-| **Optimize** | Sliders for the 4 soft weights, 0–200 in steps of 5. The conflict slider (100–5000) is disabled in strict mode. Strict/relaxed and single/two-phase toggles, a time limit of 5–120 s, the seed, max exams per day, students per period (aggregate cap), groups per period, and a HYPOTHETICAL "allow moving common exams" checkbox. **Lock exam groups** (pick a group and a period, add or remove). Run and Reset buttons. `JobStatus` shows elapsed time against the limit; the bar explicitly says it is not solution progress. `RunDetails` shows status, integrity checks, warnings, infeasibility hints, and model stats and weights in a `<details>`. **Run history** with View buttons. The selected run's `RunMeta` includes the **Download PDF report** button. |
+| **Optimize** | Sliders for the 4 soft weights, 0–200 in steps of 5. The conflict slider (100–5000) is disabled in strict mode. Strict/relaxed and hybrid/single/two-phase toggles, a time limit of 5–120 s, the seed, max exams per day, students per period (aggregate cap), groups per period, and a HYPOTHETICAL "allow moving common exams" checkbox. **Lock exam groups** (pick a group and a period, add or remove). Run and Reset buttons. `JobStatus` shows elapsed time against the limit; the bar explicitly says it is not solution progress. `RunDetails` shows status, integrity checks, warnings, infeasibility hints, and model stats and weights in a `<details>`. **Run history** with View buttons. The selected run's `RunMeta` includes the **Download PDF report** button. |
 | `RunMeta` (shared) | Precomputed notice, runtime, evaluated score, solver objective, best bound ("not reported" when null), optimality gap %, strategy, finish time, an honest status sentence, "N/9 integrity checks passed" and, when not compact, the report button. |
 
 ### 10.4 Frontend tests (`src/__tests__/app.test.tsx`, 13 tests)
@@ -473,18 +496,18 @@ They mock `fetch` with fixture responses and cover:
 
 ## 12. Results — precomputed demo run (actual file contents)
 
-`run-20261115-000737-0de9`: default weights, **120 s** limit, seed 0, 8 workers. Status **FEASIBLE** (not proven optimal); runtime 120.99 s; objective **17,765**; best bound **1,475**, so the gap is about 92 %. The run has 5,294 variables and 47,945 constraints; the warm start took 199 ms and moved 6 groups. Dataset version `6c0f9920ccea90d0`. **All 9 integrity checks passed.**
+`run-20261115-022320-89fb`: **hybrid** strategy, default weights, **120 s** limit, seed 0, 8 workers. Status **FEASIBLE** (not proven optimal); runtime 120.15 s; objective **15,705**; best bound **1,465**, so the gap is about 91 %. The local search took the warm schedule from 37,225 to 15,705 in 27.3 s (15 rounds, 563,756 chain moves scored); CP-SAT then ran 92 s without improving it. The run has 5,294 variables and 47,945 constraints; the warm start took 144 ms and moved 6 groups. The previous demo run (single pass, 120 s) scored 17,765. Dataset version `6c0f9920ccea90d0`. **All 9 integrity checks passed.**
 
 | Metric (unit) | Baseline → Optimized | Students affected | Weighted points |
 |---|---|---|---|
 | Simultaneous conflicts (pairs) | 30 → **0** | 30 → 0 | 30,000 → 0 |
-| 3 in 24 h (students) | 187 → **66** | 187 → 66 | 18,700 → 6,600 |
-| Back-to-back (pairs) | 554 → **319** | 449 → 283 | 16,620 → 9,570 |
-| 4 in 48 h (students) | 150 → **73** | 150 → 73 | 2,250 → 1,095 |
-| Late → early (pairs) | 123 → **50** | 119 → 50 | 1,230 → 500 |
-| **Total score** | **68,800 → 17,765 (−74.2 %)** | any issue: 534 → 330 | |
+| 3 in 24 h (students) | 187 → **56** | 187 → 56 | 18,700 → 5,600 |
+| Back-to-back (pairs) | 554 → **281** | 449 → 250 | 16,620 → 8,430 |
+| 4 in 48 h (students) | 150 → **65** | 150 → 65 | 2,250 → 975 |
+| Late → early (pairs) | 123 → **70** | 119 → 69 | 1,230 → 700 |
+| **Total score** | **68,800 → 15,705 (−77.2 %)** | any issue: 534 → 323 | |
 
-- Students: **424** better off, **173** worse off, **403** unchanged. **40 of 52** groups moved. Every metric improves.
+- Students: **433** better off, **166** worse off, **401** unchanged. **44 of 52** groups moved. Every metric improves.
 - Separate per-exam late-evening and early-morning metrics were tried (−65 % to −68 %, "any issue" 637 to 966) and reverted in favor of this pair metric.
 - Baseline diagnostics: 283 distinct 3-in-24 h triples, 243 4-in-48 h quadruples, at most 4 exams in one day.
 
@@ -492,28 +515,29 @@ They mock `fetch` with fixture responses and cover:
 
 ## 13. Tests — `backend/tests/` (pytest; `pythonpath=.`)
 
-| Module | Tests | Focus |
+| Module | Test functions | Focus |
 |---|---|---|
 | `test_records.py` | 41 | per-record validators: timezones (UTC → New York, DST in May, naive rejected), meeting times, ID formats, CRN, synthetic-only students, provenance rules, exam-group restrictions, schedules, MetricValue invariants |
 | `test_dataset.py` | 36 | sample-dataset integrity, round trip, New York offsets, index derivation (incl. chronological `timeslots_by_day`), every cross-record error and warning code, schedule and config validation, default weight ordering |
-| `test_evaluator.py` | 25 | touching intervals = back-to-back not conflict, partial overlap, 3 in one slot = 3 pairs, 3 in a day counts as 3 in 24 h, a window of exactly 24 h is excluded, rolling (not calendar) 48 h, once per student, late→early pairs (and the skipped-day gap limit), configurable thresholds, an exam crossing midnight, DST, multi-section common exams counted once, invalid or missing assignments, breakdown sums, determinism, `SlotRelations` agreeing with the evaluator, window coverage |
+| `test_evaluator.py` | 26 | touching intervals = back-to-back not conflict, partial overlap, 3 in one slot = 3 pairs, 3 in a day counts as 3 in 24 h, a window of exactly 24 h is excluded, rolling (not calendar) 48 h, once per student, late→early pairs (and the skipped-day gap limit), configurable thresholds, an exam crossing midnight, DST, multi-section common exams counted once, invalid or missing assignments, breakdown sums, determinism, `SlotRelations` agreeing with the evaluator, window coverage |
 | `test_data_generation.py` | 23 | matrix structure, known rows, block sizes, end-sensitive pattern, days+start fallback, common and special periods, geometry on synthetic fragments, wrong weekday, crawler tuple decoding, IRP parsers, fetch caching and fallback, term resolution, section eligibility, config consistency, selection rules |
 | `test_optimization.py` | 21 | schema-level config and result validators, weights, `relative_gap`, request exactly-one rules |
 | `test_optimizer.py` | 20 | exactly once, no conflicts, unrelated groups may share a slot, fixed exams preserved, restrictions, locks, both capacity caps, per-day cap, infeasibility and diagnosis, pinned-pair explanation, lock to a forbidden slot, hypothetical mode, relaxed mode, known optima, **solver objective == evaluator**, weight trade-offs, exact late→early objective, two-phase reports no bound |
+| `test_local_search.py` | 16 | scorer == evaluator on random schedules and on the real dataset, single-move costs == full re-scoring (strict and relaxed), incremental state stays exact, compound-move scoring, Kempe chains never create a conflict, hard constraints block moves, search result legal and no worse, same seed gives the same schedule, illegal start rejected, fixes/restrictions/caps respected, relaxed mode, hybrid end to end (default strategy, stats, never worse than its local search, local search disabled, infeasible input) |
 | `test_api.py` | 16 | all endpoints, 404/409/422, infeasible run reported rather than faked, async 202 + polling, PDF report content read back with pypdf |
 | `test_data_integration.py` | 7 | full-dataset validation, shape, plausible stats, same seed gives the same output and a different seed differs, injected problems caught, alternative granularities build, committed dataset is current |
 | `test_ts_sync.py` | 3 | Pydantic ↔ TypeScript interfaces and unions in sync |
 | `test_integration_pipeline.py` | 1 | full dataset end to end: baseline untouched, registrations unchanged, integrity checks pass, genuine improvement |
 | `factories.py`, `conftest.py` | — | builders for small datasets; sample-dataset fixtures (deep-copied per test) |
 
-Last run, after the section 15 fixes: **286 backend tests passed, 13 frontend tests passed**, with `tsc` and `vite build` OK.
+Last run (2026-11-15): **303 backend tests passed** (collected cases; the table counts test functions, and parametrized ones expand), **13 frontend tests passed**, with `tsc` and `vite build` OK.
 
 ---
 
 ## 14. Scripts and run commands
 
 - `scripts/dev.ps1` (Windows) and `scripts/dev.sh` (macOS, Linux, Git Bash) create the venv and `pip install -e backend[dev]` if missing, run `npm install` if needed, start uvicorn on :8000 in the background and Vite on :5173 in the foreground, and kill the API on exit.
-- `scripts/precompute_demo.py --dataset --time-limit --seed --workers` runs `execute()` with default weights. It writes `precomputed_run.json` (labeled and `precomputed=True`) only if a schedule exists **and** integrity passed.
+- `scripts/precompute_demo.py --dataset --time-limit --seed --workers` runs `execute()` with default weights and the default (hybrid) strategy; the saved label names the strategy. It writes `precomputed_run.json` (labeled and `precomputed=True`) only if a schedule exists **and** integrity passed.
 - `.claude/launch.json` holds the `hexam-api` and `hexam-web` preview configs.
 
 ```bash
@@ -538,8 +562,8 @@ cd backend && .venv/Scripts/python -m hexam.data_generation.build
 
 | # | Finding | Status |
 |---|---|---|
-| 1 | `handoff.md` did not match the metrics in the code at the time. | **Fixed.** It shows the current run (68,800 → 17,765, −74.2 %) with the late → early pair metric, which was briefly replaced by per-exam metrics and then restored. |
-| 2 | `docs/schemas.md` defined conflicts as "k − 1 per slot" and back-to-back as "consecutive same-day slots", and quoted the sample penalty as 7,400 → 25. | **Fixed.** Both are now defined as pairs of a student's exams (overlapping intervals; a break of at most 30 min), and the sample figure is 7,110 → 685 (6,795 → 330 after the late-evening metric was removed). |
+| 1 | `handoff.md` did not match the metrics in the code at the time. | **Fixed.** It shows the current run (68,800 → 15,705, −77.2 % since the hybrid refresh on 2026-11-15) with the late → early pair metric, which was briefly replaced by per-exam metrics and then restored. |
+| 2 | `docs/schemas.md` defined conflicts as "k − 1 per slot" and back-to-back as "consecutive same-day slots", and quoted the sample penalty as 7,400 → 25. | **Fixed.** Both are now defined as pairs of a student's exams (overlapping intervals; a break of at most 30 min), and the sample figure is 6,600 → 25, as in `data/sample/optimization_results.json`. |
 | 3 | `reportlab` looked like an unused dependency. | **Not an issue.** `services/report_service.py` imports it to build the PDF report. |
 | 4 | `DatasetIndex.overnight_pairs` and `consecutive_pairs` were built but unused, and the `EVENING_START_HOUR` docstring mentioned the removed night→morning metric. | **Fixed.** Both tables are removed (the test now checks `timeslots_by_day`), and the docstring now says evening is display only. |
 | 5 | The Student impact table labeled late-evening and early-morning rows "(pairs)" (late-evening has since been removed). | **Fixed.** `student exams` units now show "(exams)"; the dead `student-days` branch is gone. |
@@ -550,6 +574,8 @@ cd backend && .venv/Scripts/python -m hexam.data_generation.build
 
 ## 16. Possible next steps (from handoff.md, still applicable)
 
-- Improve solution quality and the bound: symmetry breaking across same-time periods, LNS tuning, or seeding two-phase from the best run.
+- Reuse `MoveScorer.move_costs()` for live drag-and-drop scoring and a "best periods for this exam" heatmap.
+- From the paper comparison: do-no-harm fairness (cap students made worse off), a change-budget frontier (at most k groups moved), held-out validation on a second synthetic population, difficulty-aware weights.
+- The lower bound is still weak (1,465 against 15,705); nothing so far improves it.
 - Add a test that forces the warm-start incumbent fallback (main search returns UNKNOWN → the warm schedule is returned as FEASIBLE).
 - Code-split Recharts (about 526 kB minified, 151 kB gzipped).

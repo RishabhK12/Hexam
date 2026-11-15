@@ -74,8 +74,9 @@ class HardConstraints(HexamModel):
 
 
 class OptimizationStrategy(StrEnum):
-    SINGLE_PASS = "single_pass"  # one CP-SAT model over all exam groups (default)
+    SINGLE_PASS = "single_pass"  # one CP-SAT model over all exam groups
     TWO_PHASE = "two_phase"  # paper-style: place the largest groups first, then the rest
+    HYBRID = "hybrid"  # Kempe-chain local search first, then CP-SAT started from its schedule (default)
 
 
 class SolverSettings(HexamModel):
@@ -85,8 +86,12 @@ class SolverSettings(HexamModel):
     relative_gap_limit: float | None = Field(default=None, ge=0, le=1)
     use_baseline_hint: bool = Field(default=True, description="Warm-start CP-SAT from the baseline.")
     log_search_progress: bool = False
-    strategy: OptimizationStrategy = OptimizationStrategy.SINGLE_PASS
+    strategy: OptimizationStrategy = OptimizationStrategy.HYBRID
     two_phase_large_groups: int = Field(default=18, ge=1, description="Two-phase: groups placed in phase 1.")
+    local_search_seconds: float = Field(
+        default=60.0, ge=0, le=600,
+        description="Hybrid: most seconds the local search may use (never more than half the time limit).",
+    )
 
 
 class FixedAssignment(HexamModel):
