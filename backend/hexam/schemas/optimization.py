@@ -25,7 +25,7 @@ class PenaltyWeights(HexamModel):
     """Soft-constraint weights. Field names == ``ImpactMetricKey`` values.
 
     Integers because CP-SAT objectives require integer coefficients.
-    Defaults are assumptions (the paper does not publish its weights), ordered
+    Defaults are assumptions, ordered
     by Hexam's priorities: conflicts ≫ 3-in-24 h > back-to-back > 4-in-48 h
     > late-evening → early-morning pairs. ``three_in_24h`` also covers 3 exams in one calendar day. ``simultaneous_conflicts`` only matters when
     conflicts are relaxed (strict mode forbids them outright).
@@ -75,7 +75,7 @@ class HardConstraints(HexamModel):
 
 class OptimizationStrategy(StrEnum):
     SINGLE_PASS = "single_pass"  # one CP-SAT model over all exam groups
-    TWO_PHASE = "two_phase"  # paper-style: place the largest groups first, then the rest
+    TWO_PHASE = "two_phase"  # place the largest groups first, then the rest
     HYBRID = "hybrid"  # Kempe-chain local search first, then CP-SAT started from its schedule (default)
 
 

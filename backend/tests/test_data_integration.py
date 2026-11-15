@@ -49,7 +49,7 @@ def test_dataset_shape(built):
     assert len(ds.students) == 1000
     assert len({s.student_id for s in ds.students}) == 1000
     assert len(ds.timeslots) == 21
-    # Bucknell-paper course groups: common-exam courses + one group per regular meeting time
+    # Course groups: common-exam courses + one group per regular meeting time
     assert cfg.exam_group_granularity is ExamGroupGranularity.MEETING_TIME
     assert len(ds.exam_groups) == 52
     pattern = {g.exam_group_id: g for g in ds.exam_groups if g.kind is ExamGroupKind.MEETING_PATTERN}

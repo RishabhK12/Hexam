@@ -99,7 +99,7 @@ class ExamMapping:
     pattern: str | None  # e.g. "MWF 09:30" (None for common)
     meeting: str | None  # the class meeting used, e.g. "MWF 09:30-10:20"
     common_label: str | None = None
-    # other meetings of the section that map to a *different* matrix period (paper: flag as ambiguous)
+    # other meetings of the section that map to a *different* matrix period (flagged as ambiguous)
     ambiguous_alternatives: list[str] = field(default_factory=list)
 
 
@@ -164,7 +164,7 @@ def _exam_mapping(
     """Exam period + group key for an exam-bearing section.
 
     The first meeting that maps to the matrix decides (crawler + registrar convention).
-    ``full_time_key`` keys the group on days+start+end (paper's "regular meeting time");
+    ``full_time_key`` keys the group on days+start+end (the "regular meeting time");
     otherwise on days+start, adding the end only where the matrix depends on it.
     """
     if common is not None:
