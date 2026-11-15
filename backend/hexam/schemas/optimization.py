@@ -18,22 +18,25 @@ from .base import (
     find_duplicates,
     now_campus,
 )
-from .metrics import ImpactMetricKey, ScheduleEvaluation, StudentImpactMetrics
+from .metrics import EvaluationSettings, ImpactMetricKey, ScheduleEvaluation, StudentImpactMetrics
 
 
 class PenaltyWeights(HexamModel):
     """Soft-constraint weights. Field names == ``ImpactMetricKey`` values.
 
     Integers because CP-SAT objectives require integer coefficients.
-    Defaults are assumptions to tune (the paper does not publish its weights).
+    Defaults are assumptions (the paper does not publish its weights), ordered
+    by Hexam's priorities: conflicts ≫ 3-in-a-day > back-to-back > 24/48 h
+    clustering > late→early. ``simultaneous_conflicts`` only matters when
+    conflicts are relaxed (strict mode forbids them outright).
     """
 
-    simultaneous_conflicts: int = Field(default=1000, ge=0)
-    back_to_back: int = Field(default=10, ge=0)
-    night_to_morning: int = Field(default=5, ge=0)
-    three_in_one_day: int = Field(default=100, ge=0)
-    three_in_24h: int = Field(default=50, ge=0)
-    four_in_48h: int = Field(default=75, ge=0)
+    simultaneous_conflicts: int = Field(default=1000, ge=0, le=1_000_000)
+    back_to_back: int = Field(default=30, ge=0, le=1_000_000)
+    night_to_morning: int = Field(default=10, ge=0, le=1_000_000)
+    three_in_one_day: int = Field(default=100, ge=0, le=1_000_000)
+    three_in_24h: int = Field(default=20, ge=0, le=1_000_000)
+    four_in_48h: int = Field(default=15, ge=0, le=1_000_000)
 
     def get(self, key: ImpactMetricKey | str) -> int:
         return getattr(self, ImpactMetricKey(key).value)
@@ -44,15 +47,36 @@ class PenaltyWeights(HexamModel):
 
 class HardConstraints(HexamModel):
     forbid_simultaneous_conflicts: bool = Field(
-        default=False,
-        description="Treat unforced student conflicts as infeasible instead of penalized.",
+        default=True,
+        description="Strict mode: exam groups sharing a student may not overlap. "
+        "False = relaxation mode (overlaps allowed, penalized by weights.simultaneous_conflicts).",
     )
-    max_exams_per_student_per_slot: int = Field(default=2, ge=1)
+    max_exams_per_student_per_slot: int = Field(
+        default=2, ge=1, description="Relaxation mode only: cap on one student's overlapping exams."
+    )
     max_exams_per_student_per_day: int | None = Field(default=None, ge=1)
-    enforce_timeslot_capacity: bool = True
+    enforce_timeslot_capacity: bool = Field(
+        default=True, description="Honor per-slot aggregate caps (ExamTimeslot.max_* and the overrides below)."
+    )
+    max_students_per_slot: int | None = Field(
+        default=None, ge=1,
+        description="Aggregate cap on students sitting exams in one slot (all rooms together). Not a room assignment.",
+    )
+    max_exam_groups_per_slot: int | None = Field(
+        default=None, ge=1, description="Cap on concurrent exam groups in one slot."
+    )
     enforce_group_restrictions: bool = Field(
         default=True, description="Honor ExamGroup fixed/allowed/forbidden timeslots."
     )
+    allow_moving_fixed_exams: bool = Field(
+        default=False,
+        description="HYPOTHETICAL scenario: let officially fixed common exams move. Results are labeled as such.",
+    )
+
+
+class OptimizationStrategy(StrEnum):
+    SINGLE_PASS = "single_pass"  # one CP-SAT model over all exam groups (default)
+    TWO_PHASE = "two_phase"  # paper-style: place the largest groups first, then the rest
 
 
 class SolverSettings(HexamModel):
@@ -62,6 +86,8 @@ class SolverSettings(HexamModel):
     relative_gap_limit: float | None = Field(default=None, ge=0, le=1)
     use_baseline_hint: bool = Field(default=True, description="Warm-start CP-SAT from the baseline.")
     log_search_progress: bool = False
+    strategy: OptimizationStrategy = OptimizationStrategy.SINGLE_PASS
+    two_phase_large_groups: int = Field(default=18, ge=1, description="Two-phase: groups placed in phase 1.")
 
 
 class FixedAssignment(HexamModel):
@@ -78,6 +104,7 @@ class OptimizationConfig(HexamModel):
     weights: PenaltyWeights = Field(default_factory=PenaltyWeights)
     hard_constraints: HardConstraints = Field(default_factory=HardConstraints)
     solver: SolverSettings = Field(default_factory=SolverSettings)
+    evaluation: EvaluationSettings = Field(default_factory=EvaluationSettings)
     fixed_assignments: list[FixedAssignment] = Field(default_factory=list)
     excluded_timeslot_ids: list[TimeslotId] = Field(
         default_factory=list, description="Slots unavailable for this run (what-if analysis)."
@@ -132,6 +159,12 @@ class OptimizationResult(HexamModel):
     before: ScheduleEvaluation | None = None
     after: ScheduleEvaluation | None = None
     message: str | None = None
+    relaxed: bool = Field(default=False, description="Conflicts were penalized, not forbidden (relaxation mode).")
+    hypothetical: bool = Field(default=False, description="Officially fixed exams were allowed to move.")
+    strategy: OptimizationStrategy = OptimizationStrategy.SINGLE_PASS
+    warnings: list[str] = Field(default_factory=list)
+    infeasibility_hints: list[str] = Field(default_factory=list)
+    model_stats: dict[str, int] = Field(default_factory=dict)
 
     @model_validator(mode="after")
     def _check(self) -> Self:

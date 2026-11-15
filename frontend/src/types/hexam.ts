@@ -161,6 +161,14 @@ export const IMPACT_METRIC_KEYS: readonly ImpactMetricKey[] = [
   "four_in_48h",
 ] as const;
 
+/** Thresholds for time-based metrics. */
+export interface EvaluationSettings {
+  back_to_back_max_gap_minutes: number;
+  evening_start: LocalTime;
+  morning_end: LocalTime;
+  overnight_max_gap_hours: number;
+}
+
 export interface MetricValue {
   count: number;
   students_affected: number;
@@ -188,6 +196,8 @@ export interface StudentImpactDetail {
   three_in_one_day: number;
   three_in_24h: number;
   four_in_48h: number;
+  exam_group_ids: ID[];
+  weighted_penalty: number;
 }
 
 export interface TimeslotLoad {
@@ -197,6 +207,24 @@ export interface TimeslotLoad {
   over_capacity: boolean;
 }
 
+export interface DayLoad {
+  day: ISODate;
+  exam_group_count: number;
+  student_exam_count: number;
+  student_count: number;
+}
+
+export interface EvaluationDiagnostics {
+  unassigned_exam_group_ids: ID[];
+  students_with_unassigned_exams: number;
+  three_in_one_day_excess_exams: number;
+  three_in_24h_patterns: number;
+  four_in_48h_patterns: number;
+  max_exams_one_day: number;
+  /** exams per student -> number of students (JSON keys are strings). */
+  exam_count_histogram: Record<string, number>;
+}
+
 export interface ScheduleEvaluation {
   schedule_id: ID;
   evaluated_at: ISODateTime;
@@ -204,6 +232,13 @@ export interface ScheduleEvaluation {
   weighted_penalty: number | null;
   timeslot_loads: TimeslotLoad[];
   worst_students: StudentImpactDetail[];
+  penalty_breakdown: Partial<Record<ImpactMetricKey, number>>;
+  weights_used: Partial<Record<ImpactMetricKey, number>>;
+  settings: EvaluationSettings | null;
+  valid: boolean;
+  issues: ValidationIssue[];
+  day_loads: DayLoad[];
+  diagnostics: EvaluationDiagnostics;
 }
 
 export interface MetricDelta {
@@ -231,8 +266,13 @@ export interface HardConstraints {
   max_exams_per_student_per_slot: number;
   max_exams_per_student_per_day: number | null;
   enforce_timeslot_capacity: boolean;
+  max_students_per_slot: number | null;
+  max_exam_groups_per_slot: number | null;
   enforce_group_restrictions: boolean;
+  allow_moving_fixed_exams: boolean;
 }
+
+export type OptimizationStrategy = "single_pass" | "two_phase";
 
 export interface SolverSettings {
   time_limit_seconds: number;
@@ -241,6 +281,8 @@ export interface SolverSettings {
   relative_gap_limit: number | null;
   use_baseline_hint: boolean;
   log_search_progress: boolean;
+  strategy: OptimizationStrategy;
+  two_phase_large_groups: number;
 }
 
 export interface FixedAssignment {
@@ -257,6 +299,7 @@ export interface OptimizationConfig {
   weights: PenaltyWeights;
   hard_constraints: HardConstraints;
   solver: SolverSettings;
+  evaluation: EvaluationSettings;
   fixed_assignments: FixedAssignment[];
   excluded_timeslot_ids: ID[];
   created_at: ISODateTime;
@@ -285,6 +328,12 @@ export interface OptimizationResult {
   before: ScheduleEvaluation | null;
   after: ScheduleEvaluation | null;
   message: string | null;
+  relaxed: boolean;
+  hypothetical: boolean;
+  strategy: OptimizationStrategy;
+  warnings: string[];
+  infeasibility_hints: string[];
+  model_stats: Record<string, number>;
 }
 
 // ------------------------------------------------------------------- dataset
@@ -359,6 +408,222 @@ export interface EvaluateScheduleRequest {
   schedule_id: ID | null;
   assignments: ExamAssignment[] | null;
   weights: PenaltyWeights | null;
+  dataset_id: ID;
+  settings: EvaluationSettings | null;
+  include_students: boolean;
+}
+
+// ---------------------------------------------------------- Hexam REST API
+
+export interface DatasetInfo {
+  dataset_id: ID;
+  name: string;
+  term: string | null;
+  student_count: number;
+  exam_group_count: number;
+  timeslot_count: number;
+  course_count: number;
+  section_count: number;
+  has_baseline: boolean;
+  baseline_schedule_id: ID | null;
+  baseline_provenance: string | null;
+  dataset_version: string;
+  generation_seed: number | null;
+  provenance_breakdown: Record<string, Partial<Record<DataSource, number>>>;
+  data_categories: Record<string, string>;
+  synthetic_disclosure: string;
+  exam_days: ISODate[];
+}
+
+export interface ExamGroupView {
+  exam_group_id: ID;
+  name: string;
+  kind: ExamGroupKind;
+  meeting_pattern: string | null;
+  description: string | null;
+  course_ids: CourseId[];
+  departments: string[];
+  section_count: number;
+  student_count: number;
+  fixed_timeslot_id: ID | null;
+  allowed_timeslot_ids: ID[] | null;
+  forbidden_timeslot_ids: ID[];
+  baseline_timeslot_id: ID | null;
+  source: DataSource;
+}
+
+export interface StudentSummary {
+  student_id: StudentId;
+  major: string;
+  year: ClassStanding;
+  course_ids: CourseId[];
+  exam_group_ids: ID[];
+}
+
+export interface StudentPage {
+  items: StudentSummary[];
+  total: number;
+  offset: number;
+  limit: number;
+}
+
+export interface StudentSectionView {
+  section_id: ID;
+  course_id: CourseId;
+  course_title: string;
+  section_code: string;
+  section_type: string;
+  meeting_summary: string;
+  exam_group_id: ID | null;
+}
+
+export interface StudentDetailView {
+  student_id: StudentId;
+  major: string;
+  year: ClassStanding;
+  sections: StudentSectionView[];
+  exam_group_ids: ID[];
+  synthetic: boolean;
+}
+
+export interface StudentExamView {
+  exam_group_id: ID;
+  exam_group_name: string;
+  course_ids: CourseId[];
+  timeslot_id: ID | null;
+  start: ISODateTime | null;
+  end: ISODateTime | null;
+  fixed: boolean;
+  moved: boolean;
+}
+
+export interface StudentScheduleImpact {
+  schedule_id: ID;
+  exams: StudentExamView[];
+  detail: StudentImpactDetail;
+  findings: string[];
+}
+
+export type ImpactVerdict = "improved" | "worsened" | "unchanged" | "not_available";
+
+export interface StudentImpactResponse {
+  student: StudentDetailView;
+  dataset_id: ID;
+  run_id: ID | null;
+  baseline: StudentScheduleImpact;
+  optimized: StudentScheduleImpact | null;
+  penalty_change: number | null;
+  verdict: ImpactVerdict;
+}
+
+export interface StudentRankItem {
+  student_id: StudentId;
+  major: string;
+  year: ClassStanding;
+  penalty_before: number;
+  penalty_after: number;
+  change: number;
+}
+
+export interface ScheduleComparison {
+  dataset_id: ID;
+  dataset_version: string;
+  before_schedule_id: ID;
+  after_schedule_id: ID;
+  weights: PenaltyWeights;
+  settings: EvaluationSettings;
+  count_deltas: MetricDelta[];
+  students_affected_deltas: MetricDelta[];
+  penalty_before: number;
+  penalty_after: number;
+  penalty_change: number;
+  penalty_percent_change: number | null;
+  students_with_any_issue_before: number;
+  students_with_any_issue_after: number;
+  students_improved: number;
+  students_worsened: number;
+  students_unchanged: number;
+  exam_groups_moved: number;
+  metrics_worsened: ImpactMetricKey[];
+}
+
+export interface IntegrityCheck {
+  name: string;
+  passed: boolean;
+  message: string;
+}
+
+export interface IntegrityReport {
+  passed: boolean;
+  checks: IntegrityCheck[];
+}
+
+export interface OptimizeRequest {
+  dataset_id: ID;
+  weights: PenaltyWeights;
+  time_limit_seconds: number;
+  random_seed: number;
+  num_workers: number;
+  strategy: OptimizationStrategy;
+  hard_constraints: HardConstraints;
+  evaluation: EvaluationSettings;
+  fixed_assignments: FixedAssignment[];
+  excluded_timeslot_ids: ID[];
+  use_baseline_hint: boolean;
+  wait: boolean;
+}
+
+export type RunState = "queued" | "running" | "completed" | "failed";
+
+export interface OptimizationRun {
+  run_id: ID;
+  dataset_id: ID;
+  dataset_version: string;
+  state: RunState;
+  created_at: ISODateTime;
+  finished_at: ISODateTime | null;
+  precomputed: boolean;
+  label: string | null;
+  config: OptimizationConfig;
+  result: OptimizationResult | null;
+  schedule: ExamSchedule | null;
+  comparison: ScheduleComparison | null;
+  integrity: IntegrityReport | null;
+  error: string | null;
+}
+
+export interface RunSummary {
+  run_id: ID;
+  dataset_id: ID;
+  state: RunState;
+  created_at: ISODateTime;
+  precomputed: boolean;
+  label: string | null;
+  status: string | null;
+  runtime_seconds: number | null;
+  penalty_before: number | null;
+  penalty_after: number | null;
+}
+
+export interface EvaluateResponse {
+  evaluation: ScheduleEvaluation;
+  students: StudentImpactDetail[] | null;
+}
+
+export interface HealthResponse {
+  status: string;
+  version: string;
+  ortools_version: string | null;
+  datasets: ID[];
+  active_runs: number;
+}
+
+export interface CompareRequest {
+  dataset_id: ID;
+  before_schedule_id: ID | null;
+  after_assignments: Record<ID, ID>;
+  weights: PenaltyWeights;
+  settings: EvaluationSettings;
 }
 
 // ------------------------------------------------------------------- helpers

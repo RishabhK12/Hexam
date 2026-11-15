@@ -6,6 +6,29 @@ from .api import (
     RunOptimizationRequest,
     RunOptimizationResponse,
 )
+from .api_views import (
+    CompareRequest,
+    DatasetInfo,
+    EvaluateResponse,
+    ExamGroupView,
+    HealthResponse,
+    ImpactVerdict,
+    IntegrityCheck,
+    IntegrityReport,
+    OptimizationRun,
+    OptimizeRequest,
+    RunState,
+    RunSummary,
+    ScheduleComparison,
+    StudentDetailView,
+    StudentExamView,
+    StudentImpactResponse,
+    StudentPage,
+    StudentRankItem,
+    StudentScheduleImpact,
+    StudentSectionView,
+    StudentSummary,
+)
 from .base import (
     CAMPUS_TZ,
     CAMPUS_TZ_NAME,
@@ -28,6 +51,9 @@ from .dataset import (
 from .exam_groups import ExamGroup, ExamGroupKind
 from .generation import MajorProfile, SyntheticGenerationConfig
 from .metrics import (
+    DayLoad,
+    EvaluationDiagnostics,
+    EvaluationSettings,
     ImpactMetricKey,
     MetricDelta,
     MetricValue,
@@ -42,6 +68,7 @@ from .optimization import (
     HardConstraints,
     OptimizationConfig,
     OptimizationResult,
+    OptimizationStrategy,
     PenaltyWeights,
     SolverSettings,
     SolverStatus,
