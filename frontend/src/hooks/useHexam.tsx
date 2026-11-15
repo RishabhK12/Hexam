@@ -46,7 +46,7 @@ export const DEFAULT_FORM: OptimizeForm = {
   weights: DEFAULT_WEIGHTS,
   time_limit_seconds: 20,
   random_seed: 0,
-  strategy: "single_pass",
+  strategy: "hybrid",
   hard_constraints: DEFAULT_HARD,
   fixed_assignments: [],
 };

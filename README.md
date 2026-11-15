@@ -1,7 +1,7 @@
 # Hexam — Smarter Finals. Better Schedules.
 
-Hexam re-assigns Georgia Tech final-exam groups to the official exam periods with
-**OR-Tools CP-SAT**, minimizing student congestion: overlapping exams, 3 exams in 24 h (which includes 3+ in one day),
+Hexam re-assigns Georgia Tech final-exam groups to the official exam periods with a
+**Kempe-chain local search followed by OR-Tools CP-SAT**, minimizing student congestion: overlapping exams, 3 exams in 24 h (which includes 3+ in one day),
 back-to-back exams, 4 in 48 h, and a late-evening exam followed by an early-morning exam the next day.
 It compares the result against the **official Fall 2026 exam matrix** using an
 **independent evaluator**, on **1,000 synthetic students** built from public GT data.
@@ -15,7 +15,7 @@ It compares the result against the **official Fall 2026 exam matrix** using an
 backend/hexam/schemas/          Pydantic models (mirrored in frontend/src/types/hexam.ts)
 backend/hexam/data_generation/  real GT data ingestion + synthetic students   (docs/data_pipeline.md)
 backend/hexam/evaluation/       independent evaluator (pure Python, no solver)
-backend/hexam/optimization/     CP-SAT model (problem.py precompute, solver.py model)
+backend/hexam/optimization/     optimizer (problem.py precompute, local_search.py move scorer + search, solver.py CP-SAT model)
 backend/hexam/services/         dataset registry, optimization runs, integrity checks, comparison, student views
 backend/hexam/api/              FastAPI app (thin routes)
 frontend/                       React + TypeScript + Tailwind + Recharts dashboard (Vite)
@@ -58,7 +58,7 @@ from the cached public sources, see `docs/data_pipeline.md`.
 ## Demo flow
 
 1. **Overview** shows the baseline (official matrix) and the precomputed run, if present.
-2. Click **Run optimization**. The backend runs CP-SAT for real (20 s by default) and the
+2. Click **Run optimization**. The backend runs the optimizer for real (hybrid strategy, 20 s by default) and the
    dashboard updates with the status, runtime and independently evaluated metrics.
 3. **Exam schedule** shows the timetable in Baseline, Optimized or Compare mode. Moved exams show where they came from.
 4. **Student impact** opens the most-improved, most-worsened or highest-remaining students, or searches by synthetic ID,
@@ -93,6 +93,15 @@ All times are actual exam intervals in America/New_York. A student's exams are t
   distinct student exam-set with cardinality constraints (about 974 sets for 1,000 students).
 * **Warm start:** the official baseline has 30 student conflicts, so a quick hard-constraints-only
   solve first finds the feasible schedule closest to it and hints the main model.
+* **Hybrid strategy** (default): after the warm start, a local search (`optimization/local_search.py`, numpy only)
+  improves the schedule before CP-SAT sees it. It scores moves from the same group-level structures as the model,
+  and its score equals the evaluator's exactly (tested). Under the strict no-conflict rule few single-exam moves are
+  legal, so its move is a **Kempe chain**: move one exam group to another period and let the groups that would clash
+  trade places between the two periods. Simulated annealing proposes chains in rounds; each round ends with a
+  steepest descent over single moves, chains, whole-period swaps and whole-day swaps. CP-SAT is then started from
+  that schedule, checks it against every hard constraint, keeps searching and reports the lower bound.
+  The search may use up to half the time limit (60 s at most by default) and stops early after five rounds without progress.
+* **Single pass** (optional) is CP-SAT alone on the full model, started from the warm schedule.
 * **Relaxation mode** (optional) penalizes conflicts instead of forbidding them; results are labeled RELAXED.
 * **Two-phase** (optional) places the largest groups first and then the rest. It never reports OPTIMAL or a global bound.
 * **Infeasible:** the real CP-SAT status is returned with no schedule, plus diagnostics that re-solve with
@@ -132,7 +141,7 @@ stored penalty, so it can't go stale or be hand-edited.
 ## Tests
 
 ```bash
-cd backend && .venv/Scripts/python -m pytest -q     # schemas, data pipeline, evaluator, optimizer, API, full-dataset integration
+cd backend && .venv/Scripts/python -m pytest -q     # schemas, data pipeline, evaluator, local search, optimizer, API, full-dataset integration
 cd frontend && npm test && npm run build            # vitest + tsc + production build
 ```
 
@@ -141,8 +150,9 @@ cd frontend && npm test && npm run build            # vitest + tsc + production 
 * **"Cannot reach the Hexam backend"**: start uvicorn on port 8000 (the Vite dev server proxies `/api`).
 * **Status FEASIBLE rather than OPTIMAL** is expected. The search space is large and the gap stays wide within
   interactive time limits. Every reported number is still exact for the schedule returned.
-* **Results differ between runs**: multi-worker CP-SAT under a time limit isn't deterministic. For a
-  reproducible run use a fixed seed with `num_workers=1`, or rely on the saved precomputed run.
+* **Results differ between runs**: multi-worker CP-SAT under a time limit isn't deterministic, and the local
+  search stops on a wall clock. A fixed seed with `num_workers=1` removes the thread nondeterminism but not the
+  clock; for a fixed result rely on the saved precomputed run.
 * **Slow first request**: the dataset loads and validates lazily on the first API call (about 1–2 s).
 * **Windows `sha256 mismatch` in data tests**: keep `.gitattributes` (`data/raw/** -text`) so Git doesn't rewrite cached sources.
 

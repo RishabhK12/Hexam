@@ -33,6 +33,11 @@ with the independent evaluator and reports that value as the result.
 Warm start: the official baseline usually violates strict mode, so a quick
 hard-constraints-only model first finds the feasible schedule with the fewest
 groups moved from the baseline, and the main model is hinted with it.
+
+Hybrid strategy (default): between the warm start and the main model, a
+Kempe-chain local search (``local_search.py``) improves the warm schedule.
+CP-SAT is then hinted with the result, checks it against every hard
+constraint, keeps searching, and reports a lower bound for the whole model.
 """
 
 from __future__ import annotations
@@ -45,6 +50,7 @@ from ortools.sat.python import cp_model
 
 from hexam.schemas import ImpactMetricKey, OptimizationConfig, OptimizationStrategy, PenaltyWeights
 
+from .local_search import MoveScorer, local_search
 from .problem import Problem
 
 K = ImpactMetricKey
@@ -385,6 +391,30 @@ def solve(prob: Problem, cfg: OptimizationConfig, hint: dict[str, str] | None = 
         hint = warm
     limit = max(0.5, limit - (time.perf_counter() - t_w))
 
+    # Hybrid: improve the warm schedule with the local search before CP-SAT sees it.
+    scorer = None
+    start_source = "warm-start"
+    if strategy is OptimizationStrategy.HYBRID:
+        if warm is None:
+            warnings.append("Hybrid strategy: no starting schedule was found for the local search; CP-SAT ran alone.")
+        else:
+            scorer = MoveScorer(prob, cfg.weights, strict=opt.strict, capacity=opt.capacity,
+                                per_day_cap=opt.per_day_cap, max_per_slot=opt.max_per_slot)
+            remaining = cfg.solver.time_limit_seconds - (time.perf_counter() - t0)
+            found = local_search(scorer, warm, time_limit=max(0.0, min(cfg.solver.local_search_seconds, remaining / 2)),
+                                 seed=cfg.solver.random_seed, stall_rounds=5)
+            if found is None:
+                warnings.append("Hybrid strategy: the local search rejected the starting schedule; CP-SAT ran alone.")
+            else:
+                stats["local_search_ms"] = int(found.seconds * 1000)
+                stats["local_search_start_penalty"] = found.start_penalty
+                stats["local_search_penalty"] = found.penalty
+                stats["local_search_rounds"] = found.rounds
+                stats["local_search_moves_scored"] = found.proposals
+                if found.penalty < found.start_penalty:
+                    warm = hint = found.assignments
+                    start_source = "local-search"
+
     t_b = time.perf_counter()
     built = _build(prob, cfg.weights, groups, pins, opt)
     incumbent = _full_hint(built, cfg, warm) if warm is not None else None
@@ -405,22 +435,32 @@ def solve(prob: Problem, cfg: OptimizationConfig, hint: dict[str, str] | None = 
     mapping = None
     obj = bound = None
     breakdown: dict[str, float] = {}
+    described = ("the local-search schedule" if start_source == "local-search"
+                 else "the warm-start schedule (closest to the baseline)")
     if st == cp_model.UNKNOWN and incumbent is not None:
-        # The search found nothing new in the remaining time, but the warm-start schedule is a
+        # The search found nothing new in the remaining time, but the starting schedule is a
         # CP-SAT-verified solution of this same model (all hard constraints hold). Return it,
         # clearly labeled, with no bound claimed.
         st, status = cp_model.FEASIBLE, "FEASIBLE"
         mapping, breakdown, obj = incumbent.mapping, incumbent.breakdown, incumbent.objective
         warnings.extend(f"Input issue (ignored by the model): {i.message}" for i in prob.issues)
         warnings.append(
-            "The search did not improve on the warm-start schedule within the time limit; returning that schedule "
-            "(feasible for every hard constraint, closest to the baseline). Try a longer time limit."
+            f"CP-SAT did not improve on {described} within the time limit; returning that schedule "
+            "(feasible for every hard constraint). Try a longer time limit."
         )
     elif st in (cp_model.OPTIMAL, cp_model.FEASIBLE):
         warnings.extend(f"Input issue (ignored by the model): {i.message}" for i in prob.issues)
         mapping, breakdown = _extract(solver, built)
         obj = float(round(solver.objective_value))  # integer coefficients; drop float noise
         bound = float(math.ceil(solver.best_objective_bound - 1e-6))  # integer objective ⇒ integer lower bound
+        if scorer is not None and incumbent is not None and st == cp_model.FEASIBLE:
+            # A hint is not a guarantee: if CP-SAT ended on a worse schedule than the one it was
+            # started from, keep the starting schedule (the bound still holds for the model).
+            if scorer.score(incumbent.mapping)[1] < scorer.score(mapping)[1]:
+                mapping, breakdown, obj = incumbent.mapping, incumbent.breakdown, incumbent.objective
+                warnings.append(f"CP-SAT did not improve on {described}; returning that schedule.")
+        if start_source == "local-search":
+            stats["cp_sat_improvement"] = int(stats["local_search_penalty"] - scorer.score(mapping)[1])
         if strategy is OptimizationStrategy.TWO_PHASE:
             bound = None
             if status == "OPTIMAL":

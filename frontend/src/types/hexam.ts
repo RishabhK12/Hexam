@@ -266,7 +266,7 @@ export interface HardConstraints {
   allow_moving_fixed_exams: boolean;
 }
 
-export type OptimizationStrategy = "single_pass" | "two_phase";
+export type OptimizationStrategy = "single_pass" | "two_phase" | "hybrid";
 
 export interface SolverSettings {
   time_limit_seconds: number;
@@ -277,6 +277,7 @@ export interface SolverSettings {
   log_search_progress: boolean;
   strategy: OptimizationStrategy;
   two_phase_large_groups: number;
+  local_search_seconds: number;
 }
 
 export interface FixedAssignment {

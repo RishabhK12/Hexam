@@ -1,4 +1,4 @@
-"""Run the real CP-SAT optimizer once and save the result as the dashboard's
+"""Run the real optimizer once (default strategy: local search, then CP-SAT) and save the result as the dashboard's
 precomputed demo run (``data/<dataset>/precomputed_run.json``).
 
 The API loads it on startup only if the dataset version still matches and the
@@ -48,7 +48,7 @@ def main() -> int:
     print(f"penalty {c.penalty_before:.0f} -> {c.penalty_after:.0f} ({c.penalty_percent_change}%)")
     run = run.model_copy(update={
         "precomputed": True,
-        "label": f"Precomputed demo run — real CP-SAT run, {args.time_limit:.0f}s limit, seed {args.seed}, default weights",
+        "label": f"Precomputed demo run — real {cfg.solver.strategy.value.replace('_', ' ')} run, {args.time_limit:.0f}s limit, seed {args.seed}, default weights",
     })
     out = h.path / PRECOMPUTED_FILE
     out.write_text(run.model_dump_json(indent=1) + "\n", encoding="utf-8")

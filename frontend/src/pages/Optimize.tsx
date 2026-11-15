@@ -89,6 +89,7 @@ export function Optimize() {
                 value={form.strategy}
                 onChange={(v) => set({ strategy: v })}
                 options={[
+                  { value: "hybrid", label: "Hybrid" },
                   { value: "single_pass", label: "Single pass" },
                   { value: "two_phase", label: "Two-phase" },
                 ]}

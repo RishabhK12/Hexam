@@ -199,7 +199,7 @@ class OptimizeRequest(HexamModel):
     time_limit_seconds: float = Field(default=20.0, gt=0, le=300)
     random_seed: int = Field(default=0, ge=0)
     num_workers: int = Field(default=8, ge=1, le=32)
-    strategy: OptimizationStrategy = OptimizationStrategy.SINGLE_PASS
+    strategy: OptimizationStrategy = OptimizationStrategy.HYBRID
     hard_constraints: HardConstraints = Field(default_factory=HardConstraints)
     evaluation: EvaluationSettings = Field(default_factory=EvaluationSettings)
     fixed_assignments: list[FixedAssignment] = Field(default_factory=list)
