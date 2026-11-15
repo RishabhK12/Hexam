@@ -87,7 +87,7 @@ class TestHardConstraints:
     def test_max_exams_per_day(self):
         ds = make_dataset(list("abc"), {"S000001": list("abc")}, standard_slots(days=(7, 8)))
         out, idx, _ = run(ds, config(hc={"max_exams_per_student_per_day": 1}, weights=PenaltyWeights(
-            simultaneous_conflicts=0, back_to_back=0, late_evening=0, early_morning=0, three_in_24h=0, four_in_48h=0)))
+            simultaneous_conflicts=0, back_to_back=0, night_to_morning=0, three_in_24h=0, four_in_48h=0)))
         assert out.status == "INFEASIBLE"  # 3 exams, 2 days, ≤ 1 per day
 
 
@@ -147,7 +147,7 @@ class TestObjective:
         slots = standard_slots(days=(7,))[:3]
         ds = make_dataset(list("abc"), {"S000001": list("abc"), "S000002": list("abc")}, slots)
         out, idx, cfg = run(ds)
-        expected = 2 * (2 * W.back_to_back + W.three_in_24h + W.early_morning)  # one exam must sit at 08:00
+        expected = 2 * (2 * W.back_to_back + W.three_in_24h)
         assert out.status == "OPTIMAL"
         assert out.objective_value == expected == penalty(idx, out.assignments, cfg)
         assert out.objective_breakdown["back_to_back"] == 4 * W.back_to_back
@@ -167,36 +167,25 @@ class TestObjective:
             assert out.objective_breakdown[k.value] == v
 
     def test_weights_change_the_tradeoff(self):
-        # b can sit in the evening, early next morning, or back-to-back with a (fixed 11:20)
+        # two exams, two days: evening + next morning (late→early) vs back-to-back same day
         from .factories import dt, slot
 
-        slots = [
-            slot("D7E", dt(7, 18), dt(7, 20, 50)),
-            slot("D9M", dt(9, 8), dt(9, 10, 50)),
-            slot("D10L", dt(10, 11, 20), dt(10, 14, 10)),
-            slot("D10A", dt(10, 14, 40), dt(10, 17, 30)),
-        ]
-        ds = make_dataset(list("ab"), {"S000001": ["a", "b"]}, slots, fixed={"a": "D10L"})
-        cases = [
-            (PenaltyWeights(back_to_back=100, late_evening=1, early_morning=50), "D7E"),
-            (PenaltyWeights(back_to_back=100, late_evening=50, early_morning=1), "D9M"),
-            (PenaltyWeights(back_to_back=1, late_evening=50, early_morning=50), "D10A"),
-        ]
-        for w, expected in cases:
-            out, *_ = run(ds, config(weights=w))
-            assert out.assignments["b"] == expected, w
+        slots = [slot("D7E", dt(7, 18), dt(7, 20, 50)), slot("D8M", dt(8, 8), dt(8, 10, 50)), slot("D8L", dt(8, 11, 20), dt(8, 14, 10))]
+        ds = make_dataset(list("ab"), {"S000001": ["a", "b"]}, slots, fixed={"a": "D8M"})
+        out1, *_ = run(ds, config(weights=PenaltyWeights(back_to_back=100, night_to_morning=1)))
+        assert out1.assignments["b"] == "D7E"
+        out2, *_ = run(ds, config(weights=PenaltyWeights(back_to_back=1, night_to_morning=100)))
+        assert out2.assignments["b"] == "D8L"
 
-    def test_late_and_early_objective_is_exact(self):
-        # 3 students in a, forced into an evening slot; 2 in b, forced into an early slot
+    def test_late_to_early_objective_is_exact(self):
+        # 3 students in a (evening), 2 of them also in b (next morning); c (afternoon) is unrelated
         from .factories import dt, slot
 
-        slots = [slot("E", dt(7, 18), dt(7, 20, 50)), slot("M", dt(8, 8), dt(8, 10, 50))]
-        students = {"S000001": ["a"], "S000002": ["a"], "S000003": ["a", "b"], "S000004": ["b"]}
-        ds = make_dataset(list("ab"), students, slots, fixed={"a": "E", "b": "M"})
+        slots = [slot("E", dt(7, 18), dt(7, 20, 50)), slot("M", dt(8, 8), dt(8, 10, 50)), slot("A", dt(8, 14, 40), dt(8, 17, 30))]
+        students = {"S000001": ["a", "b"], "S000002": ["a", "b"], "S000003": ["a", "c"]}
+        ds = make_dataset(list("abc"), students, slots, fixed={"a": "E", "b": "M", "c": "A"})
         out, idx, cfg = run(ds)
-        w = cfg.weights
-        assert out.objective_breakdown["late_evening"] == 3 * w.late_evening
-        assert out.objective_breakdown["early_morning"] == 2 * w.early_morning
+        assert out.objective_breakdown["night_to_morning"] == 2 * cfg.weights.night_to_morning
         assert out.objective_value == penalty(idx, out.assignments, cfg)
 
 

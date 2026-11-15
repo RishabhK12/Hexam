@@ -133,10 +133,9 @@ def _schedule_impact(h: DatasetHandle, student_id: str, outcome: EvaluationOutco
     for a, b in f.back_to_back_pairs:
         msgs.append(f"Back-to-back: {_label(h, a, student_id)} ends {_fmt_time(slot_of[a].end)}, "
                     f"{_label(h, b, student_id)} starts {_fmt_time(slot_of[b].start)} ({_fmt_day(slot_of[b].start)})")
-    for g in f.late_exams:
-        msgs.append(f"Late-evening exam: {_label(h, g, student_id)} at {_fmt_time(slot_of[g].start)} ({_fmt_day(slot_of[g].start)})")
-    for g in f.early_exams:
-        msgs.append(f"Early-morning exam: {_label(h, g, student_id)} at {_fmt_time(slot_of[g].start)} ({_fmt_day(slot_of[g].start)})")
+    for a, b in f.late_early_pairs:
+        msgs.append(f"Late→early: {_label(h, a, student_id)} at {_fmt_time(slot_of[a].start)} {_fmt_day(slot_of[a].start)}, "
+                    f"then {_label(h, b, student_id)} at {_fmt_time(slot_of[b].start)} next morning")
     if d.three_in_24h:
         # 3 exams on one calendar day is the tightest form of 3-in-24 h; name the day(s).
         per_day = Counter(campus_date(e.start) for e in outcome.exams[student_id])

@@ -2,7 +2,7 @@
 
 Hexam re-assigns Georgia Tech final-exam groups to the official exam periods with
 **OR-Tools CP-SAT**, minimizing student congestion: overlapping exams, 3 exams in 24 h (which includes 3+ in one day),
-back-to-back exams, 4 in 48 h, late-evening exams and early-morning exams (weighted separately).
+back-to-back exams, 4 in 48 h, and a late-evening exam followed by an early-morning exam the next day.
 It compares the result against the **official Fall 2026 exam matrix** using an
 **independent evaluator**, on **1,000 synthetic students** built from public GT data.
 
@@ -65,7 +65,6 @@ from the cached public sources, see `docs/data_pipeline.md`.
    and shows before/after calendars and metrics.
 5. **Download PDF report** (Overview, Optimize) saves a comparison report of the official exam times vs the optimized ones, with all the stats.
 6. **Optimize** lets you change weights, the time limit, strategy, strict/relaxed mode, aggregate caps and locks, then re-run.
-7. **How it works** covers the model, constraints, provenance and limitations.
 
 ## Metrics (evaluator = source of truth)
 
@@ -76,13 +75,12 @@ All times are actual exam intervals in America/New_York. A student's exams are t
 |---|---|
 | Simultaneous conflicts | exam **pairs** whose intervals overlap (end == start is not a conflict) |
 | Back-to-back | non-overlapping exam **pairs** with a break ≤ 30 min (configurable) |
-| Late evening | **student exams** starting ≥ 17:00 (each sitting counts once) |
-| Early morning | **student exams** starting < 10:00 (each sitting counts once) |
+| Late → early | exam **pairs**: one starting ≥ 17:00, then one starting < 10:00 the next day, break ≤ 14 h |
 | 3 in 24 h | **students** with 3 exam starts within a rolling window < 24 h (once per student). Covers 3+ exams on one calendar day, which always span < 24 h |
 | 4 in 48 h | **students** with 4 exam starts within a rolling window < 48 h (once per student) |
 
 `penalty = Σ weight × count`. Default weights: conflict 1000 · 3/24 h 100 · back-to-back 30 ·
-4/48 h 15 · late evening 3 · early morning 3 (assumptions in the spec's priority order; adjustable in the UI).
+4/48 h 15 · late → early 10 (assumptions in the spec's priority order; adjustable in the UI).
 
 ## Optimization model (summary)
 

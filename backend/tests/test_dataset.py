@@ -266,7 +266,7 @@ class TestConfigValidation:
 
 
 def test_weights_default_ordering():
-    """Hexam priority order: conflicts ≫ 3-in-24 h (incl. 3 in a day) > back-to-back > 4-in-48 h > late/early exams."""
+    """Hexam priority order: conflicts ≫ 3-in-24 h (incl. 3 in a day) > back-to-back > 4-in-48 h > late→early pairs."""
     w = PenaltyWeights()
     assert w.simultaneous_conflicts > w.three_in_24h > w.back_to_back > w.four_in_48h
-    assert w.four_in_48h > w.late_evening and w.four_in_48h > w.early_morning
+    assert w.four_in_48h > w.night_to_morning

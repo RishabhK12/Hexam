@@ -5,12 +5,7 @@ import { METRICS, campusDay, campusTime, classNames, courseLabel, num } from "..
 import type { ImpactMetricKey, OptimizationRun } from "../types/hexam";
 import { RunMeta } from "./RunMeta";
 
-const WEIGHT_KEYS: ImpactMetricKey[] = ["three_in_24h", "back_to_back", "four_in_48h", "late_evening", "early_morning"];
-/** Per-exam metrics occur thousands of times, so they need small weights and a finer slider. */
-const SLIDER: Partial<Record<ImpactMetricKey, { max: number; step: number }>> = {
-  late_evening: { max: 50, step: 1 },
-  early_morning: { max: 50, step: 1 },
-};
+const WEIGHT_KEYS: ImpactMetricKey[] = ["three_in_24h", "back_to_back", "four_in_48h", "night_to_morning"];
 
 export function Optimize() {
   const { form, setForm, runOptimization, job, jobError, activeRun, runs, selectRun, exams, slots } = useHexam();
@@ -43,8 +38,8 @@ export function Optimize() {
                   <input
                     type="range"
                     min={0}
-                    max={SLIDER[k]?.max ?? 200}
-                    step={SLIDER[k]?.step ?? 5}
+                    max={200}
+                    step={5}
                     value={form.weights[k]}
                     onChange={(e) => set({ weights: { ...form.weights, [k]: Number(e.target.value) } })}
                     className="mt-1 w-full"
@@ -124,7 +119,7 @@ export function Optimize() {
               </label>
               <label className="flex flex-col gap-1">
                 <span className="label" title="Aggregate cap on students sitting exams in one period (all rooms together). Not a room assignment.">
-                  Seats / period
+                  Students / period
                 </span>
                 <input
                   className="input"

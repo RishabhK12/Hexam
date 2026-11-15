@@ -3,12 +3,12 @@ import { PairBars, type PairRow } from "../components/charts";
 import { ReportButton } from "../components/ReportButton";
 import { Card, Delta, Empty, Kpi, Legend, Spinner } from "../components/ui";
 import { useHexam } from "../hooks/useHexam";
-import { METRICS, campusDay, dayFromKey, num, pct, shortDay, campusTime, weekday } from "../lib/format";
+import { METRICS, num, pct } from "../lib/format";
 import type { ScheduleEvaluation } from "../types/hexam";
 import { RunMeta } from "./RunMeta";
 
 export function Overview({ go }: { go: (tab: string) => void }) {
-  const { info, baselineEval, activeRun, slots, job, runOptimization, exams } = useHexam();
+  const { info, baselineEval, activeRun, job, runOptimization, exams } = useHexam();
   const run = activeRun?.result?.after ? activeRun : null;
   const before: ScheduleEvaluation | null = run?.result?.before ?? baselineEval?.evaluation ?? null;
   const after: ScheduleEvaluation | null = run?.result?.after ?? null;
@@ -39,35 +39,6 @@ export function Overview({ go }: { go: (tab: string) => void }) {
         : [],
     [before, after],
   );
-  const dayRows: PairRow[] = useMemo(() => {
-    if (!before) return [];
-    const a = new Map(after?.day_loads.map((d) => [d.day, d]) ?? []);
-    return before.day_loads.map((d) => ({
-      label: dayFromKey(d.day),
-      detail: "student-exam sittings",
-      base: d.student_exam_count,
-      opt: after ? (a.get(d.day)?.student_exam_count ?? 0) : null,
-    }));
-  }, [before, after]);
-  const slotRows: PairRow[] = useMemo(() => {
-    if (!before) return [];
-    const byId = new Map(slots.map((s) => [s.timeslot_id, s]));
-    const a = new Map(after?.timeslot_loads.map((d) => [d.timeslot_id, d]) ?? []);
-    return [...before.timeslot_loads]
-      .sort((x, y) => (byId.get(x.timeslot_id)?.start ?? "").localeCompare(byId.get(y.timeslot_id)?.start ?? ""))
-      .map((d) => {
-        const s = byId.get(d.timeslot_id);
-        return {
-          label: s ? `${campusDay(s.start)} · ${campusTime(s.start)}` : d.timeslot_id,
-          group: s ? weekday(s.start) : undefined,
-          groupSub: s ? shortDay(s.start) : undefined,
-          minor: s ? campusTime(s.start).replace(/ [AP]M$/, "") : undefined,
-          detail: s ? `${d.exam_group_count} → ${a.get(d.timeslot_id)?.exam_group_count ?? "–"} exam groups` : undefined,
-          base: d.student_count,
-          opt: after ? (a.get(d.timeslot_id)?.student_count ?? 0) : null,
-        };
-      });
-  }, [before, after, slots]);
 
   if (!before || !info) return <Empty>No evaluation available.</Empty>;
   const m = before.metrics;
@@ -151,9 +122,8 @@ export function Overview({ go }: { go: (tab: string) => void }) {
       </section>
 
       {cmp && (
-        <section className="grid gap-4 md:grid-cols-4">
+        <section className="grid gap-4 md:grid-cols-3">
           <MiniStat label="Students better off" value={cmp.students_improved} tone="good" total={m.students_evaluated} />
-          <MiniStat label="Students worse off" value={cmp.students_worsened} tone="bad" total={m.students_evaluated} />
           <MiniStat label="Unchanged" value={cmp.students_unchanged} total={m.students_evaluated} />
           <MiniStat label="Exam groups moved" value={cmp.exam_groups_moved} total={info.exam_group_count} />
         </section>
@@ -165,12 +135,6 @@ export function Overview({ go }: { go: (tab: string) => void }) {
         </Card>
         <Card title="Where the inconvenience score comes from" sub="Weighted penalty points per metric (weight × count)" right={<Legend />}>
           <PairBars data={penaltyRows} unit="penalty points" horizontal height={280} />
-        </Card>
-        <Card title="Exam load by day" sub="Student-exam sittings per final-exam day" right={<Legend />}>
-          <PairBars data={dayRows} unit="sittings" height={260} />
-        </Card>
-        <Card title="Concentration across periods" sub="Distinct students sitting an exam in each official period, grouped by day (periods start 8:00, 11:20, 2:40 and 6:00)" right={<Legend />}>
-          <PairBars data={slotRows} unit="students" height={260} />
         </Card>
       </div>
 

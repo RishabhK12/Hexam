@@ -11,7 +11,7 @@ from .base import CampusDateTime, Provenance, ProvenancedModel, TimeslotId
 
 EVENING_START_HOUR: Final = 17
 """Slots starting at/after 17:00 campus time count as evening (``ExamTimeslot.is_evening``). The
-late-evening metric uses ``EvaluationSettings.evening_start``, which has the same default."""
+late→early metric uses ``EvaluationSettings.evening_start``, which has the same default."""
 
 
 class ExamTimeslot(ProvenancedModel):

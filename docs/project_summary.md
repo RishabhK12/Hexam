@@ -37,8 +37,8 @@ backend/
     services/      dataset, optimization runs, integrity, comparison, student views, PDF report
     api/           main.py (app factory) + routes.py (thin handlers)
     storage.py     JSON-array-per-collection file storage
-  tests/           11 test modules (285 tests pass, counting parametrized cases)
-frontend/          Vite app: App.tsx shell, 6 pages, 3 component files, hook/context, api client, types mirror
+  tests/           11 test modules (286 tests pass, counting parametrized cases)
+frontend/          Vite app: App.tsx shell, 5 pages, 3 component files, hook/context, api client, types mirror
 data/
   raw/             cached public downloads (crawler JSON, matrix PDF, registrar + IRP HTML, Fact Book extract)
   provenance/sources.json   manifest: URL, status, HTTP code, retrieved_at, sha256, bytes
@@ -56,9 +56,9 @@ The largest files are the data files: `sections.json` (25k lines), `section_meta
 - The branch is `improve-algorithm`, based on `main` after merging PR #3 ("Built algorithm and dashboard"). The earlier PRs were #1 (schemas) and #2 (synthetic data).
 - The working tree has uncommitted changes that do four things:
   - It removes the separate **3-exams-in-one-day** metric, which three-in-24 h already covers. The merged `three_in_24h` takes its weight of 100.
-  - It replaces the old **night→morning** pair metric with two per-exam metrics: **`late_evening`** (start ≥ 17:00) and **`early_morning`** (start < 10:00).
+  - It keeps the **late-evening → early-morning** pair metric (`night_to_morning`). Separate per-exam late and early metrics were tried and reverted.
   - It adds a **PDF comparison report** (`GET /api/runs/{id}/report.pdf`, built with ReportLab) and a **Download PDF report** button.
-  - It gives the "concentration across periods" chart a day-grouped two-tier x-axis.
+  - It trims the dashboard: the Overview's day-load and period-concentration charts, the How it works tab and the synthetic-data banner are gone, and schedule cells say "students" instead of "seats".
   - It also regenerates `precomputed_run.json`, re-scores the sample results, and updates tests and docs.
 
 ---
@@ -103,20 +103,19 @@ All models extend `HexamModel`: `extra="forbid"`, strings are trimmed, assignmen
 
 ### 4.3 Metrics (`metrics.py`) — the shared contract between evaluator, solver and UI
 
-`ImpactMetricKey` has 6 keys:
+`ImpactMetricKey` has 5 keys:
 
 | Key | Unit counted | Per-student detail |
 |---|---|---|
 | `simultaneous_conflicts` | exam **pairs** with overlapping intervals (`a.start < b.end and b.start < a.end`; touching intervals do not count) | pairs |
 | `back_to_back` | non-overlapping exam **pairs** with `0 ≤ gap ≤ back_to_back_max_gap_minutes` (30) | pairs |
-| `late_evening` | student **exams** starting ≥ `evening_start` (17:00) | exams |
-| `early_morning` | student **exams** starting < `morning_end` (10:00) | exams |
+| `night_to_morning` | exam **pairs**: prev starts ≥ `evening_start` (17:00), next starts < `morning_end` (10:00) on a later day, break ≤ `overnight_max_gap_hours` (14) | pairs |
 | `three_in_24h` | **students** with 3 starts inside a window < 24 h (covers 3 in one day) | 0/1 |
 | `four_in_48h` | **students** with 4 starts inside a window < 48 h | 0/1 |
 
 Supporting models:
 
-- `EvaluationSettings`: `back_to_back_max_gap_minutes` (default 30, range 0–720), `evening_start` (17:00), `morning_end` (10:00).
+- `EvaluationSettings`: `back_to_back_max_gap_minutes` (default 30, range 0–720), `evening_start` (17:00), `morning_end` (10:00), `overnight_max_gap_hours` (14).
 - `MetricValue`: `count`, `students_affected`. Affected students can't exceed the count, and a non-zero count needs at least one affected student.
 - `StudentImpactMetrics`: totals plus `students_with_any_issue`, with consistency bounds.
 - `StudentImpactDetail`: per-student counts, `exam_timeslot_ids`, `exam_group_ids`, `weighted_penalty`.
@@ -126,7 +125,7 @@ Supporting models:
 
 ### 4.4 Optimization config and result (`optimization.py`)
 
-- **`PenaltyWeights`** are integers, as CP-SAT requires. Each is limited to 0–1,000,000. Defaults: conflicts **1000**, three_in_24h **100**, back_to_back **30**, four_in_48h **15**, late_evening **3**, early_morning **3**. `.score(metrics)` = Σ weight × count.
+- **`PenaltyWeights`** are integers, as CP-SAT requires. Each is limited to 0–1,000,000. Defaults: conflicts **1000**, three_in_24h **100**, back_to_back **30**, four_in_48h **15**, night_to_morning **10**. `.score(metrics)` = Σ weight × count.
 - **`HardConstraints`**:
 
   | Field | Default | Meaning |
@@ -289,7 +288,7 @@ Each step is a CLI module run from `backend/`. `build.py` runs all of them offli
 | Wed Dec 16 | 08:00, 11:20, 14:40, 18:00 |
 | Thu Dec 17 | 08:00, 11:20, 14:40, 18:00 |
 
-Every period lasts 2 h 50 m with 30-minute gaps. This means **back-to-back = consecutive same-day periods** (the 30-minute gap is ≤ the 30-minute threshold), **late = the 18:00 periods** and **early = the 08:00 periods**.
+Every period lasts 2 h 50 m with 30-minute gaps. This means **back-to-back = consecutive same-day periods** (the 30-minute gap is ≤ the 30-minute threshold), and **late → early = an 18:00 period followed by the next day's 08:00 period**.
 
 ---
 
@@ -299,16 +298,16 @@ Every period lasts 2 h 50 m with 30-minute gaps. This means **back-to-back = con
 
 - `campus()` rejects naive datetimes. `campus_date()` is the day an exam *starts*.
 - `overlaps()` uses half-open intervals. `is_back_to_back()` requires `0 ≤ next.start − prev.end ≤ gap`.
-- `is_late_evening()` (wall clock ≥ 17:00) and `is_early_morning()` (< 10:00).
+- `is_late_to_early()`: prev starts ≥ 17:00, next starts < 10:00 on a later campus day, break ≤ 14 h.
 - `count_windows(starts, k, window)` returns (any k starts within < window, number of distinct k-subsets inside the window).
-- **`SlotRelations.build()`** precomputes the same rules over pairs of slots for the solver: `overlap[t]` (including t itself), ordered `b2b` pairs, the `late` and `early` sets, `days`, and `windows24` / `windows48`. A window holds the slots starting in `[t.start, t.start + W)`, and windows that are strict subsets of another are dropped. Sharing these definitions is what keeps the solver objective and the evaluator in agreement.
+- **`SlotRelations.build()`** precomputes the same rules over pairs of slots for the solver: `overlap[t]` (including t itself), ordered `b2b` and `late_early` pairs, `days`, and `windows24` / `windows48`. A window holds the slots starting in `[t.start, t.start + W)`, and windows that are strict subsets of another are dropped. Sharing these definitions is what keeps the solver objective and the evaluator in agreement.
 
 ### 6.2 `evaluator.py`
 
 - `Evaluator(index, settings)` keeps students sorted. `evaluate(schedule | mapping, weights, worst_n=25, require_complete=True)` returns an `EvaluationOutcome(evaluation, students, findings, exams)`.
 - For each student, it collects distinct exam groups, so two sections in one common exam count once. It sorts exams by start time and runs `_score_student`:
   - an O(n²) pass over pairs that counts conflicts and otherwise back-to-back;
-  - per-exam late and early lists;
+  - late→early pairs;
   - the 3-in-24 h and 4-in-48 h windows.
 - Aggregates: totals, students affected, `students_with_any_issue`, timeslot loads (with over-capacity flags), day loads, the worst 25 students, the penalty breakdown and diagnostics.
 - `_validate` reports unknown groups or slots and restriction violations as errors. A moved fixed exam is only a **warning** (`fixed_exam_moved`), so hypothetical runs can still be scored. An unassigned group is an error when the schedule must be complete and the group has students.
@@ -347,7 +346,7 @@ Every period lasts 2 h 50 m with 30-minute gaps. This means **back-to-back = con
 **Objective** (equal to the evaluator penalty at optimality):
 
 - **Pair metrics** (back-to-back always; conflicts only in relaxed mode): one Boolean `p[g,h]` per edge, forced by `x[a,t] + Σ_{u∈R(t)} x[b,u] ≤ 1 + p`, with cost weight × shared students.
-- **Late and early:** linear, with cost weight × group size × `x[g,t]` for t in the late or early set. No auxiliary variables are needed.
+- **Late → early:** a pair indicator per co-enrolled pair, like back-to-back, with cost weight × shared students.
 - **Windows** (3 in 24 h, 4 in 48 h): one Boolean `q[S]` per distinct student set S with |S| ≥ k. For each window W: `Σ_{g∈S} y[g,W] + c ≤ k−1 + (c+|v|−k+1)·q`, with cost weight × number of students holding S.
   - `y[g,W]` is cached. It is the constant 0 or 1 when all or none of g's eligible slots fall inside W; otherwise it is a new Boolean equal to Σ x.
 - The indicators are only bounded from below. At a time limit the solver objective can therefore be **≥** the true penalty, so the evaluator's value is always the one reported.
@@ -422,8 +421,8 @@ Every period lasts 2 h 50 m with 30-minute gaps. This means **back-to-back = con
   - It holds the form state. `DEFAULT_WEIGHTS` match the backend; `DEFAULT_FORM` uses 20 s, seed 0 and single pass.
   - `runOptimization()` posts `/optimize` and polls `/runs/{id}` every **700 ms** until the run completes or fails, then refreshes the run list.
   - `selectRun` and `optimizedMapping()` are exported helpers.
-- **`lib/format.ts`** formats everything in campus time with `Intl` (`campusTime`, `campusDay`, `campusDateKey`, `campusHHMM`, `dayFromKey`, `weekday`, `shortDay`). It also has `num`, `pct` and `courseLabel`. **`METRICS`** lists the 6 metrics in priority order (label, short label, unit, help text). It also defines `STANDING` and `classNames`.
-- **`App.tsx`** is the shell. Tabs are driven by the URL hash (`#overview`, `#schedule`, `#students`, `#optimize`, `#method`). The sticky header has the brand, desktop and mobile navs, a dataset blurb, a status pill and a global **Run optimization** button. A gold synthetic-data banner, loading and error states (with Retry) and a footer frame the pages.
+- **`lib/format.ts`** formats everything in campus time with `Intl` (`campusTime`, `campusDay`, `campusDateKey`, `campusHHMM`, `dayFromKey`). It also has `num`, `pct` and `courseLabel`. **`METRICS`** lists the 5 metrics in priority order (label, short label, unit, help text). It also defines `STANDING` and `classNames`.
+- **`App.tsx`** is the shell. Tabs are driven by the URL hash (`#overview`, `#schedule`, `#students`, `#optimize`). The sticky header has the brand, desktop and mobile navs, a dataset blurb, a status pill and a global **Run optimization** button. Loading and error states (with Retry) and a footer frame the pages.
 - **`index.css`** defines design tokens as RGB triplets, GT navy and gold, chart series colors (baseline `#b8892a`, optimized `#2a5fa8`), automatic dark mode under `prefers-color-scheme` guarded by `data-theme`, and component classes (`card`, `btn-primary`, `btn-ghost`, `chip`, `input`, `label`, `h-section`, `tabular`, …). `tailwind.config.js` maps the tokens to colors with alpha support.
 
 ### 10.2 Components
@@ -434,9 +433,8 @@ Every period lasts 2 h 50 m with 30-minute gaps. This means **back-to-back = con
   - `Kpi`: the optimized value is large, with the baseline struck through;
   - `StatusPill`: OPTIMAL ✓, FEASIBLE ◐, other ✕, plus RELAXED and HYPOTHETICAL chips;
   - `Spinner`, `ErrorBox`, `Empty`, `Swatch`, `Legend`, and an accessible `Segmented` radio group.
-- **`components/charts.tsx`:** `PairBars` shows baseline vs optimized bars on one axis, horizontal or vertical.
+- **`components/charts.tsx`:** `PairBars` shows baseline vs optimized bars on one axis, horizontal or vertical (the Overview uses horizontal only).
   - Colors come from a theme hook (`useChartTokens`) that re-reads the CSS variables when the OS color scheme changes.
-  - A new **`GroupedTick`** draws a two-tier x-axis: an optional per-bar time label (only when bars are ≥ 27 px wide, measured with a ResizeObserver) and one centered day label per group with dividers.
   - `PairTooltip` shows the baseline, optimized and change values. Animation is off.
 - **`components/ReportButton.tsx`:** fetches `/api/runs/{id}/report.pdf` as a blob and saves it as `hexam-report-<run>.pdf`. It shows "Generating PDF…" while waiting and the backend's error message if generation fails. It renders nothing for a run without an optimized schedule.
 
@@ -444,14 +442,13 @@ Every period lasts 2 h 50 m with 30-minute gaps. This means **back-to-back = con
 
 | Page | Content |
 |---|---|
-| **Overview** | Hero sentence: "lowered inconvenience by X % … with zero exam conflicts", or the baseline-only "N of 1,000 face a problem". Run, Adjust weights, Explore a student and **Download PDF report** buttons; `RunMeta` card. **6 KPIs**: students evaluated, groups scheduled, conflicts, students with 3 in 24 h, back-to-back pairs, inconvenience score. **Mini stats**: better off, worse off, unchanged, groups moved. **4 charts**: students affected per metric; penalty points per metric (weight × count); student-exam sittings per day; distinct students per period, grouped by day. **All-metrics table** with count, delta, students affected (baseline → optimized), weight, and a total row. |
-| **Exam schedule** | A **Baseline / Optimized / Compare** segmented control (optimized modes are disabled with no run). Department, course and "only moved" filters. A day × start-time **timetable** with per-period exam counts and seat totals. `ExamCard` shows courses and size, 🔒 for common exams, and "from Fri 8 AM" for moved exams; dashed "↗ … moved out" ghosts mark old positions. A sticky `ExamDetail` side panel shows students, sections, meeting pattern, baseline vs optimized slot and source. |
-| **Student impact** | Left list in **Improved / Worse / Highest / Search** modes (search by id plus a major dropdown, 60 results). Rankings come from `/runs/{id}/students` (40). The top student is selected by default. Right panel: synthetic id, major, year, number of exams, a verdict chip, and personal score before → after. Course chips. Two **MiniWeek** calendars (7:30–21:30, days with ≥ 3 exams flagged ⚠, moved exams ringed in gold) with finding bullets. A per-metric table with deltas; each row's unit is shown as (pairs), (exams) or (yes/no). |
-| **Optimize** | Sliders for the 5 soft weights. Late and early go 0–50 in steps of 1; the others 0–200 in steps of 5. The conflict slider (100–5000) is disabled in strict mode. Strict/relaxed and single/two-phase toggles, a time limit of 5–120 s, the seed, max exams per day, seats per period, groups per period, and a HYPOTHETICAL "allow moving common exams" checkbox. **Lock exam groups** (pick a group and a period, add or remove). Run and Reset buttons. `JobStatus` shows elapsed time against the limit; the bar explicitly says it is not solution progress. `RunDetails` shows status, integrity checks, warnings, infeasibility hints, and model stats and weights in a `<details>`. **Run history** with View buttons. The selected run's `RunMeta` includes the **Download PDF report** button. |
-| **How it works** | Model explanation, the hard constraints (with the live fixed-exam count), the soft objectives from `METRICS`, data provenance (disclosure, data categories, baseline provenance, dataset version, seed), what is not modeled, the paper link, and the current run's `RunMeta`. |
+| **Overview** | Hero sentence: "lowered inconvenience by X % … with zero exam conflicts", or the baseline-only "N of 1,000 face a problem". Run, Adjust weights, Explore a student and **Download PDF report** buttons; `RunMeta` card. **6 KPIs**: students evaluated, groups scheduled, conflicts, students with 3 in 24 h, back-to-back pairs, inconvenience score. **Mini stats**: better off, unchanged, groups moved. **2 charts**: students affected per metric; penalty points per metric (weight × count). **All-metrics table** with count, delta, students affected (baseline → optimized), weight, and a total row. |
+| **Exam schedule** | A **Baseline / Optimized / Compare** segmented control (optimized modes are disabled with no run). Department, course and "only moved" filters. A day × start-time **timetable** with per-period exam counts and student totals (exam sittings in the period, not room capacity). `ExamCard` shows courses and size, 🔒 for common exams, and "from Fri 8 AM" for moved exams; dashed "↗ … moved out" ghosts mark old positions. A sticky `ExamDetail` side panel shows students, sections, meeting pattern, baseline vs optimized slot and source. |
+| **Student impact** | Left list in **Improved / Worse / Highest / Search** modes (search by id plus a major dropdown, 60 results). Rankings come from `/runs/{id}/students` (40). The top student is selected by default. Right panel: synthetic id, major, year, number of exams, a verdict chip, and personal score before → after. Course chips. Two **MiniWeek** calendars (7:30–21:30, days with ≥ 3 exams or an overlap flagged ⚠, overlapping exams drawn side by side and outlined in red, moved exams ringed in gold) with finding bullets. A per-metric table with deltas; each row's unit is shown as (pairs) or (yes/no). |
+| **Optimize** | Sliders for the 4 soft weights, 0–200 in steps of 5. The conflict slider (100–5000) is disabled in strict mode. Strict/relaxed and single/two-phase toggles, a time limit of 5–120 s, the seed, max exams per day, students per period (aggregate cap), groups per period, and a HYPOTHETICAL "allow moving common exams" checkbox. **Lock exam groups** (pick a group and a period, add or remove). Run and Reset buttons. `JobStatus` shows elapsed time against the limit; the bar explicitly says it is not solution progress. `RunDetails` shows status, integrity checks, warnings, infeasibility hints, and model stats and weights in a `<details>`. **Run history** with View buttons. The selected run's `RunMeta` includes the **Download PDF report** button. |
 | `RunMeta` (shared) | Precomputed notice, runtime, evaluated score, solver objective, best bound ("not reported" when null), optimality gap %, strategy, finish time, an honest status sentence, "N/9 integrity checks passed" and, when not compact, the report button. |
 
-### 10.4 Frontend tests (`src/__tests__/app.test.tsx`, 12 tests)
+### 10.4 Frontend tests (`src/__tests__/app.test.tsx`, 13 tests)
 
 They mock `fetch` with fixture responses and cover:
 
@@ -476,20 +473,19 @@ They mock `fetch` with fixture responses and cover:
 
 ## 12. Results — precomputed demo run (actual file contents)
 
-`run-20261114-222616-b7a0`: default weights, **120 s** limit, seed 0, 8 workers. Status **FEASIBLE** (not proven optimal); runtime 120.15 s; objective **25,863**; best bound **6,688**, so the gap is about 74 %. The run has 4,590 variables and 44,256 constraints; the warm start took 174 ms and moved 6 groups. Dataset version `6c0f9920ccea90d0`. **All 9 integrity checks passed.**
+`run-20261115-000737-0de9`: default weights, **120 s** limit, seed 0, 8 workers. Status **FEASIBLE** (not proven optimal); runtime 120.99 s; objective **17,765**; best bound **1,475**, so the gap is about 92 %. The run has 5,294 variables and 47,945 constraints; the warm start took 199 ms and moved 6 groups. Dataset version `6c0f9920ccea90d0`. **All 9 integrity checks passed.**
 
 | Metric (unit) | Baseline → Optimized | Students affected | Weighted points |
 |---|---|---|---|
 | Simultaneous conflicts (pairs) | 30 → **0** | 30 → 0 | 30,000 → 0 |
-| 3 in 24 h (students) | 187 → **75** | 187 → 75 | 18,700 → 7,500 |
-| Back-to-back (pairs) | 554 → **360** | 449 → 320 | 16,620 → 10,800 |
-| 4 in 48 h (students) | 150 → **75** | 150 → 75 | 2,250 → 1,125 |
-| Late evening (exams) | 1,401 → **1,567** ▲ | 844 → 857 | 4,203 → 4,701 |
-| Early morning (exams) | 876 → **579** | 656 → 502 | 2,628 → 1,737 |
-| **Total score** | **74,401 → 25,863 (−65.2 %)** | any issue: 985 → 966 | |
+| 3 in 24 h (students) | 187 → **66** | 187 → 66 | 18,700 → 6,600 |
+| Back-to-back (pairs) | 554 → **319** | 449 → 283 | 16,620 → 9,570 |
+| 4 in 48 h (students) | 150 → **73** | 150 → 73 | 2,250 → 1,095 |
+| Late → early (pairs) | 123 → **50** | 119 → 50 | 1,230 → 500 |
+| **Total score** | **68,800 → 17,765 (−74.2 %)** | any issue: 534 → 330 | |
 
-- Students: **529** better off, **290** worse off, **181** unchanged. **39 of 52** groups moved.
-- `late_evening` is the only metric that got worse. With weight 3, the solver traded more evening sittings for fewer conflicts, back-to-backs and dense windows.
+- Students: **424** better off, **173** worse off, **403** unchanged. **40 of 52** groups moved. Every metric improves.
+- Separate per-exam late-evening and early-morning metrics were tried (−65 % to −68 %, "any issue" 637 to 966) and reverted in favor of this pair metric.
 - Baseline diagnostics: 283 distinct 3-in-24 h triples, 243 4-in-48 h quadruples, at most 4 exams in one day.
 
 ---
@@ -500,17 +496,17 @@ They mock `fetch` with fixture responses and cover:
 |---|---|---|
 | `test_records.py` | 41 | per-record validators: timezones (UTC → New York, DST in May, naive rejected), meeting times, ID formats, CRN, synthetic-only students, provenance rules, exam-group restrictions, schedules, MetricValue invariants |
 | `test_dataset.py` | 36 | sample-dataset integrity, round trip, New York offsets, index derivation (incl. chronological `timeslots_by_day`), every cross-record error and warning code, schedule and config validation, default weight ordering |
-| `test_evaluator.py` | 25 | touching intervals = back-to-back not conflict, partial overlap, 3 in one slot = 3 pairs, 3 in a day counts as 3 in 24 h, a window of exactly 24 h is excluded, rolling (not calendar) 48 h, once per student, late and early counted separately and per exam, configurable thresholds, an exam crossing midnight, DST, multi-section common exams counted once, invalid or missing assignments, breakdown sums, determinism, `SlotRelations` agreeing with the evaluator, window coverage |
+| `test_evaluator.py` | 25 | touching intervals = back-to-back not conflict, partial overlap, 3 in one slot = 3 pairs, 3 in a day counts as 3 in 24 h, a window of exactly 24 h is excluded, rolling (not calendar) 48 h, once per student, late→early pairs (and the skipped-day gap limit), configurable thresholds, an exam crossing midnight, DST, multi-section common exams counted once, invalid or missing assignments, breakdown sums, determinism, `SlotRelations` agreeing with the evaluator, window coverage |
 | `test_data_generation.py` | 23 | matrix structure, known rows, block sizes, end-sensitive pattern, days+start fallback, common and special periods, geometry on synthetic fragments, wrong weekday, crawler tuple decoding, IRP parsers, fetch caching and fallback, term resolution, section eligibility, config consistency, selection rules |
 | `test_optimization.py` | 21 | schema-level config and result validators, weights, `relative_gap`, request exactly-one rules |
-| `test_optimizer.py` | 20 | exactly once, no conflicts, unrelated groups may share a slot, fixed exams preserved, restrictions, locks, both capacity caps, per-day cap, infeasibility and diagnosis, pinned-pair explanation, lock to a forbidden slot, hypothetical mode, relaxed mode, known optima, **solver objective == evaluator**, weight trade-offs, exact late and early objective, two-phase reports no bound |
+| `test_optimizer.py` | 20 | exactly once, no conflicts, unrelated groups may share a slot, fixed exams preserved, restrictions, locks, both capacity caps, per-day cap, infeasibility and diagnosis, pinned-pair explanation, lock to a forbidden slot, hypothetical mode, relaxed mode, known optima, **solver objective == evaluator**, weight trade-offs, exact late→early objective, two-phase reports no bound |
 | `test_api.py` | 16 | all endpoints, 404/409/422, infeasible run reported rather than faked, async 202 + polling, PDF report content read back with pypdf |
 | `test_data_integration.py` | 7 | full-dataset validation, shape, plausible stats, same seed gives the same output and a different seed differs, injected problems caught, alternative granularities build, committed dataset is current |
 | `test_ts_sync.py` | 3 | Pydantic ↔ TypeScript interfaces and unions in sync |
 | `test_integration_pipeline.py` | 1 | full dataset end to end: baseline untouched, registrations unchanged, integrity checks pass, genuine improvement |
 | `factories.py`, `conftest.py` | — | builders for small datasets; sample-dataset fixtures (deep-copied per test) |
 
-Last run, after the section 15 fixes: **285 backend tests passed, 12 frontend tests passed**, with `tsc` and `vite build` OK.
+Last run, after the section 15 fixes: **286 backend tests passed, 13 frontend tests passed**, with `tsc` and `vite build` OK.
 
 ---
 
@@ -542,11 +538,11 @@ cd backend && .venv/Scripts/python -m hexam.data_generation.build
 
 | # | Finding | Status |
 |---|---|---|
-| 1 | `handoff.md` reported the old results (68,800 → 17,765) and the old late → early metric. | **Fixed.** It now shows 74,401 → 25,863 (−65.2 %), bound 6,688, 529/290/181, and the per-exam late and early metrics with weights 3 and 3. |
-| 2 | `docs/schemas.md` defined conflicts as "k − 1 per slot" and back-to-back as "consecutive same-day slots", and quoted the sample penalty as 7,400 → 25. | **Fixed.** Both are now defined as pairs of a student's exams (overlapping intervals; a break of at most 30 min), and the sample figure is 7,110 → 685. |
+| 1 | `handoff.md` did not match the metrics in the code at the time. | **Fixed.** It shows the current run (68,800 → 17,765, −74.2 %) with the late → early pair metric, which was briefly replaced by per-exam metrics and then restored. |
+| 2 | `docs/schemas.md` defined conflicts as "k − 1 per slot" and back-to-back as "consecutive same-day slots", and quoted the sample penalty as 7,400 → 25. | **Fixed.** Both are now defined as pairs of a student's exams (overlapping intervals; a break of at most 30 min), and the sample figure is 7,110 → 685 (6,795 → 330 after the late-evening metric was removed). |
 | 3 | `reportlab` looked like an unused dependency. | **Not an issue.** `services/report_service.py` imports it to build the PDF report. |
-| 4 | `DatasetIndex.overnight_pairs` and `consecutive_pairs` were built but unused, and the `EVENING_START_HOUR` docstring mentioned the removed night→morning metric. | **Fixed.** Both tables are removed (the test now checks `timeslots_by_day`), and the docstring points to `EvaluationSettings.evening_start`. |
-| 5 | The Student impact table labeled late-evening and early-morning rows "(pairs)". | **Fixed.** `student exams` units now show "(exams)"; the dead `student-days` branch is gone. |
+| 4 | `DatasetIndex.overnight_pairs` and `consecutive_pairs` were built but unused, and the `EVENING_START_HOUR` docstring mentioned the removed night→morning metric. | **Fixed.** Both tables are removed (the test now checks `timeslots_by_day`), and the docstring now says evening is display only. |
+| 5 | The Student impact table labeled late-evening and early-morning rows "(pairs)" (late-evening has since been removed). | **Fixed.** `student exams` units now show "(exams)"; the dead `student-days` branch is gone. |
 | 6 | `model_stats.build_ms` included the warm start (and phase 1). | **Fixed.** It now times only the model build and full hint; the warm start keeps its own `warm_start_ms`. |
 | 7 | `pyproject.toml` said 0.1.0 while the code, API and frontend said 1.0.0. | **Fixed.** `pyproject.toml` is 1.0.0, and the API reads `hexam.__version__` instead of a hard-coded string. |
 
@@ -557,4 +553,3 @@ cd backend && .venv/Scripts/python -m hexam.data_generation.build
 - Improve solution quality and the bound: symmetry breaking across same-time periods, LNS tuning, or seeding two-phase from the best run.
 - Add a test that forces the warm-start incumbent fallback (main search returns UNKNOWN → the warm schedule is returned as FEASIBLE).
 - Code-split Recharts (about 526 kB minified, 151 kB gzipped).
-- Consider a higher `late_evening` weight: at 3 the solver adds evening sittings (1,401 → 1,567) to cut more costly problems.

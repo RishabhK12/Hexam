@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis, type TooltipProps } from "recharts";
 import { num } from "../lib/format";
 
@@ -38,76 +38,6 @@ export interface PairRow {
   base: number;
   opt?: number | null;
   detail?: string;
-  /** Grouped x-axis (vertical charts): consecutive rows with the same `group` share one label. */
-  group?: string;
-  groupSub?: string;
-  /** Short per-bar label under each bar, shown only when there is room. */
-  minor?: string;
-}
-
-/** Width of an element, tracked with ResizeObserver. */
-function useWidth<T extends HTMLElement>() {
-  const ref = useRef<T>(null);
-  const [w, setW] = useState(0);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    setW(el.getBoundingClientRect().width);
-    if (typeof ResizeObserver === "undefined") return;
-    const ro = new ResizeObserver(([e]) => setW(e.contentRect.width));
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, []);
-  return [ref, w] as const;
-}
-
-const Y_AXIS_W = 48;
-const MINOR_MIN_BAND = 27; // px per bar needed for the per-bar label not to collide
-
-type GroupedTickProps = {
-  x?: number;
-  y?: number;
-  payload?: { index: number };
-  data: PairRow[];
-  band: number;
-  showMinor: boolean;
-  t: Tokens;
-};
-
-/** Two-tier category tick: optional per-bar label, then one centered label per group with dividers. */
-function GroupedTick({ x = 0, y = 0, payload, data, band, showMinor, t }: GroupedTickProps) {
-  const i = payload?.index ?? 0;
-  const row = data[i];
-  if (!row) return null;
-  let s = i;
-  while (s > 0 && data[s - 1].group === row.group) s--;
-  let e = i;
-  while (e < data.length - 1 && data[e + 1].group === row.group) e++;
-  const mid = (s + e) / 2;
-  const top = y - 8; // the axis line
-  const groupY = top + (showMinor ? 30 : 16);
-  return (
-    <g>
-      {showMinor && row.minor && (
-        <text x={x} y={top + 15} textAnchor="middle" fontSize={10} fill={t.axis}>
-          {row.minor}
-        </text>
-      )}
-      {i === s && i > 0 && <line x1={x - band / 2} x2={x - band / 2} y1={top} y2={top + (showMinor ? 20 : 7)} stroke={t.axis} strokeOpacity={0.6} />}
-      {i === Math.floor(mid) && (
-        <>
-          <text x={x + (mid - i) * band} y={groupY} textAnchor="middle" fontSize={11} fontWeight={600} fill={t.ink}>
-            {row.group}
-          </text>
-          {row.groupSub && (
-            <text x={x + (mid - i) * band} y={groupY + 13} textAnchor="middle" fontSize={10} fill={t.axis}>
-              {row.groupSub}
-            </text>
-          )}
-        </>
-      )}
-    </g>
-  );
 }
 
 function PairTooltip({ active, payload, label, unit }: TooltipProps<number, string> & { unit: string }) {
@@ -139,16 +69,12 @@ function PairTooltip({ active, payload, label, unit }: TooltipProps<number, stri
 /** Baseline vs optimized bars on one shared axis (same unit for every row). */
 export function PairBars({ data, unit, horizontal = false, height = 260 }: { data: PairRow[]; unit: string; horizontal?: boolean; height?: number }) {
   const t = useChartTokens();
-  const [ref, width] = useWidth<HTMLDivElement>();
   const hasOpt = data.some((d) => d.opt != null);
   const axisStyle = { fontSize: 11, fill: t.axis };
-  const grouped = !horizontal && data.some((d) => d.group);
-  const band = data.length ? Math.max(0, width - Y_AXIS_W - 24) / data.length : 0;
-  const showMinor = grouped && band >= MINOR_MIN_BAND && data.some((d) => d.minor);
   return (
-    <div ref={ref} style={{ height }} role="img" aria-label={`Bar chart, ${unit}, baseline${hasOpt ? " versus optimized" : ""}`}>
+    <div style={{ height }} role="img" aria-label={`Bar chart, ${unit}, baseline${hasOpt ? " versus optimized" : ""}`}>
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={data} layout={horizontal ? "vertical" : "horizontal"} barGap={2} barCategoryGap={horizontal ? "22%" : "18%"} margin={{ top: 4, right: 12, bottom: 0, left: horizontal ? 8 : grouped ? 0 : -12 }}>
+        <BarChart data={data} layout={horizontal ? "vertical" : "horizontal"} barGap={2} barCategoryGap={horizontal ? "22%" : "18%"} margin={{ top: 4, right: 12, bottom: 0, left: horizontal ? 8 : -12 }}>
           <CartesianGrid stroke={t.grid} strokeDasharray="0" vertical={horizontal} horizontal={!horizontal} />
           {horizontal ? (
             <>
@@ -157,19 +83,8 @@ export function PairBars({ data, unit, horizontal = false, height = 260 }: { dat
             </>
           ) : (
             <>
-              {grouped ? (
-                <XAxis
-                  dataKey="label"
-                  axisLine={{ stroke: t.line }}
-                  tickLine={false}
-                  interval={0}
-                  height={showMinor ? 50 : 36}
-                  tick={<GroupedTick data={data} band={band} showMinor={showMinor} t={t} />}
-                />
-              ) : (
-                <XAxis dataKey="label" tick={axisStyle} axisLine={{ stroke: t.line }} tickLine={false} interval={0} />
-              )}
-              <YAxis tick={axisStyle} axisLine={false} tickLine={false} tickFormatter={(v) => num(v)} width={grouped ? Y_AXIS_W : undefined} />
+              <XAxis dataKey="label" tick={axisStyle} axisLine={{ stroke: t.line }} tickLine={false} interval={0} />
+              <YAxis tick={axisStyle} axisLine={false} tickLine={false} tickFormatter={(v) => num(v)} />
             </>
           )}
           <Tooltip cursor={{ fill: t.grid, fillOpacity: 0.35 }} content={<PairTooltip unit={unit} />} />

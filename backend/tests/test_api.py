@@ -184,9 +184,10 @@ def test_run_report_pdf(client, run):
     reader = PdfReader(BytesIO(r.content))
     assert len(reader.pages) >= 4
     text = "\n".join(p.extract_text() for p in reader.pages)
-    for needle in ("Final exam schedule comparison", "Late-evening exams", "Early-morning exams",
+    for needle in ("Final exam schedule comparison", "Late evening to early morning",
                    "Exam times: official vs optimized", "Integrity checks", run.run_id):
         assert needle in text, needle
+    assert "Late-evening" not in text
     moved = run.comparison.exam_groups_moved
     assert f"{moved} of 52 exam groups moved." in text
     assert f"{run.result.after.weighted_penalty:,.0f}" in text  # same score the API reports

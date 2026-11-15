@@ -3,12 +3,13 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import App from "../App";
 import { Delta, Kpi } from "../components/ui";
 import { campusDateKey, campusHHMM, campusTime, courseLabel, pct } from "../lib/format";
+import { layoutDay } from "../pages/Students";
 import type { ImpactMetricKey, OptimizationRun, ScheduleEvaluation } from "../types/hexam";
 
 // ------------------------------------------------------------------ fixtures
 
-const KEYS: ImpactMetricKey[] = ["simultaneous_conflicts", "back_to_back", "late_evening", "early_morning", "three_in_24h", "four_in_48h"];
-const W = { simultaneous_conflicts: 1000, back_to_back: 30, late_evening: 3, early_morning: 3, three_in_24h: 100, four_in_48h: 15 };
+const KEYS: ImpactMetricKey[] = ["simultaneous_conflicts", "back_to_back", "night_to_morning", "three_in_24h", "four_in_48h"];
+const W = { simultaneous_conflicts: 1000, back_to_back: 30, night_to_morning: 10, three_in_24h: 100, four_in_48h: 15 };
 
 function evaluation(id: string, scale: number): ScheduleEvaluation {
   const metrics = Object.fromEntries(KEYS.map((k) => [k, { count: 10 * scale, students_affected: 5 * scale }]));
@@ -183,6 +184,15 @@ describe("format helpers", () => {
 });
 
 describe("components", () => {
+  it("places overlapping exams side by side and flags them", () => {
+    const ex = (id: string, start: string, end: string) =>
+      ({ exam_group_id: id, course_ids: [id], start: `2026-12-07T${start}:00-05:00`, end: `2026-12-07T${end}:00-05:00` }) as never;
+    const l = layoutDay([ex("a", "08:00", "10:50"), ex("b", "09:00", "11:50"), ex("c", "14:40", "17:30")]);
+    expect(l.get("a")).toEqual({ lane: 0, lanes: 2, conflict: true });
+    expect(l.get("b")).toEqual({ lane: 1, lanes: 2, conflict: true });
+    expect(l.get("c")).toEqual({ lane: 0, lanes: 1, conflict: false });
+  });
+
   it("Delta shows improvement, worsening and undefined percentages", () => {
     const { rerender } = render(<Delta before={10} after={5} />);
     expect(screen.getByText("-50.0%")).toBeInTheDocument();

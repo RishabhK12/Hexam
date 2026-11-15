@@ -3,13 +3,9 @@ import { CAMPUS_TIMEZONE, type ImpactMetricKey, type ISODateTime } from "../type
 const fmt = (opts: Intl.DateTimeFormatOptions) => new Intl.DateTimeFormat("en-US", { ...opts, timeZone: CAMPUS_TIMEZONE });
 const timeF = fmt({ hour: "numeric", minute: "2-digit" });
 const dayF = fmt({ weekday: "short", month: "short", day: "numeric" });
-const weekdayF = fmt({ weekday: "short" });
-const shortDayF = fmt({ month: "short", day: "numeric" });
 
 export const campusTime = (iso: ISODateTime) => timeF.format(new Date(iso));
 export const campusDay = (iso: ISODateTime) => dayF.format(new Date(iso));
-export const weekday = (iso: ISODateTime) => weekdayF.format(new Date(iso));
-export const shortDay = (iso: ISODateTime) => shortDayF.format(new Date(iso));
 export const timeRange = (start: ISODateTime, end: ISODateTime) => `${campusTime(start)}–${campusTime(end)}`;
 
 /** "YYYY-MM-DD" in campus time. */
@@ -61,18 +57,11 @@ export const METRICS: { key: ImpactMetricKey; label: string; short: string; unit
     help: "Students with four exam starts inside a rolling window shorter than 48 hours.",
   },
   {
-    key: "late_evening",
-    label: "Late-evening exams",
-    short: "Late evening",
-    unit: "student exams",
-    help: "Exams a student sits that start at or after 5 PM (each exam counts once per student).",
-  },
-  {
-    key: "early_morning",
-    label: "Early-morning exams",
-    short: "Early morning",
-    unit: "student exams",
-    help: "Exams a student sits that start before 10 AM (each exam counts once per student).",
+    key: "night_to_morning",
+    label: "Late-evening → early-morning",
+    short: "Late → early",
+    unit: "exam pairs",
+    help: "An exam starting at/after 5 PM followed by one starting before 10 AM the next day (break ≤ 14 h).",
   },
 ];
 

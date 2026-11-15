@@ -48,8 +48,8 @@ METRICS: list[tuple[ImpactMetricKey, str, str, str]] = [
      "Three exam starts inside a rolling window under 24 hours (includes 3+ exams on one day)."),
     (K.BACK_TO_BACK, "Back-to-back exams", "exam pairs", "Two exams separated by at most the back-to-back gap."),
     (K.FOUR_IN_48H, "4 exams within 48 h", "students", "Four exam starts inside a rolling window under 48 hours."),
-    (K.LATE_EVENING, "Late-evening exams", "student exams", "Exams a student sits that start at or after the evening cutoff."),
-    (K.EARLY_MORNING, "Early-morning exams", "student exams", "Exams a student sits that start before the morning cutoff."),
+    (K.NIGHT_TO_MORNING, "Late evening to early morning", "exam pairs",
+     "An evening exam followed by an exam early the next morning (short overnight break)."),
 ]
 
 # Same series colors as the dashboard.
@@ -512,9 +512,10 @@ def build_run_report(h: DatasetHandle, run: OptimizationRun, art: RunArtifacts) 
     story.append(_table(rows, [1.6 * inch, CONTENT_W - 2.2 * inch, 0.6 * inch], extra=[("ALIGN", (2, 0), (2, -1), "RIGHT")], font_size=7.3))
     story.append(Spacer(1, 4))
     story.append(Paragraph(
-        f"Thresholds: back-to-back gap up to {settings.back_to_back_max_gap_minutes} min; late evening = start at or after "
-        f"{settings.evening_start.strftime('%I:%M %p').lstrip('0')}; early morning = start before "
-        f"{settings.morning_end.strftime('%I:%M %p').lstrip('0')}. All times America/New_York.", st["small"]))
+        f"Thresholds: back-to-back gap up to {settings.back_to_back_max_gap_minutes} min; late to early = an exam starting at or after "
+        f"{settings.evening_start.strftime('%I:%M %p').lstrip('0')}, then one starting before "
+        f"{settings.morning_end.strftime('%I:%M %p').lstrip('0')} the next day, at most "
+        f"{settings.overnight_max_gap_hours:g} h apart. All times America/New_York.", st["small"]))
     story.append(Spacer(1, 8))
     story.append(Paragraph(_latin1(info.synthetic_disclosure), st["small"]))
 
@@ -557,8 +558,8 @@ def _day_table(before: ScheduleEvaluation, after: ScheduleEvaluation) -> Table:
 def _issue_summary(d) -> str:
     parts = []
     names = {
-        "simultaneous_conflicts": "conflict", "back_to_back": "back-to-back", "late_evening": "late evening",
-        "early_morning": "early morning", "three_in_24h": "3 in 24 h", "four_in_48h": "4 in 48 h",
+        "simultaneous_conflicts": "conflict", "back_to_back": "back-to-back",
+        "night_to_morning": "late to early", "three_in_24h": "3 in 24 h", "four_in_48h": "4 in 48 h",
     }
     for k, label in names.items():
         v = getattr(d, k)

@@ -10,7 +10,7 @@ from hexam.schemas import EvaluationSettings, PenaltyWeights
 from .factories import dt, make_dataset, slot, standard_slots
 
 W = PenaltyWeights(
-    simultaneous_conflicts=1000, back_to_back=10, late_evening=5, early_morning=7,
+    simultaneous_conflicts=1000, back_to_back=10, night_to_morning=5,
     three_in_24h=50, four_in_48h=75,
 )
 
@@ -77,8 +77,7 @@ class TestDayAndWindows:
         out = evaluate(ds, {"a": "T071440", "b": "T071800", "c": "T080800"})
         assert out.evaluation.diagnostics.max_exams_one_day == 2
         assert m(out, "three_in_24h").count == 1
-        assert m(out, "late_evening").count == 1  # 18:00
-        assert m(out, "early_morning").count == 1  # 08:00
+        assert m(out, "night_to_morning").count == 1  # 18:00 → 08:00
         assert m(out, "back_to_back").count == 1  # 17:30 → 18:00
 
     def test_exactly_24h_apart_is_not_within_24h(self):
@@ -100,43 +99,44 @@ class TestDayAndWindows:
         assert out.evaluation.diagnostics.three_in_24h_patterns > 1
 
 
-# ------------------------------------------ late evening, early morning, midnight
+# ---------------------------------------------------- late-to-early, midnight
 
 
-class TestLateEarlyAndMidnight:
-    def test_late_and_early_are_counted_separately(self):
+class TestLateToEarlyAndMidnight:
+    def test_evening_then_next_morning(self):
         ds = make_dataset(["a", "b"], {"S000001": ["a", "b"]}, standard_slots())
         out = evaluate(ds, {"a": "T071800", "b": "T080800"})
-        late, early = m(out, "late_evening"), m(out, "early_morning")
-        assert (late.count, late.students_affected) == (1, 1)
-        assert (early.count, early.students_affected) == (1, 1)
-        assert out.evaluation.penalty_breakdown["late_evening"] == W.late_evening
-        assert out.evaluation.penalty_breakdown["early_morning"] == W.early_morning
+        v = m(out, "night_to_morning")
+        assert (v.count, v.students_affected) == (1, 1)
+        assert out.evaluation.weighted_penalty == W.night_to_morning
         assert m(out, "back_to_back").count == 0
 
-    def test_counted_per_exam_not_per_pair(self):
-        # two evening exams on different days, no morning exam at all
-        ds = make_dataset(["a", "b", "c"], {"S000001": ["a", "b", "c"]}, standard_slots(days=(7, 9)))
-        out = evaluate(ds, {"a": "T071800", "b": "T091800", "c": "T071120"})
-        assert m(out, "late_evening").count == 2 and m(out, "late_evening").students_affected == 1
-        assert m(out, "early_morning").count == 0
-
-    def test_midday_exams_are_neither(self):
+    def test_lone_evening_or_morning_exam_is_free(self):
         ds = make_dataset(["a", "b"], {"S000001": ["a", "b"]}, standard_slots())
-        out = evaluate(ds, {"a": "T071120", "b": "T081440"})
-        assert m(out, "late_evening").count == m(out, "early_morning").count == 0
+        out = evaluate(ds, {"a": "T071800", "b": "T091120"})
+        assert m(out, "night_to_morning").count == 0
+        assert evaluate(ds, {"a": "T070800", "b": "T081440"}).evaluation.weighted_penalty == 0
 
-    def test_each_student_counts_their_own_sitting(self):
-        ds = make_dataset(["a"], {"S000001": ["a"], "S000002": ["a"], "S000003": ["a"]}, standard_slots())
-        v = m(evaluate(ds, {"a": "T070800"}), "early_morning")
-        assert (v.count, v.students_affected) == (3, 3)
+    def test_evening_then_late_morning_is_not_early(self):
+        ds = make_dataset(["a", "b"], {"S000001": ["a", "b"]}, standard_slots())
+        assert m(evaluate(ds, {"a": "T071800", "b": "T081120"}), "night_to_morning").count == 0
+
+    def test_gap_limit_excludes_skipped_day(self):
+        ds = make_dataset(["a", "b"], {"S000001": ["a", "b"]}, standard_slots(days=(7, 9)))
+        assert m(evaluate(ds, {"a": "T071800", "b": "T090800"}), "night_to_morning").count == 0
+
+    def test_counted_per_pair_and_per_student(self):
+        students = {"S000001": ["a", "b"], "S000002": ["a", "b"], "S000003": ["a"]}
+        ds = make_dataset(["a", "b"], students, standard_slots())
+        v = m(evaluate(ds, {"a": "T071800", "b": "T080800"}), "night_to_morning")
+        assert (v.count, v.students_affected) == (2, 2)
 
     def test_thresholds_are_configurable(self):
         ds = make_dataset(["a", "b"], {"S000001": ["a", "b"]}, standard_slots())
-        s = EvaluationSettings(morning_end=time(12, 0), evening_start=time(19, 0))
-        out = evaluate(ds, {"a": "T071800", "b": "T081120"}, settings=s)
-        assert m(out, "early_morning").count == 1  # 11:20 < 12:00
-        assert m(out, "late_evening").count == 0  # 18:00 < 19:00
+        s = EvaluationSettings(morning_end=time(12, 0), overnight_max_gap_hours=16)
+        assert m(evaluate(ds, {"a": "T071800", "b": "T081120"}, settings=s), "night_to_morning").count == 1
+        s = EvaluationSettings(evening_start=time(19, 0))
+        assert m(evaluate(ds, {"a": "T071800", "b": "T080800"}, settings=s), "night_to_morning").count == 0
         s = EvaluationSettings(back_to_back_max_gap_minutes=20)
         assert m(evaluate(ds, {"a": "T070800", "b": "T071120"}, settings=s), "back_to_back").count == 0
 
@@ -150,8 +150,7 @@ class TestLateEarlyAndMidnight:
         out = evaluate(ds, {"a": "LATE", "b": "EARLY", "c": "MORN"})
         d = out.students["S000001"]
         assert d.back_to_back == 1  # LATE→EARLY across midnight
-        assert d.late_evening == 1  # 21:00
-        assert d.early_morning == 2  # 00:10 and 08:00
+        assert d.night_to_morning == 2  # LATE→EARLY and LATE→MORN
         assert d.three_in_24h == 1
 
     def test_dst_timezone_offsets_are_respected(self):
@@ -241,8 +240,7 @@ def test_slot_relations_agree_with_evaluator():
             assert d.simultaneous_conflicts == int(s2 in rel.overlap[s1])
             assert d.back_to_back == int((s1, s2) in rel.b2b or (s2, s1) in rel.b2b)
             if s1 != s2:
-                assert d.late_evening == int(s1 in rel.late) + int(s2 in rel.late)
-                assert d.early_morning == int(s1 in rel.early) + int(s2 in rel.early)
+                assert d.night_to_morning == int((s1, s2) in rel.late_early or (s2, s1) in rel.late_early)
 
 
 @pytest.mark.parametrize("n", [3, 4])

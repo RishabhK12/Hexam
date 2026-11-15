@@ -19,8 +19,7 @@ export const DEFAULT_WEIGHTS: PenaltyWeights = {
   three_in_24h: 100,
   back_to_back: 30,
   four_in_48h: 15,
-  late_evening: 3,
-  early_morning: 3,
+  night_to_morning: 10,
 };
 
 export const DEFAULT_HARD: HardConstraints = {

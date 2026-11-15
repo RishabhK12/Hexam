@@ -28,7 +28,7 @@ OptimizationResult ──> config_id ──────────────�
 `Dataset` bundles courses + sections + exam_groups + timeslots + students (one dataset per data directory).
 `DatasetIndex` (`dataset.build_index()`) gives the solver/evaluator O(1) lookups,
 `student_exam_groups`, `group_students` and chronological `timeslots_by_day`.
-Time relations between slots (overlap, back-to-back, late/early, rolling windows) live in
+Time relations between slots (overlap, back-to-back, late → early, rolling windows) live in
 `hexam.evaluation.rules.SlotRelations`, shared by the evaluator and the solver.
 
 ## Time handling
@@ -46,12 +46,11 @@ Same keys in `PenaltyWeights`, `StudentImpactMetrics`, `StudentImpactDetail`, `o
 |---|---|
 | `simultaneous_conflicts` | per pair of a student's exams whose time intervals overlap (touching end == start is not a conflict) |
 | `back_to_back` | per pair of a student's non-overlapping exams with a break of at most 30 min (`back_to_back_max_gap_minutes`) |
-| `late_evening` | per student exam starting at/after 17:00 |
-| `early_morning` | per student exam starting before 10:00 |
+| `night_to_morning` | per pair of a student's exams: one starting at/after 17:00, then one starting before 10:00 on a later day, with a break of at most 14 h (`overnight_max_gap_hours`) |
 | `three_in_24h` | once per student with 3 exam starts within < 24 h (includes 3+ exams in one calendar day) |
 | `four_in_48h` | once per student with 4 exam starts within < 48 h |
 
-Evening = slot starting at or after 17:00 (`EVENING_START_HOUR`).
+Evening = slot starting at or after 17:00 (`EVENING_START_HOUR`, `EvaluationSettings.evening_start`).
 
 ## Provenance
 
@@ -84,4 +83,4 @@ Fall 2026 sample: 11 real GT course codes (titles marked `assumed` until verifie
 against the catalog), 18 synthetic sections, 12 exam groups (9 meeting-pattern,
 3 common: one fixed, one evening-only, one no-evening), 19 assumed 2h50m slots
 (Dec 7–11), 60 synthetic students, a baseline and optimized schedule, two configs,
-and one result whose metrics are exact for this data (baseline penalty 7,110 → 685).
+and one result whose metrics are exact for this data (baseline penalty 6,600 → 25).

@@ -15,9 +15,7 @@ Hard constraints
     (+) optional: per-student max exams per day
 
 Objective (minimized) — *exactly* the evaluator's weighted penalty:
-    late_evening / early_morning: linear, per group g and late/early slot t,
-        cost = weight × students(g) × x[g,t]   (exact, no auxiliary variable)
-    pair metrics (conflicts in relaxed mode, back-to-back):
+    pair metrics (conflicts in relaxed mode, back-to-back, late→early):
         one Boolean p[g,h] per co-enrolled pair, forced to 1 by
         x[g,t] + Σ_{u ∈ R(t)} x[h,u] ≤ 1 + p[g,h]   for each t,
         cost = weight × shared_students(g,h) × p[g,h]
@@ -112,6 +110,7 @@ def _build(prob: Problem, weights: PenaltyWeights, groups: list[str], pins: dict
         return {b for a, b in rel_pairs if a == t} | {a for a, b in rel_pairs if b == t}
 
     b2b_nb = {t: neighbors(rel.b2b, t) for t in rel.slot_ids}
+    late_nb = {t: neighbors(rel.late_early, t) for t in rel.slot_ids}
 
     def pair_indicator(g: str, h: str, nb: dict[str, set[str]] | dict[str, frozenset[str]], name: str):
         """Boolean forced to 1 when g's slot and h's slot are related by ``nb``; None if impossible."""
@@ -145,19 +144,10 @@ def _build(prob: Problem, weights: PenaltyWeights, groups: list[str], pins: dict
                 p = pair_indicator(g, h, b2b_nb, "b2b")
                 if p is not None:
                     terms[K.BACK_TO_BACK.value].append((weights.back_to_back * n, p))
-
-    # late-evening / early-morning exams: linear in x (one sitting per student in the group)
-    if opt.objective:
-        for key, w, slots in (
-            (K.LATE_EVENING, weights.late_evening, rel.late),
-            (K.EARLY_MORNING, weights.early_morning, rel.early),
-        ):
-            if not w:
-                continue
-            for g in groups:
-                size = prob.group_size[g]
-                if size:
-                    terms[key.value].extend((w * size, x[g, t]) for t in elig[g] if t in slots)
+            if weights.night_to_morning:
+                p = pair_indicator(g, h, late_nb, "late")
+                if p is not None:
+                    terms[K.NIGHT_TO_MORNING.value].append((weights.night_to_morning * n, p))
 
     # day / window indicators per group
     def group_in(g: str, slots, cache: dict) -> cp_model.LinearExpr | int:

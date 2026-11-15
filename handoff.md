@@ -1,6 +1,6 @@
 # Hexam — handoff
 
-Status: 2026-11-14. **All five stages are implemented and verified end to end.** Branch `improve-algorithm`: removed the separate 3-per-day metric (merged into 3-in-24 h), split late→early into separate late-evening and early-morning metrics, added a PDF comparison report, and gave the period-concentration chart a day-grouped x-axis; **not committed yet**.
+Status: 2026-11-14. **All five stages are implemented and verified end to end.** Branch `improve-algorithm`: removed the separate 3-per-day metric (merged into 3-in-24 h), split late→early into separate late-evening and early-morning metrics, and added a PDF comparison report (committed in 68de5ff). Since then, **uncommitted**: removed the Overview "exam load by day" and "concentration across periods" charts, the How it works tab and the synthetic-data banner, renamed "seats" to "students" in schedule cells and the Optimize cap, removed the "students worse off" box from the Overview, drew overlapping exams side by side in the Student impact calendars, and **went back to the single late-evening → early-morning pair metric** (`night_to_morning`, weight 10) instead of separate late/early metrics.
 
 ## Done
 
@@ -12,26 +12,25 @@ Status: 2026-11-14. **All five stages are implemented and verified end to end.**
 | Comparison + integrity | `backend/hexam/services/` | `tests/test_integration_pipeline.py` (full dataset: baseline untouched, registrations unchanged, 9 integrity checks, genuine improvement) |
 | FastAPI | `backend/hexam/api/` | `tests/test_api.py` (17 tests incl. 422/404/409, infeasible run, async job polling, PDF report content) |
 | PDF report | `backend/hexam/services/report_service.py`, `GET /api/runs/{id}/report.pdf`, `frontend/src/components/ReportButton.tsx` | ReportLab; API test reads the PDF back with pypdf; pages checked visually; button verified in the browser |
-| Frontend | `frontend/` | `src/__tests__/app.test.tsx` (12 vitest tests); `tsc` + `vite build` pass; verified live in a browser (load, run optimization, schedule modes, student impact, methodology) |
+| Frontend | `frontend/` | `src/__tests__/app.test.tsx` (13 vitest tests); `tsc` + `vite build` pass; verified live in a browser (load, run optimization, schedule modes, student impact) |
 | Docs / scripts | `README.md`, `scripts/dev.ps1`, `scripts/dev.sh`, `scripts/precompute_demo.py` | — |
 
-**Test results (last run):** backend `285 passed`; frontend `12 passed`; `tsc` and production build OK.
+**Test results (last run):** backend `286 passed`; frontend `13 passed`; `tsc` and production build OK.
 
 ## Real results (precomputed demo run, `data/fall2026/precomputed_run.json`)
-Default weights, 120 s limit, seed 0, 8 workers → **FEASIBLE** (not proven optimal), 120.2 s, objective 25,863, best bound 6,688.
+Default weights, 120 s limit, seed 0, 8 workers → **FEASIBLE** (not proven optimal), 121.0 s, objective 17,765, best bound 1,475.
 
 | Metric | Baseline → Optimized | Students affected |
 |---|---|---|
 | Simultaneous conflicts (pairs) | 30 → 0 | 30 → 0 |
-| 3 in 24 h, incl. 3+ in one day (students) | 187 → 75 | 187 → 75 |
-| Back-to-back (pairs) | 554 → 360 | 449 → 320 |
-| 4 in 48 h (students) | 150 → 75 | 150 → 75 |
-| Late-evening exams (student exams) | 1,401 → 1,567 | 844 → 857 |
-| Early-morning exams (student exams) | 876 → 579 | 656 → 502 |
-| **Weighted score** | **74,401 → 25,863 (−65.2 %)** | any issue: 985 → 966 |
+| 3 in 24 h, incl. 3+ in one day (students) | 187 → 66 | 187 → 66 |
+| Back-to-back (pairs) | 554 → 319 | 449 → 283 |
+| 4 in 48 h (students) | 150 → 73 | 150 → 73 |
+| Late evening → early morning (pairs) | 123 → 50 | 119 → 50 |
+| **Weighted score** | **68,800 → 17,765 (−74.2 %)** | any issue: 534 → 330 |
 
-529 students are better off, **290 worse off**, 181 unchanged; 39 of 52 groups moved.
-"Any issue" is now near 100 % because almost every student has at least one 8 AM or 6 PM exam; the per-metric rows are more informative.
+424 students are better off, 173 worse off, 403 unchanged; 40 of 52 groups moved. Every metric improves.
+For comparison, the separate per-exam metrics reached −65 % to −68 % and left "any issue" at 637 to 966 students.
 
 ## Possible next steps
 - Improve solution quality and the bound: symmetry breaking across same-time periods, LNS parameter tuning, or the two-phase heuristic seeded from the best run.
@@ -39,13 +38,13 @@ Default weights, 120 s limit, seed 0, 8 workers → **FEASIBLE** (not proven opt
 - Optional: code-split Recharts (about 526 kB minified, 151 kB gzipped).
 
 ## Key decisions / caveats
-- **Metric units:** conflicts and back-to-back are *pairs*; 3/24h and 4/48h are *students*; late-evening and early-morning are *student exams* (each sitting counts once). Penalty = Σ weight × count.
-- **Late-evening and early-morning are separate metrics** (replacing the old late→early *pair* metric), each with its own weight. They are linear in the CP-SAT model (weight × group size × x[g,t] for evening/early slots), so the solver term is exact. `overnight_max_gap_hours` was removed from `EvaluationSettings`. Sliders for these two are 0–50 in steps of 1 (they occur thousands of times).
+- **Metric units:** conflicts, back-to-back and late→early are *pairs*; 3/24h and 4/48h are *students*. Penalty = Σ weight × count.
+- **Late→early is a pair metric** (`night_to_morning`): an exam starting ≥ 17:00, then one starting < 10:00 on a later day, break ≤ 14 h. Separate per-exam late-evening and early-morning metrics were tried and dropped: penalizing every 8 AM or 6 PM sitting made "any issue" nearly universal, and the user preferred the pair metric. In CP-SAT it is a pair indicator, like back-to-back.
 - **No separate 3-per-day metric:** three exam starts on one calendar day always span < 24 h, so it was a subset of 3-in-24 h and double-counted.
   It was removed everywhere (schemas, evaluator, solver, API data, UI). The merged `three_in_24h` metric takes the old 3/day weight (100).
   The student page still names the heavy day ("3 exams within 24 hours (4 on Fri Dec 11)"). The optional *hard* per-day cap remains.
-  Thresholds: back-to-back ≤ 30 min; late = start ≥ 17:00; early = start < 10:00.
-- **Defaults:** strict mode on by default; weights in priority order (conflict 1000 > 3/24h 100 > b2b 30 > 4/48h 15 > late evening 3 = early morning 3).
+  Thresholds: back-to-back ≤ 30 min; late = start ≥ 17:00; early = start < 10:00; overnight gap ≤ 14 h.
+- **Defaults:** strict mode on by default; weights in priority order (conflict 1000 > 3/24h 100 > b2b 30 > 4/48h 15 > late→early 10).
   `tests/test_dataset.py::test_weights_default_ordering` was updated to match.
 - **The solver objective can exceed the evaluated score** before optimality is proven (indicators are only lower-bounded). Reported results always come from the evaluator;
   an integrity check enforces `objective ≥ evaluated`.

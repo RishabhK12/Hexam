@@ -39,8 +39,7 @@ from .rules import (
     campus_date,
     count_windows,
     is_back_to_back,
-    is_early_morning,
-    is_late_evening,
+    is_late_to_early,
     overlaps,
 )
 
@@ -61,8 +60,7 @@ class StudentFindings:
 
     conflict_pairs: list[tuple[str, str]] = field(default_factory=list)
     back_to_back_pairs: list[tuple[str, str]] = field(default_factory=list)
-    late_exams: list[str] = field(default_factory=list)  # exam groups starting in the evening
-    early_exams: list[str] = field(default_factory=list)  # exam groups starting early morning
+    late_early_pairs: list[tuple[str, str]] = field(default_factory=list)  # (evening exam, next-morning exam)
     three_in_24h_patterns: int = 0
     four_in_48h_patterns: int = 0
 
@@ -239,7 +237,7 @@ class Evaluator:
     @staticmethod
     def _score_student(exams: list[StudentExam], cfg: EvaluationSettings) -> tuple[dict[str, int], StudentFindings]:
         """Counts for one student's chronologically sorted exams."""
-        conflicts, b2b = [], []
+        conflicts, b2b, late = [], [], []
         n = len(exams)
         for i in range(n):
             a = exams[i]
@@ -251,9 +249,9 @@ class Evaluator:
                 first, second = (a, b) if a.end <= b.start else (b, a)
                 if is_back_to_back(first.end, second.start, cfg):
                     b2b.append((first.exam_group_id, second.exam_group_id))
+                if is_late_to_early(first.start, first.end, second.start, cfg):
+                    late.append((first.exam_group_id, second.exam_group_id))
 
-        late = [e.exam_group_id for e in exams if is_late_evening(e.start, cfg)]
-        early = [e.exam_group_id for e in exams if is_early_morning(e.start, cfg)]
         starts = [e.start for e in exams]
         hit24, p24 = count_windows(starts, 3, WINDOW_24H)
         hit48, p48 = count_windows(starts, 4, WINDOW_48H)
@@ -261,12 +259,11 @@ class Evaluator:
         counts = {
             K.SIMULTANEOUS_CONFLICTS.value: len(conflicts),
             K.BACK_TO_BACK.value: len(b2b),
-            K.LATE_EVENING.value: len(late),
-            K.EARLY_MORNING.value: len(early),
+            K.NIGHT_TO_MORNING.value: len(late),
             K.THREE_IN_24H.value: int(hit24),
             K.FOUR_IN_48H.value: int(hit48),
         }
-        return counts, StudentFindings(conflicts, b2b, late, early, p24, p48)
+        return counts, StudentFindings(conflicts, b2b, late, p24, p48)
 
     # -------------------------------------------------------------- validity
 
