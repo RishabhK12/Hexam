@@ -24,10 +24,10 @@ from hexam.services.optimization_service import PRECOMPUTED_FILE, execute, new_r
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--dataset", default="fall2026")
-    ap.add_argument("--time-limit", type=float, default=60)
-    ap.add_argument("--seed", type=int, default=0)
-    ap.add_argument("--workers", type=int, default=8)
+    ap.add_argument("--dataset", default="fall2026", help="dataset id under data/ (default: %(default)s)")
+    ap.add_argument("--time-limit", type=float, default=60, help="solver time limit in seconds (default: %(default)s)")
+    ap.add_argument("--seed", type=int, default=0, help="random seed for the solver (default: %(default)s)")
+    ap.add_argument("--workers", type=int, default=8, help="CP-SAT worker threads (default: %(default)s)")
     args = ap.parse_args()
 
     h = DatasetRegistry().get(args.dataset)

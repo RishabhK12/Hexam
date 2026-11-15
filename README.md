@@ -127,37 +127,9 @@ All times are actual exam intervals in America/New_York. A student's exams are t
 
 Runs execute one at a time on a background worker (CP-SAT uses all cores) and are kept in memory.
 
-## Precomputed demo run
-
-```bash
-backend/.venv/Scripts/python scripts/precompute_demo.py --time-limit 120
-```
-
-This runs the real optimizer and saves `data/fall2026/precomputed_run.json`, labeled as precomputed.
-On startup the API loads it only if the dataset version matches and the stored schedule re-scores to the
-stored penalty, so it can't go stale or be hand-edited.
-
 ## Tests
 
 ```bash
 cd backend && .venv/Scripts/python -m pytest -q     # schemas, data pipeline, evaluator, local search, optimizer, API, full-dataset integration
 cd frontend && npm test && npm run build            # vitest + tsc + production build
 ```
-
-## Troubleshooting
-
-* **"Cannot reach the Hexam backend"**: start uvicorn on port 8000 (the Vite dev server proxies `/api`).
-* **Status FEASIBLE rather than OPTIMAL** is expected. The search space is large and the gap stays wide within
-  interactive time limits. Every reported number is still exact for the schedule returned.
-* **Results differ between runs**: multi-worker CP-SAT under a time limit isn't deterministic, and the local
-  search stops on a wall clock. A fixed seed with `num_workers=1` removes the thread nondeterminism but not the
-  clock; for a fixed result rely on the saved precomputed run.
-* **Slow first request**: the dataset loads and validates lazily on the first API call (about 1–2 s).
-* **Windows `sha256 mismatch` in data tests**: keep `.gitattributes` (`data/raw/** -text`) so Git doesn't rewrite cached sources.
-
-## Limitations
-
-* Synthetic students; the baseline is the official matrix rule applied to a 64-course subset.
-* No room, proctor, instructor or accommodation constraints. Capacity is only an optional aggregate cap
-  (no real seat data exists).
-* Solutions are good, not proven optimal, within interactive time limits.

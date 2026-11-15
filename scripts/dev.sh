@@ -12,5 +12,5 @@ fi
 "$PY" -m uvicorn hexam.api.main:app --app-dir "$ROOT/backend" --port 8000 &
 API_PID=$!
 trap 'kill $API_PID 2>/dev/null' EXIT
-echo "API: http://127.0.0.1:8000/docs   App: http://localhost:5173"
+echo "API docs: http://127.0.0.1:8000/docs   App: http://localhost:5173"
 npm --prefix "$ROOT/frontend" run dev

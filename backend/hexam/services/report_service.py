@@ -294,7 +294,7 @@ def build_run_report(h: DatasetHandle, run: OptimizationRun, art: RunArtifacts) 
         "Both schedules are scored by the same independent evaluator, on the same students, with the same weights.",
         st["lead"]))
 
-    # KPI strip
+    # KPI strip: headline score change and how many exam groups moved
     def kpi(label: str, value: str, sub: str):
         return [Paragraph(label, st["kpi_label"]), Paragraph(value, st["kpi_value"]), Paragraph(sub, st["kpi_sub"])]
 
